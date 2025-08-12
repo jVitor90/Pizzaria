@@ -1,6 +1,6 @@
 ﻿namespace Pizzaria
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkblcadastrar = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
