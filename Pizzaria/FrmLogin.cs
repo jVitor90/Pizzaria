@@ -16,5 +16,23 @@ namespace Pizzaria
         {
             InitializeComponent();
         }
+
+        private void btnentrar_Click(object sender, EventArgs e)
+        {
+            if(txbcpf.Text.Length < 5)
+            {
+                MessageBox.Show("CPF invalido!", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbsenha.Text.Length < 5)
+            {
+                MessageBox.Show("Senha invalido!", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Moe
+            }
+        }
     }
 }
