@@ -19,12 +19,13 @@ namespace Pizzaria
 
         private void btnentrar_Click(object sender, EventArgs e)
         {
-            if(txbcpf.Text.Length < 5)
+            
+            if(txbcpf.Text.Length < 6)
             {
                 MessageBox.Show("CPF invalido!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txbsenha.Text.Length < 5)
+            else if (txbsenha.Text.Length < 3)
             {
                 MessageBox.Show("Senha invalido!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -32,8 +33,9 @@ namespace Pizzaria
             else
             {
                 Model.Usuario usuario = new Model.Usuario();
-                usuario.cpf = txbcpf.Text;
+                usuario.cpf = txbcpf.Text.Replace(",","").Replace(".","").Replace("-","");
                 usuario.Senha = txbsenha.Text;
+                MessageBox.Show(usuario.cpf);
                 // Armazenar  o resultado de logar (SELECT)
                 DataTable resultado = new DataTable();
                 resultado = usuario.Logar();

@@ -35,9 +35,9 @@
             this.lblcadastrar = new System.Windows.Forms.Label();
             this.lblsenha = new System.Windows.Forms.Label();
             this.lblcpf = new System.Windows.Forms.Label();
-            this.txbcpf = new System.Windows.Forms.TextBox();
             this.txbsenha = new System.Windows.Forms.TextBox();
             this.btnentrar = new System.Windows.Forms.Button();
+            this.txbcpf = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,14 +109,6 @@
             this.lblcpf.TabIndex = 13;
             this.lblcpf.Text = "CPF:";
             // 
-            // txbcpf
-            // 
-            this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbcpf.Location = new System.Drawing.Point(253, 190);
-            this.txbcpf.Name = "txbcpf";
-            this.txbcpf.Size = new System.Drawing.Size(351, 47);
-            this.txbcpf.TabIndex = 12;
-            // 
             // txbsenha
             // 
             this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +128,15 @@
             this.btnentrar.UseVisualStyleBackColor = true;
             this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
             // 
+            // txbcpf
+            // 
+            this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbcpf.Location = new System.Drawing.Point(253, 186);
+            this.txbcpf.Mask = "000.000.000-00";
+            this.txbcpf.Name = "txbcpf";
+            this.txbcpf.Size = new System.Drawing.Size(351, 49);
+            this.txbcpf.TabIndex = 19;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,13 +144,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(842, 450);
+            this.Controls.Add(this.txbcpf);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkblcadastrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblcadastrar);
             this.Controls.Add(this.lblsenha);
             this.Controls.Add(this.lblcpf);
-            this.Controls.Add(this.txbcpf);
             this.Controls.Add(this.txbsenha);
             this.Controls.Add(this.btnentrar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -169,8 +170,8 @@
         private System.Windows.Forms.Label lblcadastrar;
         private System.Windows.Forms.Label lblsenha;
         private System.Windows.Forms.Label lblcpf;
-        private System.Windows.Forms.TextBox txbcpf;
         private System.Windows.Forms.TextBox txbsenha;
         private System.Windows.Forms.Button btnentrar;
+        private System.Windows.Forms.MaskedTextBox txbcpf;
     }
 }
