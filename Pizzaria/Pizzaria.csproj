@@ -59,7 +59,6 @@
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Banco.cs" />
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmGestaoEstoque.resx">
@@ -68,9 +67,6 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\Pizzaria.Form1.resources" />
-    <EmbeddedResource Include="obj\Debug\Pizzaria.FundoCadastro.resources" />
-    <EmbeddedResource Include="obj\Debug\Pizzaria.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,12 +77,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="bin\Debug\Pizzaria.exe.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\Pizzaria.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\Pizzaria.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\Pizzaria.csproj.GenerateResource.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,16 +96,6 @@
   <ItemGroup>
     <None Include="Resources\pizza-4952508_1920 %281%29.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\Pizzaria.exe" />
-    <Content Include="bin\Debug\Pizzaria.pdb" />
-    <Content Include="obj\Debug\Pizzaria.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Pizzaria.exe" />
-    <Content Include="obj\Debug\Pizzaria.pdb" />
-    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
