@@ -8,13 +8,13 @@ using MySqlConnector;
 
 namespace Pizzaria.Model
 {
-    internal class Usuario
+    public class Usuario
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
+        public int Id_usuario { get; set; }
+        public string Nome_usuario { get; set; }
         public string Senha { get; set; }
-        public int cpf { get; set; }
-        public int Cargo { get; set; }
+        public string cpf { get; set; }
+        public string Cargo { get; set; }
 
 
         public DataTable Logar()

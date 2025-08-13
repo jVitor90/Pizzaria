@@ -12,9 +12,17 @@ namespace Pizzaria
 {
     public partial class FrmOpcoes : Form
     {
-        public FrmOpcoes()
+        Model.Usuario Usuario;
+        public FrmOpcoes(Model.Usuario usuario)
         {
             InitializeComponent();
+            this.Usuario = usuario;
+
+        }
+
+        private void FrmOpcoes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -122,6 +122,7 @@
             this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbsenha.Location = new System.Drawing.Point(253, 248);
             this.txbsenha.Name = "txbsenha";
+            this.txbsenha.PasswordChar = '•';
             this.txbsenha.Size = new System.Drawing.Size(351, 47);
             this.txbsenha.TabIndex = 11;
             // 

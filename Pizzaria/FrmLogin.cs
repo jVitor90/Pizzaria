@@ -31,7 +31,30 @@ namespace Pizzaria
             }
             else
             {
-                Moe
+                Model.Usuario usuario = new Model.Usuario();
+                usuario.cpf = txbcpf.Text;
+                usuario.Senha = txbsenha.Text;
+                // Armazenar  o resultado de logar (SELECT)
+                DataTable resultado = new DataTable();
+                resultado = usuario.Logar();
+
+                // Vai verfica se a tebela em alguma linha
+                if(resultado.Rows.Count > 0)
+                {
+                    usuario.Nome_usuario = resultado.Rows[0]["nome_usuario"].ToString();
+                    usuario.Id_usuario = (int)resultado.Rows[0]["Id_usuario"];
+
+                    //Mudar para o FrmOpcoes
+                    FrmOpcoes frmOpcoes = new FrmOpcoes(usuario);
+                    this.Hide();
+                    frmOpcoes.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("CPF ou senha invalida!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
     }
