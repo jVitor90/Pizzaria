@@ -118,6 +118,7 @@
       <DependentUpon>FrmOpcoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Banco.cs" />
+    <Compile Include="Model\Produtos.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

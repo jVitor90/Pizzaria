@@ -15,6 +15,7 @@ namespace Pizzaria.Model
         public string Senha { get; set; }
         public string cpf { get; set; }
         public string Cargo { get; set; }
+        public DateTime criado_em { get; set; }
 
 
         public DataTable Logar()
