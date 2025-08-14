@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.linkblcadastrar = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblcadastrar = new System.Windows.Forms.Label();
             this.lblsenha = new System.Windows.Forms.Label();
             this.lblcpf = new System.Windows.Forms.Label();
             this.txbsenha = new System.Windows.Forms.TextBox();
             this.btnentrar = new System.Windows.Forms.Button();
             this.txbcpf = new System.Windows.Forms.MaskedTextBox();
+            this.lblcadastrar = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.linkblcadastrar = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,39 +51,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // linkblcadastrar
-            // 
-            this.linkblcadastrar.AutoSize = true;
-            this.linkblcadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.linkblcadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkblcadastrar.LinkColor = System.Drawing.Color.Lime;
-            this.linkblcadastrar.Location = new System.Drawing.Point(481, 363);
-            this.linkblcadastrar.Name = "linkblcadastrar";
-            this.linkblcadastrar.Size = new System.Drawing.Size(87, 20);
-            this.linkblcadastrar.TabIndex = 17;
-            this.linkblcadastrar.TabStop = true;
-            this.linkblcadastrar.Text = "Clique aqui";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(317, 363);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Deseja se cadastrar?";
-            // 
-            // lblcadastrar
-            // 
-            this.lblcadastrar.AutoSize = true;
-            this.lblcadastrar.Location = new System.Drawing.Point(327, 363);
-            this.lblcadastrar.Name = "lblcadastrar";
-            this.lblcadastrar.Size = new System.Drawing.Size(0, 13);
-            this.lblcadastrar.TabIndex = 15;
             // 
             // lblsenha
             // 
@@ -137,6 +104,39 @@
             this.txbcpf.Size = new System.Drawing.Size(351, 47);
             this.txbcpf.TabIndex = 19;
             // 
+            // lblcadastrar
+            // 
+            this.lblcadastrar.AutoSize = true;
+            this.lblcadastrar.Location = new System.Drawing.Point(327, 363);
+            this.lblcadastrar.Name = "lblcadastrar";
+            this.lblcadastrar.Size = new System.Drawing.Size(0, 13);
+            this.lblcadastrar.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(317, 363);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 20);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Deseja se cadastrar?";
+            // 
+            // linkblcadastrar
+            // 
+            this.linkblcadastrar.AutoSize = true;
+            this.linkblcadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.linkblcadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkblcadastrar.LinkColor = System.Drawing.Color.Lime;
+            this.linkblcadastrar.Location = new System.Drawing.Point(481, 363);
+            this.linkblcadastrar.Name = "linkblcadastrar";
+            this.linkblcadastrar.Size = new System.Drawing.Size(87, 20);
+            this.linkblcadastrar.TabIndex = 17;
+            this.linkblcadastrar.TabStop = true;
+            this.linkblcadastrar.Text = "Clique aqui";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,13 +165,13 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.LinkLabel linkblcadastrar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblcadastrar;
         private System.Windows.Forms.Label lblsenha;
         private System.Windows.Forms.Label lblcpf;
         private System.Windows.Forms.TextBox txbsenha;
         private System.Windows.Forms.Button btnentrar;
         private System.Windows.Forms.MaskedTextBox txbcpf;
+        private System.Windows.Forms.Label lblcadastrar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkblcadastrar;
     }
 }
