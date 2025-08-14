@@ -49,7 +49,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(12, 386);
+            this.btnVoltar.Location = new System.Drawing.Point(14, 386);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(320, 49);
             this.btnVoltar.TabIndex = 15;
@@ -63,7 +63,7 @@
             this.grbPagamentos.Controls.Add(this.txbValor);
             this.grbPagamentos.Controls.Add(this.lblValorFinal);
             this.grbPagamentos.Controls.Add(this.btnFinalizar);
-            this.grbPagamentos.Location = new System.Drawing.Point(-6, 211);
+            this.grbPagamentos.Location = new System.Drawing.Point(4, 211);
             this.grbPagamentos.Name = "grbPagamentos";
             this.grbPagamentos.Size = new System.Drawing.Size(344, 169);
             this.grbPagamentos.TabIndex = 17;
@@ -111,7 +111,7 @@
             // btnFinalizar
             // 
             this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(18, 112);
+            this.btnFinalizar.Location = new System.Drawing.Point(10, 112);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(320, 49);
             this.btnFinalizar.TabIndex = 9;
@@ -124,7 +124,7 @@
             this.grbInformacoes.Controls.Add(this.lblMesa);
             this.grbInformacoes.Controls.Add(this.btnLimpar);
             this.grbInformacoes.Controls.Add(this.txbMesa);
-            this.grbInformacoes.Location = new System.Drawing.Point(-6, 12);
+            this.grbInformacoes.Location = new System.Drawing.Point(4, 12);
             this.grbInformacoes.Name = "grbInformacoes";
             this.grbInformacoes.Size = new System.Drawing.Size(344, 193);
             this.grbInformacoes.TabIndex = 16;
@@ -134,7 +134,7 @@
             // btnPesquisar
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(6, 69);
+            this.btnPesquisar.Location = new System.Drawing.Point(10, 69);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(320, 49);
             this.btnPesquisar.TabIndex = 13;
@@ -154,7 +154,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(6, 124);
+            this.btnLimpar.Location = new System.Drawing.Point(10, 124);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(320, 49);
             this.btnLimpar.TabIndex = 11;
