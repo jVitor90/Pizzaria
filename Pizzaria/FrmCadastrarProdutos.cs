@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pizzaria.Model;
 
 namespace Pizzaria
 {
     public partial class FrmCadastrarProdutos : Form
     {
+        Model.Usuario usuario;
+        Model.Produtos produtos = new Produtos();
         public FrmCadastrarProdutos()
         {
             InitializeComponent();
+            this.usuario = usuario;
+            AtualizarDgv();
+        }
+        public void AtualizarDgv()
+        {
+            dgvProdutos.DataSource = produtos.Listar();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -40,8 +49,29 @@ namespace Pizzaria
                 // Iniciar o cadastro no Banco de dados
                 Model.Produtos produtos = new Model.Produtos();
                 produtos.nome_produto = txbNomeProduto.Text;
-                produtos.preco = txbValor.Text;
+                produtos.preco = decimal.Parse(txbValor.Text);
+                // obter o id-categoria do cbb
+                produtos.id_categoria = int.Parse(cmbCategoria.Text);
+                produtos.id_Resp = usuario.Id_usuario;
+
+                if (produtos.Cadastrar())
+                {
+                    MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Limpar os campos de cadastro
+                    txbNomeProduto.Clear();
+                    txbValor.Clear();
+                    cmbCategoria.SelectedIndex = -1;
+                    // Atualizar o dgv
+                    AtualizarDgv();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("falha ao cadastrar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
+       
     }
 }

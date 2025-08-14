@@ -16,11 +16,12 @@ namespace Pizzaria.Model
         public int id_categoria { get; set; }
         public int disponivel { get; set; }
         public DateTime atualizado_em { get; set; }
+        public int id_Resp {  get; set; }
 
         public bool Cadastrar()
         {
-            string comando = " INSERT INTO produtos (nome_produto, preco, id_categoria, disponivel, atualizado_em) " +
-                "VALUES (@nome_produto, @preco, @id_categoria, @disponivel, @atualizado_em)";
+            string comando = " INSERT INTO produtos (nome_produto, preco, id_categoria, disponivel, atualizado_em, id_Resp) " +
+                "VALUES (@nome_produto, @preco, @id_categoria, @disponivel, @atualizado_em, @id_Resp)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
@@ -29,6 +30,7 @@ namespace Pizzaria.Model
             cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
             cmd.Parameters.AddWithValue("@disponivel", disponivel);
             cmd.Parameters.AddWithValue("@atualizado_em", atualizado_em);
+            cmd.Parameters.AddWithValue("@id_Resp", id_Resp);
             cmd.Prepare();
             // impede que o programa quebre
             try
