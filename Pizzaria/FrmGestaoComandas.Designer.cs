@@ -45,7 +45,9 @@
             this.txbMesa = new System.Windows.Forms.TextBox();
             this.lblBebidas = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grbPedidos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbPedidos
@@ -243,18 +245,29 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Comandas";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(467, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(360, 426);
+            this.dataGridView1.TabIndex = 14;
+            // 
             // FrmGestaoComandas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(839, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.grbPedidos);
             this.Controls.Add(this.label1);
             this.Name = "FrmGestaoComandas";
             this.Text = "FrmGestaoComandas";
             this.grbPedidos.ResumeLayout(false);
             this.grbPedidos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +292,6 @@
         private System.Windows.Forms.TextBox txbMesa;
         private System.Windows.Forms.Label lblBebidas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
