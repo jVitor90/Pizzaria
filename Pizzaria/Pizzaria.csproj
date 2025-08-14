@@ -81,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCadastrarProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastrarProdutos.Designer.cs">
+      <DependentUpon>FrmCadastrarProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestaoCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCadastrarProdutos.resx">
+      <DependentUpon>FrmCadastrarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestaoCaixa.resx">
       <DependentUpon>FrmGestaoCaixa.cs</DependentUpon>
     </EmbeddedResource>
