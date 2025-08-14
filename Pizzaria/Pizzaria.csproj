@@ -87,6 +87,12 @@
     <Compile Include="FrmGestaoCaixa.Designer.cs">
       <DependentUpon>FrmGestaoCaixa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestaoComandas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestaoComandas.Designer.cs">
+      <DependentUpon>FrmGestaoComandas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestaoEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmGestaoCaixa.resx">
       <DependentUpon>FrmGestaoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestaoComandas.resx">
+      <DependentUpon>FrmGestaoComandas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestaoEstoque.resx">
       <DependentUpon>FrmGestaoEstoque.cs</DependentUpon>
