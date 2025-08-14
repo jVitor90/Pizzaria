@@ -130,11 +130,11 @@
             // 
             // txbcpf
             // 
-            this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbcpf.Location = new System.Drawing.Point(253, 186);
-            this.txbcpf.Mask = "000.000.000-00";
+            this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbcpf.Location = new System.Drawing.Point(253, 195);
+            this.txbcpf.Mask = "000,000,000-00";
             this.txbcpf.Name = "txbcpf";
-            this.txbcpf.Size = new System.Drawing.Size(351, 49);
+            this.txbcpf.Size = new System.Drawing.Size(351, 47);
             this.txbcpf.TabIndex = 19;
             // 
             // FrmLogin

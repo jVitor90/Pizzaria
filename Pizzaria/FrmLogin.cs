@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +17,7 @@ namespace Pizzaria
         public FrmLogin()
         {
             InitializeComponent();
+            txbcpf.Mask = "000.000.000-00";
         }
 
         private void btnentrar_Click(object sender, EventArgs e)
@@ -33,9 +36,10 @@ namespace Pizzaria
             else
             {
                 Model.Usuario usuario = new Model.Usuario();
+                
                 usuario.cpf = txbcpf.Text.Replace(",","").Replace(".","").Replace("-","");
-                usuario.Senha = txbsenha.Text;
                 MessageBox.Show(usuario.cpf);
+                usuario.Senha = txbsenha.Text;
                 // Armazenar  o resultado de logar (SELECT)
                 DataTable resultado = new DataTable();
                 resultado = usuario.Logar();
@@ -59,5 +63,9 @@ namespace Pizzaria
 
             }
         }
+
+        
+
+        
     }
 }
