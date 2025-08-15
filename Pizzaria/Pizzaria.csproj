@@ -87,6 +87,12 @@
     <Compile Include="FrmCadastrarProdutos.Designer.cs">
       <DependentUpon>FrmCadastrarProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCaixa.Designer.cs">
+      <DependentUpon>FrmCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestaoCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCadastrarProdutos.resx">
       <DependentUpon>FrmCadastrarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCaixa.resx">
+      <DependentUpon>FrmCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestaoCaixa.resx">
       <DependentUpon>FrmGestaoCaixa.cs</DependentUpon>
