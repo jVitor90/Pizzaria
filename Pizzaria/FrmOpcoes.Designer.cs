@@ -28,20 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOpcoes));
+            this.bntcadastrarusuarios = new System.Windows.Forms.Button();
+            this.bntpedidos = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnEstoque = new System.Windows.Forms.Button();
+            this.btnComandas = new System.Windows.Forms.Button();
+            this.btnCaixa = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // bntcadastrarusuarios
+            // 
+            this.bntcadastrarusuarios.BackColor = System.Drawing.Color.Transparent;
+            this.bntcadastrarusuarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntcadastrarusuarios.Location = new System.Drawing.Point(302, 342);
+            this.bntcadastrarusuarios.Name = "bntcadastrarusuarios";
+            this.bntcadastrarusuarios.Size = new System.Drawing.Size(190, 51);
+            this.bntcadastrarusuarios.TabIndex = 15;
+            this.bntcadastrarusuarios.Text = "Cadastrar Usuarios";
+            this.bntcadastrarusuarios.UseVisualStyleBackColor = false;
+            // 
+            // bntpedidos
+            // 
+            this.bntpedidos.BackColor = System.Drawing.Color.Transparent;
+            this.bntpedidos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntpedidos.Location = new System.Drawing.Point(302, 279);
+            this.bntpedidos.Name = "bntpedidos";
+            this.bntpedidos.Size = new System.Drawing.Size(190, 51);
+            this.bntpedidos.TabIndex = 14;
+            this.bntpedidos.Text = "Gestão de Pedidos";
+            this.bntpedidos.UseVisualStyleBackColor = false;
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.Transparent;
+            this.btnSair.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(302, 399);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(190, 51);
+            this.btnSair.TabIndex = 13;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            // 
+            // btnEstoque
+            // 
+            this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoque.Location = new System.Drawing.Point(302, 220);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(190, 51);
+            this.btnEstoque.TabIndex = 12;
+            this.btnEstoque.Text = "Gestão de Estoque";
+            this.btnEstoque.UseVisualStyleBackColor = false;
+            // 
+            // btnComandas
+            // 
+            this.btnComandas.BackColor = System.Drawing.Color.Transparent;
+            this.btnComandas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComandas.Location = new System.Drawing.Point(302, 164);
+            this.btnComandas.Name = "btnComandas";
+            this.btnComandas.Size = new System.Drawing.Size(190, 51);
+            this.btnComandas.TabIndex = 11;
+            this.btnComandas.Text = "Gestão de Comandas";
+            this.btnComandas.UseVisualStyleBackColor = false;
+            // 
+            // btnCaixa
+            // 
+            this.btnCaixa.BackColor = System.Drawing.Color.Transparent;
+            this.btnCaixa.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaixa.Location = new System.Drawing.Point(302, 105);
+            this.btnCaixa.Name = "btnCaixa";
+            this.btnCaixa.Size = new System.Drawing.Size(190, 51);
+            this.btnCaixa.TabIndex = 10;
+            this.btnCaixa.Text = "Gestão de Caixa";
+            this.btnCaixa.UseVisualStyleBackColor = false;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(302, 48);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(190, 51);
+            this.btnCadastrar.TabIndex = 9;
+            this.btnCadastrar.Text = "Cadastrar Produtos";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(265, -5);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(271, 38);
+            this.lblTitulo.TabIndex = 8;
+            this.lblTitulo.Text = "Gestão de Opções ";
             // 
             // FrmOpcoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bntcadastrarusuarios);
+            this.Controls.Add(this.bntpedidos);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnEstoque);
+            this.Controls.Add(this.btnComandas);
+            this.Controls.Add(this.btnCaixa);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.lblTitulo);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOpcoes";
-            this.Text = "FrmOpcoes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Opções";
             this.Load += new System.EventHandler(this.FrmOpcoes_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button bntcadastrarusuarios;
+        private System.Windows.Forms.Button bntpedidos;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnEstoque;
+        private System.Windows.Forms.Button btnComandas;
+        private System.Windows.Forms.Button btnCaixa;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
