@@ -48,7 +48,7 @@ namespace Pizzaria
                 if(resultado.Rows.Count > 0)
                 {
                     usuario.Nome_usuario = resultado.Rows[0]["nome_usuario"].ToString();
-                    usuario.Id_usuario = (int)resultado.Rows[0]["Id_usuario"];
+                    usuario.id_usuario = (int)resultado.Rows[0]["Id_usuario"];
 
                     //Mudar para o FrmOpcoes
                     FrmOpcoes frmOpcoes = new FrmOpcoes(usuario);

@@ -24,5 +24,13 @@ namespace Pizzaria
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FrmCadastrarProdutos frmCadastrarProdutos = new FrmCadastrarProdutos();
+            this.Hide();
+            frmCadastrarProdutos.ShowDialog();
+            this.Show();
+        }
     }
 }

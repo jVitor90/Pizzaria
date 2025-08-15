@@ -10,7 +10,7 @@ namespace Pizzaria.Model
 {
     public class Usuario
     {
-        public int Id_usuario { get; set; }
+        public int id_usuario { get; set; }
         public string Nome_usuario { get; set; }
         public string Senha { get; set; }
         public string cpf { get; set; }

@@ -52,7 +52,7 @@ namespace Pizzaria
                 produtos.preco = decimal.Parse(txbValor.Text);
                 // obter o id-categoria do cbb
                 produtos.id_categoria = int.Parse(cmbCategoria.Text);
-                produtos.id_Resp = usuario.Id_usuario;
+                produtos.id_Resp = usuario.id_usuario;
 
                 if (produtos.Cadastrar())
                 {

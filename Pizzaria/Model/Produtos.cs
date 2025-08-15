@@ -55,7 +55,7 @@ namespace Pizzaria.Model
         }
         public DataTable Listar()
         {
-            string comando = "SELECT id, nome_produto, preco, id_categoria, disponivel, atualizado_em FROM produtos;";
+            string comando = "SELECT id_produto, nome_produto, preco, id_categoria, disponivel, atualizado_em FROM produtos;";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
