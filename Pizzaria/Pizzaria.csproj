@@ -119,7 +119,8 @@
     </Compile>
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
-    <Compile Include="Model\Ordens.cs" />
+    <Compile Include="Model\Itens_comandas.cs" />
+    <Compile Include="Model\OrdensComandas.cs" />
     <Compile Include="Model\Produtos.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
