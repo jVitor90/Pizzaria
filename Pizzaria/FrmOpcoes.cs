@@ -32,5 +32,50 @@ namespace Pizzaria
             frmCadastrarProdutos.ShowDialog();
             this.Show();
         }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+            FrmGestaoCaixa frmGestaoCaixa = new FrmGestaoCaixa();
+            this.Hide();
+            frmGestaoCaixa.ShowDialog();
+            this.Show();
+        }
+
+        private void btnComandas_Click(object sender, EventArgs e)
+        {
+            FrmGestaoComandas frmGestaoComanda = new FrmGestaoComandas();
+            this.Hide();
+            frmGestaoComanda.ShowDialog();
+            this.Show();
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            FrmGestaoEstoque frmGestaoEstoque = new FrmGestaoEstoque();
+            this.Hide();
+            frmGestaoEstoque.ShowDialog();
+            this.Show();
+        }
+
+        private void bntpedidos_Click(object sender, EventArgs e)
+        {
+            FrmCaixa frmGestaoPedidos = new FrmCaixa();
+            this.Hide();
+            frmGestaoPedidos.ShowDialog(); this.Show();
+            this.Show();
+        }
+
+        private void bntcadastrarusuarios_Click(object sender, EventArgs e)
+        {
+           // Adicionar
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            this.Hide();
+            frmLogin.ShowDialog();
+            this.Show();
+        }
     }
 }

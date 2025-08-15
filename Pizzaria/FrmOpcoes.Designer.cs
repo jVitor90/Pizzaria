@@ -49,6 +49,7 @@
             this.bntcadastrarusuarios.TabIndex = 15;
             this.bntcadastrarusuarios.Text = "Cadastrar Usuarios";
             this.bntcadastrarusuarios.UseVisualStyleBackColor = false;
+            this.bntcadastrarusuarios.Click += new System.EventHandler(this.bntcadastrarusuarios_Click);
             // 
             // bntpedidos
             // 
@@ -60,6 +61,7 @@
             this.bntpedidos.TabIndex = 14;
             this.bntpedidos.Text = "Gestão de Pedidos";
             this.bntpedidos.UseVisualStyleBackColor = false;
+            this.bntpedidos.Click += new System.EventHandler(this.bntpedidos_Click);
             // 
             // btnSair
             // 
@@ -71,6 +73,7 @@
             this.btnSair.TabIndex = 13;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnEstoque
             // 
@@ -82,6 +85,7 @@
             this.btnEstoque.TabIndex = 12;
             this.btnEstoque.Text = "Gestão de Estoque";
             this.btnEstoque.UseVisualStyleBackColor = false;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // btnComandas
             // 
@@ -93,6 +97,7 @@
             this.btnComandas.TabIndex = 11;
             this.btnComandas.Text = "Gestão de Comandas";
             this.btnComandas.UseVisualStyleBackColor = false;
+            this.btnComandas.Click += new System.EventHandler(this.btnComandas_Click);
             // 
             // btnCaixa
             // 
@@ -104,6 +109,7 @@
             this.btnCaixa.TabIndex = 10;
             this.btnCaixa.Text = "Gestão de Caixa";
             this.btnCaixa.UseVisualStyleBackColor = false;
+            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             // 
             // btnCadastrar
             // 
