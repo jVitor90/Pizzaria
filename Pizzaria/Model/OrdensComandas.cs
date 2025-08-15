@@ -68,5 +68,38 @@ namespace Pizzaria.Model
                 return false;
             }
         }
+        public bool Encerrar()
+        {
+            string comando = "UPDATE ordens_comandas " +
+               "SET situacao = 0 WHERE num_mesa = @num_mesa AND situacao = 1";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
+
+            cmd.Prepare();
+
+            // para impedir que o programa quebre 
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            // se der erro, ele ira desconectar do bd
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
     }
 }

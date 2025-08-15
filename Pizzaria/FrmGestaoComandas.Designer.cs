@@ -106,7 +106,7 @@
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Size = new System.Drawing.Size(174, 32);
             this.btnContinuar.TabIndex = 1;
-            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.Text = "Cadastrar";
             this.btnContinuar.UseVisualStyleBackColor = false;
             // 
             // comboBox1
