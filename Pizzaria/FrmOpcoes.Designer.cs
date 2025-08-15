@@ -91,7 +91,7 @@
             // 
             this.btnComandas.BackColor = System.Drawing.Color.Transparent;
             this.btnComandas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComandas.Location = new System.Drawing.Point(302, 164);
+            this.btnComandas.Location = new System.Drawing.Point(302, 163);
             this.btnComandas.Name = "btnComandas";
             this.btnComandas.Size = new System.Drawing.Size(190, 51);
             this.btnComandas.TabIndex = 11;

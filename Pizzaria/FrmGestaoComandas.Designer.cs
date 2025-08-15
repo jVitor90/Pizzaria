@@ -265,6 +265,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmGestaoComandas";
             this.Text = "FrmGestaoComandas";
+            this.Load += new System.EventHandler(this.FrmGestaoComandas_Load);
             this.grbPedidos.ResumeLayout(false);
             this.grbPedidos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

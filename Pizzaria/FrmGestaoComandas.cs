@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Pizzaria
 {
-    public partial class FrmGestaoComandas : Form
+     partial class FrmGestaoComandas : Form
     {
-        public FrmGestaoComandas()
+        Model.Usuario usuario;
+        public FrmGestaoComandas(Model.Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
+        }
+
+        private void FrmGestaoComandas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

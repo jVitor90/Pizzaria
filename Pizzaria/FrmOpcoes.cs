@@ -12,11 +12,11 @@ namespace Pizzaria
 {
     public partial class FrmOpcoes : Form
     {
-        Model.Usuario Usuario;
+        Model.Usuario usuario;
         public FrmOpcoes(Model.Usuario usuario)
         {
             InitializeComponent();
-            this.Usuario = usuario;
+            this.usuario = usuario;
 
         }
 
@@ -43,7 +43,7 @@ namespace Pizzaria
 
         private void btnComandas_Click(object sender, EventArgs e)
         {
-            FrmGestaoComandas frmGestaoComanda = new FrmGestaoComandas();
+            FrmGestaoComandas frmGestaoComanda = new FrmGestaoComandas(usuario);
             this.Hide();
             frmGestaoComanda.ShowDialog();
             this.Show();

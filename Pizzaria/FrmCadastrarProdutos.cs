@@ -71,6 +71,9 @@ namespace Pizzaria
             }
         }
 
-       
+        private void FrmCadastrarProdutos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

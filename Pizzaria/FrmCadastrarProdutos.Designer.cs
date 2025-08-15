@@ -175,6 +175,7 @@
             this.Controls.Add(this.dgvProdutos);
             this.Name = "FrmCadastrarProdutos";
             this.Text = "FrmCadastrarProdutos";
+            this.Load += new System.EventHandler(this.FrmCadastrarProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
