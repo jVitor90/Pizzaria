@@ -12,8 +12,8 @@ namespace Pizzaria.Model
     internal class Banco
     {
         //Informações da conexão com o BD
-        private const string SERVER = "10.141.44.133",
-                              PORT = "3306",
+        private const string SERVER = "localhost",
+                              PORT = "49170",
                               DATABASE = "pizzaria",
                               UID = "root",
                               PWD = "";
