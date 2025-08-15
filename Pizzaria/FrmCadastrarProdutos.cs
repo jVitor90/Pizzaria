@@ -13,7 +13,7 @@ namespace Pizzaria
 {
     public partial class FrmCadastrarProdutos : Form
     {
-        Model.Usuario usuario;
+        Model.Usuario usuario = new Usuario();
         Model.Produtos produtos = new Produtos();
         public FrmCadastrarProdutos()
         {
@@ -47,12 +47,11 @@ namespace Pizzaria
             else
             {
                 // Iniciar o cadastro no Banco de dados
-                Model.Produtos produtos = new Model.Produtos();
+               // Model.Produtos produtos = new Model.Produtos();
                 produtos.nome_produto = txbNomeProduto.Text;
                 produtos.preco = decimal.Parse(txbValor.Text);
                 // obter o id-categoria do cbb
                 produtos.id_categoria = int.Parse(cmbCategoria.Text);
-                produtos.id_Resp = usuario.id_usuario;
 
                 if (produtos.Cadastrar())
                 {
