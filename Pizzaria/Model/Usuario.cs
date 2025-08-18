@@ -51,9 +51,9 @@ namespace Pizzaria.Model
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
             cmd.Parameters.AddWithValue("@nome_usuario", Nome_usuario);
-            cmd.Parameters.AddWithvalue("@cpf", cpf);
-            cmd.Parameters.AddWithvalue("@cargo", Cargo);
-            cmd.Parameters.AddWithvalue("@senha", Senha);
+            cmd.Parameters.AddWithValue("@cpf", cpf);
+            cmd.Parameters.AddWithValue("@cargo", Cargo);
+            cmd.Parameters.AddWithValue("@senha", Senha);
             // Obter o hash
             string hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
             cmd.Parameters.AddWithValue("@senha", hashsenha);
@@ -81,15 +81,21 @@ namespace Pizzaria.Model
         }
         public DataTable Listar()
         {
+            string comando = "SELECT id_usuario, nome_usuario, senha, cpf, cargo FROM usuarios; ";
+
             Banco conexaoBD = new Banco();
-            MysqlConnection con = conexaoBD.ObterConexao();
-            Mysqlcommand cmd = new Mysqlcommand(comando, con );
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con );
 
             cmd.Prepare();
             //Declarar tablela que ira receber o resultado
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
 
         }
-        }
+        
 
     }
 }
