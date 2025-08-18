@@ -67,7 +67,10 @@ namespace Pizzaria
 
         private void bntcadastrarusuarios_Click(object sender, EventArgs e)
         {
-           // Adicionar
+            FrmCadastroUsuario frmCadastrarUsuario = new FrmCadastroUsuario();
+            this.Hide();
+            frmCadastrarUsuario.ShowDialog(); this.Show();
+            this.Show();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
