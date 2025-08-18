@@ -101,5 +101,22 @@ namespace Pizzaria.Model
                 return false;
             }
         }
+        public DataTable Listar()
+        {
+            string comando = "SELECT * FROM ordens_comandas WHERE metodo_pagamento = @metodo_pagamento;";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@metodo_pagamento", metodo_pagamento);
+
+            cmd.Prepare();
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+        }
+        
     }
 }

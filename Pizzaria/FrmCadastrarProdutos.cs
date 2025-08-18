@@ -136,7 +136,7 @@ namespace Pizzaria
                 "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(apagar == DialogResult.Yes)
             {
-                if(this.produt)
+                
             }
         }
     }

@@ -117,6 +117,7 @@
             this.btnFinalizar.TabIndex = 9;
             this.btnFinalizar.Text = "Finalizar pedido";
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // grbInformacoes
             // 
