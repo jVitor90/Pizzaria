@@ -43,7 +43,7 @@
             // 
             this.bntcadastrarusuarios.BackColor = System.Drawing.Color.Transparent;
             this.bntcadastrarusuarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntcadastrarusuarios.Location = new System.Drawing.Point(302, 342);
+            this.bntcadastrarusuarios.Location = new System.Drawing.Point(577, 189);
             this.bntcadastrarusuarios.Name = "bntcadastrarusuarios";
             this.bntcadastrarusuarios.Size = new System.Drawing.Size(190, 51);
             this.bntcadastrarusuarios.TabIndex = 15;
@@ -55,7 +55,7 @@
             // 
             this.bntpedidos.BackColor = System.Drawing.Color.Transparent;
             this.bntpedidos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntpedidos.Location = new System.Drawing.Point(302, 279);
+            this.bntpedidos.Location = new System.Drawing.Point(308, 189);
             this.bntpedidos.Name = "bntpedidos";
             this.bntpedidos.Size = new System.Drawing.Size(190, 51);
             this.bntpedidos.TabIndex = 14;
@@ -67,7 +67,7 @@
             // 
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
             this.btnSair.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(302, 399);
+            this.btnSair.Location = new System.Drawing.Point(308, 348);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(190, 51);
             this.btnSair.TabIndex = 13;
@@ -79,7 +79,7 @@
             // 
             this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
             this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoque.Location = new System.Drawing.Point(302, 220);
+            this.btnEstoque.Location = new System.Drawing.Point(18, 189);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(190, 51);
             this.btnEstoque.TabIndex = 12;
@@ -91,7 +91,7 @@
             // 
             this.btnComandas.BackColor = System.Drawing.Color.Transparent;
             this.btnComandas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComandas.Location = new System.Drawing.Point(302, 163);
+            this.btnComandas.Location = new System.Drawing.Point(577, 105);
             this.btnComandas.Name = "btnComandas";
             this.btnComandas.Size = new System.Drawing.Size(190, 51);
             this.btnComandas.TabIndex = 11;
@@ -103,7 +103,7 @@
             // 
             this.btnCaixa.BackColor = System.Drawing.Color.Transparent;
             this.btnCaixa.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.Location = new System.Drawing.Point(302, 105);
+            this.btnCaixa.Location = new System.Drawing.Point(308, 105);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(190, 51);
             this.btnCaixa.TabIndex = 10;
@@ -115,7 +115,7 @@
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(302, 48);
+            this.btnCadastrar.Location = new System.Drawing.Point(18, 105);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(190, 51);
             this.btnCadastrar.TabIndex = 9;
@@ -128,7 +128,8 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(265, -5);
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(257, 3);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(271, 38);
             this.lblTitulo.TabIndex = 8;
