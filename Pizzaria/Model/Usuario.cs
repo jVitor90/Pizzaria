@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,42 @@ namespace Pizzaria.Model
             tabela.Load(cmd.ExecuteReader());
             conexaoBD.Desconectar(con);
             return tabela;
+        }
+        public bool Cadastrar()
+        {
+            string comando = "INSERT INTO usuarios ( nome_usuario, cpf, cargo, senha) " +
+                "VALUES (@nome_usuario, @cpf, @cargo, @senha)";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@nome_usuario", Nome_usuario);
+            cmd.Parameters.AddWithvalue("@cpf", cpf);
+            cmd.Parameters.AddWithvalue("@cargo", Cargo);
+            cmd.Parameters.AddWithvalue("@senha", Senha);
+            // Obter o hash
+            string hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
+            cmd.Parameters.AddWithValue("@senha", hashsenha);
+            cmd.Prepare();
+            // para impedir que o programa quebre 
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            // se der erro, ele ira desconectar do bd
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
         }
 
     }
