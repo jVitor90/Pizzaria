@@ -79,6 +79,17 @@ namespace Pizzaria.Model
                 return false;
             }
         }
+        public DataTable Listar()
+        {
+            Banco conexaoBD = new Banco();
+            MysqlConnection con = conexaoBD.ObterConexao();
+            Mysqlcommand cmd = new Mysqlcommand(comando, con );
+
+            cmd.Prepare();
+            //Declarar tablela que ira receber o resultado
+
+        }
+        }
 
     }
 }
