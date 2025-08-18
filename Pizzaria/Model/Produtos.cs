@@ -66,7 +66,34 @@ namespace Pizzaria.Model
         }
         public bool Modificar()
         {
+            string comando = "UPDATE produtos SET nome_produto = @nome_produto, preco = @preco, id_categoria = @id_categoria WHERE id_produto = @id_produto";
 
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand( comando, con);
+            cmd.Parameters.AddWithValue("@nome_produto", nome_produto);
+            cmd.Parameters.AddWithValue("@preco", preco);
+            cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
+
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            // se der erro, ele ira desconectar do bd
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
         }
     }
 }
