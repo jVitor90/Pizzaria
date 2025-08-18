@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,6 +76,36 @@ namespace Pizzaria.Model
             cmd.Parameters.AddWithValue("@preco", preco);
             cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
 
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            // se der erro, ele ira desconectar do bd
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
+        public bool Remover()
+        {
+            string comando  = "DELETE FROM produtos WHERE id_produto = @id_produto";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("id_produto", Id_produto);
+
+            cmd.Prepare();
+            // para impedir que o programa quebre 
             try
             {
                 if (cmd.ExecuteNonQuery() == 0)

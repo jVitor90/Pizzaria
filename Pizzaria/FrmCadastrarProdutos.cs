@@ -132,7 +132,12 @@ namespace Pizzaria
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            
+            DialogResult apagar = MessageBox.Show("Tem certeza que deseja apagar este Produto?",
+                "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(apagar == DialogResult.Yes)
+            {
+                if(this.produt)
+            }
         }
     }
 }
