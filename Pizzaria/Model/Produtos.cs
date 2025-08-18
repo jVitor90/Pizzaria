@@ -64,5 +64,9 @@ namespace Pizzaria.Model
             conexaoBD.Desconectar(con);
             return tabela;
         }
+        public bool Modificar()
+        {
+
+        }
     }
 }

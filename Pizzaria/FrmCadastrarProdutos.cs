@@ -81,6 +81,50 @@ namespace Pizzaria
             }
         }
 
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //validar Erros
+            if (double.Parse(txbValor.Text) == 0.00)
+            {
+                MessageBox.Show("O preço e invalido", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbNomeProduto.Text.Length <= 3)
+            {
+                MessageBox.Show("O Nome informado é invalido!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cmbCategoria.Text.Length <= 0)
+            {
+                MessageBox.Show("A categoria nao pode ser null cacacteres!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Iniciar no bd
+                // Instanciar o produto
+                produtos.nome_produto = txbNomeProduto.Text;
+                produtos.preco = decimal.Parse(txbValor.Text);
+                produtos.id_categoria = int.Parse(txbValor.Text);
+                produtos.Id_produto = this.produtos.Id_produto;
+
+                if (produtos.Modificar())
+                {
+                    MessageBox.Show("Produto editado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Limpa os campos de cadastro
+                    txbNomeProduto.Clear();
+                    txbValor.Clear();
+                    cmbCategoria.SelectedIndex = -1;
+                    // Atualiza o dgv
+                    AtualizarDgv();
+                }
+                else
+                {
+                    MessageBox.Show("falha ao editar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         private void FrmCadastrarProdutos_Load(object sender, EventArgs e)
         {
 
