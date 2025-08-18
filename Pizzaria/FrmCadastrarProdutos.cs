@@ -85,7 +85,7 @@ namespace Pizzaria
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //validar Erros
-            if (double.Parse(txbValor.Text) == 0.00)
+            if (double.Parse(txbValor.Text) == null)
             {
                 MessageBox.Show("O preço e invalido", "ERRO",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -106,7 +106,7 @@ namespace Pizzaria
                 // Instanciar o produto
                 produtos.nome_produto = txbNomeProduto.Text;
                 produtos.preco = decimal.Parse(txbValor.Text);
-                produtos.id_categoria = int.Parse(txbValor.Text);
+                produtos.id_categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
                 produtos.Id_produto = this.produtos.Id_produto;
 
                 if (produtos.Modificar())
@@ -136,8 +136,37 @@ namespace Pizzaria
                 "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(apagar == DialogResult.Yes)
             {
-                
+                if (this.produtos.Remover())
+                {
+                    MessageBox.Show("Produto removido com sucesso", "Sucesso!!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizarDgv();
+                    // Limpar os campos
+                    txbNomeProduto.Clear();
+                    txbValor.Clear();
+                    cmbCategoria.SelectedIndex = -1;
+
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao remover Produto!!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FrmOpcoes frmOpcoes = new FrmOpcoes(usuario);
+            this.Hide();
+            frmOpcoes.ShowDialog();
+            this.Show();
+        }
+
+        private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int linhaselecionada = dgvProdutos.SelectedCells[0].RowIndex;
+            this.produtos.Id_produto = (int)dgvProdutos.Rows[linhaselecionada].Cells[0].Value;
         }
     }
 }
