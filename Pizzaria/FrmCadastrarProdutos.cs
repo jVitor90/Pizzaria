@@ -15,11 +15,21 @@ namespace Pizzaria
     {
         Model.Usuario usuario = new Usuario();
         Model.Produtos produtos = new Produtos();
+        Model.Categoria categoria = new Categoria();
         public FrmCadastrarProdutos()
         {
             InitializeComponent();
             this.usuario = usuario;
             AtualizarDgv();
+
+
+            //Obter as categorias do banco
+            DataTable resultadoCategoria = categoria.Listar();
+            foreach(DataRow linha in resultadoCategoria.Rows)
+            {
+                //Adicionar os Combobox
+                cmbCategoria.Items.Add($"{linha["id_categoria"]} - {linha["nome_categoria"]}");
+            } 
         }
         public void AtualizarDgv()
         {
@@ -29,7 +39,7 @@ namespace Pizzaria
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             //validar Erros
-            if(double.Parse(txbValor.Text) == 0.00)
+            if (double.Parse(txbValor.Text) == 0.00)
             {
                 MessageBox.Show("O preço e invalido", "ERRO",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -47,11 +57,11 @@ namespace Pizzaria
             else
             {
                 // Iniciar o cadastro no Banco de dados
-               // Model.Produtos produtos = new Model.Produtos();
+                // Model.Produtos produtos = new Model.Produtos();
                 produtos.nome_produto = txbNomeProduto.Text;
                 produtos.preco = decimal.Parse(txbValor.Text);
                 // obter o id-categoria do cbb
-                produtos.id_categoria = int.Parse(cmbCategoria.Text);
+                produtos.id_categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
 
                 if (produtos.Cadastrar())
                 {
