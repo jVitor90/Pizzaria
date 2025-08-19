@@ -131,6 +131,7 @@
     </Compile>
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Estoque.cs" />
     <Compile Include="Model\Itens_comandas.cs" />
     <Compile Include="Model\Metodos_pagamento.cs" />
     <Compile Include="Model\OrdensComandas.cs" />

@@ -147,6 +147,7 @@
             this.btnEditar.TabIndex = 53;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // dgvEstoque
             // 
@@ -162,6 +163,7 @@
             this.dgvEstoque.Name = "dgvEstoque";
             this.dgvEstoque.Size = new System.Drawing.Size(794, 274);
             this.dgvEstoque.TabIndex = 51;
+            this.dgvEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellContentClick);
             // 
             // FrmGestaoEstoque
             // 
