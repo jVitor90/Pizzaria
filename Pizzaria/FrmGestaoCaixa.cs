@@ -31,5 +31,52 @@ namespace Pizzaria
         {
 
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+             
+
+
+            if (txbMesa.Text == "" || txbMesa.Text.Length < 1)
+            {
+                MessageBox.Show("Informe corretamente o número da ficha!",
+                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                comandas.id_comanda = int.Parse(txbMesa.Text);
+                DataTable consulta = comandas.BuscarMesa();
+
+                //Verificar se existe lançamentos na comanda
+                if (consulta.Rows.Count == 0)
+                {
+                    MessageBox.Show("Não existe lancamentos nessa comnada!",
+                   "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //Mostar a consulta no dgv
+                    dgvComanda.DataSource = consulta;
+
+                    //Mostrar no label o total:
+                    lblValorFinal.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
+                }
+                grbInformacoes.Enabled = true;
+            }
+
+        }
+       
+
+       
+
+        private void btnLimpar_Click_1(object sender, EventArgs e)
+        {
+            txbMesa.Clear();
+            txbValor.Clear();
+            cmbFormaPagamento.Text = " ";
+        }
     }
+
 }
+
+        

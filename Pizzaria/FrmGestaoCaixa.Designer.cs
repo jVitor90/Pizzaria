@@ -63,6 +63,7 @@
             this.grbPagamentos.Controls.Add(this.txbValor);
             this.grbPagamentos.Controls.Add(this.lblValorFinal);
             this.grbPagamentos.Controls.Add(this.btnFinalizar);
+            this.grbPagamentos.Enabled = false;
             this.grbPagamentos.Location = new System.Drawing.Point(4, 211);
             this.grbPagamentos.Name = "grbPagamentos";
             this.grbPagamentos.Size = new System.Drawing.Size(344, 169);
@@ -141,6 +142,7 @@
             this.btnPesquisar.TabIndex = 13;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // lblMesa
             // 
@@ -161,6 +163,7 @@
             this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click_1);
             // 
             // txbMesa
             // 
