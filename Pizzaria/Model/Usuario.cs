@@ -55,7 +55,7 @@ namespace Pizzaria.Model
             cmd.Parameters.AddWithValue("@nome_usuario", Nome_usuario);
             cmd.Parameters.AddWithValue("@cpf", cpf);
             cmd.Parameters.AddWithValue("@cargo", Cargo);
-            cmd.Parameters.AddWithValue("@senha", Senha);
+            
             // Obter o hash
             string hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
             cmd.Parameters.AddWithValue("@senha", hashsenha);

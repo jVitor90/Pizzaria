@@ -36,8 +36,9 @@
             this.txbcpf = new System.Windows.Forms.MaskedTextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txbSenha = new System.Windows.Forms.TextBox();
             this.btrnCadastrar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.txbSenha = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblLogo
@@ -46,7 +47,7 @@
             this.lblLogo.BackColor = System.Drawing.Color.Transparent;
             this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogo.ForeColor = System.Drawing.Color.White;
-            this.lblLogo.Location = new System.Drawing.Point(90, 13);
+            this.lblLogo.Location = new System.Drawing.Point(24, 9);
             this.lblLogo.Name = "lblLogo";
             this.lblLogo.Size = new System.Drawing.Size(214, 30);
             this.lblLogo.TabIndex = 41;
@@ -58,7 +59,7 @@
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.White;
-            this.lblNome.Location = new System.Drawing.Point(144, 91);
+            this.lblNome.Location = new System.Drawing.Point(144, 54);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(94, 31);
             this.lblNome.TabIndex = 40;
@@ -67,16 +68,18 @@
             // txbNome
             // 
             this.txbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNome.Location = new System.Drawing.Point(244, 82);
+            this.txbNome.Location = new System.Drawing.Point(244, 45);
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(351, 47);
             this.txbNome.TabIndex = 39;
+            this.txbNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNome_KeyPress);
             // 
             // cmbCargo
             // 
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(246, 223);
+            this.cmbCargo.Location = new System.Drawing.Point(244, 172);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(351, 47);
             this.cmbCargo.TabIndex = 38;
@@ -87,7 +90,7 @@
             this.lblCargo.BackColor = System.Drawing.Color.Transparent;
             this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCargo.ForeColor = System.Drawing.Color.White;
-            this.lblCargo.Location = new System.Drawing.Point(144, 232);
+            this.lblCargo.Location = new System.Drawing.Point(144, 195);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(96, 31);
             this.lblCargo.TabIndex = 37;
@@ -96,7 +99,7 @@
             // txbcpf
             // 
             this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbcpf.Location = new System.Drawing.Point(246, 153);
+            this.txbcpf.Location = new System.Drawing.Point(244, 109);
             this.txbcpf.Mask = "000,000,000-00";
             this.txbcpf.Name = "txbcpf";
             this.txbcpf.Size = new System.Drawing.Size(351, 47);
@@ -108,7 +111,7 @@
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.Transparent;
-            this.lblSenha.Location = new System.Drawing.Point(140, 291);
+            this.lblSenha.Location = new System.Drawing.Point(140, 254);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(100, 31);
             this.lblSenha.TabIndex = 35;
@@ -120,30 +123,44 @@
             this.lblCpf.BackColor = System.Drawing.Color.Transparent;
             this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpf.ForeColor = System.Drawing.Color.White;
-            this.lblCpf.Location = new System.Drawing.Point(161, 162);
+            this.lblCpf.Location = new System.Drawing.Point(161, 125);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(77, 31);
             this.lblCpf.TabIndex = 34;
             this.lblCpf.Text = "CPF:";
             // 
-            // txbSenha
-            // 
-            this.txbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSenha.Location = new System.Drawing.Point(246, 291);
-            this.txbSenha.Name = "txbSenha";
-            this.txbSenha.Size = new System.Drawing.Size(351, 47);
-            this.txbSenha.TabIndex = 33;
-            // 
             // btrnCadastrar
             // 
             this.btrnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btrnCadastrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btrnCadastrar.Location = new System.Drawing.Point(244, 362);
+            this.btrnCadastrar.Location = new System.Drawing.Point(244, 301);
             this.btrnCadastrar.Name = "btrnCadastrar";
             this.btrnCadastrar.Size = new System.Drawing.Size(351, 52);
             this.btrnCadastrar.TabIndex = 32;
             this.btrnCadastrar.Text = "Cadastrar";
             this.btrnCadastrar.UseVisualStyleBackColor = true;
+            this.btrnCadastrar.Click += new System.EventHandler(this.btrnCadastrar_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVoltar.Location = new System.Drawing.Point(244, 371);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(351, 52);
+            this.btnVoltar.TabIndex = 42;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // txbSenha
+            // 
+            this.txbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSenha.Location = new System.Drawing.Point(244, 238);
+            this.txbSenha.Name = "txbSenha";
+            this.txbSenha.Size = new System.Drawing.Size(351, 47);
+            this.txbSenha.TabIndex = 33;
+            this.txbSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSenha_KeyPress);
             // 
             // FrmCadastroUsuario
             // 
@@ -152,6 +169,7 @@
             this.BackgroundImage = global::Pizzaria.Properties.Resources.pizza_4952508_1920__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(842, 450);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblLogo);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txbNome);
@@ -179,7 +197,8 @@
         private System.Windows.Forms.MaskedTextBox txbcpf;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Button btrnCadastrar;
+        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.TextBox txbSenha;
     }
 }
