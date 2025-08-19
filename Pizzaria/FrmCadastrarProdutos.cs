@@ -187,5 +187,10 @@ namespace Pizzaria
         {
 
         }
+
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

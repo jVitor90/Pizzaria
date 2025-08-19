@@ -140,6 +140,7 @@
             this.dgvProdutos.Size = new System.Drawing.Size(794, 318);
             this.dgvProdutos.TabIndex = 66;
             this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
+            this.dgvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellContentClick);
             this.dgvProdutos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutos_RowHeaderMouseClick);
             // 
             // lblCategoria

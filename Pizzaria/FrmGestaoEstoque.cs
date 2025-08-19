@@ -14,10 +14,20 @@ namespace Pizzaria
 {
     public partial class FrmGestaoEstoque : Form
     {
+        
         Model.Estoque estoque = new Estoque();
         public FrmGestaoEstoque()
         {
             InitializeComponent();
+
+
+            //Obter as categorias do banco
+            DataTable resultadoEstoque = estoque.Listar();
+            foreach (DataRow linha in resultadoEstoque.Rows)
+            {
+                //Adicionar os Combobox
+                cmbCategoria.Items.Add($"{linha["id_estoque"]} - {linha["nome_item"]}");
+            }
         }
         public void AtualizarDgv()
         {

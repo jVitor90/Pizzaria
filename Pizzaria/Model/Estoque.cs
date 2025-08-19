@@ -20,7 +20,7 @@ namespace Pizzaria.Model
 
         public DataTable Listar()
         {
-            string comando = "SELECT * FROM estoque;";
+            string comando = "SELECT id_estoque, nome_item, quantidade, unidade, id_Categoria, atualizado_em FROM estoque;";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
