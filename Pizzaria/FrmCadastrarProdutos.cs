@@ -16,7 +16,7 @@ namespace Pizzaria
         Model.Usuario usuario = new Usuario();
         Model.Produtos produtos = new Produtos();
         Model.Categoria categoria = new Categoria();
-        public FrmCadastrarProdutos()
+        public FrmCadastrarProdutos(Model.Usuario usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
@@ -57,7 +57,7 @@ namespace Pizzaria
             else
             {
                 // Iniciar o cadastro no Banco de dados
-                // Model.Produtos produtos = new Model.Produtos();
+                Model.Produtos produtos = new Model.Produtos();
                 produtos.nome_produto = txbNomeProduto.Text;
                 produtos.preco = decimal.Parse(txbValor.Text);
                 // obter o id-categoria do cbb
@@ -85,7 +85,7 @@ namespace Pizzaria
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //validar Erros
-            if (double.Parse(txbValor.Text) == null)
+            if (double.Parse(txbValor.Text) == 0.00)
             {
                 MessageBox.Show("O preço e invalido", "ERRO",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -104,6 +104,7 @@ namespace Pizzaria
             {
                 // Iniciar no bd
                 // Instanciar o produto
+                Model.Produtos produtos = new Model.Produtos();
                 produtos.nome_produto = txbNomeProduto.Text;
                 produtos.preco = decimal.Parse(txbValor.Text);
                 produtos.id_categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
@@ -165,8 +166,22 @@ namespace Pizzaria
 
         private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int linhaselecionada = dgvProdutos.SelectedCells[0].RowIndex;
-            this.produtos.Id_produto = (int)dgvProdutos.Rows[linhaselecionada].Cells[0].Value;
+            int linhaSelecionada = dgvProdutos.SelectedCells[0].RowIndex;
+            this.produtos.nome_produto = dgvProdutos.Rows[linhaSelecionada].Cells[1].Value.ToString();
+            this.produtos.preco = (decimal)dgvProdutos.Rows[linhaSelecionada].Cells[2].Value;
+            this.produtos.id_categoria = (int)dgvProdutos.Rows[linhaSelecionada].Cells[3].Value;
+            this.produtos.Id_produto = (int)dgvProdutos.Rows[linhaSelecionada].Cells[0].Value;
+
+            // Atribuir as linhas selecionadas
+            txbNomeProduto.Text = this.produtos.nome_produto;
+            txbValor.Text = this.produtos.preco.ToString();
+            cmbCategoria.Text = this.produtos.id_categoria.ToString();
+
+        }
+
+        private void dgvProdutos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
         }
     }
 }

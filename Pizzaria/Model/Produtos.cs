@@ -75,6 +75,9 @@ namespace Pizzaria.Model
             cmd.Parameters.AddWithValue("@nome_produto", nome_produto);
             cmd.Parameters.AddWithValue("@preco", preco);
             cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
+            cmd.Parameters.AddWithValue("@id_produto", Id_produto);
+
+
 
             try
             {
