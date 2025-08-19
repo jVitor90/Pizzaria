@@ -63,6 +63,8 @@ namespace Pizzaria
                 // obter o id-categoria do cbb
                 produtos.id_categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
 
+                DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja Cadstrar este Produto?",
+               "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (produtos.Cadastrar())
                 {
                     MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -110,6 +112,8 @@ namespace Pizzaria
                 produtos.id_categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
                 produtos.Id_produto = this.produtos.Id_produto;
 
+                DialogResult editar = MessageBox.Show("Tem certeza que deseja Editar este Produto?",
+                "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (produtos.Modificar())
                 {
                     MessageBox.Show("Produto editado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
