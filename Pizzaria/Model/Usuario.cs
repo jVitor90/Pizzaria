@@ -1,11 +1,13 @@
-﻿using System;
+﻿using EasyEncryption;
+using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySqlConnector;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Pizzaria.Model
 {
@@ -94,6 +96,52 @@ namespace Pizzaria.Model
             conexaoBD.Desconectar(con);
             return tabela;
 
+        }
+        public bool Modificar()
+        {
+            string comando = "UPDATE usuarios SET nome_usuario = @nome_usuarios, cpf = @cpf, cargo = @cargo, senha = @senha WHERE id_usuario = id_usuario ";
+
+            if(Senha == "" || Senha == null)
+            {
+                comando = "UPDATE usuarios SET nome_usuario = @nome_usuarios, cpf = @cpf, cargo = @cargo, senha = @senha WHERE id_usuario = id_usuario ";
+
+            }
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@nome_usuario", Nome_usuario);
+            cmd.Parameters.AddWithValue("@cpf", cpf);
+            cmd.Parameters.AddWithValue("@cargo", Cargo);
+            cmd.Parameters.AddWithValue("@senha", Senha);
+
+            // Obter o hash
+            if (Senha != "" || Senha != null)
+            {
+                string hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
+                cmd.Parameters.AddWithValue("@senha", hashsenha);
+            }
+
+
+            cmd.Prepare();
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
         }
         
 
