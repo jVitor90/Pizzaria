@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+<<<<<<< Updated upstream
+=======
+            this.lblcadastrar = new System.Windows.Forms.Label();
+>>>>>>> Stashed changes
             this.lblsenha = new System.Windows.Forms.Label();
             this.lblcpf = new System.Windows.Forms.Label();
             this.txbsenha = new System.Windows.Forms.TextBox();
@@ -49,6 +53,17 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+<<<<<<< Updated upstream
+=======
+            // lblcadastrar
+            // 
+            this.lblcadastrar.AutoSize = true;
+            this.lblcadastrar.Location = new System.Drawing.Point(327, 363);
+            this.lblcadastrar.Name = "lblcadastrar";
+            this.lblcadastrar.Size = new System.Drawing.Size(0, 13);
+            this.lblcadastrar.TabIndex = 15;
+            // 
+>>>>>>> Stashed changes
             // lblsenha
             // 
             this.lblsenha.AutoSize = true;
@@ -92,6 +107,7 @@
             this.btnentrar.UseVisualStyleBackColor = true;
             this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
             // 
+<<<<<<< Updated upstream
             // txbcpf
             // 
             this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,6 +117,8 @@
             this.txbcpf.Size = new System.Drawing.Size(351, 47);
             this.txbcpf.TabIndex = 19;
             // 
+=======
+>>>>>>> Stashed changes
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +128,10 @@
             this.ClientSize = new System.Drawing.Size(842, 450);
             this.Controls.Add(this.txbcpf);
             this.Controls.Add(this.pictureBox1);
+<<<<<<< Updated upstream
+=======
+            this.Controls.Add(this.lblcadastrar);
+>>>>>>> Stashed changes
             this.Controls.Add(this.lblsenha);
             this.Controls.Add(this.lblcpf);
             this.Controls.Add(this.txbsenha);
@@ -126,6 +148,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
+<<<<<<< Updated upstream
+=======
+        private System.Windows.Forms.Label lblcadastrar;
+>>>>>>> Stashed changes
         private System.Windows.Forms.Label lblsenha;
         private System.Windows.Forms.Label lblcpf;
         private System.Windows.Forms.TextBox txbsenha;
