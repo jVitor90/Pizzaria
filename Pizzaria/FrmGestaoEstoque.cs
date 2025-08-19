@@ -14,7 +14,7 @@ namespace Pizzaria
 {
     public partial class FrmGestaoEstoque : Form
     {
-        Model.Estoque estoque = new Estoque
+        Model.Estoque estoque = new Estoque();
         public FrmGestaoEstoque()
         {
             InitializeComponent();
