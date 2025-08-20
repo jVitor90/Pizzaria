@@ -17,7 +17,7 @@ namespace Pizzaria
         public FrmLogin()
         {
             InitializeComponent();
-            txbcpf.Mask = "000.000.000-00";
+            
         }
 
         private void btnentrar_Click(object sender, EventArgs e)
