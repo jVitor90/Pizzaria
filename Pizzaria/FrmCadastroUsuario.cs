@@ -115,6 +115,19 @@ namespace Pizzaria
             }
 
         }
+
+        private void FrmCadastroUsuario_Load(object sender, EventArgs e)
+        {
+            cmbCargo.Items.Clear();
+            cmbCargo.Items.Add("Estoquista");
+            cmbCargo.Items.Add("Pizzaiolo");
+            cmbCargo.Items.Add("Chef de Cozinha");
+            cmbCargo.Items.Add("Garçom");
+            cmbCargo.Items.Add("Gerente");
+            cmbCargo.Items.Add("Caixa");
+
+            cmbCargo.SelectedIndex = -1; // deixa sem nada selecionado no início
+        }
     }
     }
 

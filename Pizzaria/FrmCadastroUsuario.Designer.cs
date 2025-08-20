@@ -182,6 +182,7 @@
             this.Controls.Add(this.btrnCadastrar);
             this.Name = "FrmCadastroUsuario";
             this.Text = "FrmCadastroUsuario";
+            this.Load += new System.EventHandler(this.FrmCadastroUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
