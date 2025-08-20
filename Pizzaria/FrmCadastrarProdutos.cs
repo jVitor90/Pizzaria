@@ -130,10 +130,7 @@ namespace Pizzaria
                 }
             }
         }
-        private void FrmCadastrarProdutos_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
