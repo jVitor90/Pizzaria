@@ -93,7 +93,8 @@ namespace Pizzaria
             int linhaSelecionada = dgvEstoque.SelectedCells[0].RowIndex;
             this.estoque.nome_item = dgvEstoque.Rows[linhaSelecionada].Cells[1].Value.ToString();
             this.estoque.quantidade = (decimal)dgvEstoque.Rows[linhaSelecionada].Cells[2].Value;
-            this.estoque.Id_Categoria = (int)dgvEstoque.Rows[linhaSelecionada].Cells[3].Value;
+            this.estoque.unidade = dgvEstoque.Rows[linhaSelecionada].Cells[3].Value.ToString();
+            this.estoque.Id_Categoria = (int)dgvEstoque.Rows[linhaSelecionada].Cells[4].Value;
             this.estoque.id_estoque = (int)dgvEstoque.Rows[linhaSelecionada].Cells[0].Value;
 
             // Atribuir as linhas selecionadas
