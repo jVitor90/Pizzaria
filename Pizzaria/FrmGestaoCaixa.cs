@@ -21,6 +21,7 @@ namespace Pizzaria
         {
             InitializeComponent();
             //Obter as categorias do banco
+            AtualizarDgvCaixa();
             DataTable resultado = metodos.Listar();
             foreach(DataRow linha in resultado.Rows)
             {
@@ -41,10 +42,10 @@ namespace Pizzaria
                 if (itens.Encerrar())
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    AtualizarDgvCaixa();
 
                 }
-            }   }
+        }   }   
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -57,8 +58,10 @@ namespace Pizzaria
                 }
                 else
                 {
-                    comandas.id_comanda = int.Parse(txbMesa.Text);
+                
+                    comandas.num_mesa = int.Parse(txbMesa.Text);
                     DataTable consulta = comandas.BuscarMesa();
+
 
                     //Verificar se existe lançamentos na comanda
                     if (consulta.Rows.Count == 0)
@@ -70,6 +73,7 @@ namespace Pizzaria
                     {
                         //Mostar a consulta no dgv
                         dgvComanda.DataSource = consulta;
+                        AtualizarDgvCaixa();
 
                         //Mostrar no label o total:
                         lblValorFinal.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
@@ -79,9 +83,13 @@ namespace Pizzaria
             
 
         }
-       
+        public void AtualizarDgvCaixa()
+        {
+            dgvComanda.DataSource = comandas.BuscarMesa();
 
-       
+        }
+
+
 
         private void btnLimpar_Click_1(object sender, EventArgs e)
         {

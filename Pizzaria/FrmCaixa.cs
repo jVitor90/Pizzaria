@@ -47,10 +47,16 @@ namespace Pizzaria
                 }
             }
         }
-        public void AtualizarDgv()
+        public void AtualizarDgvPedidos()
         {
-           
+         
+        
+            dgvPedidos.DataSource = ordens.Listar();
+
         }
+
+        
+
 
         private void brnFinalizar_Click(object sender, EventArgs e)
         {
@@ -67,6 +73,11 @@ namespace Pizzaria
 
                 }
             }
+        }
+
+        private void dgvPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
