@@ -45,6 +45,7 @@
             this.brnFinalizar.TabIndex = 9;
             this.brnFinalizar.Text = "Finalizar";
             this.brnFinalizar.UseVisualStyleBackColor = true;
+            this.brnFinalizar.Click += new System.EventHandler(this.brnFinalizar_Click);
             // 
             // txbPedido
             // 
@@ -84,11 +85,11 @@
             // 
             this.lblLogo.AutoSize = true;
             this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogo.Location = new System.Drawing.Point(13, 12);
+            this.lblLogo.Location = new System.Drawing.Point(10, 12);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(83, 31);
+            this.lblLogo.Size = new System.Drawing.Size(112, 31);
             this.lblLogo.TabIndex = 10;
-            this.lblLogo.Text = "Caixa";
+            this.lblLogo.Text = "Pedidos";
             // 
             // FrmCaixa
             // 
