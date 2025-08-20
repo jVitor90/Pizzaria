@@ -17,7 +17,6 @@ namespace Pizzaria
         public FrmLogin()
         {
             InitializeComponent();
-            
         }
 
         private void btnentrar_Click(object sender, EventArgs e)
