@@ -104,7 +104,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(174, 411);
+            this.btnEditar.Location = new System.Drawing.Point(179, 411);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(135, 41);
             this.btnEditar.TabIndex = 68;
@@ -181,7 +181,6 @@
             this.Controls.Add(this.dgvProdutos);
             this.Name = "FrmCadastrarProdutos";
             this.Text = "FrmCadastrarProdutos";
-//            this.Load += new System.EventHandler(this.FrmCadastrarProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

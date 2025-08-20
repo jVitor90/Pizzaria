@@ -39,6 +39,22 @@ namespace Pizzaria.Model
 
 
         }
+        public DataTable Listar2()
+        {
+            string comando = "SELECT nome_categoria, id_categoria FROM categoria WHERE id_categoria IN (5, 6);";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Prepare();
+            // Declarar a t6abela que irá receber o rtesultado
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+
+        }
         public int Exluir()
         {
             return 0; // Modificar depois

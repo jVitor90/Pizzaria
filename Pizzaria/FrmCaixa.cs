@@ -51,7 +51,7 @@ namespace Pizzaria
         {
          
         
-            dgvPedidos.DataSource = ordens.Listar();
+            dgvPedidos.DataSource = ordens.ListarComanda();
 
         }
 

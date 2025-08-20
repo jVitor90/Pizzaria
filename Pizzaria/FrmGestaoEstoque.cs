@@ -16,6 +16,7 @@ namespace Pizzaria
     {
         
         Model.Estoque estoque = new Estoque();
+        Model.Categoria categoria = new Categoria();
         public FrmGestaoEstoque()
         {
             InitializeComponent();
@@ -23,11 +24,13 @@ namespace Pizzaria
 
 
             //Obter as categorias do banco
-            DataTable resultadoEstoque = estoque.Listar();
-            foreach (DataRow linha in resultadoEstoque.Rows)
+
+            //Obter as categorias do banco
+            DataTable resultadoCategoria = categoria.Listar2();
+            foreach (DataRow linha in resultadoCategoria.Rows)
             {
                 //Adicionar os Combobox
-                cmbCategoria.Items.Add($"{linha["id_estoque"]} - {linha["nome_item"]}");
+                cmbCategoria.Items.Add($"{linha["id_categoria"]} - {linha["nome_categoria"]}");
             }
         }
         public void AtualizarDgv()
