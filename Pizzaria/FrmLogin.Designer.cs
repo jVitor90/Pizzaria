@@ -31,7 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             this.lblcadastrar = new System.Windows.Forms.Label();
 >>>>>>> Stashed changes
             this.lblsenha = new System.Windows.Forms.Label();
@@ -54,7 +57,10 @@
             this.pictureBox1.TabStop = false;
             // 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             // lblcadastrar
             // 
             this.lblcadastrar.AutoSize = true;
@@ -108,6 +114,7 @@
             this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
             // 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             // txbcpf
             // 
             this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,6 +124,8 @@
             this.txbcpf.Size = new System.Drawing.Size(351, 47);
             this.txbcpf.TabIndex = 19;
             // 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             // FrmLogin
@@ -129,7 +138,10 @@
             this.Controls.Add(this.txbcpf);
             this.Controls.Add(this.pictureBox1);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             this.Controls.Add(this.lblcadastrar);
 >>>>>>> Stashed changes
             this.Controls.Add(this.lblsenha);
@@ -149,7 +161,10 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         private System.Windows.Forms.Label lblcadastrar;
 >>>>>>> Stashed changes
         private System.Windows.Forms.Label lblsenha;
