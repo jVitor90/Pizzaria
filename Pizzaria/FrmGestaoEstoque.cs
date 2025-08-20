@@ -19,6 +19,7 @@ namespace Pizzaria
         public FrmGestaoEstoque()
         {
             InitializeComponent();
+            AtualizarDgv();
 
 
             //Obter as categorias do banco

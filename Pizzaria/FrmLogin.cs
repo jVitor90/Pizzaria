@@ -36,9 +36,7 @@ namespace Pizzaria
             else
             {
                 Model.Usuario usuario = new Model.Usuario();
-                
                 usuario.cpf = txbcpf.Text.Replace(",","").Replace(".","").Replace("-","");
-                MessageBox.Show(usuario.cpf);
                 usuario.Senha = txbsenha.Text;
                 // Armazenar  o resultado de logar (SELECT)
                 DataTable resultado = new DataTable();
