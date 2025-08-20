@@ -81,8 +81,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <Compile Include="FrmCadastrarProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,18 +110,6 @@
     </Compile>
     <Compile Include="FrmGestaoComandas.Designer.cs">
       <DependentUpon>FrmGestaoComandas.cs</DependentUpon>
-=======
-=======
->>>>>>> Stashed changes
-    <Compile Include="FrmGestaoCadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGestaoCadastro.Designer.cs">
-      <DependentUpon>FrmGestaoCadastro.cs</DependentUpon>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     </Compile>
     <Compile Include="FrmGestaoEstoque.cs">
       <SubType>Form</SubType>
@@ -153,8 +139,6 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <EmbeddedResource Include="FrmCadastrarProdutos.resx">
       <DependentUpon>FrmCadastrarProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,14 +153,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestaoComandas.resx">
       <DependentUpon>FrmGestaoComandas.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="FrmGestaoCadastro.resx">
-      <DependentUpon>FrmGestaoCadastro.cs</DependentUpon>
->>>>>>> Stashed changes
-=======
-    <EmbeddedResource Include="FrmGestaoCadastro.resx">
-      <DependentUpon>FrmGestaoCadastro.cs</DependentUpon>
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestaoEstoque.resx">
       <DependentUpon>FrmGestaoEstoque.cs</DependentUpon>
