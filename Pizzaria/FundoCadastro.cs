@@ -20,7 +20,7 @@ namespace Pizzaria
         private void Form1_Activated(object sender, EventArgs e)
         {
             //Inicializar o Inicializador (form)
-            Form1 inicializador = new Form1();
+            FrmLogin inicializador = new FrmLogin();
             inicializador.ShowDialog();
             Application.Exit(); // Fechar o programa todo ao sair do inicializador
         } 

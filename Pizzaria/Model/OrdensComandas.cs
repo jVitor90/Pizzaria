@@ -101,15 +101,15 @@ namespace Pizzaria.Model
                 return false;
             }
         }
-        public DataTable Listar()
+        public DataTable ListarComanda()
         {
-            string comando = "SELECT * FROM ordens_comandas WHERE metodo_pagamento = @metodo_pagamento;";
+            string comando = "SELECT * FROM ordens_comandas";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-            cmd.Parameters.AddWithValue("@metodo_pagamento", metodo_pagamento);
+
 
             cmd.Prepare();
             DataTable tabela = new DataTable();
@@ -117,6 +117,65 @@ namespace Pizzaria.Model
             conexaoBD.Desconectar(con);
             return tabela;
         }
-        
+        public bool ExcluirPorId()
+        {
+            string comando = "DELETE FROM ordens_comandas WHERE id_comanda = @id_comanda";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@id_comanda", id_comanda);
+            cmd.Prepare();
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
+
+        public bool ExcluirPorMesa()
+        {
+            string comando = "DELETE FROM ordens_comandas WHERE num_mesa = @num_mesa";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
+            cmd.Prepare();
+
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
+
+
     }
 }

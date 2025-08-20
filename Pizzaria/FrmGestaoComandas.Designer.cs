@@ -31,23 +31,23 @@
             this.grbPedidos = new System.Windows.Forms.GroupBox();
             this.lblAdicionais = new System.Windows.Forms.Label();
             this.cmbAdicionais = new System.Windows.Forms.ComboBox();
-            this.btnContinuar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.cmbBordas = new System.Windows.Forms.ComboBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.lblBordas = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.cmdPizzas = new System.Windows.Forms.ComboBox();
+            this.cmbPizzas = new System.Windows.Forms.ComboBox();
             this.lblPIzzas = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblObservacao = new System.Windows.Forms.Label();
-            this.cmdBebidas = new System.Windows.Forms.ComboBox();
+            this.cmbBebidas = new System.Windows.Forms.ComboBox();
             this.txbObservecao = new System.Windows.Forms.TextBox();
             this.txbMesa = new System.Windows.Forms.TextBox();
             this.lblBebidas = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvComandas = new System.Windows.Forms.DataGridView();
             this.grbPedidos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvComandas)).BeginInit();
             this.SuspendLayout();
             // 
             // grbPedidos
@@ -55,16 +55,16 @@
             this.grbPedidos.BackColor = System.Drawing.Color.Transparent;
             this.grbPedidos.Controls.Add(this.lblAdicionais);
             this.grbPedidos.Controls.Add(this.cmbAdicionais);
-            this.grbPedidos.Controls.Add(this.btnContinuar);
-            this.grbPedidos.Controls.Add(this.comboBox1);
+            this.grbPedidos.Controls.Add(this.btnCadastrar);
+            this.grbPedidos.Controls.Add(this.cmbBordas);
             this.grbPedidos.Controls.Add(this.btnVoltar);
             this.grbPedidos.Controls.Add(this.lblBordas);
             this.grbPedidos.Controls.Add(this.btnLimpar);
-            this.grbPedidos.Controls.Add(this.cmdPizzas);
+            this.grbPedidos.Controls.Add(this.cmbPizzas);
             this.grbPedidos.Controls.Add(this.lblPIzzas);
             this.grbPedidos.Controls.Add(this.label2);
             this.grbPedidos.Controls.Add(this.lblObservacao);
-            this.grbPedidos.Controls.Add(this.cmdBebidas);
+            this.grbPedidos.Controls.Add(this.cmbBebidas);
             this.grbPedidos.Controls.Add(this.txbObservecao);
             this.grbPedidos.Controls.Add(this.txbMesa);
             this.grbPedidos.Controls.Add(this.lblBebidas);
@@ -89,6 +89,7 @@
             // 
             // cmbAdicionais
             // 
+            this.cmbAdicionais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAdicionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAdicionais.FormattingEnabled = true;
             this.cmbAdicionais.Location = new System.Drawing.Point(9, 184);
@@ -96,27 +97,29 @@
             this.cmbAdicionais.Size = new System.Drawing.Size(195, 28);
             this.cmbAdicionais.TabIndex = 15;
             // 
-            // btnContinuar
+            // btnCadastrar
             // 
-            this.btnContinuar.BackColor = System.Drawing.Color.White;
-            this.btnContinuar.FlatAppearance.BorderSize = 0;
-            this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnContinuar.ForeColor = System.Drawing.Color.Black;
-            this.btnContinuar.Location = new System.Drawing.Point(121, 341);
-            this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(174, 32);
-            this.btnContinuar.TabIndex = 1;
-            this.btnContinuar.Text = "Cadastrar";
-            this.btnContinuar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.BackColor = System.Drawing.Color.White;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
+            this.btnCadastrar.Location = new System.Drawing.Point(121, 341);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(174, 32);
+            this.btnCadastrar.TabIndex = 1;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // comboBox1
+            // cmbBordas
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(229, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 28);
-            this.comboBox1.TabIndex = 14;
+            this.cmbBordas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBordas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBordas.FormattingEnabled = true;
+            this.cmbBordas.Location = new System.Drawing.Point(229, 118);
+            this.cmbBordas.Name = "cmbBordas";
+            this.cmbBordas.Size = new System.Drawing.Size(195, 28);
+            this.cmbBordas.TabIndex = 14;
             // 
             // btnVoltar
             // 
@@ -129,6 +132,7 @@
             this.btnVoltar.TabIndex = 0;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // lblBordas
             // 
@@ -153,15 +157,18 @@
             this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // cmdPizzas
+            // cmbPizzas
             // 
-            this.cmdPizzas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdPizzas.FormattingEnabled = true;
-            this.cmdPizzas.Location = new System.Drawing.Point(6, 39);
-            this.cmdPizzas.Name = "cmdPizzas";
-            this.cmdPizzas.Size = new System.Drawing.Size(195, 28);
-            this.cmdPizzas.TabIndex = 2;
+            this.cmbPizzas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPizzas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPizzas.FormattingEnabled = true;
+            this.cmbPizzas.Location = new System.Drawing.Point(6, 39);
+            this.cmbPizzas.Name = "cmbPizzas";
+            this.cmbPizzas.Size = new System.Drawing.Size(195, 28);
+            this.cmbPizzas.TabIndex = 2;
+            this.cmbPizzas.SelectedIndexChanged += new System.EventHandler(this.cmbPizzas_SelectedIndexChanged);
             // 
             // lblPIzzas
             // 
@@ -197,14 +204,15 @@
             this.lblObservacao.TabIndex = 7;
             this.lblObservacao.Text = "Observações";
             // 
-            // cmdBebidas
+            // cmbBebidas
             // 
-            this.cmdBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBebidas.FormattingEnabled = true;
-            this.cmdBebidas.Location = new System.Drawing.Point(229, 39);
-            this.cmdBebidas.Name = "cmdBebidas";
-            this.cmdBebidas.Size = new System.Drawing.Size(195, 28);
-            this.cmdBebidas.TabIndex = 4;
+            this.cmbBebidas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBebidas.FormattingEnabled = true;
+            this.cmbBebidas.Location = new System.Drawing.Point(229, 39);
+            this.cmbBebidas.Name = "cmbBebidas";
+            this.cmbBebidas.Size = new System.Drawing.Size(195, 28);
+            this.cmbBebidas.TabIndex = 4;
             // 
             // txbObservecao
             // 
@@ -221,6 +229,8 @@
             this.txbMesa.Name = "txbMesa";
             this.txbMesa.Size = new System.Drawing.Size(195, 28);
             this.txbMesa.TabIndex = 9;
+            this.txbMesa.TextChanged += new System.EventHandler(this.txbMesa_TextChanged);
+            this.txbMesa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMesa_KeyPress);
             // 
             // lblBebidas
             // 
@@ -245,14 +255,20 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Comandas";
             // 
-            // dataGridView1
+            // DgvComandas
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(467, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(360, 426);
-            this.dataGridView1.TabIndex = 14;
+            this.DgvComandas.AllowUserToAddRows = false;
+            this.DgvComandas.AllowUserToDeleteRows = false;
+            this.DgvComandas.AllowUserToResizeColumns = false;
+            this.DgvComandas.AllowUserToResizeRows = false;
+            this.DgvComandas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvComandas.BackgroundColor = System.Drawing.Color.White;
+            this.DgvComandas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvComandas.Location = new System.Drawing.Point(467, 6);
+            this.DgvComandas.Name = "DgvComandas";
+            this.DgvComandas.Size = new System.Drawing.Size(360, 426);
+            this.DgvComandas.TabIndex = 14;
+            this.DgvComandas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellDoubleClick);
             // 
             // FrmGestaoComandas
             // 
@@ -260,7 +276,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(839, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DgvComandas);
             this.Controls.Add(this.grbPedidos);
             this.Controls.Add(this.label1);
             this.Name = "FrmGestaoComandas";
@@ -268,7 +284,7 @@
             this.Load += new System.EventHandler(this.FrmGestaoComandas_Load);
             this.grbPedidos.ResumeLayout(false);
             this.grbPedidos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvComandas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,20 +295,20 @@
         private System.Windows.Forms.GroupBox grbPedidos;
         private System.Windows.Forms.Label lblAdicionais;
         private System.Windows.Forms.ComboBox cmbAdicionais;
-        private System.Windows.Forms.Button btnContinuar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.ComboBox cmbBordas;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label lblBordas;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.ComboBox cmdPizzas;
+        private System.Windows.Forms.ComboBox cmbPizzas;
         private System.Windows.Forms.Label lblPIzzas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblObservacao;
-        private System.Windows.Forms.ComboBox cmdBebidas;
+        private System.Windows.Forms.ComboBox cmbBebidas;
         private System.Windows.Forms.TextBox txbObservecao;
         private System.Windows.Forms.TextBox txbMesa;
         private System.Windows.Forms.Label lblBebidas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvComandas;
     }
 }

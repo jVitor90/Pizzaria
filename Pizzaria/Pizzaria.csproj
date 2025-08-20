@@ -129,6 +129,12 @@
     <Compile Include="FrmOpcoes.Designer.cs">
       <DependentUpon>FrmOpcoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FundoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoCadastro.Designer.cs">
+      <DependentUpon>FundoCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Estoque.cs" />
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOpcoes.resx">
       <DependentUpon>FrmOpcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FundoCadastro.resx">
+      <DependentUpon>FundoCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

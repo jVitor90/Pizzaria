@@ -17,15 +17,14 @@ namespace Pizzaria.Model
 
         public bool Cadastrar()
         {
-            string comando = "INSERT INTO itens_comandas " +
-                "( id_item, id_comanda, id_produto, quantidade, situacao_pedido) " +
-                "VALUES (@id_item, @id_comanda, @id_produto, @quantidade, @situacao_pedido)";
+            string comando = "INSERT INTO itens_comanda " +
+                "(id_Comanda, id_Produto, quantidade, situacao_pedido) " +
+                "VALUES (@id_Comanda, @id_Produto, @quantidade, @situacao_pedido)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-            cmd.Parameters.AddWithValue("@id_item", id_item);
-            cmd.Parameters.AddWithValue("@id_comanda", id_Comanda);
-            cmd.Parameters.AddWithValue("@id_produto", id_produto);
+            cmd.Parameters.AddWithValue("@id_Comanda", id_Comanda);
+            cmd.Parameters.AddWithValue("@id_Produto", id_produto);
             cmd.Parameters.AddWithValue("@quantidade", quantidade);
             cmd.Parameters.AddWithValue("@situacao_pedido", situacao_pedido);
             cmd.Prepare();
@@ -51,7 +50,7 @@ namespace Pizzaria.Model
         }
         public bool Encerrar()
         {
-            string comando = "UPDATE itens_comandas SET situacao_pedido = @situacao_pedido WHERE id_item = @id_item";
+            string comando = "UPDATE itens_comanda SET situacao_pedido = @situacao_pedido WHERE id_item = @id_item";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);

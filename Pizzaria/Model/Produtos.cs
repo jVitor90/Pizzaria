@@ -65,6 +65,25 @@ namespace Pizzaria.Model
             conexaoBD.Desconectar(con);
             return tabela;
         }
+
+        public DataTable ListarPorCategoria()
+        {
+            string comando = "SELECT id_produto, nome_produto " +
+                             "FROM produtos " +
+                             "WHERE id_Categoria = @id_categoria AND disponivel = 1";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
+            cmd.Prepare();
+
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+        }
         public bool Modificar()
         {
             string comando = "UPDATE produtos SET nome_produto = @nome_produto, preco = @preco, id_categoria = @id_categoria WHERE id_produto = @id_produto";
