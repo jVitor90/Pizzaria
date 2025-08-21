@@ -90,7 +90,31 @@ namespace Pizzaria
         {
 
         }
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DialogResult apagar = MessageBox.Show("Tem certeza que deseja apagar este Produto?",
+                "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (apagar == DialogResult.Yes)
+            {
+                if (this.estoque.Remover())
+                {
+                    MessageBox.Show("Produto removido com sucesso", "Sucesso!!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizarDgv();
+                    // Limpar os campos
+                    txbNomeProduto.Clear();
+                    txbQuantidade.Clear();
+                    txbUnidade.Clear();
+                    cmbCategoria.SelectedIndex = -1;
 
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao remover Produto!!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         private void dgvEstoque_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int linhaSelecionada = dgvEstoque.SelectedCells[0].RowIndex;
@@ -106,5 +130,6 @@ namespace Pizzaria
             txbUnidade.Text = this.estoque.unidade.ToString();
             cmbCategoria.Text = this.estoque.Id_Categoria.ToString();
         }
+
     }
 }

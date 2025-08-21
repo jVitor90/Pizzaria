@@ -124,12 +124,12 @@ namespace Pizzaria.Model
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-            cmd.Parameters.AddWithValue("id_produto", Id_produto);
+            cmd.Parameters.AddWithValue("@id_produto", Id_produto);
 
             cmd.Prepare();
             // para impedir que o programa quebre 
-            //try
-            //{
+            try
+            {
                 if (cmd.ExecuteNonQuery() == 0)
                 {
                     conexaoBD.Desconectar(con);
@@ -140,13 +140,13 @@ namespace Pizzaria.Model
                     conexaoBD.Desconectar(con);
                     return true;
                 }
-            //}
+            }
             // se der erro, ele ira desconectar do bd
-           // catch
-           // {
-             //   conexaoBD.Desconectar(con);
-              //  return false;
-           // }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+               return false;
+            }
         }
     }
 }
