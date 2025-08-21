@@ -17,6 +17,7 @@ namespace Pizzaria
         
         Model.Estoque estoque = new Estoque();
         Model.Categoria categoria = new Categoria();
+        Model.Usuario usuario = new Usuario();
         public FrmGestaoEstoque()
         {
             InitializeComponent();
@@ -131,5 +132,12 @@ namespace Pizzaria
             cmbCategoria.Text = this.estoque.Id_Categoria.ToString();
         }
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FrmOpcoes frmOpcoes = new FrmOpcoes(usuario);
+            this.Hide();
+            frmOpcoes.ShowDialog();
+            this.Show();
+        }
     }
 }

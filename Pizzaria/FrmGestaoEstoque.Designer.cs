@@ -122,6 +122,7 @@
             this.btnVoltar.TabIndex = 55;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnExcluir
             // 
@@ -151,6 +152,7 @@
             this.dgvEstoque.AllowUserToDeleteRows = false;
             this.dgvEstoque.AllowUserToResizeColumns = false;
             this.dgvEstoque.AllowUserToResizeRows = false;
+            this.dgvEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEstoque.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dgvEstoque.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
