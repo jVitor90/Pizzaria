@@ -21,7 +21,15 @@ namespace Pizzaria.Model
 
         public DataTable BuscarMesa()
         {
-            string comando = "SELECT * FROM ordens_comandas WHERE num_mesa = @num_mesa;";
+            string comando = "SELECT i.id_item, " +
+           "p.nome_produto, " +
+           "i.quantidade, " +
+           "p.preco, " +
+           "(i.quantidade * p.preco) AS Total_Item " +
+           "FROM itens_comanda i " +
+           "JOIN produtos p ON i.id_Produto = p.id_produto " +
+           "JOIN ordens_comandas o ON i.id_Comanda = o.id_comanda " +
+           "WHERE o.num_mesa = @num_mesa AND o.situacao = 1;";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -35,6 +43,7 @@ namespace Pizzaria.Model
             conexaoBD.Desconectar(con);
             return tabela;
         }
+
         public bool Cadastrar()
         {
             string comando = "INSERT INTO ordens_comandas " +

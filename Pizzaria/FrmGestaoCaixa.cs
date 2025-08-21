@@ -75,9 +75,10 @@ namespace Pizzaria
                         dgvComanda.DataSource = consulta;
                         AtualizarDgvCaixa();
 
-                        //Mostrar no label o total:
-                        lblValorFinal.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
-                    }
+                    //Mostrar no label o total:
+                    decimal valorTotal = Convert.ToDecimal(consulta.Compute("SUM(Total_Item)", ""));
+                    txbValor.Text = "R$ " + valorTotal.ToString("N2");
+                }
                     grbInformacoes.Enabled = true;
                 }
             

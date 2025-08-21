@@ -1,6 +1,6 @@
 ﻿namespace Pizzaria
 {
-    partial class FrmCaixa
+    partial class FrmPedidos
     {
         /// <summary>
         /// Required designer variable.

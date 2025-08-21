@@ -59,7 +59,7 @@ namespace Pizzaria
 
         private void bntpedidos_Click(object sender, EventArgs e)
         {
-            FrmCaixa frmGestaoPedidos = new FrmCaixa();
+            FrmPedidos frmGestaoPedidos = new FrmPedidos();
             this.Hide();
             frmGestaoPedidos.ShowDialog(); this.Show();
             this.Show();
