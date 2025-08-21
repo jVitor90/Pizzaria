@@ -21,15 +21,17 @@ namespace Pizzaria.Model
 
         public DataTable BuscarMesa()
         {
-            string comando = "SELECT i.id_item, " +
-           "p.nome_produto, " +
-           "i.quantidade, " +
-           "p.preco, " +
-           "(i.quantidade * p.preco) AS Total_Item " +
-           "FROM itens_comanda i " +
-           "JOIN produtos p ON i.id_Produto = p.id_produto " +
-           "JOIN ordens_comandas o ON i.id_Comanda = o.id_comanda " +
-           "WHERE o.num_mesa = @num_mesa AND o.situacao = 1;";
+            string comando = @"
+        SELECT 
+            ID_Comanda,
+            Produto,
+            Quantidade,
+            Valor_Unit,
+            Total_Item
+        FROM 
+            view_comandas
+        WHERE 
+            Mesa = @num_mesa;";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();

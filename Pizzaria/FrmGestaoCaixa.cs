@@ -34,12 +34,12 @@ namespace Pizzaria
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
-               $"Tem certeza que deseja encerrar a comanda {itens.situacao_pedido}?",
+               $"Tem certeza que deseja encerrar a comanda {comandas.num_mesa}?",
                "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
-                if (itens.Encerrar())
+                if (comandas.Encerrar())
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     AtualizarDgvCaixa();
@@ -53,7 +53,7 @@ namespace Pizzaria
             
                 if (txbMesa.Text == "" || txbMesa.Text.Length < 1)
                 {
-                    MessageBox.Show("Informe corretamente o número da ficha!",
+                    MessageBox.Show("Informe corretamente o número da mesa!",
                         "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
@@ -66,7 +66,7 @@ namespace Pizzaria
                     //Verificar se existe lançamentos na comanda
                     if (consulta.Rows.Count == 0)
                     {
-                        MessageBox.Show("Não existe lancamentos nessa comnada!",
+                        MessageBox.Show("Não existe lançamentos nessa comnada!",
                        "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -75,11 +75,12 @@ namespace Pizzaria
                         dgvComanda.DataSource = consulta;
                         AtualizarDgvCaixa();
 
-                    //Mostrar no label o total:
-                    decimal valorTotal = Convert.ToDecimal(consulta.Compute("SUM(Total_Item)", ""));
-                    txbValor.Text = "R$ " + valorTotal.ToString("N2");
+                      //Mostrar no label o total:
+                      txbValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
+
+                      grbPagamentos.Enabled = true;
                 }
-                    grbInformacoes.Enabled = true;
+                    
                 }
             
 
