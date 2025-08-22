@@ -16,7 +16,7 @@ namespace Pizzaria
         Model.Usuario usuario;
         Model.Categoria categoria = new Model.Categoria();
         Model.Produtos produto = new Model.Produtos();
-        Model.OrdensComandas ordemComanda = new Model.OrdensComandas();
+        Model.Mesas ordemComanda = new Model.Mesas();
 
         public FrmGestaoComandas(Model.Usuario usuario)
         {
@@ -117,7 +117,7 @@ namespace Pizzaria
                     int idComanda = Convert.ToInt32(dtComanda.Rows[0]["id_comanda"]);
 
                     // Cadastrar itens selecionados
-                    Itens_comandas itemComanda = new Itens_comandas();
+                    Mesas_lancamentos itemComanda = new Mesas_lancamentos();
                     itemComanda.id_Comanda = idComanda;
 
                     // Adicionar pizza, se selecionada

@@ -14,9 +14,8 @@ namespace Pizzaria
     public partial class FrmGestaoCaixa : Form
     {
         Model.Usuario usuario = new Usuario();
-        Model.OrdensComandas comandas = new Model.OrdensComandas();
         Model.Metodos_pagamento metodos = new Metodos_pagamento();
-        Model.Itens_comandas itens = new Model.Itens_comandas();
+        Model.Mesas mesas = new Mesas();
         public FrmGestaoCaixa()
         {
             InitializeComponent();
@@ -34,12 +33,12 @@ namespace Pizzaria
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
-               $"Tem certeza que deseja encerrar a comanda {comandas.num_mesa}?",
+               $"Tem certeza que deseja encerrar a comanda {mesas.num_mesa}?",
                "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
-                if (comandas.Encerrar())
+                if (mesas.Encerrar())
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     AtualizarDgvCaixa();
@@ -59,8 +58,8 @@ namespace Pizzaria
                 else
                 {
                 
-                    comandas.num_mesa = int.Parse(txbMesa.Text);
-                    DataTable consulta = comandas.BuscarMesa();
+                    mesas.num_mesa = int.Parse(txbMesa.Text);
+                    DataTable consulta = mesas.BuscarMesa();
 
 
                     //Verificar se existe lançamentos na comanda
@@ -87,7 +86,7 @@ namespace Pizzaria
         }
         public void AtualizarDgvCaixa()
         {
-            dgvComanda.DataSource = comandas.BuscarMesa();
+            dgvComanda.DataSource = mesas.BuscarMesa();
 
         }
 

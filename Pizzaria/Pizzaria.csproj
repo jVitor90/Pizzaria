@@ -138,9 +138,9 @@
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Estoque.cs" />
-    <Compile Include="Model\Itens_comandas.cs" />
+    <Compile Include="Model\Mesas_lancamentos.cs" />
     <Compile Include="Model\Metodos_pagamento.cs" />
-    <Compile Include="Model\OrdensComandas.cs" />
+    <Compile Include="Model\Mesas.cs" />
     <Compile Include="Model\Produtos.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />

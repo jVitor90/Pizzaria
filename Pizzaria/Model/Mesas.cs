@@ -8,38 +8,36 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Model
 {
-    public class OrdensComandas
+    public class Mesas
     {
 
 
-        public int id_comanda { get; set; }
+        public int id_mesa { get; set; }
         public int num_mesa { get; set; }
         public int id_resp { get; set; }
         public DateTime data_adic { get; set; }
-        public int situacao { get; set; }
-        public string metodo_pagamento { get; set; }
+        public string nome_cliente { get; set; }
+        public bool ativa { get; set; }
 
+        // Buscar mesa pelo número
         public DataTable BuscarMesa()
         {
             string comando = @"
-        SELECT 
-            ID_Comanda,
-            Produto,
-            Quantidade,
-            Valor_Unit,
-            Total_Item
-        FROM 
-            view_comandas
-        WHERE 
-            Mesa = @num_mesa;";
+            SELECT 
+                id_mesa,
+                num_mesa,
+                id_resp,
+                data_adic,
+                nome_cliente,
+                ativa
+            FROM mesas
+            WHERE num_mesa = @num_mesa;";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-
             cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
 
-            cmd.Prepare();
             DataTable tabela = new DataTable();
             tabela.Load(cmd.ExecuteReader());
             conexaoBD.Desconectar(con);
@@ -48,107 +46,78 @@ namespace Pizzaria.Model
 
         public bool Cadastrar()
         {
-            string comando = "INSERT INTO ordens_comandas " +
-                "( id_comanda, num_mesa, id_resp, situacao) " +
-                "VALUES (@id_comanda, @num_mesa, @id_resp, @situacao)";
+            string comando = "INSERT INTO mesas (num_mesa, id_resp, nome_cliente, ativa) " +
+                             "VALUES (@num_mesa, @id_resp, @nome_cliente, @ativa)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-            cmd.Parameters.AddWithValue("@id_comanda", id_comanda);
+
             cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
             cmd.Parameters.AddWithValue("@id_resp", id_resp);
-            cmd.Parameters.AddWithValue("@situacao", situacao);
-            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@nome_cliente", nome_cliente ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@ativa", ativa);
             try
             {
-                if (cmd.ExecuteNonQuery() == 0)
-                {
-                    conexaoBD.Desconectar(con);
-                    return false;
-                }
-                else
-                {
-                    conexaoBD.Desconectar(con);
-                    return true;
-                }
+                bool sucesso = cmd.ExecuteNonQuery() > 0;
+                conexaoBD.Desconectar(con);
+                return sucesso;
             }
-            // se der erro, ele ira desconectar do bd
             catch
             {
                 conexaoBD.Desconectar(con);
                 return false;
             }
         }
+
         public bool Encerrar()
         {
-            string comando = "UPDATE ordens_comandas " +
-               "SET situacao = 0 WHERE num_mesa = @num_mesa AND situacao = 1";
+            string comando = "UPDATE mesas SET ativa = 0 WHERE num_mesa = @num_mesa AND ativa = 1";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
             cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
 
-            cmd.Prepare();
-
-            // para impedir que o programa quebre 
             try
             {
-                if (cmd.ExecuteNonQuery() == 0)
-                {
-                    conexaoBD.Desconectar(con);
-                    return false;
-                }
-                else
-                {
-                    conexaoBD.Desconectar(con);
-                    return true;
-                }
+                bool sucesso = cmd.ExecuteNonQuery() > 0;
+                conexaoBD.Desconectar(con);
+                return sucesso;
             }
-            // se der erro, ele ira desconectar do bd
             catch
             {
                 conexaoBD.Desconectar(con);
                 return false;
             }
         }
-        public DataTable ListarComanda()
-        {
-            string comando = "SELECT * FROM ordens_comandas";
 
+        public DataTable ListarMesas()
+        {
+            string comando = "SELECT * FROM mesas";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-
-
-            cmd.Prepare();
             DataTable tabela = new DataTable();
             tabela.Load(cmd.ExecuteReader());
             conexaoBD.Desconectar(con);
             return tabela;
         }
+
         public bool ExcluirPorId()
         {
-            string comando = "DELETE FROM ordens_comandas WHERE id_comanda = @id_comanda";
-
+            string comando = "DELETE FROM mesas WHERE id_mesa = @id_mesa";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-            cmd.Parameters.AddWithValue("@id_comanda", id_comanda);
-            cmd.Prepare();
+
+            cmd.Parameters.AddWithValue("@id_mesa", id_mesa);
+
             try
             {
-                if (cmd.ExecuteNonQuery() == 0)
-                {
-                    conexaoBD.Desconectar(con);
-                    return false;
-                }
-                else
-                {
-                    conexaoBD.Desconectar(con);
-                    return true;
-                }
+                bool sucesso = cmd.ExecuteNonQuery() > 0;
+                conexaoBD.Desconectar(con);
+                return sucesso;
             }
             catch
             {
@@ -159,26 +128,18 @@ namespace Pizzaria.Model
 
         public bool ExcluirPorMesa()
         {
-            string comando = "DELETE FROM ordens_comandas WHERE num_mesa = @num_mesa";
-
+            string comando = "DELETE FROM mesas WHERE num_mesa = @num_mesa";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
+
             cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
-            cmd.Prepare();
 
             try
             {
-                if (cmd.ExecuteNonQuery() == 0)
-                {
-                    conexaoBD.Desconectar(con);
-                    return false;
-                }
-                else
-                {
-                    conexaoBD.Desconectar(con);
-                    return true;
-                }
+                bool sucesso = cmd.ExecuteNonQuery() > 0;
+                conexaoBD.Desconectar(con);
+                return sucesso;
             }
             catch
             {
@@ -186,7 +147,5 @@ namespace Pizzaria.Model
                 return false;
             }
         }
-
-
     }
 }

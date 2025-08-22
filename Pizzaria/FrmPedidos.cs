@@ -16,37 +16,11 @@ namespace Pizzaria
         public FrmPedidos()
         {
             InitializeComponent();
-
+            AtualizarDgvPedidos();
         }
-        Model.Itens_comandas itemnsComanda = new Model.Itens_comandas();
+        Model.Mesas_lancamentos itemnsComanda = new Model.Mesas_lancamentos();
         Model.OrdensComandas ordens = new Model.OrdensComandas();
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            if (txbPedido.Text == "" || txbPedido.Text.Length < 2)
-            {
-                MessageBox.Show("Informe corretamente o número da ficha!",
-                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                ordens.id_comanda = int.Parse(txbPedido.Text);
-                DataTable consulta = ordens.BuscarMesa();
-
-                //Verificar se existe lançamentos na comanda
-                if (consulta.Rows.Count == 0)
-                {
-                    MessageBox.Show("Não existe lancamentos nessa comnada!",
-                   "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    //Mostar a consulta no dgv
-                    dgvPedidos.DataSource = consulta;
-
-
-                }
-            }
-        }
+       
         public void AtualizarDgvPedidos()
         {
          
@@ -61,23 +35,29 @@ namespace Pizzaria
         private void brnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
-               $"Tem certeza que deseja encerrar a comanda {itemnsComanda.situacao_pedido}?",
+               $"Tem certeza que deseja encerrar a comanda {ordens.num_mesa}?",
                "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
-                if (itemnsComanda.Encerrar())
+                if (ordens.Encerrar())
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
+                   
                 }
+
+                AtualizarDgvPedidos();
+
             }
         }
 
-        private void dgvPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int linhaSelecionada = dgvPedidos.SelectedCells[0].RowIndex;
 
+            
         }
     }
 }
+
