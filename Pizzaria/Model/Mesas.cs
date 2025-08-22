@@ -10,8 +10,6 @@ namespace Pizzaria.Model
 {
     public class Mesas
     {
-
-
         public int id_mesa { get; set; }
         public int num_mesa { get; set; }
         public int id_resp { get; set; }

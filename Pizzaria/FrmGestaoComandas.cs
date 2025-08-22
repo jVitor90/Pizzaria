@@ -27,7 +27,7 @@ namespace Pizzaria
 
         public void atualizarComanda()
         {
-            DataTable dt = ordemComanda.ListarComanda();
+            DataTable dt = ordemComanda.ListarMesas();
             DgvComandas.DataSource = dt;
 
             // Personalizar colunas
