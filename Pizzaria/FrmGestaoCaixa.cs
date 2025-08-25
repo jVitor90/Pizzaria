@@ -59,7 +59,7 @@ namespace Pizzaria
                 {
                 
                     mesas.num_mesa = int.Parse(txbMesa.Text);
-                    DataTable consulta = mesas.BuscarMesa();
+                    DataTable consulta = mesas.Listar();
 
 
                     //Verificar se existe lançamentos na comanda
@@ -75,7 +75,7 @@ namespace Pizzaria
                         AtualizarDgvCaixa();
 
                       //Mostrar no label o total:
-                      txbValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
+                      //txbValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
 
                       grbPagamentos.Enabled = true;
                 }
@@ -86,7 +86,28 @@ namespace Pizzaria
         }
         public void AtualizarDgvCaixa()
         {
-            dgvComanda.DataSource = mesas.BuscarMesa();
+            //dgvComanda.DataSource = mesas.BuscarMesa();
+            DataTable dt = mesas.Listar();
+            dgvComanda.DataSource = dt;
+
+
+
+            // Personalizar colunas
+            if (dt.Rows.Count > 0)
+            {
+                //dgvComanda.Columns["id_mesa"].HeaderText = "ID Comanda";
+                //dgvComanda.Columns["num_mesa"].HeaderText = "Nº Mesa";
+                //dgvComanda.Columns["nome_cliente"].HeaderText = "Nome Cliente";
+                //dgvComanda.Columns["Produto"].HeaderText = "Produto";
+                //dgvComanda.Columns["Quantidade"].HeaderText = "Quantidade";
+                //dgvComanda.Columns["Valor_Unit"].HeaderText = "Valor Unitario";
+                //dgvComanda.Columns["Total_Item"].HeaderText = "Total";
+                //dgvComanda.Columns["id_resp"].HeaderText = "ID Responsável";
+                //if (dgvComanda.Columns.Contains("metodo_pagamento"))
+                //{
+                //    dgvComanda.Columns["metodo_pagamento"].HeaderText = "Método de Pagamento";
+                //}
+            }
 
         }
 

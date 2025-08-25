@@ -33,12 +33,10 @@ namespace Pizzaria
             // Personalizar colunas
             if (dt.Rows.Count > 0)
             {
-                DgvComandas.Columns["id_mesa"].HeaderText = "ID Comanda";
+                DgvComandas.Columns["id_mesa"].HeaderText = "ID Mesa";
                 DgvComandas.Columns["num_mesa"].HeaderText = "Nº Mesa";
                 DgvComandas.Columns["id_resp"].HeaderText = "ID Responsável";
                 DgvComandas.Columns["data_adic"].HeaderText = "Data";
-                DgvComandas.Columns["nome_cliente"].HeaderText = "Nome Cliente";
-                DgvComandas.Columns["ativa"].HeaderText = "Ativa";
                 if (DgvComandas.Columns.Contains("metodo_pagamento"))
                 {
                     DgvComandas.Columns["metodo_pagamento"].HeaderText = "Método de Pagamento";
@@ -46,7 +44,7 @@ namespace Pizzaria
             }
             else
             {
-               
+
             }
         }
 
@@ -269,7 +267,7 @@ namespace Pizzaria
 
         private void DgvComandas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(this.DesignMode) return; // Evita execução no designer
+            if (this.DesignMode) return; // Evita execução no designer
                                          // Verifica se o clique foi em uma linha válida 
             if (e.RowIndex >= 0 && DgvComandas.Rows[e.RowIndex].Cells["id_mesa"].Value != DBNull.Value)
             {
@@ -326,4 +324,3 @@ namespace Pizzaria
         }
     }
 }
-

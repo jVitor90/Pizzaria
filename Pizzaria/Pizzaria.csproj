@@ -138,6 +138,7 @@
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\Lancamento.cs" />
     <Compile Include="Model\Mesas_lancamentos.cs" />
     <Compile Include="Model\Metodos_pagamento.cs" />
     <Compile Include="Model\Mesas.cs" />

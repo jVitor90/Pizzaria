@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -144,6 +145,27 @@ namespace Pizzaria.Model
                 conexaoBD.Desconectar(con);
                 return false;
             }
+        }
+        public DataTable Listar()
+        {
+
+//            CREATE VIEW 'view_mesas_abertas' AS
+//SELECT mesas_lancamentos.id_lancamento, mesas_lancamentos.num_mesa, mesas_lancamentos.id_Produto, produtos.nome_produto, mesas_lancamentos.quantidade, produtos.preco ,produtos.preco* mesas_lancamentos.quantidade AS 'total_item', (SELECT mesas.nome_cliente FROM mesas WHERE mesas.num_mesa = mesas_lancamentos.num_mesa AND mesas.ativa = 1) AS 'nome_cliente'
+//FROM mesas_lancamentos
+//INNER JOIN produtos ON mesas_lancamentos.id_Produto = produtos.id_produto
+//WHERE mesas_lancamentos.pagamento = 1;
+
+            string comando = "SELECT * FROM view_mesas_abertas";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
+
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
         }
     }
 }
