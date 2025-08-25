@@ -19,13 +19,13 @@ namespace Pizzaria
             AtualizarDgvPedidos();
         }
         Model.Mesas_lancamentos itemnsComanda = new Model.Mesas_lancamentos();
-        Model.OrdensComandas ordens = new Model.OrdensComandas();
+        Model.Mesas  mesas = new Model.Mesas();
        
         public void AtualizarDgvPedidos()
         {
          
         
-            dgvPedidos.DataSource = ordens.ListarComanda();
+            dgvPedidos.DataSource = mesas.ListarMesas();
 
         }
 
@@ -35,12 +35,12 @@ namespace Pizzaria
         private void brnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
-               $"Tem certeza que deseja encerrar a comanda {ordens.num_mesa}?",
+               $"Tem certeza que deseja encerrar a comanda {mesas.num_mesa}?",
                "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
-                if (ordens.Encerrar())
+                if (mesas.Encerrar())
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
