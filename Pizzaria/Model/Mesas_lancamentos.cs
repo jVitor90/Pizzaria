@@ -66,7 +66,7 @@ namespace Pizzaria.Model
 
             // supondo que você tenha uma propriedade id_lancamento
             cmd.Parameters.AddWithValue("@id_lancamento", id_lancamento);
-            cmd.Parameters.AddWithValue("@pagamento", 0); // 0 = encerrado/pago, 1 = em aberto
+            cmd.Parameters.AddWithValue("@pagamento", 1); // 0 = encerrado/pago, 1 = em aberto
 
             cmd.Prepare();
 

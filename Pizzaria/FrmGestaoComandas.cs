@@ -16,7 +16,7 @@ namespace Pizzaria
         Model.Usuario usuario;
         Model.Categoria categoria = new Model.Categoria();
         Model.Produtos produto = new Model.Produtos();
-        Model.Mesas ordemComanda = new Model.Mesas();
+        Model.Mesas mesas = new Model.Mesas();
 
         public FrmGestaoComandas(Model.Usuario usuario)
         {
@@ -27,7 +27,7 @@ namespace Pizzaria
 
         public void atualizarComanda()
         {
-            DataTable dt = ordemComanda.ListarMesas();
+            DataTable dt = mesas.ListarMesas();
             DgvComandas.DataSource = dt;
 
             // Personalizar colunas
@@ -104,31 +104,32 @@ namespace Pizzaria
             }
 
             // Cadastrar a comanda
-            ordemComanda.num_mesa = int.Parse(txbMesa.Text);
-            ordemComanda.id_resp = usuario.id_usuario;
-            ordemComanda.situacao = 1;
+            mesas.num_mesa = int.Parse(txbMesa.Text);
+            mesas.id_resp = usuario.id_usuario;
+            mesas.ativa = true;
 
-            if (ordemComanda.Cadastrar())
+            if (mesas.Cadastrar())
             {
                 // Obter o ID da comanda recém-criada
-                DataTable dtComanda = ordemComanda.BuscarMesa();
+                DataTable dtComanda = mesas.BuscarMesa();
                 if (dtComanda.Rows.Count > 0)
                 {
-                    int idComanda = Convert.ToInt32(dtComanda.Rows[0]["id_comanda"]);
+                    int numeroMesa = Convert.ToInt32(dtComanda.Rows[0]["num_mesa"]);
 
                     // Cadastrar itens selecionados
-                    Mesas_lancamentos itemComanda = new Mesas_lancamentos();
-                    itemComanda.id_Comanda = idComanda;
+                    Mesas_lancamentos lancamento = new Mesas_lancamentos();
+                    lancamento.num_mesa = numeroMesa;
 
                     // Adicionar pizza, se selecionada
                     if (cmbPizzas.SelectedIndex != -1)
                     {
                         produto.id_categoria = 1;
                         DataTable dtPizzas = produto.ListarPorCategoria();
-                        itemComanda.id_produto = Convert.ToInt32(dtPizzas.Rows[cmbPizzas.SelectedIndex]["id_produto"]);
-                        itemComanda.quantidade = 1;
-                        itemComanda.situacao_pedido = "pendente";
-                        itemComanda.Cadastrar();
+                        lancamento.id_Produto = Convert.ToInt32(dtPizzas.Rows[cmbPizzas.SelectedIndex]["id_produto"]);
+                        lancamento.quantidade = 1;
+                        lancamento.cozinha = 1; // Pendente para cozinha
+                        lancamento.pagamento = 1; // Pagamento pendente
+                        lancamento.Cadastrar();
                     }
 
                     // Adicionar bebida, se selecionada
@@ -136,10 +137,11 @@ namespace Pizzaria
                     {
                         produto.id_categoria = 2;
                         DataTable dtBebidas = produto.ListarPorCategoria();
-                        itemComanda.id_produto = Convert.ToInt32(dtBebidas.Rows[cmbBebidas.SelectedIndex]["id_produto"]);
-                        itemComanda.quantidade = 1;
-                        itemComanda.situacao_pedido = "pendente";
-                        itemComanda.Cadastrar();
+                        lancamento.id_Produto = Convert.ToInt32(dtBebidas.Rows[cmbBebidas.SelectedIndex]["id_produto"]);
+                        lancamento.quantidade = 1;
+                        lancamento.cozinha = 1; // Pendente para cozinha
+                        lancamento.pagamento = 1; // Pagamento pendente
+                        lancamento.Cadastrar();
                     }
 
                     // Adicionar adicional, se selecionado
@@ -147,10 +149,11 @@ namespace Pizzaria
                     {
                         produto.id_categoria = 3;
                         DataTable dtAdicionais = produto.ListarPorCategoria();
-                        itemComanda.id_produto = Convert.ToInt32(dtAdicionais.Rows[cmbAdicionais.SelectedIndex]["id_produto"]);
-                        itemComanda.quantidade = 1;
-                        itemComanda.situacao_pedido = "pendente";
-                        itemComanda.Cadastrar();
+                        lancamento.id_Produto = Convert.ToInt32(dtAdicionais.Rows[cmbAdicionais.SelectedIndex]["id_produto"]);
+                        lancamento.quantidade = 1;
+                        lancamento.cozinha = 1; // Pendente para cozinha
+                        lancamento.pagamento = 1; // Pagamento pendente
+                        lancamento.Cadastrar();
                     }
 
                     // Adicionar borda, se selecionada
@@ -158,10 +161,11 @@ namespace Pizzaria
                     {
                         produto.id_categoria = 4;
                         DataTable dtBordas = produto.ListarPorCategoria();
-                        itemComanda.id_produto = Convert.ToInt32(dtBordas.Rows[cmbBordas.SelectedIndex]["id_produto"]);
-                        itemComanda.quantidade = 1;
-                        itemComanda.situacao_pedido = "pendente";
-                        itemComanda.Cadastrar();
+                        lancamento.id_Produto = Convert.ToInt32(dtBordas.Rows[cmbBordas.SelectedIndex]["id_produto"]);
+                        lancamento.quantidade = 1;
+                        lancamento.cozinha = 1; // Pendente para cozinha
+                        lancamento.pagamento = 1; // Pagamento pendente
+                        lancamento.Cadastrar();
                     }
 
                     MessageBox.Show("Comanda lançada com sucesso!", "Sucesso!",
@@ -264,23 +268,23 @@ namespace Pizzaria
 
         private void DgvComandas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.DesignMode) return; // Evita execução no designer
+            if(this.DesignMode) return; // Evita execução no designer
                                          // Verifica se o clique foi em uma linha válida 
-            if (e.RowIndex >= 0 && DgvComandas.Rows[e.RowIndex].Cells["id_comanda"].Value != DBNull.Value)
+            if (e.RowIndex >= 0 && DgvComandas.Rows[e.RowIndex].Cells["id_mesa"].Value != DBNull.Value)
             {
-                int id_comanda = Convert.ToInt32(DgvComandas.Rows[e.RowIndex].Cells["id_comanda"].Value);
+                int idMesa = Convert.ToInt32(DgvComandas.Rows[e.RowIndex].Cells["id_mesa"].Value);
 
-                OrdensComandas ordens = new OrdensComandas { id_comanda = id_comanda };
+                Mesas mesa = new Mesas { id_mesa = idMesa };
 
-                // Excluir a comanda pelo ID
-                if (ordens.ExcluirPorId())
+                // Excluir a mesa pelo ID
+                if (mesa.ExcluirPorId())
                 {
-                    MessageBox.Show("Comanda excluída com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Mesa excluída com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     atualizarComanda();
                 }
                 else
                 {
-                    MessageBox.Show("Falha ao excluir a comanda.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Falha ao excluir a mesa.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
