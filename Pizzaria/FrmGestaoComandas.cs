@@ -33,11 +33,12 @@ namespace Pizzaria
             // Personalizar colunas
             if (dt.Rows.Count > 0)
             {
-                DgvComandas.Columns["id_comanda"].HeaderText = "ID Comanda";
+                DgvComandas.Columns["id_mesa"].HeaderText = "ID Comanda";
                 DgvComandas.Columns["num_mesa"].HeaderText = "Nº Mesa";
                 DgvComandas.Columns["id_resp"].HeaderText = "ID Responsável";
                 DgvComandas.Columns["data_adic"].HeaderText = "Data";
-                DgvComandas.Columns["situacao"].HeaderText = "Situação";
+                DgvComandas.Columns["nome_cliente"].HeaderText = "Nome Cliente";
+                DgvComandas.Columns["ativa"].HeaderText = "Ativa";
                 if (DgvComandas.Columns.Contains("metodo_pagamento"))
                 {
                     DgvComandas.Columns["metodo_pagamento"].HeaderText = "Método de Pagamento";
