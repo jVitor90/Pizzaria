@@ -84,6 +84,7 @@
             // 
             // cmbFormaPagamento
             // 
+            this.cmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFormaPagamento.FormattingEnabled = true;
             this.cmbFormaPagamento.Location = new System.Drawing.Point(187, 80);
@@ -180,21 +181,25 @@
             this.dgvComanda.AllowUserToDeleteRows = false;
             this.dgvComanda.AllowUserToResizeColumns = false;
             this.dgvComanda.AllowUserToResizeRows = false;
+            this.dgvComanda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvComanda.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvComanda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComanda.Location = new System.Drawing.Point(358, 12);
+            this.dgvComanda.Location = new System.Drawing.Point(381, 12);
+            this.dgvComanda.MultiSelect = false;
             this.dgvComanda.Name = "dgvComanda";
-            this.dgvComanda.Size = new System.Drawing.Size(449, 426);
-            this.dgvComanda.TabIndex = 14;
+            this.dgvComanda.ReadOnly = true;
+            this.dgvComanda.Size = new System.Drawing.Size(714, 423);
+            this.dgvComanda.TabIndex = 18;
             // 
             // FrmGestaoCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 450);
+            this.ClientSize = new System.Drawing.Size(1107, 450);
+            this.Controls.Add(this.dgvComanda);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.grbPagamentos);
             this.Controls.Add(this.grbInformacoes);
-            this.Controls.Add(this.dgvComanda);
             this.Name = "FrmGestaoCaixa";
             this.Text = "FrmGestaoCaixa";
             this.grbPagamentos.ResumeLayout(false);

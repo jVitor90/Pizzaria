@@ -61,6 +61,7 @@ namespace Pizzaria
 
                     mesas.num_mesa = int.Parse(txbMesa.Text);
                     DataTable consulta = mesas.Listar();
+                    txbMesa.Enabled = false;
 
 
                     //Verificar se existe lançamentos na comanda
@@ -98,6 +99,10 @@ namespace Pizzaria
             txbMesa.Clear();
             txbValor.Clear();
             cmbFormaPagamento.Text = " ";
+
+            dgvComanda.DataSource = "";
+            grbPagamentos.Enabled = false;
+            txbMesa.Enabled = true;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
