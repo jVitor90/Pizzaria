@@ -155,7 +155,7 @@ namespace Pizzaria.Model
 //INNER JOIN produtos ON mesas_lancamentos.id_Produto = produtos.id_produto
 //WHERE mesas_lancamentos.pagamento = 1;
 
-            string comando = "SELECT * FROM view_mesas_abertas";
+            string comando = "SELECT * FROM view_mesas_abertas  WHERE num_mesa = @num_mesa ";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();

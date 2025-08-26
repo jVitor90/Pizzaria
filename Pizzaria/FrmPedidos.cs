@@ -35,8 +35,8 @@ namespace Pizzaria
         private void brnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
-               $"Tem certeza que deseja encerrar a comanda {mesas.num_mesa}?",
-               "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+              $"Tem certeza que deseja encerrar a comanda {mesas.num_mesa}?",
+              "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
