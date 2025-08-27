@@ -35,8 +35,8 @@ namespace Pizzaria
         private void brnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
-              $"Tem certeza que deseja encerrar a comanda {mesas.num_mesa}?",
-              "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            $"Tem certeza que deseja encerrar a comanda {mesas.num_mesa}?",
+            "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
@@ -44,20 +44,30 @@ namespace Pizzaria
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                   
+
                 }
 
                 AtualizarDgvPedidos();
 
             }
         }
-
+        private int idLancamentoSelecionado = 0;
         private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int linhaSelecionada = dgvPedidos.SelectedCells[0].RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                object valorCelula = dgvPedidos.Rows[e.RowIndex].Cells[1].Value;
 
-            
+                if (valorCelula != DBNull.Value && valorCelula != null)
+                {
+                    mesas.num_mesa = Convert.ToInt32(valorCelula);
+                }
+            }
+
         }
+
+
     }
 }
+
 
