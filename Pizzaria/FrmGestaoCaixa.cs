@@ -16,19 +16,19 @@ namespace Pizzaria
         Model.Usuario usuario = new Usuario();
         Model.Metodos_pagamento metodos = new Metodos_pagamento();
         Model.Mesas mesas = new Mesas();
+        Model.Mesas_lancamentos mesas_Lancamentos = new Mesas_lancamentos();
         public FrmGestaoCaixa()
         {
             InitializeComponent();
             //Obter as categorias do banco
-          //  AtualizarDgvCaixa();
+            //  AtualizarDgvCaixa();
             DataTable resultado = metodos.Listar();
-            foreach(DataRow linha in resultado.Rows)
+            foreach (DataRow linha in resultado.Rows)
             {
                 // Adiconar o combobox
                 cmbFormaPagamento.Items.Add($"{linha["id_metodo"]} - {linha["nome_metodo"]}");
             }
         }
-       
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
@@ -45,54 +45,48 @@ namespace Pizzaria
 
                     dgvComanda.DataSource = "";
                 }
-        }   }   
+            }
+        }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            
-            
-                if (txbMesa.Text == "" || txbMesa.Text.Length < 1)
+
+            if (txbMesa.Text == "" || txbMesa.Text.Length < 1)
+            {
+                MessageBox.Show("Informe corretamente o número da mesa!",
+                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                mesas.num_mesa = int.Parse(txbMesa.Text);
+                DataTable consulta = mesas_Lancamentos.Listar();
+                txbMesa.Enabled = false;
+
+                //Verificar se existe lançamentos na comanda
+                if (consulta.Rows.Count == 0)
                 {
-                    MessageBox.Show("Informe corretamente o número da mesa!",
-                        "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Não existe lançamentos nessa comnada!",
+                   "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
+                    //Mostar a consulta no dgv
+                    dgvComanda.DataSource = consulta;
+                    Atualizar();
 
-                    mesas.num_mesa = int.Parse(txbMesa.Text);
-                    DataTable consulta = mesas.Listar();
-                    txbMesa.Enabled = false;
+                    //Mostrar no label o total:
+                    txbValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
 
-
-                    //Verificar se existe lançamentos na comanda
-                    if (consulta.Rows.Count == 0)
-                    {
-                        MessageBox.Show("Não existe lançamentos nessa comnada!",
-                       "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        //Mostar a consulta no dgv
-                        dgvComanda.DataSource = consulta;
-                        Atualizar();
-
-                      //Mostrar no label o total:
-                      txbValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
-
-                      grbPagamentos.Enabled = true;
-                    }
-                    
+                    grbPagamentos.Enabled = true;
                 }
-
-            
-
+            }
         }
+
         public void Atualizar()
         {
-            dgvComanda.DataSource = mesas.Listar();
+            dgvComanda.DataSource = mesas_Lancamentos.Listar();
         }
-
-
 
         private void btnLimpar_Click_1(object sender, EventArgs e)
         {
@@ -113,7 +107,4 @@ namespace Pizzaria
             this.Show();
         }
     }
-
 }
-
-        

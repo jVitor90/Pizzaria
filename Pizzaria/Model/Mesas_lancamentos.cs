@@ -1,6 +1,8 @@
 ﻿ using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
@@ -57,37 +59,75 @@ namespace Pizzaria.Model
         public bool Encerrar()
         {
             string comando = "UPDATE mesas_lancamentos " +
-                             "SET pagamento = @pagamento " +
-                             "WHERE id_lancamento = @id_lancamento";
+                     "SET pagamento = 0 " +  
+                     "WHERE num_mesa = @num_mesa AND pagamento = 1";  
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-            // supondo que você tenha uma propriedade id_lancamento
-            cmd.Parameters.AddWithValue("@id_lancamento", id_lancamento);
-            cmd.Parameters.AddWithValue("@pagamento", 1); // 0 = encerrado/pago, 1 = em aberto
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);  
 
             cmd.Prepare();
 
             try
             {
-                if (cmd.ExecuteNonQuery() == 0)
-                {
-                    conexaoBD.Desconectar(con);
-                    return false;
-                }
-                else
-                {
-                    conexaoBD.Desconectar(con);
-                    return true;
-                }
+                int rowsAffected = cmd.ExecuteNonQuery();
+                conexaoBD.Desconectar(con);
+                return rowsAffected > 0;  
             }
             catch
             {
                 conexaoBD.Desconectar(con);
                 return false;
             }
+        }
+
+        public DataTable Listar()
+        {
+
+            
+            string comando = "SELECT * FROM view_mesas_abertas  WHERE num_mesa = @num_mesa";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
+
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+        }
+        public DataTable ListarProdutos()
+        {
+            string comando = @"
+             SELECT 
+              ml.id_lancamento,
+               ml.num_mesa,
+              ml.id_Produto,
+              p.nome_produto,
+              ml.quantidade,
+              p.preco,
+              (p.preco * ml.quantidade) AS total_item,
+              m.nome_cliente
+              FROM mesas_lancamentos ml
+              INNER JOIN produtos p 
+              ON ml.id_Produto = p.id_produto
+              LEFT JOIN mesas m
+              ON ml.num_mesa = m.num_mesa AND m.ativa = 1
+              WHERE ml.pagamento = 1
+              AND ml.num_mesa = @num_mesa;";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
+
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
         }
     }
 }

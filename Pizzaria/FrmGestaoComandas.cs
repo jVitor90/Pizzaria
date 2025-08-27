@@ -17,11 +17,14 @@ namespace Pizzaria
         Model.Categoria categoria = new Model.Categoria();
         Model.Produtos produto = new Model.Produtos();
         Model.Mesas mesas = new Model.Mesas();
+        Model.Mesas_lancamentos mesas_Lancamentos = new Mesas_lancamentos();
 
         public FrmGestaoComandas(Model.Usuario usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
+            this.DgvComandas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvComandas.MultiSelect = false;
             atualizarComanda();
         }
 
@@ -30,22 +33,17 @@ namespace Pizzaria
             DataTable dt = mesas.ListarMesas();
             DgvComandas.DataSource = dt;
 
-            // Personalizar colunas
-            if (dt.Rows.Count > 0)
+            DgvComandas.Columns["id_mesa"].HeaderText = "ID Mesa";
+            DgvComandas.Columns["num_mesa"].HeaderText = "Nº Mesa";
+            DgvComandas.Columns["id_resp"].HeaderText = "ID Responsável";
+            DgvComandas.Columns["data_adic"].HeaderText = "Data";
+            DgvComandas.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
+            DgvComandas.Columns["ativa"].HeaderText = "Ativa";
+            if (DgvComandas.Columns.Contains("metodo_pagamento"))
             {
-                DgvComandas.Columns["id_mesa"].HeaderText = "ID Mesa";
-                DgvComandas.Columns["num_mesa"].HeaderText = "Nº Mesa";
-                DgvComandas.Columns["id_resp"].HeaderText = "ID Responsável";
-                DgvComandas.Columns["data_adic"].HeaderText = "Data";
-                if (DgvComandas.Columns.Contains("metodo_pagamento"))
-                {
-                    DgvComandas.Columns["metodo_pagamento"].HeaderText = "Método de Pagamento";
-                }
+                DgvComandas.Columns["metodo_pagamento"].HeaderText = "Método de Pagamento";
             }
-            else
-            {
 
-            }
         }
 
         private void FrmGestaoComandas_Load(object sender, EventArgs e)
@@ -105,6 +103,7 @@ namespace Pizzaria
             // Cadastrar a comanda
             mesas.num_mesa = int.Parse(txbMesa.Text);
             mesas.id_resp = usuario.id_usuario;
+            mesas.nome_cliente = txbClientes.Text;
             mesas.ativa = true;
 
             if (mesas.Cadastrar())
@@ -173,9 +172,11 @@ namespace Pizzaria
                     cmbBebidas.SelectedIndex = -1;
                     cmbBordas.SelectedIndex = -1;
                     cmbAdicionais.SelectedIndex = -1;
+                    txbClientes.Clear();
                     txbMesa.Clear();
                     txbObservecao.Clear();
                     atualizarComanda();
+
                 }
             }
             else
@@ -198,6 +199,7 @@ namespace Pizzaria
                 cmbBordas.SelectedIndex = -1;
                 cmbAdicionais.SelectedIndex = -1;
                 txbMesa.Clear();
+                txbClientes.Clear();
                 txbObservecao.Clear();
                 MessageBox.Show("Campos limpos com sucesso!", "Sucesso!",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -268,25 +270,39 @@ namespace Pizzaria
         private void DgvComandas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (this.DesignMode) return; // Evita execução no designer
-                                         // Verifica se o clique foi em uma linha válida 
+
+            // Verifica se o clique foi em uma linha válida 
             if (e.RowIndex >= 0 && DgvComandas.Rows[e.RowIndex].Cells["id_mesa"].Value != DBNull.Value)
             {
                 int idMesa = Convert.ToInt32(DgvComandas.Rows[e.RowIndex].Cells["id_mesa"].Value);
+                int numMesa = Convert.ToInt32(DgvComandas.Rows[e.RowIndex].Cells["num_mesa"].Value);
+
 
                 Mesas mesa = new Mesas { id_mesa = idMesa };
+                mesas_Lancamentos.num_mesa = numMesa;
 
-                // Excluir a mesa pelo ID
-                if (mesa.ExcluirPorId())
+                // Excluir a mesa pelo ID e encerrar lançamentos
+                bool lancamentosEncerrados = mesas_Lancamentos.Encerrar();
+                bool mesaExcluida = mesa.ExcluirPorId();
+                if (mesaExcluida && lancamentosEncerrados)
                 {
-                    MessageBox.Show("Mesa excluída com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Mesa excluída com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     atualizarComanda();
+                    //Limpa os itens do DgvProdutos
+                    DgvProdutos.DataSource = null;
+                    DgvProdutos.Rows.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Falha ao excluir a mesa.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Falha ao excluir a mesa ou encerrar lançamentos.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Selecione uma mesa para excluir.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -319,8 +335,141 @@ namespace Pizzaria
 
         private void txbMesa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsControl(e.KeyChar)) return;     // permite teclas de controle
-            if (!char.IsDigit(e.KeyChar)) e.Handled = true; // bloqueia letras/símbolos
+            if (char.IsControl(e.KeyChar)) return;
+            if (!char.IsDigit(e.KeyChar)) e.Handled = true;
+        }
+
+
+
+        //Os checkbox para confirmar os pedidos da comanda
+        private void ChbPizzas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChbPizzas.Checked)
+            {
+                cmbPizzas.Enabled = true;
+                txbObservecao.Enabled = true;
+                txbClientes.Enabled = true;
+
+            }
+            else
+            {
+                cmbPizzas.SelectedIndex = -1;
+                cmbPizzas.Enabled = false;
+                txbObservecao.Clear();
+                txbObservecao.Enabled = false;
+                txbClientes.Clear();
+                txbClientes.Enabled = false;
+            }
+        }
+        private void ChbBebidas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChbBebidas.Checked)
+            {
+                cmbBebidas.Enabled = true;
+            }
+            else
+            {
+                cmbBebidas.SelectedIndex = -1;
+                cmbBebidas.Enabled = false;
+            }
+        }
+        private void ChbBordas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChbBordas.Checked)
+            {
+                cmbBordas.Enabled = true;
+            }
+            else
+            {
+                cmbBordas.SelectedIndex = -1;
+                cmbBordas.Enabled = false;
+            }
+        }
+        private void ChbAdicionais_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChbAdicionais.Checked)
+            {
+                cmbAdicionais.Enabled = true;
+            }
+            else
+            {
+                cmbAdicionais.SelectedIndex = -1;
+                cmbAdicionais.Enabled = false;
+            }
+        }
+
+        private void txbClientes_TextChanged(object sender, EventArgs e)
+        {
+            var txb = (TextBox)sender;
+            if (txb.Text.Length == 0) return;
+
+            int caracter = txb.SelectionStart;
+            // Mantém apenas letras e espaços
+            string apenasLetras = new string(txb.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
+
+            if (apenasLetras != txb.Text)
+            {
+                txb.Text = apenasLetras;
+                txb.SelectionStart = Math.Min(caracter, txb.Text.Length);
+            }
+        }
+
+        private void txbClientes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar)) return;
+            // Bloqueia números (permite só letras e espaço)
+            if (!(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
+        }
+
+
+        private void DgvComandas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DgvComandas.SelectedCells.Count == 0) return;
+
+            int linhaSelecionada = DgvComandas.SelectedCells[0].RowIndex;
+
+            // Agora pega direto pelo nome da coluna (seguro contra mudanças de ordem)
+            int numMesa = Convert.ToInt32(DgvComandas.Rows[linhaSelecionada].Cells["num_mesa"].Value);
+
+            // Passa para as classes
+            mesas.num_mesa = numMesa;
+            mesas_Lancamentos.num_mesa = numMesa;
+
+            DgvProdutos.DataSource = null; // Limpa antes
+            DataTable dados = mesas_Lancamentos.ListarProdutos();  // <-- usa o novo método
+
+            if (dados.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum dado encontrado para a mesa selecionada.");
+                return;
+            }
+
+            DgvProdutos.DataSource = dados;
+
+            // Configurações das colunas
+            if (DgvProdutos.Columns.Contains("id_Produto"))
+                DgvProdutos.Columns["id_Produto"].HeaderText = "ID Produto";
+            if (DgvProdutos.Columns.Contains("nome_produto"))
+                DgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
+            if (DgvProdutos.Columns.Contains("quantidade"))
+                DgvProdutos.Columns["quantidade"].HeaderText = "Quantidade";
+            if (DgvProdutos.Columns.Contains("nome_cliente"))
+                DgvProdutos.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
+
+            // Oculta colunas indesejadas
+            if (DgvProdutos.Columns.Contains("id_lancamento"))
+                DgvProdutos.Columns["id_lancamento"].Visible = false;
+            if (DgvProdutos.Columns.Contains("num_mesa"))
+                DgvProdutos.Columns["num_mesa"].Visible = false;
+            if (DgvProdutos.Columns.Contains("preco"))
+                DgvProdutos.Columns["preco"].Visible = false;
+            if (DgvProdutos.Columns.Contains("total_item"))
+                DgvProdutos.Columns["total_item"].Visible = false;
+
         }
     }
 }
+
+   
+

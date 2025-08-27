@@ -19,18 +19,11 @@ namespace Pizzaria
             AtualizarDgvPedidos();
         }
         Model.Mesas_lancamentos itemnsComanda = new Model.Mesas_lancamentos();
-        Model.Mesas  mesas = new Model.Mesas();
-       
+        Model.Mesas mesas = new Model.Mesas();
         public void AtualizarDgvPedidos()
         {
-         
-        
             dgvPedidos.DataSource = mesas.ListarMesas();
-
         }
-
-        
-
 
         private void brnFinalizar_Click(object sender, EventArgs e)
         {
@@ -43,12 +36,8 @@ namespace Pizzaria
                 if (mesas.Encerrar())
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
                 }
-
                 AtualizarDgvPedidos();
-
             }
         }
         private int idLancamentoSelecionado = 0;
@@ -65,9 +54,5 @@ namespace Pizzaria
             }
 
         }
-
-
     }
 }
-
-
