@@ -59,14 +59,14 @@ namespace Pizzaria.Model
         public bool Encerrar()
         {
             string comando = "UPDATE mesas_lancamentos " +
-                     "SET pagamento = 0 " +  
-                     "WHERE num_mesa = @num_mesa AND pagamento = 1";  
+                     "SET pagamento = 0 " +
+                     "WHERE num_mesa = @num_mesa AND pagamento = 1";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);  
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
 
             cmd.Prepare();
 
@@ -74,7 +74,7 @@ namespace Pizzaria.Model
             {
                 int rowsAffected = cmd.ExecuteNonQuery();
                 conexaoBD.Desconectar(con);
-                return rowsAffected > 0;  
+                return rowsAffected > 0;
             }
             catch
             {
@@ -86,7 +86,7 @@ namespace Pizzaria.Model
         public DataTable Listar()
         {
 
-            
+
             string comando = "SELECT * FROM view_mesas_abertas  WHERE num_mesa = @num_mesa";
 
             Banco conexaoBD = new Banco();
@@ -129,5 +129,49 @@ namespace Pizzaria.Model
             conexaoBD.Desconectar(con);
             return tabela;
         }
+        public bool ExcluirPorId()
+        {
+            string comando = "DELETE FROM mesas_lancamentos WHERE id_lancamento = @id_lancamento";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id_lancamento", id_lancamento);
+
+            try
+            {
+                bool sucesso = cmd.ExecuteNonQuery() > 0;
+                conexaoBD.Desconectar(con);
+                return sucesso;
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
+        public bool ExcluirPorMesa()
+        {
+            string comando = "DELETE FROM mesas_lancamentos WHERE num_mesa = @num_mesa";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
+
+            try
+            {
+                bool sucesso = cmd.ExecuteNonQuery() >= 0; // >= 0 porque pode não haver lançamentos
+                conexaoBD.Desconectar(con);
+                return sucesso;
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }   
+
+
     }
 }

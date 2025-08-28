@@ -1,4 +1,5 @@
-﻿using Pizzaria.Model;
+﻿using MySqlConnector;
+using Pizzaria.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -269,39 +270,59 @@ namespace Pizzaria
 
         private void DgvComandas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.DesignMode) return; // Evita execução no designer
+            if (this.DesignMode) return; 
 
-            // Verifica se o clique foi em uma linha válida 
+            // Verifica se o clique foi em uma linha válida
             if (e.RowIndex >= 0 && DgvComandas.Rows[e.RowIndex].Cells["id_mesa"].Value != DBNull.Value)
             {
                 int idMesa = Convert.ToInt32(DgvComandas.Rows[e.RowIndex].Cells["id_mesa"].Value);
                 int numMesa = Convert.ToInt32(DgvComandas.Rows[e.RowIndex].Cells["num_mesa"].Value);
 
+                // Confirmação para evitar deleções acidentais
+                DialogResult confirmar = MessageBox.Show("Tem certeza que deseja excluir a comanda e todos os seus lançamentos?", "Confirmação",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                Mesas mesa = new Mesas { id_mesa = idMesa };
-                mesas_Lancamentos.num_mesa = numMesa;
+                if (confirmar == DialogResult.Yes)
+                {
+                    // Instancia as classes
+                    Mesas mesa = new Mesas { id_mesa = idMesa };
+                    mesas_Lancamentos.num_mesa = numMesa;
 
-                // Excluir a mesa pelo ID e encerrar lançamentos
-                bool lancamentosEncerrados = mesas_Lancamentos.Encerrar();
-                bool mesaExcluida = mesa.ExcluirPorId();
-                if (mesaExcluida && lancamentosEncerrados)
-                {
-                    MessageBox.Show("Mesa excluída com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    atualizarComanda();
-                    //Limpa os itens do DgvProdutos
-                    DgvProdutos.DataSource = null;
-                    DgvProdutos.Rows.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Falha ao excluir a mesa ou encerrar lançamentos.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Deleta todos os lançamentos da mesa
+                    bool lancamentosExcluidos = mesas_Lancamentos.ExcluirPorMesa();
+
+                    if (lancamentosExcluidos)
+                    {
+                        // Deleta a mesa
+                        bool mesaExcluida = mesa.ExcluirPorId();
+                        if (mesaExcluida)
+                        {
+                            MessageBox.Show("Comanda e todos os seus lançamentos excluídos com sucesso!", "Sucesso!",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            atualizarComanda();
+                            DgvProdutos.DataSource = null; // Limpa os produtos
+                            DgvProdutos.Rows.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Falha ao excluir a comanda. Verifique os dados e tente novamente.", "ERRO!",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao excluir os lançamentos da comanda.", "ERRO!",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Selecione uma mesa para excluir.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione uma comanda válida para excluir.", "Aviso!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        
 
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -467,6 +488,36 @@ namespace Pizzaria
             if (DgvProdutos.Columns.Contains("total_item"))
                 DgvProdutos.Columns["total_item"].Visible = false;
 
+        }
+
+        private void DgvProdutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; 
+
+            // Pega o ID do lançamento da linha selecionada
+            int idLancamento = Convert.ToInt32(DgvProdutos.Rows[e.RowIndex].Cells["id_lancamento"].Value);
+
+            // Confirmação para evitar deleções acidentais
+            DialogResult confirmar = MessageBox.Show("Tem certeza que deseja excluir este lançamento?", "Confirmação",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmar == DialogResult.Yes)
+            {
+                Mesas_lancamentos lancamento = new Mesas_lancamentos { id_lancamento = idLancamento };
+
+                if (lancamento.ExcluirPorId())
+                {
+                    MessageBox.Show("Lançamento excluído com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             
+                    atualizarComanda();
+                    // Força atualização dos produtos da mesa selecionada
+                    DgvComandas_SelectionChanged(null, null); 
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao excluir o lançamento.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
