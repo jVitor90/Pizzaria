@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pizzaria.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,44 @@ namespace Pizzaria
 
         private void FrmOpcoes_Load(object sender, EventArgs e)
         {
+            string cargo = SessaoUsuario.Cargo;
 
+            // 🔒 Desabilita tudo primeiro
+            bntcadastrarusuarios.Enabled = false;
+            btnpedidos.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnCaixa.Enabled = false;
+            btnComandas.Enabled = false;
+            btnEstoque.Enabled = false;
+
+            // 🔑 Agora libera conforme o cargo
+            if (cargo == "admin" || cargo == "Gerente")
+            {
+                bntcadastrarusuarios.Enabled = true;
+                btnpedidos.Enabled = true;
+                btnCadastrar.Enabled = true;
+                btnCaixa.Enabled = true;
+                btnComandas.Enabled = true;
+                btnEstoque.Enabled = true;
+            }
+            else if (cargo == "Garçom")
+            {
+                btnCaixa.Enabled = true;
+                btnComandas.Enabled = true;
+            }
+            else if (cargo == "Estoquista")
+            {
+                btnCadastrar.Enabled = true;
+                btnEstoque.Enabled = true;
+            }
+            else if (cargo == "Pizzaiolo" || cargo == "Chef de Cozinha")
+            {
+                btnpedidos.Enabled = true;
+            }
+            else if (cargo == "Caixa")
+            {
+                btnCaixa.Enabled = true;
+            }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -57,14 +95,6 @@ namespace Pizzaria
             this.Show();
         }
 
-        private void bntpedidos_Click(object sender, EventArgs e)
-        {
-            FrmPedidos frmGestaoPedidos = new FrmPedidos();
-            this.Hide();
-            frmGestaoPedidos.ShowDialog(); this.Show();
-            this.Show();
-        }
-
         private void bntcadastrarusuarios_Click(object sender, EventArgs e)
         {
             FrmCadastroUsuario frmCadastrarUsuario = new FrmCadastroUsuario();
@@ -78,6 +108,16 @@ namespace Pizzaria
             FrmLogin frmLogin = new FrmLogin();
             this.Hide();
             frmLogin.ShowDialog();
+            this.Show();
+        }
+
+    
+
+        private void btnpedidos_Click(object sender, EventArgs e)
+        {
+            FrmPedidos frmGestaoPedidos = new FrmPedidos();
+            this.Hide();
+            frmGestaoPedidos.ShowDialog(); this.Show();
             this.Show();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pizzaria.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,9 @@ namespace Pizzaria
                 // Vai verfica se a tebela em alguma linha
                 if(resultado.Rows.Count > 0)
                 {
+                    SessaoUsuario.Nome = resultado.Rows[0]["nome_usuario"].ToString();
+                    SessaoUsuario.Cargo = resultado.Rows[0]["cargo"].ToString();
+                    SessaoUsuario.Cpf = resultado.Rows[0]["cpf"].ToString();
                     usuario.Nome_usuario = resultado.Rows[0]["nome_usuario"].ToString();
                     usuario.id_usuario = (int)resultado.Rows[0]["Id_usuario"];
 

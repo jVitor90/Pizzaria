@@ -143,6 +143,7 @@
     <Compile Include="Model\Metodos_pagamento.cs" />
     <Compile Include="Model\Mesas.cs" />
     <Compile Include="Model\Produtos.cs" />
+    <Compile Include="Model\SessaoUsuario.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

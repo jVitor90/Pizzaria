@@ -46,10 +46,15 @@
             // 
             // dgvPedidos
             // 
+            this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.AllowUserToDeleteRows = false;
+            this.dgvPedidos.AllowUserToResizeColumns = false;
+            this.dgvPedidos.AllowUserToResizeRows = false;
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedidos.Location = new System.Drawing.Point(12, 42);
             this.dgvPedidos.Name = "dgvPedidos";
-            this.dgvPedidos.Size = new System.Drawing.Size(772, 240);
+            this.dgvPedidos.ReadOnly = true;
+            this.dgvPedidos.Size = new System.Drawing.Size(643, 240);
             this.dgvPedidos.TabIndex = 5;
             this.dgvPedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellClick);
             // 
@@ -67,7 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(669, 450);
             this.Controls.Add(this.lblLogo);
             this.Controls.Add(this.brnFinalizar);
             this.Controls.Add(this.dgvPedidos);

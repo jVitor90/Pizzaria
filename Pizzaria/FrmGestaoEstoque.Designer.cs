@@ -159,6 +159,7 @@
             this.dgvEstoque.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvEstoque.Location = new System.Drawing.Point(12, 141);
             this.dgvEstoque.Name = "dgvEstoque";
+            this.dgvEstoque.ReadOnly = true;
             this.dgvEstoque.Size = new System.Drawing.Size(794, 274);
             this.dgvEstoque.TabIndex = 51;
             this.dgvEstoque.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellClick);

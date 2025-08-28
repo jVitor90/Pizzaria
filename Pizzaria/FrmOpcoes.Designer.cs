@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOpcoes));
             this.bntcadastrarusuarios = new System.Windows.Forms.Button();
-            this.bntpedidos = new System.Windows.Forms.Button();
+            this.btnpedidos = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnComandas = new System.Windows.Forms.Button();
@@ -51,17 +51,17 @@
             this.bntcadastrarusuarios.UseVisualStyleBackColor = false;
             this.bntcadastrarusuarios.Click += new System.EventHandler(this.bntcadastrarusuarios_Click);
             // 
-            // bntpedidos
+            // btnpedidos
             // 
-            this.bntpedidos.BackColor = System.Drawing.Color.Transparent;
-            this.bntpedidos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntpedidos.Location = new System.Drawing.Point(308, 189);
-            this.bntpedidos.Name = "bntpedidos";
-            this.bntpedidos.Size = new System.Drawing.Size(190, 51);
-            this.bntpedidos.TabIndex = 14;
-            this.bntpedidos.Text = "Gestão de Pedidos";
-            this.bntpedidos.UseVisualStyleBackColor = false;
-            this.bntpedidos.Click += new System.EventHandler(this.bntpedidos_Click);
+            this.btnpedidos.BackColor = System.Drawing.Color.Transparent;
+            this.btnpedidos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpedidos.Location = new System.Drawing.Point(308, 189);
+            this.btnpedidos.Name = "btnpedidos";
+            this.btnpedidos.Size = new System.Drawing.Size(190, 51);
+            this.btnpedidos.TabIndex = 14;
+            this.btnpedidos.Text = "Gestão de Pedidos";
+            this.btnpedidos.UseVisualStyleBackColor = false;
+            this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click);
             // 
             // btnSair
             // 
@@ -143,7 +143,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bntcadastrarusuarios);
-            this.Controls.Add(this.bntpedidos);
+            this.Controls.Add(this.btnpedidos);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.btnComandas);
@@ -164,7 +164,7 @@
         #endregion
 
         private System.Windows.Forms.Button bntcadastrarusuarios;
-        private System.Windows.Forms.Button bntpedidos;
+        private System.Windows.Forms.Button btnpedidos;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.Button btnComandas;
