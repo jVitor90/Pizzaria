@@ -18,6 +18,7 @@ namespace Pizzaria
             InitializeComponent();
             AtualizarDgvPedidos();
         }
+        Model.Usuario usuario = new Usuario();
         Model.Mesas_lancamentos itemnsComanda = new Model.Mesas_lancamentos();
         Model.Mesas mesas = new Model.Mesas();
         public void AtualizarDgvPedidos()
@@ -53,6 +54,14 @@ namespace Pizzaria
                 }
             }
 
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FrmOpcoes frmOpcoes = new FrmOpcoes(usuario);
+            this.Hide();
+            frmOpcoes.ShowDialog();
+            this.Show();
         }
     }
 }

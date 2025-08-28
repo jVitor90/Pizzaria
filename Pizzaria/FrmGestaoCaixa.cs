@@ -33,21 +33,22 @@ namespace Pizzaria
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
-               $"Tem certeza que deseja encerrar a comanda {mesas.num_mesa}?",
-               "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+         $"Tem certeza que deseja encerrar a comanda {mesas_Lancamentos.num_mesa}?",
+         "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
-                if (mesas.Encerrar())
+                if (mesas_Lancamentos.Encerrar())
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Atualizar();
 
                     dgvComanda.DataSource = "";
+
                 }
+
             }
         }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
 
@@ -59,7 +60,7 @@ namespace Pizzaria
             else
             {
 
-                mesas.num_mesa = int.Parse(txbMesa.Text);
+                mesas_Lancamentos.num_mesa = int.Parse(txbMesa.Text);
                 DataTable consulta = mesas_Lancamentos.Listar();
                 txbMesa.Enabled = false;
 
@@ -79,6 +80,7 @@ namespace Pizzaria
                     txbValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
 
                     grbPagamentos.Enabled = true;
+
                 }
             }
         }

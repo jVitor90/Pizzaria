@@ -92,10 +92,12 @@ namespace Pizzaria.Model
 
         public DataTable ListarMesas()
         {
-            string comando = "SELECT * FROM mesas";
+            string comando = "SELECT * FROM mesas WHERE ativa = 1";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
+            
+
 
             DataTable tabela = new DataTable();
             tabela.Load(cmd.ExecuteReader());

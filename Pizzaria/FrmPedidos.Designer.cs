@@ -31,12 +31,13 @@
             this.brnFinalizar = new System.Windows.Forms.Button();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.lblLogo = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // brnFinalizar
             // 
-            this.brnFinalizar.Location = new System.Drawing.Point(188, 307);
+            this.brnFinalizar.Location = new System.Drawing.Point(136, 302);
             this.brnFinalizar.Name = "brnFinalizar";
             this.brnFinalizar.Size = new System.Drawing.Size(398, 60);
             this.brnFinalizar.TabIndex = 9;
@@ -62,17 +63,28 @@
             // 
             this.lblLogo.AutoSize = true;
             this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogo.Location = new System.Drawing.Point(320, -1);
+            this.lblLogo.Location = new System.Drawing.Point(268, 8);
             this.lblLogo.Name = "lblLogo";
             this.lblLogo.Size = new System.Drawing.Size(112, 31);
             this.lblLogo.TabIndex = 10;
             this.lblLogo.Text = "Pedidos";
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(248, 368);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(167, 39);
+            this.btnVoltar.TabIndex = 11;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // FrmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 450);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblLogo);
             this.Controls.Add(this.brnFinalizar);
             this.Controls.Add(this.dgvPedidos);
@@ -89,5 +101,6 @@
         private System.Windows.Forms.Button brnFinalizar;
         private System.Windows.Forms.DataGridView dgvPedidos;
         private System.Windows.Forms.Label lblLogo;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
