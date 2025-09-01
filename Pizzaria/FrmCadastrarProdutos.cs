@@ -65,21 +65,41 @@ namespace Pizzaria
 
                 DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja Cadstrar este Produto?",
                "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (produtos.Cadastrar())
+
+                if(cadastrar == DialogResult.Yes)
                 {
-                    MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Limpar os campos de cadastro
-                    txbNomeProduto.Clear();
-                    txbValor.Clear();
-                    cmbCategoria.SelectedIndex = -1;
-                    // Atualizar o dgv
-                    AtualizarDgv();
+                    if (produtos.Cadastrar())
+                    {
+                        MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Limpar os campos de cadastro
+                        txbNomeProduto.Clear();
+                        txbValor.Clear();
+                        cmbCategoria.SelectedIndex = -1;
+                        // Atualizar o dgv
+                        AtualizarDgv();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("falha ao cadastrar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                //if (produtos.Cadastrar())
+                //{
+                //    MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    //Limpar os campos de cadastro
+                //    txbNomeProduto.Clear();
+                //    txbValor.Clear();
+                //    cmbCategoria.SelectedIndex = -1;
+                //    // Atualizar o dgv
+                //    AtualizarDgv();
                     
-                }
-                else
-                {
-                    MessageBox.Show("falha ao cadastrar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("falha ao cadastrar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
         }
 
@@ -114,20 +134,38 @@ namespace Pizzaria
 
                 DialogResult editar = MessageBox.Show("Tem certeza que deseja Editar este Produto?",
                 "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (produtos.Modificar())
+
+                if (editar == DialogResult.Yes)
                 {
-                    MessageBox.Show("Produto editado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Limpa os campos de cadastro
-                    txbNomeProduto.Clear();
-                    txbValor.Clear();
-                    cmbCategoria.SelectedIndex = -1;
-                    // Atualiza o dgv
-                    AtualizarDgv();
+                    if (produtos.Modificar())
+                    {
+                        MessageBox.Show("Produto editado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Limpa os campos de cadastro
+                        txbNomeProduto.Clear();
+                        txbValor.Clear();
+                        cmbCategoria.SelectedIndex = -1;
+                        // Atualiza o dgv
+                        AtualizarDgv();
+                    }
+                    else
+                    {
+                        MessageBox.Show("falha ao editar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("falha ao editar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //if (produtos.Modificar())
+                //{
+                //    MessageBox.Show("Produto editado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    // Limpa os campos de cadastro
+                //    txbNomeProduto.Clear();
+                //    txbValor.Clear();
+                //    cmbCategoria.SelectedIndex = -1;
+                //    // Atualiza o dgv
+                //    AtualizarDgv();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("falha ao editar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
         }
         
