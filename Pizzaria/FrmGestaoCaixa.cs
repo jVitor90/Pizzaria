@@ -29,7 +29,6 @@ namespace Pizzaria
                 cmbFormaPagamento.Items.Add($"{linha["id_metodo"]} - {linha["nome_metodo"]}");
             }
         }
-
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
@@ -38,28 +37,36 @@ namespace Pizzaria
 
             if (pergunta == DialogResult.Yes)
             {
+                if (string.IsNullOrWhiteSpace(cmbFormaPagamento.Text))
+                {
+                    MessageBox.Show("Selecione uma forma de pagamento antes de encerrar a comanda!",
+                                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbFormaPagamento.Focus();
+                    return; // Interrompe o processo
+                }
                 if (mesas_Lancamentos.Encerrar())
                 {
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Atualizar();
 
                     dgvComanda.DataSource = "";
+                    txbMesa.Clear();
+                    txbValor.Clear();
+                    cmbFormaPagamento.Text = " ";
 
+                    dgvComanda.DataSource = "";
                 }
-
             }
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-
             if (txbMesa.Text == "" || txbMesa.Text.Length < 1)
             {
                 MessageBox.Show("Informe corretamente o número da mesa!",
-                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                       "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-
                 mesas_Lancamentos.num_mesa = int.Parse(txbMesa.Text);
                 DataTable consulta = mesas_Lancamentos.Listar();
                 txbMesa.Enabled = false;
@@ -80,16 +87,13 @@ namespace Pizzaria
                     txbValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
 
                     grbPagamentos.Enabled = true;
-
                 }
             }
         }
-
         public void Atualizar()
         {
             dgvComanda.DataSource = mesas_Lancamentos.Listar();
         }
-
         private void btnLimpar_Click_1(object sender, EventArgs e)
         {
             txbMesa.Clear();
@@ -100,7 +104,6 @@ namespace Pizzaria
             grbPagamentos.Enabled = false;
             txbMesa.Enabled = true;
         }
-
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             FrmOpcoes frmOpcoes = new FrmOpcoes(usuario);
