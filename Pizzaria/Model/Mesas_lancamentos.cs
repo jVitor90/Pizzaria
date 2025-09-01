@@ -149,10 +149,10 @@ namespace Pizzaria.Model
                 conexaoBD.Desconectar(con);
                 return false;
             }
-        }
+        }   
         public bool ExcluirPorMesa()
         {
-            string comando = "DELETE FROM mesas_lancamentos WHERE num_mesa = @num_mesa";
+            string comando = "DELETE FROM mesas_lancamentos WHERE num_mesa = @num_mesa AND pagamento = 1";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);

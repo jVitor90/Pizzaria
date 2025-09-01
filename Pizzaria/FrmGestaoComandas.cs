@@ -285,7 +285,7 @@ namespace Pizzaria
                 if (confirmar == DialogResult.Yes)
                 {
                     // Instancia as classes
-                    Mesas mesa = new Mesas { id_mesa = idMesa };
+                    Mesas mesa = new Mesas { num_mesa = numMesa };
                     mesas_Lancamentos.num_mesa = numMesa;
 
                     // Deleta todos os lançamentos da mesa
@@ -294,12 +294,12 @@ namespace Pizzaria
                     if (lancamentosExcluidos)
                     {
                         // Deleta a mesa
-                        bool mesaExcluida = mesa.ExcluirPorId();
+                        bool mesaExcluida = mesa.ExcluirPorMesa();
                         if (mesaExcluida)
                         {
                             MessageBox.Show("Comanda e todos os seus lançamentos excluídos com sucesso!", "Sucesso!",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            atualizarComanda();
+                            atualizarComanda();                          
                             DgvProdutos.DataSource = null; // Limpa os produtos
                             DgvProdutos.Rows.Clear();
                         }
@@ -380,6 +380,12 @@ namespace Pizzaria
                 txbObservecao.Enabled = false;
                 txbClientes.Clear();
                 txbClientes.Enabled = false;
+                // Só desabilita txbClientes se ChbBebidas também estiver desmarcado
+                if (!ChbBebidas.Checked)
+                {
+                    txbClientes.Clear();
+                    txbClientes.Enabled = false;
+                }
             }
         }
         private void ChbBebidas_CheckedChanged(object sender, EventArgs e)
@@ -387,11 +393,20 @@ namespace Pizzaria
             if (ChbBebidas.Checked)
             {
                 cmbBebidas.Enabled = true;
+                txbClientes.Enabled = true;
             }
             else
             {
                 cmbBebidas.SelectedIndex = -1;
                 cmbBebidas.Enabled = false;
+                txbClientes.Clear();
+                txbClientes.Enabled = false;
+                // Só desabilita txbClientes se ChbPizzas também estiver desmarcado
+                if (!ChbBebidas.Checked)
+                {
+                    txbClientes.Clear();
+                    txbClientes.Enabled = false;
+                }
             }
         }
         private void ChbBordas_CheckedChanged(object sender, EventArgs e)
@@ -403,7 +418,7 @@ namespace Pizzaria
             else
             {
                 cmbBordas.SelectedIndex = -1;
-                cmbBordas.Enabled = false;
+                cmbBordas.Enabled = false;             
             }
         }
         private void ChbAdicionais_CheckedChanged(object sender, EventArgs e)
@@ -416,7 +431,14 @@ namespace Pizzaria
             {
                 cmbAdicionais.SelectedIndex = -1;
                 cmbAdicionais.Enabled = false;
+                // Só desabilita txbClientes se ChbPizzas também estiver desmarcado
+                if (!ChbPizzas.Checked)
+                {
+                txbClientes.Clear();
+                txbClientes.Enabled = false;
+                }
             }
+          
         }
 
         private void txbClientes_TextChanged(object sender, EventArgs e)
@@ -458,7 +480,7 @@ namespace Pizzaria
             mesas_Lancamentos.num_mesa = numMesa;
 
             DgvProdutos.DataSource = null; // Limpa antes
-            DataTable dados = mesas_Lancamentos.ListarProdutos();  // <-- usa o novo método
+            DataTable dados = mesas_Lancamentos.ListarProdutos();  
 
             if (dados.Rows.Count == 0)
             {
@@ -517,10 +539,8 @@ namespace Pizzaria
                 {
                     MessageBox.Show("Falha ao excluir o lançamento.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
         }
     }
 }
-
-   
-
