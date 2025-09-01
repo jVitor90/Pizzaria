@@ -23,6 +23,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestaoEstoque));
             this.lblUnidade = new System.Windows.Forms.Label();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -41,7 +42,9 @@
             // lblUnidade
             // 
             this.lblUnidade.AutoSize = true;
+            this.lblUnidade.BackColor = System.Drawing.Color.Transparent;
             this.lblUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnidade.ForeColor = System.Drawing.Color.White;
             this.lblUnidade.Location = new System.Drawing.Point(150, 68);
             this.lblUnidade.Name = "lblUnidade";
             this.lblUnidade.Size = new System.Drawing.Size(66, 18);
@@ -51,7 +54,9 @@
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
+            this.lblQuantidade.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantidade.ForeColor = System.Drawing.Color.White;
             this.lblQuantidade.Location = new System.Drawing.Point(12, 68);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(87, 18);
@@ -61,7 +66,9 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
+            this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.White;
             this.lblCategoria.Location = new System.Drawing.Point(358, 18);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(76, 18);
@@ -73,6 +80,7 @@
             this.lblProduto.AutoSize = true;
             this.lblProduto.BackColor = System.Drawing.Color.Transparent;
             this.lblProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduto.ForeColor = System.Drawing.Color.White;
             this.lblProduto.Location = new System.Drawing.Point(12, 18);
             this.lblProduto.Name = "lblProduto";
             this.lblProduto.Size = new System.Drawing.Size(65, 18);
@@ -170,7 +178,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(818, 485);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(818, 503);
             this.Controls.Add(this.lblUnidade);
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.lblCategoria);
@@ -184,7 +194,7 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvEstoque);
             this.Name = "FrmGestaoEstoque";
-            this.Text = "FrmGestaoEstoque";
+            this.Text = "Estoque";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
