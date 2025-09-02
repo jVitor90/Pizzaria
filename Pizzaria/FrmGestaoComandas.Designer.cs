@@ -106,7 +106,7 @@
             this.grbPedidos.Controls.Add(this.cmbBebidas);
             this.grbPedidos.Controls.Add(this.txbObservecao);
             this.grbPedidos.Controls.Add(this.txbMesa);
-            this.grbPedidos.ForeColor = System.Drawing.Color.Black;
+            this.grbPedidos.ForeColor = System.Drawing.Color.White;
             this.grbPedidos.Location = new System.Drawing.Point(12, 35);
             this.grbPedidos.Name = "grbPedidos";
             this.grbPedidos.Size = new System.Drawing.Size(1301, 202);

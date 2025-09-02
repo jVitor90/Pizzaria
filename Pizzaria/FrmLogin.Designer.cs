@@ -35,7 +35,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(350, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(209, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 152);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -45,7 +45,7 @@
             // lblcadastrar
             // 
             this.lblcadastrar.AutoSize = true;
-            this.lblcadastrar.Location = new System.Drawing.Point(327, 363);
+            this.lblcadastrar.Location = new System.Drawing.Point(509, 415);
             this.lblcadastrar.Name = "lblcadastrar";
             this.lblcadastrar.Size = new System.Drawing.Size(0, 13);
             this.lblcadastrar.TabIndex = 15;
@@ -54,11 +54,11 @@
             // 
             this.lblsenha.AutoSize = true;
             this.lblsenha.BackColor = System.Drawing.Color.Transparent;
-            this.lblsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsenha.ForeColor = System.Drawing.Color.Transparent;
-            this.lblsenha.Location = new System.Drawing.Point(147, 257);
+            this.lblsenha.Location = new System.Drawing.Point(21, 256);
             this.lblsenha.Name = "lblsenha";
-            this.lblsenha.Size = new System.Drawing.Size(100, 31);
+            this.lblsenha.Size = new System.Drawing.Size(76, 25);
             this.lblsenha.TabIndex = 14;
             this.lblsenha.Text = "Senha:";
             // 
@@ -66,28 +66,29 @@
             // 
             this.lblcpf.AutoSize = true;
             this.lblcpf.BackColor = System.Drawing.Color.Transparent;
-            this.lblcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcpf.ForeColor = System.Drawing.Color.White;
-            this.lblcpf.Location = new System.Drawing.Point(147, 195);
+            this.lblcpf.Location = new System.Drawing.Point(34, 198);
             this.lblcpf.Name = "lblcpf";
-            this.lblcpf.Size = new System.Drawing.Size(77, 31);
+            this.lblcpf.Size = new System.Drawing.Size(58, 25);
             this.lblcpf.TabIndex = 13;
             this.lblcpf.Text = "CPF:";
             // 
             // txbsenha
             // 
             this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbsenha.Location = new System.Drawing.Point(253, 248);
+            this.txbsenha.Location = new System.Drawing.Point(113, 256);
+            this.txbsenha.Multiline = true;
             this.txbsenha.Name = "txbsenha";
             this.txbsenha.PasswordChar = '•';
-            this.txbsenha.Size = new System.Drawing.Size(351, 47);
+            this.txbsenha.Size = new System.Drawing.Size(351, 37);
             this.txbsenha.TabIndex = 11;
             // 
             // btnentrar
             // 
-            this.btnentrar.Location = new System.Drawing.Point(253, 304);
+            this.btnentrar.Location = new System.Drawing.Point(113, 313);
             this.btnentrar.Name = "btnentrar";
-            this.btnentrar.Size = new System.Drawing.Size(351, 52);
+            this.btnentrar.Size = new System.Drawing.Size(351, 32);
             this.btnentrar.TabIndex = 10;
             this.btnentrar.Text = "Entrar";
             this.btnentrar.UseVisualStyleBackColor = true;
@@ -95,11 +96,11 @@
             // 
             // txbcpf
             // 
-            this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbcpf.Location = new System.Drawing.Point(253, 195);
+            this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbcpf.Location = new System.Drawing.Point(113, 192);
             this.txbcpf.Mask = "000,000,000-00";
             this.txbcpf.Name = "txbcpf";
-            this.txbcpf.Size = new System.Drawing.Size(351, 47);
+            this.txbcpf.Size = new System.Drawing.Size(351, 35);
             this.txbcpf.TabIndex = 19;
             // 
             // FrmLogin
@@ -108,7 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(842, 450);
+            this.ClientSize = new System.Drawing.Size(704, 390);
             this.Controls.Add(this.txbcpf);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblcadastrar);
