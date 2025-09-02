@@ -211,6 +211,7 @@
             this.Controls.Add(this.grbPagamentos);
             this.Controls.Add(this.grbInformacoes);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGestaoCaixa";
             this.Text = "Caixa";
             this.grbPagamentos.ResumeLayout(false);

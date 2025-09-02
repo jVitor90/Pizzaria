@@ -193,6 +193,7 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvEstoque);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGestaoEstoque";
             this.Text = "Estoque";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();

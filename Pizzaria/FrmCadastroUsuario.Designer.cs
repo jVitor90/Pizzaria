@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroUsuario));
             this.lblLogo = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txbNome = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@
             this.btrnCadastrar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txbSenha = new System.Windows.Forms.TextBox();
+            this.picblogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picblogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLogo
@@ -111,7 +114,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.ForeColor = System.Drawing.Color.Transparent;
+            this.lblSenha.ForeColor = System.Drawing.Color.White;
             this.lblSenha.Location = new System.Drawing.Point(23, 265);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(76, 25);
@@ -164,13 +167,26 @@
             this.txbSenha.TabIndex = 33;
             this.txbSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSenha_KeyPress);
             // 
+            // picblogo
+            // 
+            this.picblogo.BackColor = System.Drawing.Color.Transparent;
+            this.picblogo.ErrorImage = null;
+            this.picblogo.Image = ((System.Drawing.Image)(resources.GetObject("picblogo.Image")));
+            this.picblogo.Location = new System.Drawing.Point(554, 72);
+            this.picblogo.Name = "picblogo";
+            this.picblogo.Size = new System.Drawing.Size(249, 257);
+            this.picblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picblogo.TabIndex = 43;
+            this.picblogo.TabStop = false;
+            // 
             // FrmCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Pizzaria.Properties.Resources.pizza_4952508_1920__1_;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(842, 450);
+            this.Controls.Add(this.picblogo);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblLogo);
             this.Controls.Add(this.lblNome);
@@ -182,9 +198,11 @@
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.btrnCadastrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroUsuario";
             this.Text = "FrmCadastroUsuario";
             this.Load += new System.EventHandler(this.FrmCadastroUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picblogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +221,6 @@
         private System.Windows.Forms.Button btrnCadastrar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txbSenha;
+        private System.Windows.Forms.PictureBox picblogo;
     }
 }

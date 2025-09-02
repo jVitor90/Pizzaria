@@ -21,26 +21,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picblogo = new System.Windows.Forms.PictureBox();
             this.lblcadastrar = new System.Windows.Forms.Label();
             this.lblsenha = new System.Windows.Forms.Label();
             this.lblcpf = new System.Windows.Forms.Label();
             this.txbsenha = new System.Windows.Forms.TextBox();
             this.btnentrar = new System.Windows.Forms.Button();
             this.txbcpf = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picblogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picblogo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(209, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.picblogo.BackColor = System.Drawing.Color.Transparent;
+            this.picblogo.Image = ((System.Drawing.Image)(resources.GetObject("picblogo.Image")));
+            this.picblogo.Location = new System.Drawing.Point(209, 12);
+            this.picblogo.Name = "picblogo";
+            this.picblogo.Size = new System.Drawing.Size(159, 152);
+            this.picblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picblogo.TabIndex = 18;
+            this.picblogo.TabStop = false;
             // 
             // lblcadastrar
             // 
@@ -111,7 +111,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(704, 390);
             this.Controls.Add(this.txbcpf);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picblogo);
             this.Controls.Add(this.lblcadastrar);
             this.Controls.Add(this.lblsenha);
             this.Controls.Add(this.lblcpf);
@@ -120,7 +120,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picblogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,7 +128,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picblogo;
 
         private System.Windows.Forms.Label lblcadastrar;
 

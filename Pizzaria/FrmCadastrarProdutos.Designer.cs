@@ -187,6 +187,7 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.dgvProdutos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastrarProdutos";
             this.Text = "Cadastrar Produto";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
