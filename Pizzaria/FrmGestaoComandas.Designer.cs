@@ -332,7 +332,7 @@
             this.Controls.Add(this.grbPedidos);
             this.Controls.Add(this.label1);
             this.Name = "FrmGestaoComandas";
-            this.Text = "FrmGestaoComandas";
+            this.Text = "Comandas";
             this.Load += new System.EventHandler(this.FrmGestaoComandas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvComandas)).EndInit();

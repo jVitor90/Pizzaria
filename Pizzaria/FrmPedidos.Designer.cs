@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPedidos));
             this.brnFinalizar = new System.Windows.Forms.Button();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.lblLogo = new System.Windows.Forms.Label();
@@ -37,11 +38,12 @@
             // 
             // brnFinalizar
             // 
-            this.brnFinalizar.Location = new System.Drawing.Point(136, 302);
+            this.brnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnFinalizar.Location = new System.Drawing.Point(139, 313);
             this.brnFinalizar.Name = "brnFinalizar";
-            this.brnFinalizar.Size = new System.Drawing.Size(398, 60);
+            this.brnFinalizar.Size = new System.Drawing.Size(580, 57);
             this.brnFinalizar.TabIndex = 9;
-            this.brnFinalizar.Text = "Finalizar";
+            this.brnFinalizar.Text = "Finalizar Pedido";
             this.brnFinalizar.UseVisualStyleBackColor = true;
             this.brnFinalizar.Click += new System.EventHandler(this.brnFinalizar_Click);
             // 
@@ -52,28 +54,31 @@
             this.dgvPedidos.AllowUserToResizeColumns = false;
             this.dgvPedidos.AllowUserToResizeRows = false;
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedidos.Location = new System.Drawing.Point(12, 42);
+            this.dgvPedidos.Location = new System.Drawing.Point(16, 57);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
-            this.dgvPedidos.Size = new System.Drawing.Size(643, 240);
+            this.dgvPedidos.Size = new System.Drawing.Size(788, 240);
             this.dgvPedidos.TabIndex = 5;
             this.dgvPedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellClick);
             // 
             // lblLogo
             // 
             this.lblLogo.AutoSize = true;
-            this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogo.Location = new System.Drawing.Point(268, 8);
+            this.lblLogo.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogo.ForeColor = System.Drawing.Color.White;
+            this.lblLogo.Location = new System.Drawing.Point(353, 9);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(112, 31);
+            this.lblLogo.Size = new System.Drawing.Size(127, 33);
             this.lblLogo.TabIndex = 10;
             this.lblLogo.Text = "Pedidos";
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(248, 368);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(252, 379);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(167, 39);
+            this.btnVoltar.Size = new System.Drawing.Size(367, 46);
             this.btnVoltar.TabIndex = 11;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -83,13 +88,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(826, 450);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblLogo);
             this.Controls.Add(this.brnFinalizar);
             this.Controls.Add(this.dgvPedidos);
             this.Name = "FrmPedidos";
-            this.Text = "FrmCaixa";
+            this.Text = "Pedidos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

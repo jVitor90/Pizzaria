@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastrarProdutos));
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblProduto = new System.Windows.Forms.Label();
             this.txbValor = new System.Windows.Forms.TextBox();
@@ -45,7 +46,9 @@
             // lblPreco
             // 
             this.lblPreco.AutoSize = true;
+            this.lblPreco.BackColor = System.Drawing.Color.Transparent;
             this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreco.ForeColor = System.Drawing.Color.White;
             this.lblPreco.Location = new System.Drawing.Point(349, 12);
             this.lblPreco.Name = "lblPreco";
             this.lblPreco.Size = new System.Drawing.Size(52, 18);
@@ -57,6 +60,7 @@
             this.lblProduto.AutoSize = true;
             this.lblProduto.BackColor = System.Drawing.Color.Transparent;
             this.lblProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduto.ForeColor = System.Drawing.Color.White;
             this.lblProduto.Location = new System.Drawing.Point(12, 12);
             this.lblProduto.Name = "lblProduto";
             this.lblProduto.Size = new System.Drawing.Size(65, 18);
@@ -134,7 +138,7 @@
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgvProdutos.Location = new System.Drawing.Point(3, 78);
+            this.dgvProdutos.Location = new System.Drawing.Point(7, 78);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(794, 318);
@@ -146,7 +150,9 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
+            this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.White;
             this.lblCategoria.Location = new System.Drawing.Point(508, 12);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(76, 18);
@@ -167,7 +173,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(825, 465);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(816, 473);
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblProduto);
@@ -180,7 +188,7 @@
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.dgvProdutos);
             this.Name = "FrmCadastrarProdutos";
-            this.Text = "FrmCadastrarProdutos";
+            this.Text = "Cadastrar Produto";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

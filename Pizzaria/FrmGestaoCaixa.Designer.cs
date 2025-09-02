@@ -201,7 +201,7 @@
             this.Controls.Add(this.grbPagamentos);
             this.Controls.Add(this.grbInformacoes);
             this.Name = "FrmGestaoCaixa";
-            this.Text = "FrmGestaoCaixa";
+            this.Text = "Caixa";
             this.grbPagamentos.ResumeLayout(false);
             this.grbPagamentos.PerformLayout();
             this.grbInformacoes.ResumeLayout(false);
