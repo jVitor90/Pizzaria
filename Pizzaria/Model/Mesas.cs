@@ -92,7 +92,9 @@ namespace Pizzaria.Model
 
         public DataTable ListarMesas()
         {
-            string comando = "SELECT * FROM mesas WHERE ativa = 1";
+            string comando = "SELECT mesas.id_mesa, mesas.num_mesa, usuarios.nome_usuario AS " +
+                "responsavel, mesas.data_adic, mesas.nome_cliente, mesas.ativa" +
+                " FROM mesas INNER JOIN usuarios ON mesas.id_resp = usuarios.id_usuario WHERE mesas.ativa = 1;";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);

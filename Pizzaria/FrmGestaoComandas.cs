@@ -14,6 +14,7 @@ namespace Pizzaria
 {
     partial class FrmGestaoComandas : Form
     {
+        //Variaveis globais
         Model.Usuario usuario;
         Model.Categoria categoria = new Model.Categoria();
         Model.Produtos produto = new Model.Produtos();
@@ -23,9 +24,7 @@ namespace Pizzaria
         public FrmGestaoComandas(Model.Usuario usuario)
         {
             InitializeComponent();
-            this.usuario = usuario;
-            this.DgvComandas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvComandas.MultiSelect = false;
+            this.usuario = usuario;         
             atualizarComanda();
         }
 
@@ -36,7 +35,7 @@ namespace Pizzaria
 
             DgvComandas.Columns["id_mesa"].HeaderText = "ID Mesa";
             DgvComandas.Columns["num_mesa"].HeaderText = "Nº Mesa";
-            DgvComandas.Columns["id_resp"].HeaderText = "ID Responsável";
+            DgvComandas.Columns["responsavel"].HeaderText = "Nome Responsável";
             DgvComandas.Columns["data_adic"].HeaderText = "Data";
             DgvComandas.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
             DgvComandas.Columns["ativa"].HeaderText = "Ativa";
@@ -113,7 +112,7 @@ namespace Pizzaria
                 DataTable dtComanda = mesas.BuscarMesa();
                 if (dtComanda.Rows.Count > 0)
                 {
-                    int numeroMesa = Convert.ToInt32(dtComanda.Rows[0]["num_mesa"]);
+                    int numeroMesa = (int)dtComanda.Rows[0]["num_mesa"];
 
                     // Cadastrar itens selecionados
                     Mesas_lancamentos lancamento = new Mesas_lancamentos();
@@ -126,8 +125,8 @@ namespace Pizzaria
                         DataTable dtPizzas = produto.ListarPorCategoria();
                         lancamento.id_Produto = Convert.ToInt32(dtPizzas.Rows[cmbPizzas.SelectedIndex]["id_produto"]);
                         lancamento.quantidade = 1;
-                        lancamento.cozinha = 1; // Pendente para cozinha
-                        lancamento.pagamento = 1; // Pagamento pendente
+                        lancamento.cozinha = 1; 
+                        lancamento.pagamento = 1; 
                         lancamento.Cadastrar();
                     }
 
@@ -138,8 +137,8 @@ namespace Pizzaria
                         DataTable dtBebidas = produto.ListarPorCategoria();
                         lancamento.id_Produto = Convert.ToInt32(dtBebidas.Rows[cmbBebidas.SelectedIndex]["id_produto"]);
                         lancamento.quantidade = 1;
-                        lancamento.cozinha = 1; // Pendente para cozinha
-                        lancamento.pagamento = 1; // Pagamento pendente
+                        lancamento.cozinha = 1; 
+                        lancamento.pagamento = 1; 
                         lancamento.Cadastrar();
                     }
 
@@ -150,8 +149,8 @@ namespace Pizzaria
                         DataTable dtAdicionais = produto.ListarPorCategoria();
                         lancamento.id_Produto = Convert.ToInt32(dtAdicionais.Rows[cmbAdicionais.SelectedIndex]["id_produto"]);
                         lancamento.quantidade = 1;
-                        lancamento.cozinha = 1; // Pendente para cozinha
-                        lancamento.pagamento = 1; // Pagamento pendente
+                        lancamento.cozinha = 1; 
+                        lancamento.pagamento = 1; 
                         lancamento.Cadastrar();
                     }
 
@@ -162,8 +161,8 @@ namespace Pizzaria
                         DataTable dtBordas = produto.ListarPorCategoria();
                         lancamento.id_Produto = Convert.ToInt32(dtBordas.Rows[cmbBordas.SelectedIndex]["id_produto"]);
                         lancamento.quantidade = 1;
-                        lancamento.cozinha = 1; // Pendente para cozinha
-                        lancamento.pagamento = 1; // Pagamento pendente
+                        lancamento.cozinha = 1; 
+                        lancamento.pagamento = 1; 
                         lancamento.Cadastrar();
                     }
 
@@ -473,7 +472,7 @@ namespace Pizzaria
             int linhaSelecionada = DgvComandas.SelectedCells[0].RowIndex;
 
             // Agora pega direto pelo nome da coluna (seguro contra mudanças de ordem)
-            int numMesa = Convert.ToInt32(DgvComandas.Rows[linhaSelecionada].Cells["num_mesa"].Value);
+            int numMesa = (int)DgvComandas.Rows[linhaSelecionada].Cells["num_mesa"].Value;
 
             // Passa para as classes
             mesas.num_mesa = numMesa;
@@ -517,7 +516,7 @@ namespace Pizzaria
             if (e.RowIndex < 0) return; 
 
             // Pega o ID do lançamento da linha selecionada
-            int idLancamento = Convert.ToInt32(DgvProdutos.Rows[e.RowIndex].Cells["id_lancamento"].Value);
+            int idLancamento = (int)DgvProdutos.Rows[e.RowIndex].Cells["id_lancamento"].Value;
 
             // Confirmação para evitar deleções acidentais
             DialogResult confirmar = MessageBox.Show("Tem certeza que deseja excluir este lançamento?", "Confirmação",
