@@ -97,5 +97,38 @@ namespace Pizzaria.Model
                 return false;
             }
         }
+        public bool Cadastrar()
+        {
+            string comando = " INSERT INTO estoque (nome_item, quantidade, unidade, id_Categoria) " +
+                "VALUES (@nome_item, @quantidade, @unidade, @id_Categoria)";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@nome_item", nome_item);
+            cmd.Parameters.AddWithValue("@quantidade", quantidade);
+            cmd.Parameters.AddWithValue("@unidade", unidade);
+            cmd.Parameters.AddWithValue("@id_Categoria", Id_Categoria);
+            cmd.Prepare();
+            // impede que o programa quebre
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            // se deer erro vai desconectar do banco de dados
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
     }
 }

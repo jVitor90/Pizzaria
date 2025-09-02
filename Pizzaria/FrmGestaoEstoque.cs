@@ -54,10 +54,15 @@ namespace Pizzaria
             }
             else if(txbUnidade.Text.Length <= 0)
             {
-                MessageBox.Show("A quamtidade informada é invalido!", "ERRO",
+                MessageBox.Show("A unidade informada é invalido!", "ERRO",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(cmbCategoria.SelectedIndex <= 0) 
+            else if(cmbCategoria.SelectedIndex <= 0)
+            {
+                MessageBox.Show("A categoria nãp pode estra vazia!", "ERRO",
+                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 Model.Estoque estoque= new Model.Estoque();
                 estoque.nome_item = txbNomeProduto.Text;
@@ -138,6 +143,102 @@ namespace Pizzaria
             this.Hide();
             frmOpcoes.ShowDialog();
             this.Show();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+            // Validar Erros
+            if (txbNomeProduto.Text.Length <= 2)
+            {
+                MessageBox.Show("O Nome informado é invalido!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbQuantidade.Text.Length <= 0)
+            {
+                MessageBox.Show("A quantidade informada é invalido!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbUnidade.Text.Length <= 0)
+            {
+                MessageBox.Show("A unidade informada é invalido!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cmbCategoria.SelectedIndex <= 0)
+            {
+                Model.Estoque estoque = new Model.Estoque();
+                estoque.nome_item = txbNomeProduto.Text;
+                estoque.quantidade = decimal.Parse(txbQuantidade.Text);
+                estoque.unidade = txbUnidade.Text;
+                estoque.Id_Categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
+
+                DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja cadastrar este item?",
+                "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (estoque.Cadastrar())
+                {
+                    MessageBox.Show("item cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Limpa os campos de edição
+                    txbNomeProduto.Clear();
+                    txbQuantidade.Clear();
+                    txbUnidade.Clear();
+                    cmbCategoria.SelectedIndex = -1;
+                    // Atualiza o dgv
+                    AtualizarDgv();
+                }
+                else
+                {
+                    MessageBox.Show("falha ao cadastrar item", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+
+                //if (txbNomeProduto.Text.Length <= 2)
+                //{
+                //    MessageBox.Show("O Nome informado é invalido!", "ERRO",
+                //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+                //else if (txbQuantidade.Text.Length <= 0)
+                //{
+                //    MessageBox.Show("A quantidade é invalido!", "ERRO",
+                //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+                //else if (txbUnidade.Text.Length <= 0)
+                //{
+                //    MessageBox.Show("A unidade nao pode estar vazio!", "ERRO",
+                //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+                //else
+                //{
+                //    Model.Estoque estoque = new Model.Estoque();
+                //    estoque.nome_item = txbNomeProduto.Text;
+                //    estoque.quantidade = decimal.Parse(txbQuantidade.Text);
+                //    estoque.unidade = txbUnidade.Text;
+                //    // obter o id categoria
+                //    estoque.id_estoque = int.Parse(cmbCategoria.Text.Split('-')[0]);
+
+                //    DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja Cadstrar este Produto?",
+                //   "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                //    if (cadastrar == DialogResult.Yes)
+                //    {
+                //        if (estoque.Cadastrar())
+                //        {
+                //            MessageBox.Show("Item cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //            //Limpar os campos de cadastro
+                //            txbNomeProduto.Clear();
+                //            txbQuantidade.Clear();
+                //            txbUnidade.Clear();
+                //            cmbCategoria.SelectedIndex = -1;
+                //            // Atualizar o dgv
+                //            AtualizarDgv();
+                //        }
+                //        else
+                //        {
+                //            MessageBox.Show("falha ao cadastrar item", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //        }
+                //    }
+
+            }
         }
     }
 }
