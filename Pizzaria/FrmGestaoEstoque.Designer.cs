@@ -36,6 +36,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +98,6 @@
             // 
             // txbNomeProduto
             // 
-            this.txbNomeProduto.Enabled = false;
             this.txbNomeProduto.Location = new System.Drawing.Point(12, 39);
             this.txbNomeProduto.Multiline = true;
             this.txbNomeProduto.Name = "txbNomeProduto";
@@ -124,7 +124,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(299, 432);
+            this.btnVoltar.Location = new System.Drawing.Point(436, 432);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(135, 41);
             this.btnVoltar.TabIndex = 55;
@@ -135,7 +135,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(156, 432);
+            this.btnExcluir.Location = new System.Drawing.Point(295, 432);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(135, 41);
             this.btnExcluir.TabIndex = 54;
@@ -146,7 +146,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(15, 432);
+            this.btnEditar.Location = new System.Drawing.Point(154, 432);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(135, 41);
             this.btnEditar.TabIndex = 53;
@@ -173,6 +173,16 @@
             this.dgvEstoque.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellClick);
             this.dgvEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellContentClick);
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(15, 432);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(135, 41);
+            this.btnCadastrar.TabIndex = 65;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            // 
             // FrmGestaoEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +191,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(818, 503);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.lblUnidade);
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.lblCategoria);
@@ -215,5 +226,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridView dgvEstoque;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }
