@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestaoComandas));
             this.DgvProdutos = new System.Windows.Forms.DataGridView();
             this.DgvComandas = new System.Windows.Forms.DataGridView();
             this.grbPedidos = new System.Windows.Forms.GroupBox();
@@ -117,7 +118,7 @@
             // 
             this.LblClientes.AutoSize = true;
             this.LblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblClientes.ForeColor = System.Drawing.Color.Black;
+            this.LblClientes.ForeColor = System.Drawing.Color.White;
             this.LblClientes.Location = new System.Drawing.Point(1100, 21);
             this.LblClientes.Name = "LblClientes";
             this.LblClientes.Size = new System.Drawing.Size(58, 17);
@@ -138,6 +139,7 @@
             // 
             this.ChbAdicionais.AutoSize = true;
             this.ChbAdicionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChbAdicionais.ForeColor = System.Drawing.Color.White;
             this.ChbAdicionais.Location = new System.Drawing.Point(432, 19);
             this.ChbAdicionais.Name = "ChbAdicionais";
             this.ChbAdicionais.Size = new System.Drawing.Size(94, 22);
@@ -150,6 +152,7 @@
             // 
             this.ChbBordas.AutoSize = true;
             this.ChbBordas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChbBordas.ForeColor = System.Drawing.Color.White;
             this.ChbBordas.Location = new System.Drawing.Point(642, 21);
             this.ChbBordas.Name = "ChbBordas";
             this.ChbBordas.Size = new System.Drawing.Size(79, 22);
@@ -162,6 +165,7 @@
             // 
             this.ChbBebidas.AutoSize = true;
             this.ChbBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChbBebidas.ForeColor = System.Drawing.Color.White;
             this.ChbBebidas.Location = new System.Drawing.Point(216, 19);
             this.ChbBebidas.Name = "ChbBebidas";
             this.ChbBebidas.Size = new System.Drawing.Size(86, 24);
@@ -174,6 +178,7 @@
             // 
             this.ChbPizzas.AutoSize = true;
             this.ChbPizzas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChbPizzas.ForeColor = System.Drawing.Color.White;
             this.ChbPizzas.Location = new System.Drawing.Point(10, 17);
             this.ChbPizzas.Name = "ChbPizzas";
             this.ChbPizzas.Size = new System.Drawing.Size(74, 24);
@@ -261,7 +266,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(880, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 17);
@@ -272,7 +277,7 @@
             // 
             this.lblObservacao.AutoSize = true;
             this.lblObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservacao.ForeColor = System.Drawing.Color.Black;
+            this.lblObservacao.ForeColor = System.Drawing.Color.White;
             this.lblObservacao.Location = new System.Drawing.Point(11, 84);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(92, 17);
@@ -314,7 +319,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Magneto", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(13, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 25);
@@ -326,6 +331,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1341, 620);
             this.Controls.Add(this.DgvProdutos);
             this.Controls.Add(this.DgvComandas);

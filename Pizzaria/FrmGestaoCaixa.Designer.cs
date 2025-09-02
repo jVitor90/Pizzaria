@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestaoCaixa));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.grbPagamentos = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(14, 386);
+            this.btnVoltar.Location = new System.Drawing.Point(26, 386);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(320, 49);
             this.btnVoltar.TabIndex = 15;
@@ -59,13 +60,15 @@
             // 
             // grbPagamentos
             // 
+            this.grbPagamentos.BackColor = System.Drawing.Color.Transparent;
             this.grbPagamentos.Controls.Add(this.label1);
             this.grbPagamentos.Controls.Add(this.cmbFormaPagamento);
             this.grbPagamentos.Controls.Add(this.txbValor);
             this.grbPagamentos.Controls.Add(this.lblValorFinal);
             this.grbPagamentos.Controls.Add(this.btnFinalizar);
             this.grbPagamentos.Enabled = false;
-            this.grbPagamentos.Location = new System.Drawing.Point(4, 211);
+            this.grbPagamentos.ForeColor = System.Drawing.Color.White;
+            this.grbPagamentos.Location = new System.Drawing.Point(16, 211);
             this.grbPagamentos.Name = "grbPagamentos";
             this.grbPagamentos.Size = new System.Drawing.Size(344, 169);
             this.grbPagamentos.TabIndex = 17;
@@ -124,11 +127,13 @@
             // 
             // grbInformacoes
             // 
+            this.grbInformacoes.BackColor = System.Drawing.Color.Transparent;
             this.grbInformacoes.Controls.Add(this.btnPesquisar);
             this.grbInformacoes.Controls.Add(this.lblMesa);
             this.grbInformacoes.Controls.Add(this.btnLimpar);
             this.grbInformacoes.Controls.Add(this.txbMesa);
-            this.grbInformacoes.Location = new System.Drawing.Point(4, 12);
+            this.grbInformacoes.ForeColor = System.Drawing.Color.White;
+            this.grbInformacoes.Location = new System.Drawing.Point(16, 12);
             this.grbInformacoes.Name = "grbInformacoes";
             this.grbInformacoes.Size = new System.Drawing.Size(344, 193);
             this.grbInformacoes.TabIndex = 16;
@@ -195,11 +200,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1107, 450);
             this.Controls.Add(this.dgvComanda);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.grbPagamentos);
             this.Controls.Add(this.grbInformacoes);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "FrmGestaoCaixa";
             this.Text = "Caixa";
             this.grbPagamentos.ResumeLayout(false);
