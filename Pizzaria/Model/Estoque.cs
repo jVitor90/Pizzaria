@@ -14,7 +14,7 @@ namespace Pizzaria.Model
         public string nome_item {  get; set; }
         public decimal quantidade {  get; set; }
         public string unidade { get; set; }
-        public int Id_Categoria { get; set;}
+        public int id_Categoria { get; set;}
         public DateTime atualizado_em { get; set; }
         
 
@@ -35,14 +35,15 @@ namespace Pizzaria.Model
         }
         public bool Modificar()
         {
-            string comando = "UPDATE estoque SET nome_item = @nome_item, quantidade = @quantidade, unidade = @unidade, Id_Categoria = @Id_Categoria WHERE id_estoque = @id_estoque";
+            string comando = "UPDATE estoque SET nome_item = @nome_item, quantidade = @quantidade, unidade = @unidade, id_Categoria = @id_Categoria WHERE id_estoque = @id_estoque";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-            cmd.Parameters.AddWithValue("@nome_produto", nome_item);
+            cmd.Parameters.AddWithValue("@nome_item", nome_item);
             cmd.Parameters.AddWithValue("@quantidade", quantidade);
-            cmd.Parameters.AddWithValue("@Id_Categoria", Id_Categoria);
+            cmd.Parameters.AddWithValue("@unidade", unidade);
+            cmd.Parameters.AddWithValue("@id_Categoria", id_Categoria);
             cmd.Parameters.AddWithValue("@id_estoque", id_estoque);
 
 
@@ -107,7 +108,7 @@ namespace Pizzaria.Model
             cmd.Parameters.AddWithValue("@nome_item", nome_item);
             cmd.Parameters.AddWithValue("@quantidade", quantidade);
             cmd.Parameters.AddWithValue("@unidade", unidade);
-            cmd.Parameters.AddWithValue("@id_Categoria", Id_Categoria);
+            cmd.Parameters.AddWithValue("@id_Categoria", id_Categoria);
             cmd.Prepare();
             // impede que o programa quebre
             try

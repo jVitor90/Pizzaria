@@ -35,7 +35,7 @@
             // 
             this.picblogo.BackColor = System.Drawing.Color.Transparent;
             this.picblogo.Image = ((System.Drawing.Image)(resources.GetObject("picblogo.Image")));
-            this.picblogo.Location = new System.Drawing.Point(209, 12);
+            this.picblogo.Location = new System.Drawing.Point(294, 12);
             this.picblogo.Name = "picblogo";
             this.picblogo.Size = new System.Drawing.Size(159, 152);
             this.picblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -56,7 +56,7 @@
             this.lblsenha.BackColor = System.Drawing.Color.Transparent;
             this.lblsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsenha.ForeColor = System.Drawing.Color.Transparent;
-            this.lblsenha.Location = new System.Drawing.Point(21, 256);
+            this.lblsenha.Location = new System.Drawing.Point(106, 256);
             this.lblsenha.Name = "lblsenha";
             this.lblsenha.Size = new System.Drawing.Size(76, 25);
             this.lblsenha.TabIndex = 14;
@@ -68,7 +68,7 @@
             this.lblcpf.BackColor = System.Drawing.Color.Transparent;
             this.lblcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcpf.ForeColor = System.Drawing.Color.White;
-            this.lblcpf.Location = new System.Drawing.Point(34, 198);
+            this.lblcpf.Location = new System.Drawing.Point(119, 198);
             this.lblcpf.Name = "lblcpf";
             this.lblcpf.Size = new System.Drawing.Size(58, 25);
             this.lblcpf.TabIndex = 13;
@@ -77,7 +77,7 @@
             // txbsenha
             // 
             this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbsenha.Location = new System.Drawing.Point(113, 256);
+            this.txbsenha.Location = new System.Drawing.Point(198, 256);
             this.txbsenha.Multiline = true;
             this.txbsenha.Name = "txbsenha";
             this.txbsenha.PasswordChar = '•';
@@ -86,7 +86,7 @@
             // 
             // btnentrar
             // 
-            this.btnentrar.Location = new System.Drawing.Point(113, 313);
+            this.btnentrar.Location = new System.Drawing.Point(198, 313);
             this.btnentrar.Name = "btnentrar";
             this.btnentrar.Size = new System.Drawing.Size(351, 32);
             this.btnentrar.TabIndex = 10;
@@ -97,7 +97,7 @@
             // txbcpf
             // 
             this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbcpf.Location = new System.Drawing.Point(113, 192);
+            this.txbcpf.Location = new System.Drawing.Point(198, 192);
             this.txbcpf.Mask = "000,000,000-00";
             this.txbcpf.Name = "txbcpf";
             this.txbcpf.Size = new System.Drawing.Size(351, 35);

@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace Pizzaria
 {
@@ -41,53 +42,62 @@ namespace Pizzaria
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            // Validar Erros
-            if(txbNomeProduto.Text.Length <= 2)
+
+
+            //validar Erros
+            if (txbQuantidade.Text.Length <= 0)
+            {
+                MessageBox.Show("A quantidade informada é invalido!", "ERRO",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbNomeProduto.Text.Length <= 3)
             {
                 MessageBox.Show("O Nome informado é invalido!", "ERRO",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txbQuantidade.Text.Length <= 0)
+            else if (cmbCategoria.Text.Length <= 0)
             {
-                MessageBox.Show("A quantidade informada é invalido!", "ERRO",
+                MessageBox.Show("A categoria nao pode ser null cacacteres!", "ERRO",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(txbUnidade.Text.Length <= 0)
             {
                 MessageBox.Show("A unidade informada é invalido!", "ERRO",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if(cmbCategoria.SelectedIndex <= 0)
-            {
-                MessageBox.Show("A categoria nãp pode estra vazia!", "ERRO",
-                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                Model.Estoque estoque= new Model.Estoque();
+                // Iniciar no bd
+                // Instanciar o produto
+                Model.Produtos produto = new Model.Produtos();
+                Model.Estoque estoque = new Model.Estoque();
                 estoque.nome_item = txbNomeProduto.Text;
                 estoque.quantidade = decimal.Parse(txbQuantidade.Text);
                 estoque.unidade = txbUnidade.Text;
-                estoque.Id_Categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
+                estoque.id_Categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
+                estoque.id_estoque = this.estoque.id_estoque;
 
                 DialogResult editar = MessageBox.Show("Tem certeza que deseja Editar este Produto?",
                 "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (estoque.Modificar())
-                {
-                    MessageBox.Show("Produto editado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Limpa os campos de edição
-                    txbNomeProduto.Clear();
-                    txbQuantidade.Clear();
-                    txbUnidade.Clear();
-                    cmbCategoria.SelectedIndex = -1;
-                    // Atualiza o dgv
-                    AtualizarDgv();
-                }
-                else
-                {
-                    MessageBox.Show("falha ao editar o produto", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
 
+                if (editar == DialogResult.Yes)
+                {
+                    if (estoque.Modificar())
+                    {
+                        MessageBox.Show("Item editado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Limpa os campos de cadastro
+                        txbNomeProduto.Clear();
+                        txbQuantidade.Clear();
+                        txbUnidade.Clear();
+                        cmbCategoria.SelectedIndex = -1;
+                        // Atualiza o dgv
+                        AtualizarDgv();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao editar o item", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
 
             }
         }
@@ -127,14 +137,14 @@ namespace Pizzaria
             this.estoque.nome_item = dgvEstoque.Rows[linhaSelecionada].Cells[1].Value.ToString();
             this.estoque.quantidade = (decimal)dgvEstoque.Rows[linhaSelecionada].Cells[2].Value;
             this.estoque.unidade = dgvEstoque.Rows[linhaSelecionada].Cells[3].Value.ToString();
-            this.estoque.Id_Categoria = (int)dgvEstoque.Rows[linhaSelecionada].Cells[4].Value;
+            this.estoque.id_Categoria = (int)dgvEstoque.Rows[linhaSelecionada].Cells[4].Value;
             this.estoque.id_estoque = (int)dgvEstoque.Rows[linhaSelecionada].Cells[0].Value;
 
             // Atribuir as linhas selecionadas
             txbNomeProduto.Text = this.estoque.nome_item;
             txbQuantidade.Text = this.estoque.quantidade.ToString();
             txbUnidade.Text = this.estoque.unidade.ToString();
-            cmbCategoria.Text = this.estoque.Id_Categoria.ToString();
+            cmbCategoria.Text = this.estoque.id_Categoria.ToString();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -170,7 +180,7 @@ namespace Pizzaria
                 estoque.nome_item = txbNomeProduto.Text;
                 estoque.quantidade = decimal.Parse(txbQuantidade.Text);
                 estoque.unidade = txbUnidade.Text;
-                estoque.Id_Categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
+                estoque.id_Categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
 
                 DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja cadastrar este item?",
                 "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
