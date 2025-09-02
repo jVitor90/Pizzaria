@@ -67,7 +67,7 @@
             // 
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
             this.btnSair.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(308, 348);
+            this.btnSair.Location = new System.Drawing.Point(308, 281);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(190, 51);
             this.btnSair.TabIndex = 13;
@@ -141,7 +141,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 398);
             this.Controls.Add(this.bntcadastrarusuarios);
             this.Controls.Add(this.btnpedidos);
             this.Controls.Add(this.btnSair);

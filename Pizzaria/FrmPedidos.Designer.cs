@@ -39,9 +39,9 @@
             // brnFinalizar
             // 
             this.brnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnFinalizar.Location = new System.Drawing.Point(139, 313);
+            this.brnFinalizar.Location = new System.Drawing.Point(16, 316);
             this.brnFinalizar.Name = "brnFinalizar";
-            this.brnFinalizar.Size = new System.Drawing.Size(580, 57);
+            this.brnFinalizar.Size = new System.Drawing.Size(400, 47);
             this.brnFinalizar.TabIndex = 9;
             this.brnFinalizar.Text = "Finalizar Pedido";
             this.brnFinalizar.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             this.lblLogo.BackColor = System.Drawing.Color.Transparent;
             this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogo.ForeColor = System.Drawing.Color.White;
-            this.lblLogo.Location = new System.Drawing.Point(353, 9);
+            this.lblLogo.Location = new System.Drawing.Point(10, 9);
             this.lblLogo.Name = "lblLogo";
             this.lblLogo.Size = new System.Drawing.Size(127, 33);
             this.lblLogo.TabIndex = 10;
@@ -76,9 +76,9 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(252, 379);
+            this.btnVoltar.Location = new System.Drawing.Point(16, 379);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(367, 46);
+            this.btnVoltar.Size = new System.Drawing.Size(400, 40);
             this.btnVoltar.TabIndex = 11;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
