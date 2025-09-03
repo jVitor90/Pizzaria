@@ -465,7 +465,40 @@ namespace Pizzaria
         }
 
 
-        private void DgvComandas_SelectionChanged(object sender, EventArgs e)
+       
+
+        private void DgvProdutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; 
+
+            // Pega o ID do lançamento da linha selecionada
+            int idLancamento = (int)DgvProdutos.Rows[e.RowIndex].Cells["id_lancamento"].Value;
+
+            // Confirmação para evitar deleções acidentais
+            DialogResult confirmar = MessageBox.Show("Tem certeza que deseja excluir este lançamento?", "Confirmação",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmar == DialogResult.Yes)
+            {
+                Mesas_lancamentos lancamento = new Mesas_lancamentos { id_lancamento = idLancamento };
+
+                if (lancamento.ExcluirPorId())
+                {
+                    MessageBox.Show("Lançamento excluído com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             
+                    atualizarComanda();
+                    // Força atualização dos produtos da mesa selecionada
+                    DgvComandas_CellClick(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao excluir o lançamento.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        private void DgvComandas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DgvComandas.SelectedCells.Count == 0) return;
 
@@ -479,7 +512,7 @@ namespace Pizzaria
             mesas_Lancamentos.num_mesa = numMesa;
 
             DgvProdutos.DataSource = null; // Limpa antes
-            DataTable dados = mesas_Lancamentos.ListarProdutos();  
+            DataTable dados = mesas_Lancamentos.ListarProdutos();
 
             if (dados.Rows.Count == 0)
             {
@@ -508,38 +541,6 @@ namespace Pizzaria
                 DgvProdutos.Columns["preco"].Visible = false;
             if (DgvProdutos.Columns.Contains("total_item"))
                 DgvProdutos.Columns["total_item"].Visible = false;
-
-        }
-
-        private void DgvProdutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return; 
-
-            // Pega o ID do lançamento da linha selecionada
-            int idLancamento = (int)DgvProdutos.Rows[e.RowIndex].Cells["id_lancamento"].Value;
-
-            // Confirmação para evitar deleções acidentais
-            DialogResult confirmar = MessageBox.Show("Tem certeza que deseja excluir este lançamento?", "Confirmação",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmar == DialogResult.Yes)
-            {
-                Mesas_lancamentos lancamento = new Mesas_lancamentos { id_lancamento = idLancamento };
-
-                if (lancamento.ExcluirPorId())
-                {
-                    MessageBox.Show("Lançamento excluído com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             
-                    atualizarComanda();
-                    // Força atualização dos produtos da mesa selecionada
-                    DgvComandas_SelectionChanged(null, null); 
-                }
-                else
-                {
-                    MessageBox.Show("Falha ao excluir o lançamento.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
         }
     }
 }

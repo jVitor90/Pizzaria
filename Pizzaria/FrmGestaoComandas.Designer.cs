@@ -83,8 +83,8 @@
             this.DgvComandas.Name = "DgvComandas";
             this.DgvComandas.Size = new System.Drawing.Size(557, 367);
             this.DgvComandas.TabIndex = 22;
+            this.DgvComandas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellClick);
             this.DgvComandas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellDoubleClick);
-            this.DgvComandas.SelectionChanged += new System.EventHandler(this.DgvComandas_SelectionChanged);
             // 
             // grbPedidos
             // 
