@@ -51,7 +51,7 @@ namespace Pizzaria
 
                     dgvComanda.DataSource = "";
                     txbMesa.Clear();
-                    txbValor.Clear();
+                    lblValor.Text ="";
                     cmbFormaPagamento.Text = " ";
 
                     dgvComanda.DataSource = "";
@@ -84,7 +84,7 @@ namespace Pizzaria
                     Atualizar();
 
                     //Mostrar no label o total:
-                    txbValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
+                    lblValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
 
                     grbPagamentos.Enabled = true;
                 }
@@ -97,7 +97,7 @@ namespace Pizzaria
         private void btnLimpar_Click_1(object sender, EventArgs e)
         {
             txbMesa.Clear();
-            txbValor.Clear();
+            lblValor.Text = "";
             cmbFormaPagamento.Text = " ";
 
             dgvComanda.DataSource = "";

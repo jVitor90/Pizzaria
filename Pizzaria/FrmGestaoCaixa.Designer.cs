@@ -33,7 +33,6 @@
             this.grbPagamentos = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbFormaPagamento = new System.Windows.Forms.ComboBox();
-            this.txbValor = new System.Windows.Forms.TextBox();
             this.lblValorFinal = new System.Windows.Forms.Label();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
@@ -42,6 +41,7 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.txbMesa = new System.Windows.Forms.TextBox();
             this.dgvComanda = new System.Windows.Forms.DataGridView();
+            this.lblValor = new System.Windows.Forms.Label();
             this.grbPagamentos.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).BeginInit();
@@ -61,9 +61,9 @@
             // grbPagamentos
             // 
             this.grbPagamentos.BackColor = System.Drawing.Color.Transparent;
+            this.grbPagamentos.Controls.Add(this.lblValor);
             this.grbPagamentos.Controls.Add(this.label1);
             this.grbPagamentos.Controls.Add(this.cmbFormaPagamento);
-            this.grbPagamentos.Controls.Add(this.txbValor);
             this.grbPagamentos.Controls.Add(this.lblValorFinal);
             this.grbPagamentos.Controls.Add(this.btnFinalizar);
             this.grbPagamentos.Enabled = false;
@@ -94,15 +94,6 @@
             this.cmbFormaPagamento.Name = "cmbFormaPagamento";
             this.cmbFormaPagamento.Size = new System.Drawing.Size(139, 26);
             this.cmbFormaPagamento.TabIndex = 10;
-            // 
-            // txbValor
-            // 
-            this.txbValor.Enabled = false;
-            this.txbValor.Location = new System.Drawing.Point(187, 39);
-            this.txbValor.Multiline = true;
-            this.txbValor.Name = "txbValor";
-            this.txbValor.Size = new System.Drawing.Size(139, 25);
-            this.txbValor.TabIndex = 7;
             // 
             // lblValorFinal
             // 
@@ -199,6 +190,15 @@
             this.dgvComanda.Size = new System.Drawing.Size(714, 423);
             this.dgvComanda.TabIndex = 18;
             // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(182, 40);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(0, 25);
+            this.lblValor.TabIndex = 12;
+            // 
             // FrmGestaoCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,7 +229,6 @@
         private System.Windows.Forms.GroupBox grbPagamentos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFormaPagamento;
-        private System.Windows.Forms.TextBox txbValor;
         private System.Windows.Forms.Label lblValorFinal;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.GroupBox grbInformacoes;
@@ -238,5 +237,6 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.TextBox txbMesa;
         private System.Windows.Forms.DataGridView dgvComanda;
+        private System.Windows.Forms.Label lblValor;
     }
 }
