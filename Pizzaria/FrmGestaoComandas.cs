@@ -24,7 +24,7 @@ namespace Pizzaria
         public FrmGestaoComandas(Model.Usuario usuario)
         {
             InitializeComponent();
-            this.usuario = usuario;         
+            this.usuario = usuario;
             atualizarComanda();
         }
 
@@ -125,8 +125,8 @@ namespace Pizzaria
                         DataTable dtPizzas = produto.ListarPorCategoria();
                         lancamento.id_Produto = Convert.ToInt32(dtPizzas.Rows[cmbPizzas.SelectedIndex]["id_produto"]);
                         lancamento.quantidade = 1;
-                        lancamento.cozinha = 1; 
-                        lancamento.pagamento = 1; 
+                        lancamento.cozinha = 1;
+                        lancamento.pagamento = 1;
                         lancamento.Cadastrar();
                     }
 
@@ -137,8 +137,8 @@ namespace Pizzaria
                         DataTable dtBebidas = produto.ListarPorCategoria();
                         lancamento.id_Produto = Convert.ToInt32(dtBebidas.Rows[cmbBebidas.SelectedIndex]["id_produto"]);
                         lancamento.quantidade = 1;
-                        lancamento.cozinha = 1; 
-                        lancamento.pagamento = 1; 
+                        lancamento.cozinha = 1;
+                        lancamento.pagamento = 1;
                         lancamento.Cadastrar();
                     }
 
@@ -149,8 +149,8 @@ namespace Pizzaria
                         DataTable dtAdicionais = produto.ListarPorCategoria();
                         lancamento.id_Produto = Convert.ToInt32(dtAdicionais.Rows[cmbAdicionais.SelectedIndex]["id_produto"]);
                         lancamento.quantidade = 1;
-                        lancamento.cozinha = 1; 
-                        lancamento.pagamento = 1; 
+                        lancamento.cozinha = 1;
+                        lancamento.pagamento = 1;
                         lancamento.Cadastrar();
                     }
 
@@ -161,8 +161,8 @@ namespace Pizzaria
                         DataTable dtBordas = produto.ListarPorCategoria();
                         lancamento.id_Produto = Convert.ToInt32(dtBordas.Rows[cmbBordas.SelectedIndex]["id_produto"]);
                         lancamento.quantidade = 1;
-                        lancamento.cozinha = 1; 
-                        lancamento.pagamento = 1; 
+                        lancamento.cozinha = 1;
+                        lancamento.pagamento = 1;
                         lancamento.Cadastrar();
                     }
 
@@ -177,6 +177,18 @@ namespace Pizzaria
                     txbObservecao.Clear();
                     atualizarComanda();
 
+                    // Após atualizarComanda();
+                    foreach (DataGridViewRow row in DgvComandas.Rows)
+                    {
+                        if ((int)row.Cells["num_mesa"].Value == numeroMesa)
+                        {
+                            row.Selected = true;
+                            DgvComandas_CellClick(DgvComandas, new DataGridViewCellEventArgs(0, row.Index));
+                            break;
+                        }
+                    }
+
+
                 }
             }
             else
@@ -188,19 +200,31 @@ namespace Pizzaria
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            //Verificar se o usuarios deseja limpar os campos
             DialogResult apagar = MessageBox.Show("Tem certeza que deseja limpar os campos?", "Atenção!",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (apagar == DialogResult.Yes)
             {
-                //Limpar os campos
+                // Limpar os campos
                 cmbPizzas.SelectedIndex = -1;
+                cmbPizzas.Enabled = false;
+                ChbPizzas.Checked = false;
                 cmbBebidas.SelectedIndex = -1;
+                cmbBebidas.Enabled = false;
+                ChbBebidas.Checked = false;
                 cmbBordas.SelectedIndex = -1;
+                cmbBordas.Enabled = false;
+                ChbBordas.Checked = false;
+                ChbBordas.Enabled = false;
                 cmbAdicionais.SelectedIndex = -1;
+                cmbAdicionais.Enabled = false;
+                ChbAdicionais.Checked = false;
+                ChbAdicionais.Enabled = false;
                 txbMesa.Clear();
                 txbClientes.Clear();
+                txbClientes.Enabled = false;
                 txbObservecao.Clear();
+                txbObservecao.Enabled = false;
+
                 MessageBox.Show("Campos limpos com sucesso!", "Sucesso!",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 atualizarComanda();
@@ -214,9 +238,26 @@ namespace Pizzaria
 
         private void cmbPizzas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Verificar se há uma coluna selecionada
-            if (cmbPizzas.SelectedIndex == -1) return;
+            /// Verificar se há uma pizza selecionada
+            if (cmbPizzas.SelectedIndex == -1)
+            {
+                // Desabilitar e desmarcar os checkboxes de bordas e adicionais
+                ChbBordas.Checked = false;
+                ChbBordas.Enabled = false;
+                ChbAdicionais.Checked = false;
+                ChbAdicionais.Enabled = false;
 
+                // Limpar os ComboBoxes de bordas e adicionais
+                cmbBordas.Items.Clear();
+                cmbBordas.SelectedIndex = -1;
+                cmbAdicionais.Items.Clear();
+                cmbAdicionais.SelectedIndex = -1;
+                return;
+            }
+
+            // Habilitar os checkboxes de bordas e adicionais quando uma pizza for selecionada
+            ChbBordas.Enabled = true;
+            ChbAdicionais.Enabled = true;
             cmbAdicionais.Items.Clear();
             cmbBordas.Items.Clear();
 
@@ -263,13 +304,17 @@ namespace Pizzaria
                 // Bordas para pizzas salgadas
                 cmbBordas.Items.Add("Catupiry");
                 cmbBordas.Items.Add("Cheddar");
+
             }
+
+
+
 
         }
 
         private void DgvComandas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.DesignMode) return; 
+            if (this.DesignMode) return;
 
             // Verifica se o clique foi em uma linha válida
             if (e.RowIndex >= 0 && DgvComandas.Rows[e.RowIndex].Cells["id_mesa"].Value != DBNull.Value)
@@ -298,7 +343,7 @@ namespace Pizzaria
                         {
                             MessageBox.Show("Comanda e todos os seus lançamentos excluídos com sucesso!", "Sucesso!",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            atualizarComanda();                          
+                            atualizarComanda();
                             DgvProdutos.DataSource = null; // Limpa os produtos
                             DgvProdutos.Rows.Clear();
                         }
@@ -321,7 +366,7 @@ namespace Pizzaria
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        
+
 
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -369,7 +414,6 @@ namespace Pizzaria
                 cmbPizzas.Enabled = true;
                 txbObservecao.Enabled = true;
                 txbClientes.Enabled = true;
-
             }
             else
             {
@@ -379,6 +423,15 @@ namespace Pizzaria
                 txbObservecao.Enabled = false;
                 txbClientes.Clear();
                 txbClientes.Enabled = false;
+                // Desabilitar e desmarcar bordas e adicionais
+                ChbBordas.Checked = false;
+                ChbBordas.Enabled = false;
+                cmbBordas.SelectedIndex = -1;
+                cmbBordas.Enabled = false;
+                ChbAdicionais.Checked = false;
+                ChbAdicionais.Enabled = false;
+                cmbAdicionais.SelectedIndex = -1;
+                cmbAdicionais.Enabled = false;
                 // Só desabilita txbClientes se ChbBebidas também estiver desmarcado
                 if (!ChbBebidas.Checked)
                 {
@@ -410,19 +463,19 @@ namespace Pizzaria
         }
         private void ChbBordas_CheckedChanged(object sender, EventArgs e)
         {
-            if (ChbBordas.Checked)
+            if (ChbBordas.Checked && cmbPizzas.SelectedIndex != -1)
             {
                 cmbBordas.Enabled = true;
             }
             else
             {
                 cmbBordas.SelectedIndex = -1;
-                cmbBordas.Enabled = false;             
+                cmbBordas.Enabled = false;
             }
         }
         private void ChbAdicionais_CheckedChanged(object sender, EventArgs e)
         {
-            if (ChbAdicionais.Checked)
+            if (ChbAdicionais.Checked && cmbPizzas.SelectedIndex != -1)
             {
                 cmbAdicionais.Enabled = true;
             }
@@ -430,14 +483,7 @@ namespace Pizzaria
             {
                 cmbAdicionais.SelectedIndex = -1;
                 cmbAdicionais.Enabled = false;
-                // Só desabilita txbClientes se ChbPizzas também estiver desmarcado
-                if (!ChbPizzas.Checked)
-                {
-                txbClientes.Clear();
-                txbClientes.Enabled = false;
-                }
             }
-          
         }
 
         private void txbClientes_TextChanged(object sender, EventArgs e)
@@ -464,12 +510,9 @@ namespace Pizzaria
                 e.Handled = true;
         }
 
-
-       
-
         private void DgvProdutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return; 
+            if (e.RowIndex < 0) return;
 
             // Pega o ID do lançamento da linha selecionada
             int idLancamento = (int)DgvProdutos.Rows[e.RowIndex].Cells["id_lancamento"].Value;
@@ -485,10 +528,10 @@ namespace Pizzaria
                 if (lancamento.ExcluirPorId())
                 {
                     MessageBox.Show("Lançamento excluído com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             
+
                     atualizarComanda();
                     // Força atualização dos produtos da mesa selecionada
-                    DgvComandas_CellClick(null, null);
+                    //DgvComandas_SelectionChanged(null, null); 
                 }
                 else
                 {
@@ -541,6 +584,7 @@ namespace Pizzaria
                 DgvProdutos.Columns["preco"].Visible = false;
             if (DgvProdutos.Columns.Contains("total_item"))
                 DgvProdutos.Columns["total_item"].Visible = false;
+
         }
     }
 }

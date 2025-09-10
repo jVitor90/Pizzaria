@@ -138,9 +138,10 @@
             // ChbAdicionais
             // 
             this.ChbAdicionais.AutoSize = true;
+            this.ChbAdicionais.Enabled = false;
             this.ChbAdicionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChbAdicionais.ForeColor = System.Drawing.Color.White;
-            this.ChbAdicionais.Location = new System.Drawing.Point(432, 19);
+            this.ChbAdicionais.Location = new System.Drawing.Point(432, 21);
             this.ChbAdicionais.Name = "ChbAdicionais";
             this.ChbAdicionais.Size = new System.Drawing.Size(94, 22);
             this.ChbAdicionais.TabIndex = 21;
@@ -151,6 +152,7 @@
             // ChbBordas
             // 
             this.ChbBordas.AutoSize = true;
+            this.ChbBordas.Enabled = false;
             this.ChbBordas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChbBordas.ForeColor = System.Drawing.Color.White;
             this.ChbBordas.Location = new System.Drawing.Point(642, 21);
