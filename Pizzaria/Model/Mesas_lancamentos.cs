@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -149,7 +149,7 @@ namespace Pizzaria.Model
                 conexaoBD.Desconectar(con);
                 return false;
             }
-        }   
+        }
         public bool ExcluirPorMesa()
         {
             string comando = "DELETE FROM mesas_lancamentos WHERE num_mesa = @num_mesa AND pagamento = 1";
@@ -170,7 +170,29 @@ namespace Pizzaria.Model
                 conexaoBD.Desconectar(con);
                 return false;
             }
-        }   
+        }
+        public bool FinalizarCozinha()
+        {
+            string comando = "UPDATE mesas_lancamentos SET cozinha = 1 WHERE num_mesa = @num_mesa AND cozinha = 0";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@num_mesa", num_mesa);
+
+            try
+            {
+                int rowsAffected = cmd.ExecuteNonQuery();
+                conexaoBD.Desconectar(con);
+                return rowsAffected > 0; // Retorna true se pelo menos um lançamento foi atualizado
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
 
 
     }

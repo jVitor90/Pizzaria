@@ -98,7 +98,7 @@ namespace Pizzaria.Model
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-            
+
 
 
             DataTable tabela = new DataTable();
@@ -108,32 +108,32 @@ namespace Pizzaria.Model
         }
 
         public bool ExcluirPorId()
-        {        
-                string comando = "DELETE FROM mesas WHERE id_mesa = @id_mesa";
-                Banco conexaoBD = new Banco();
-                MySqlConnection con = conexaoBD.ObterConexao();
+        {
+            string comando = "DELETE FROM mesas WHERE id_mesa = @id_mesa";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
 
-                // Garante que a conexão esteja aberta
-                if (con.State != System.Data.ConnectionState.Open)
-                {
-                    con.Open();
-                }
+            // Garante que a conexão esteja aberta
+            if (con.State != System.Data.ConnectionState.Open)
+            {
+                con.Open();
+            }
 
-                MySqlCommand cmd = new MySqlCommand(comando, con);
-                cmd.Parameters.AddWithValue("@id_mesa", id_mesa);
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@id_mesa", id_mesa);
 
-                try
-                {
-                    bool sucesso = cmd.ExecuteNonQuery() > 0;
-                    conexaoBD.Desconectar(con); // Fecha a conexão após a execução
-                    return sucesso;
-                }
-                catch
-                {
-                    conexaoBD.Desconectar(con); // Garante que a conexão seja fechada em caso de erro
-                    return false;
-                }
-            
+            try
+            {
+                bool sucesso = cmd.ExecuteNonQuery() > 0;
+                conexaoBD.Desconectar(con); // Fecha a conexão após a execução
+                return sucesso;
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con); // Garante que a conexão seja fechada em caso de erro
+                return false;
+            }
+
         }
 
         public bool ExcluirPorMesa()
@@ -147,16 +147,16 @@ namespace Pizzaria.Model
 
             //try
             //{
-                bool sucesso = cmd.ExecuteNonQuery() > 0;
-                conexaoBD.Desconectar(con);
-                return sucesso;
+            bool sucesso = cmd.ExecuteNonQuery() > 0;
+            conexaoBD.Desconectar(con);
+            return sucesso;
             //}
             //catch
             //{
-                //conexaoBD.Desconectar(con);
-                //return false;
+            //conexaoBD.Desconectar(con);
+            //return false;
             //}
         }
-        
+
     }
 }

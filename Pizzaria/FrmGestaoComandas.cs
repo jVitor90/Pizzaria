@@ -565,8 +565,7 @@ namespace Pizzaria
 
             DgvProdutos.DataSource = dados;
 
-            // Configurações das colunas
-            if (DgvProdutos.Columns.Contains("id_Produto"))
+            // Configurações das colunas if (DgvProdutos.Columns.Contains("id_Produto"))
                 DgvProdutos.Columns["id_Produto"].HeaderText = "ID Produto";
             if (DgvProdutos.Columns.Contains("nome_produto"))
                 DgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
@@ -574,6 +573,7 @@ namespace Pizzaria
                 DgvProdutos.Columns["quantidade"].HeaderText = "Quantidade";
             if (DgvProdutos.Columns.Contains("nome_cliente"))
                 DgvProdutos.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
+           
 
             // Oculta colunas indesejadas
             if (DgvProdutos.Columns.Contains("id_lancamento"))

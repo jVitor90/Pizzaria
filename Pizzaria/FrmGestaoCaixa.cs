@@ -31,32 +31,44 @@ namespace Pizzaria
         }
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+          
+        
             DialogResult pergunta = MessageBox.Show(
-         $"Tem certeza que deseja encerrar a comanda {mesas_Lancamentos.num_mesa}?",
-         "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                $"Tem certeza que deseja encerrar a comanda {mesas_Lancamentos.num_mesa}?",
+                "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
                 if (string.IsNullOrWhiteSpace(cmbFormaPagamento.Text))
                 {
                     MessageBox.Show("Selecione uma forma de pagamento antes de encerrar a comanda!",
-                                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                   "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     cmbFormaPagamento.Focus();
-                    return; // Interrompe o processo
+                    return;
                 }
+
                 if (mesas_Lancamentos.Encerrar())
                 {
+                    // Marcar a mesa como inativa
+                    mesas.num_mesa = mesas_Lancamentos.num_mesa;
+                    mesas.Encerrar();
+
                     MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Atualizar();
 
-                    dgvComanda.DataSource = "";
+                    dgvComanda.DataSource = null;
                     txbMesa.Clear();
-                    lblValor.Text ="";
-                    cmbFormaPagamento.Text = " ";
-
-                    dgvComanda.DataSource = "";
+                    lblValor.Text = "";
+                    cmbFormaPagamento.Text = "";
+                    grbPagamentos.Enabled = false;
+                    txbMesa.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao encerrar a comanda!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -92,7 +104,12 @@ namespace Pizzaria
         }
         public void Atualizar()
         {
-            dgvComanda.DataSource = mesas_Lancamentos.Listar();
+           
+        
+            DataTable consulta = mesas_Lancamentos.ListarProdutos(); // Usar ListarProdutos em vez de Listar
+
+            
+        
         }
         private void btnLimpar_Click_1(object sender, EventArgs e)
         {

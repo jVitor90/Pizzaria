@@ -33,15 +33,17 @@
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.lblLogo = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // brnFinalizar
             // 
             this.brnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnFinalizar.Location = new System.Drawing.Point(414, 309);
+            this.brnFinalizar.Location = new System.Drawing.Point(480, 320);
             this.brnFinalizar.Name = "brnFinalizar";
-            this.brnFinalizar.Size = new System.Drawing.Size(400, 52);
+            this.brnFinalizar.Size = new System.Drawing.Size(450, 65);
             this.brnFinalizar.TabIndex = 9;
             this.brnFinalizar.Text = "Finalizar Pedido";
             this.brnFinalizar.UseVisualStyleBackColor = true;
@@ -58,7 +60,7 @@
             this.dgvPedidos.Location = new System.Drawing.Point(12, 45);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
-            this.dgvPedidos.Size = new System.Drawing.Size(788, 240);
+            this.dgvPedidos.Size = new System.Drawing.Size(672, 253);
             this.dgvPedidos.TabIndex = 5;
             this.dgvPedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellClick);
             // 
@@ -77,13 +79,27 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(12, 309);
+            this.btnVoltar.Location = new System.Drawing.Point(480, 412);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(396, 52);
+            this.btnVoltar.Size = new System.Drawing.Size(450, 66);
             this.btnVoltar.TabIndex = 11;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // dgvProdutos
+            // 
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.AllowUserToResizeColumns = false;
+            this.dgvProdutos.AllowUserToResizeRows = false;
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Location = new System.Drawing.Point(690, 45);
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
+            this.dgvProdutos.Size = new System.Drawing.Size(664, 253);
+            this.dgvProdutos.TabIndex = 12;
             // 
             // FrmPedidos
             // 
@@ -91,7 +107,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(826, 450);
+            this.ClientSize = new System.Drawing.Size(1358, 515);
+            this.Controls.Add(this.dgvProdutos);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblLogo);
             this.Controls.Add(this.brnFinalizar);
@@ -100,6 +117,7 @@
             this.Name = "FrmPedidos";
             this.Text = "Pedidos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +129,6 @@
         private System.Windows.Forms.DataGridView dgvPedidos;
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.DataGridView dgvProdutos;
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,43 +17,94 @@ namespace Pizzaria
         public FrmPedidos()
         {
             InitializeComponent();
-            AtualizarDgvPedidos();
+            AtualizarDgvProdutos();
         }
         Model.Usuario usuario = new Usuario();
-        Model.Mesas_lancamentos itemnsComanda = new Model.Mesas_lancamentos();
+        Model.Mesas_lancamentos lancamentos = new Model.Mesas_lancamentos();
         Model.Mesas mesas = new Model.Mesas();
-        public void AtualizarDgvPedidos()
+        
+        public void AtualizarDgvProdutos()
         {
-            dgvPedidos.DataSource = mesas.ListarMesas();
+           
+            dgvPedidos.DataSource =  mesas.ListarMesas();
+            dgvProdutos.DataSource = lancamentos.Listar();
+
+
+            dgvPedidos.Columns["id_mesa"].HeaderText = "ID Mesa";
+            dgvPedidos.Columns["num_mesa"].HeaderText = "Nº Mesa";
+            dgvPedidos.Columns["responsavel"].HeaderText = "Nome Responsável";
+            dgvPedidos.Columns["data_adic"].HeaderText = "Data";
+            dgvPedidos.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
+            dgvPedidos.Columns["ativa"].HeaderText = "Ativa";
+           
         }
 
         private void brnFinalizar_Click(object sender, EventArgs e)
         {
             DialogResult pergunta = MessageBox.Show(
-            $"Tem certeza que deseja encerrar a comanda {mesas.num_mesa}?",
-            "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        $"Tem certeza que deseja finalizar a comanda {mesas.num_mesa}?",
+        "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
+             ;
                 if (mesas.Encerrar())
                 {
-                    MessageBox.Show("Comanda Encerrada!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Comanda finalizada!",
+                                   "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizarDgvProdutos();
                 }
-                AtualizarDgvPedidos();
+                else
+                {
+                    MessageBox.Show("Erro ao finalizar a comanda ou não há lançamentos pendentes para essa mesa!",
+                                   "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         private int idLancamentoSelecionado = 0;
         private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                object valorCelula = dgvPedidos.Rows[e.RowIndex].Cells[1].Value;
+            if (dgvPedidos.SelectedCells.Count == 0) return;
 
-                if (valorCelula != DBNull.Value && valorCelula != null)
-                {
-                    mesas.num_mesa = Convert.ToInt32(valorCelula);
-                }
+            int linhaSelecionada = dgvPedidos.SelectedCells[0].RowIndex;
+
+            // Agora pega direto pelo nome da coluna (seguro contra mudanças de ordem)
+            int numMesa = (int)dgvPedidos.Rows[linhaSelecionada].Cells["num_mesa"].Value;
+
+            // Passa para as classes
+            mesas.num_mesa = numMesa;
+            lancamentos.num_mesa = numMesa;
+
+           
+            DataTable dados = lancamentos.ListarProdutos();
+
+            if (dados.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum dado encontrado para a mesa selecionada.");
+                return;
             }
+
+            dgvProdutos.DataSource = dados;
+
+            // Configurações das colunas if (DgvProdutos.Columns.Contains("id_Produto"))
+            dgvProdutos.Columns["id_Produto"].HeaderText = "ID Produto";
+            if (dgvProdutos.Columns.Contains("nome_produto"))
+                dgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
+            if (dgvProdutos.Columns.Contains("quantidade"))
+                dgvProdutos.Columns["quantidade"].HeaderText = "Quantidade";
+            if (dgvProdutos.Columns.Contains("nome_cliente"))
+                dgvProdutos.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
+
+
+            // Oculta colunas indesejadas
+            if (dgvProdutos.Columns.Contains("id_lancamento"))
+                dgvProdutos.Columns["id_lancamento"].Visible = false;
+            if (dgvProdutos.Columns.Contains("num_mesa"))
+                dgvProdutos.Columns["num_mesa"].Visible = false;
+            if (dgvProdutos.Columns.Contains("preco"))
+                dgvProdutos.Columns["preco"].Visible = false;
+            if (dgvProdutos.Columns.Contains("total_item"))
+                dgvProdutos.Columns["total_item"].Visible = false;
 
         }
 
@@ -63,5 +115,9 @@ namespace Pizzaria
             frmOpcoes.ShowDialog();
             this.Show();
         }
+
+        
+
+       
     }
 }
