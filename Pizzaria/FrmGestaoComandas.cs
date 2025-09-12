@@ -79,7 +79,6 @@ namespace Pizzaria
             {
                 cmbBordas.Items.Add($"{linha["nome_produto"]}");
             }
-
             atualizarComanda();
         }
 
@@ -165,6 +164,7 @@ namespace Pizzaria
                         lancamento.pagamento = 1;
                         lancamento.Cadastrar();
                     }
+                    mesas_Lancamentos.id_Produto = lancamento.id_Produto;
 
                     MessageBox.Show("Comanda lançada com sucesso!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -238,79 +238,55 @@ namespace Pizzaria
 
         private void cmbPizzas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /// Verificar se há uma pizza selecionada
+            // Habilita/desabilita bordas e adicionais com base na seleção
+            ChbBordas.Enabled = (cmbPizzas.SelectedIndex != -1);
+            ChbAdicionais.Enabled = (cmbPizzas.SelectedIndex != -1);
+
             if (cmbPizzas.SelectedIndex == -1)
             {
-                // Desabilitar e desmarcar os checkboxes de bordas e adicionais
-                ChbBordas.Checked = false;
-                ChbBordas.Enabled = false;
-                ChbAdicionais.Checked = false;
-                ChbAdicionais.Enabled = false;
-
-                // Limpar os ComboBoxes de bordas e adicionais
+                // Limpa os combos se nada selecionado
                 cmbBordas.Items.Clear();
-                cmbBordas.SelectedIndex = -1;
                 cmbAdicionais.Items.Clear();
-                cmbAdicionais.SelectedIndex = -1;
                 return;
             }
 
-            // Habilitar os checkboxes de bordas e adicionais quando uma pizza for selecionada
-            ChbBordas.Enabled = true;
-            ChbAdicionais.Enabled = true;
+            // Obtém o ID da pizza selecionada
+            produto.id_categoria = 1; // Categoria de pizzas
+            DataTable dtPizzas = produto.ListarPorCategoria(); // Carrega todas as pizzas
+            int idPizza = Convert.ToInt32(dtPizzas.Rows[cmbPizzas.SelectedIndex]["id_produto"]);
+
+            // Define o Id_produto para buscar o tipo
+            produto.Id_produto = idPizza;
+
+            // Obtém o tipo_pizza da pizza selecionada
+            DataTable dtTipo = produto.ObterTipoPizza();
+            if (dtTipo.Rows.Count == 0)
+            {
+                MessageBox.Show("Tipo de pizza não encontrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbBordas.Items.Clear();
+                cmbAdicionais.Items.Clear();
+                return;
+            }
+            string tipoPizza = dtTipo.Rows[0]["tipo_pizza"].ToString(); // Ex.: "doce" ou "salgada"
+
+            // Agora use o tipoPizza para carregar adicionais e bordas filtrados
             cmbAdicionais.Items.Clear();
+            produto.id_categoria = 3; // Adicionais
+            DataTable dtAdicionais = produto.ListarPorCategoria(tipoPizza); // Filtra por tipo
+            foreach (DataRow linha in dtAdicionais.Rows)
+            {
+                cmbAdicionais.Items.Add(linha["nome_produto"].ToString());
+            }
+
             cmbBordas.Items.Clear();
-
-            string pizzaEscolhida = cmbPizzas.SelectedItem.ToString();
-
-            // Verifica se é pizza doce
-            bool pizzaDoce = pizzaEscolhida.Contains("Chocolate") ||
-                             pizzaEscolhida.Contains("Nutella") ||
-                             pizzaEscolhida.Contains("Morango") ||
-                             pizzaEscolhida.Contains("Banana");
-
-            if (pizzaDoce)
+            produto.id_categoria = 4; // Bordas
+            DataTable dtBordas = produto.ListarPorCategoria(tipoPizza); // Filtra por tipo
+            foreach (DataRow linha in dtBordas.Rows)
             {
-                // Adicionais para pizzas doces
-                cmbAdicionais.Items.Add("Banana extra");
-                cmbAdicionais.Items.Add("Morango extra");
-                cmbAdicionais.Items.Add("Chocolate extra");
-
-                // Bordas para pizzas doces
-                cmbBordas.Items.Add("Chocolate");
-                cmbBordas.Items.Add("Nutella");
+                cmbBordas.Items.Add(linha["nome_produto"].ToString());
             }
-            else
-            {
-                // Adicionais para pizzas salgadas
-                cmbAdicionais.Items.Add("Queijo extra");
-                cmbAdicionais.Items.Add("Calabresa extra");
-                cmbAdicionais.Items.Add("Frango extra");
-                cmbAdicionais.Items.Add("Presunto extra");
-                cmbAdicionais.Items.Add("Ovo extra");
-                cmbAdicionais.Items.Add("Catupiry extra");
-                cmbAdicionais.Items.Add("Bacon extra");
-                cmbAdicionais.Items.Add("Pepperoni extra");
-                cmbAdicionais.Items.Add("Champignon extra");
-                cmbAdicionais.Items.Add("Tomate extra");
-                cmbAdicionais.Items.Add("Milho extra");
-                cmbAdicionais.Items.Add("Rúcula extra");
-                cmbAdicionais.Items.Add("Lombo extra");
-                cmbAdicionais.Items.Add("Carne extra");
-                cmbAdicionais.Items.Add("Linguiça extra");
-                cmbAdicionais.Items.Add("Cebola extra");
-                cmbAdicionais.Items.Add("Azeitona extra");
-
-                // Bordas para pizzas salgadas
-                cmbBordas.Items.Add("Catupiry");
-                cmbBordas.Items.Add("Cheddar");
-
-            }
-
-
-
-
         }
+
 
         private void DgvComandas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -565,7 +541,8 @@ namespace Pizzaria
 
             DgvProdutos.DataSource = dados;
 
-            // Configurações das colunas if (DgvProdutos.Columns.Contains("id_Produto"))
+            // Configurações das colunas
+            if (DgvProdutos.Columns.Contains("id_Produto"))
                 DgvProdutos.Columns["id_Produto"].HeaderText = "ID Produto";
             if (DgvProdutos.Columns.Contains("nome_produto"))
                 DgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
@@ -573,7 +550,6 @@ namespace Pizzaria
                 DgvProdutos.Columns["quantidade"].HeaderText = "Quantidade";
             if (DgvProdutos.Columns.Contains("nome_cliente"))
                 DgvProdutos.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
-           
 
             // Oculta colunas indesejadas
             if (DgvProdutos.Columns.Contains("id_lancamento"))

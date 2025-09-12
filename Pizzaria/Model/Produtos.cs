@@ -66,17 +66,26 @@ namespace Pizzaria.Model
             return tabela;
         }
 
-        public DataTable ListarPorCategoria()
+        public DataTable ListarPorCategoria(string tipo_pizza = null)
         {
-            string comando = "SELECT id_produto, nome_produto " +
-                             "FROM produtos " +
-                             "WHERE id_Categoria = @id_categoria AND disponivel = 1";
+            string comando = "SELECT id_produto, nome_produto, tipo_pizza " +
+                     "FROM produtos " +
+                     "WHERE id_Categoria = @id_categoria AND disponivel = 1";
+
+            if (!string.IsNullOrEmpty(tipo_pizza))
+            {
+                comando += " AND tipo_pizza = @tipo_pizza";
+            }
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
             cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
+            if (!string.IsNullOrEmpty(tipo_pizza))
+            {
+                cmd.Parameters.AddWithValue("@tipo_pizza", tipo_pizza);
+            }
             cmd.Prepare();
 
             DataTable tabela = new DataTable();
@@ -147,6 +156,21 @@ namespace Pizzaria.Model
                 conexaoBD.Desconectar(con);
                return false;
             }
+        }
+        public DataTable ObterTipoPizza()
+        {
+            string comando = "SELECT tipo_pizza FROM produtos WHERE id_produto = @id_produto";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@id_produto", Id_produto);
+
+            cmd.Prepare();
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
         }
     }
 }
