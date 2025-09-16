@@ -342,6 +342,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGestaoComandas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comandas";
             this.Load += new System.EventHandler(this.FrmGestaoComandas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvProdutos)).EndInit();

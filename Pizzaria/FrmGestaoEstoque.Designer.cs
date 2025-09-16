@@ -207,6 +207,7 @@
             this.Controls.Add(this.dgvEstoque);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGestaoEstoque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estoque";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
             this.ResumeLayout(false);

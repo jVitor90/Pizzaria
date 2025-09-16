@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestaoCaixa));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.grbPagamentos = new System.Windows.Forms.GroupBox();
+            this.lblValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.lblValorFinal = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.txbMesa = new System.Windows.Forms.TextBox();
             this.dgvComanda = new System.Windows.Forms.DataGridView();
-            this.lblValor = new System.Windows.Forms.Label();
             this.grbPagamentos.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).BeginInit();
@@ -74,6 +74,15 @@
             this.grbPagamentos.TabIndex = 17;
             this.grbPagamentos.TabStop = false;
             this.grbPagamentos.Text = "Pagamento";
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(182, 40);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(0, 25);
+            this.lblValor.TabIndex = 12;
             // 
             // label1
             // 
@@ -190,15 +199,6 @@
             this.dgvComanda.Size = new System.Drawing.Size(714, 423);
             this.dgvComanda.TabIndex = 18;
             // 
-            // lblValor
-            // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(182, 40);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(0, 25);
-            this.lblValor.TabIndex = 12;
-            // 
             // FrmGestaoCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +213,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGestaoCaixa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa";
             this.grbPagamentos.ResumeLayout(false);
             this.grbPagamentos.PerformLayout();

@@ -200,6 +200,7 @@
             this.Controls.Add(this.btrnCadastrar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCadastroUsuario";
             this.Load += new System.EventHandler(this.FrmCadastroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picblogo)).EndInit();
