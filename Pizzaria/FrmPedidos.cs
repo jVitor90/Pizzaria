@@ -30,13 +30,23 @@ namespace Pizzaria
             dgvProdutos.DataSource = lancamentos.Listar();
 
 
-            dgvPedidos.Columns["id_mesa"].HeaderText = "ID Mesa";
-            dgvPedidos.Columns["num_mesa"].HeaderText = "Nº Mesa";
-            dgvPedidos.Columns["responsavel"].HeaderText = "Nome Responsável";
-            dgvPedidos.Columns["data_adic"].HeaderText = "Data";
-            dgvPedidos.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
-            dgvPedidos.Columns["ativa"].HeaderText = "Ativa";
-           
+            dgvProdutos.Columns["id_Produto"].HeaderText = "ID Produto";
+            if (dgvProdutos.Columns.Contains("nome_produto"))
+                dgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
+            if (dgvProdutos.Columns.Contains("quantidade"))
+                dgvProdutos.Columns["quantidade"].HeaderText = "Quantidade";
+            if (dgvProdutos.Columns.Contains("nome_cliente"))
+                dgvProdutos.Columns["nome_cliente"].HeaderText = "Nome do Cliente";
+
+            if (dgvProdutos.Columns.Contains("id_lancamento"))
+                dgvProdutos.Columns["id_lancamento"].Visible = false;
+            if (dgvProdutos.Columns.Contains("num_mesa"))
+                dgvProdutos.Columns["num_mesa"].Visible = false;
+            if (dgvProdutos.Columns.Contains("preco"))
+                dgvProdutos.Columns["preco"].Visible = false;
+            if (dgvProdutos.Columns.Contains("total_item"))
+                dgvProdutos.Columns["total_item"].Visible = false;
+
         }
 
         private void brnFinalizar_Click(object sender, EventArgs e)
@@ -116,8 +126,8 @@ namespace Pizzaria
             this.Show();
         }
 
-        
-
-       
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
     }
 }

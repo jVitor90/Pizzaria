@@ -31,8 +31,8 @@ namespace Pizzaria
         }
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-          
-        
+
+
             DialogResult pergunta = MessageBox.Show(
                 $"Tem certeza que deseja encerrar a comanda {mesas_Lancamentos.num_mesa}?",
                 "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -68,40 +68,61 @@ namespace Pizzaria
                     MessageBox.Show("Erro ao encerrar a comanda!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        
+
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if (txbMesa.Text == "" || txbMesa.Text.Length < 1)
+            if (!int.TryParse(txbMesa.Text, out int numeroMesa))
             {
                 MessageBox.Show("Informe corretamente o número da mesa!",
                        "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
-            {
-                mesas_Lancamentos.num_mesa = int.Parse(txbMesa.Text);
-                DataTable consulta = mesas_Lancamentos.Listar();
-                txbMesa.Enabled = false;
 
-                //Verificar se existe lançamentos na comanda
-                if (consulta.Rows.Count == 0)
-                {
-                    MessageBox.Show("Não existe lançamentos nessa comnada!",
+            mesas_Lancamentos.num_mesa = numeroMesa;
+            DataTable consulta = mesas_Lancamentos.Listar();
+
+            if (consulta == null)
+            {
+                MessageBox.Show("Erro ao consultar a comanda no banco de dados!",
+                       "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (consulta.Rows.Count == 0)
+            {
+                MessageBox.Show("Não existe lançamentos nessa comanda!",
                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Mostrar os itens no DataGridView
+            dgvComanda.DataSource = consulta;
+
+            try
+            {
+                // Verifica se existe a coluna "Total_Item"
+                if (consulta.Columns.Contains("Total_Item"))
+                {
+                    lblValor.Text = "R$ " + consulta.Compute("Sum(Total_Item)", string.Empty).ToString();
                 }
                 else
                 {
-                    //Mostar a consulta no dgv
-                    dgvComanda.DataSource = consulta;
-                    Atualizar();
-
-                    //Mostrar no label o total:
-                    lblValor.Text = "R$" + consulta.Compute("Sum(Total_Item)", "True").ToString();
-
-                    grbPagamentos.Enabled = true;
+                    lblValor.Text = "Total não disponível";
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao calcular o total: " + ex.Message,
+                   "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            grbPagamentos.Enabled = true;
+            txbMesa.Enabled = false;
         }
+    
+
+
         public void Atualizar()
         {
            
@@ -123,10 +144,7 @@ namespace Pizzaria
         }
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            FrmOpcoes frmOpcoes = new FrmOpcoes(usuario);
-            this.Hide();
-            frmOpcoes.ShowDialog();
-            this.Show();
+            this.Close();
         }
     }
 }

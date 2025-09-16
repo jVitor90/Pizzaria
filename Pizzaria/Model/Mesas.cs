@@ -55,17 +55,17 @@ namespace Pizzaria.Model
             cmd.Parameters.AddWithValue("@id_resp", id_resp);
             cmd.Parameters.AddWithValue("@nome_cliente", nome_cliente ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@ativa", ativa);
-            try
-            {
+            //try
+            //{
                 bool sucesso = cmd.ExecuteNonQuery() > 0;
                 conexaoBD.Desconectar(con);
                 return sucesso;
-            }
-            catch
-            {
+           // }
+           // catch
+           // {
                 conexaoBD.Desconectar(con);
                 return false;
-            }
+           // }
         }
 
         public bool Encerrar()
