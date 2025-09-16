@@ -54,11 +54,11 @@
             // 
             this.lblsenha.AutoSize = true;
             this.lblsenha.BackColor = System.Drawing.Color.Transparent;
-            this.lblsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsenha.ForeColor = System.Drawing.Color.Transparent;
-            this.lblsenha.Location = new System.Drawing.Point(106, 256);
+            this.lblsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsenha.ForeColor = System.Drawing.Color.Black;
+            this.lblsenha.Location = new System.Drawing.Point(92, 256);
             this.lblsenha.Name = "lblsenha";
-            this.lblsenha.Size = new System.Drawing.Size(76, 25);
+            this.lblsenha.Size = new System.Drawing.Size(100, 31);
             this.lblsenha.TabIndex = 14;
             this.lblsenha.Text = "Senha:";
             // 
@@ -66,11 +66,11 @@
             // 
             this.lblcpf.AutoSize = true;
             this.lblcpf.BackColor = System.Drawing.Color.Transparent;
-            this.lblcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcpf.ForeColor = System.Drawing.Color.White;
+            this.lblcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcpf.ForeColor = System.Drawing.Color.Black;
             this.lblcpf.Location = new System.Drawing.Point(119, 198);
             this.lblcpf.Name = "lblcpf";
-            this.lblcpf.Size = new System.Drawing.Size(58, 25);
+            this.lblcpf.Size = new System.Drawing.Size(77, 31);
             this.lblcpf.TabIndex = 13;
             this.lblcpf.Text = "CPF:";
             // 
