@@ -46,16 +46,16 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.dgvFornecedor = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(289, -1);
+            this.label1.Location = new System.Drawing.Point(283, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(387, 37);
             this.label1.TabIndex = 0;
@@ -230,27 +230,27 @@
             this.textBox6.Size = new System.Drawing.Size(333, 29);
             this.textBox6.TabIndex = 23;
             // 
-            // dgv
+            // dgvFornecedor
             // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(525, 54);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(395, 335);
-            this.dgv.TabIndex = 2;
+            this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFornecedor.Location = new System.Drawing.Point(525, 54);
+            this.dgvFornecedor.Name = "dgvFornecedor";
+            this.dgvFornecedor.Size = new System.Drawing.Size(395, 335);
+            this.dgvFornecedor.TabIndex = 2;
             // 
             // FundoFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 450);
-            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.dgvFornecedor);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "FundoFornecedor";
             this.Text = "FundoFornecedor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,6 +276,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridView dgvFornecedor;
     }
 }
