@@ -192,6 +192,7 @@
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\Forncedor.cs" />
     <Compile Include="Model\Lancamento.cs" />
     <Compile Include="Model\Mesas_lancamentos.cs" />
     <Compile Include="Model\Metodos_pagamento.cs" />
@@ -227,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FundoCadastro.resx">
       <DependentUpon>FundoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FundoFornecedor.resx">
+      <DependentUpon>FundoFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

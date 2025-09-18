@@ -154,7 +154,7 @@ namespace Pizzaria.Model
             catch
             {
                 conexaoBD.Desconectar(con);
-               return false;
+                return false;
             }
         }
         public DataTable ObterTipoPizza()
