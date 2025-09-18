@@ -93,6 +93,12 @@
     <Compile Include="FrmCadastroUsuario.Designer.cs">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmForncedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmForncedor.Designer.cs">
+      <DependentUpon>FrmForncedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,54 @@
     </Compile>
     <Compile Include="FundoCadastro.Designer.cs">
       <DependentUpon>FundoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoCadastroUsuario.Designer.cs">
+      <DependentUpon>FundoCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoCaixa.Designer.cs">
+      <DependentUpon>FundoCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoComandas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoComandas.Designer.cs">
+      <DependentUpon>FundoComandas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoEstoque.Designer.cs">
+      <DependentUpon>FundoEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoFornecedor.Designer.cs">
+      <DependentUpon>FundoFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoLogin.Designer.cs">
+      <DependentUpon>FundoLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoOpcoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoOpcoes.Designer.cs">
+      <DependentUpon>FundoOpcoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoPedidos.Designer.cs">
+      <DependentUpon>FundoPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
