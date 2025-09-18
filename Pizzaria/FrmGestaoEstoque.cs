@@ -38,6 +38,14 @@ namespace Pizzaria
         public void AtualizarDgv()
         {
             dgvEstoque.DataSource = estoque.Listar();
+
+
+            dgvEstoque.Columns["id_estoque"].HeaderText = "ID Estoque";
+            dgvEstoque.Columns["nome_item"].HeaderText = "Item";
+            dgvEstoque.Columns["quantidade"].HeaderText = "Quantidade";
+            dgvEstoque.Columns["unidade"].HeaderText = "Unidade";
+            dgvEstoque.Columns["id_Categoria"].HeaderText = "ID Categoria";
+            dgvEstoque.Columns["atualizado_em"].HeaderText = "Data";
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

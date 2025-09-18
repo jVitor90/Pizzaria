@@ -22,6 +22,17 @@ namespace Pizzaria
             this.usuario = usuario;
             AtualizarDgv();
 
+            //dgvProdutos.Columns["id_produto"].HeaderText = "ID Produto";
+            //dgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
+            //dgvProdutos.Columns["preco"].HeaderText = "Nome Responsável";
+            //dgvProdutos.Columns["id_categoria"].HeaderText = "Categorias";
+            //dgvProdutos.Columns["disponivel"].HeaderText = "Disponivel";
+            //dgvProdutos.Columns["atualizado_em"].HeaderText = "Data";
+            
+
+
+
+
 
             //Obter as categorias do banco
             DataTable resultadoCategoria = categoria.Listar();
@@ -34,6 +45,13 @@ namespace Pizzaria
         public void AtualizarDgv()
         {
             dgvProdutos.DataSource = produtos.Listar();
+
+            dgvProdutos.Columns["id_produto"].HeaderText = "ID Produto";
+            dgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
+            dgvProdutos.Columns["preco"].HeaderText = "Nome Responsável";
+            dgvProdutos.Columns["id_categoria"].HeaderText = "Categorias";
+            dgvProdutos.Columns["disponivel"].HeaderText = "Disponivel";
+            dgvProdutos.Columns["atualizado_em"].HeaderText = "Data";
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
