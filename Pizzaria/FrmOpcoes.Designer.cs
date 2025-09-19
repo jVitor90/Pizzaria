@@ -37,6 +37,7 @@
             this.btnCaixa = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnFornecedor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bntcadastrarusuarios
@@ -135,6 +136,18 @@
             this.lblTitulo.TabIndex = 8;
             this.lblTitulo.Text = "Gestão de Opções ";
             // 
+            // btnFornecedor
+            // 
+            this.btnFornecedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnFornecedor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFornecedor.Location = new System.Drawing.Point(577, 281);
+            this.btnFornecedor.Name = "btnFornecedor";
+            this.btnFornecedor.Size = new System.Drawing.Size(190, 51);
+            this.btnFornecedor.TabIndex = 16;
+            this.btnFornecedor.Text = "Fornecedor";
+            this.btnFornecedor.UseVisualStyleBackColor = false;
+            this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
+            // 
             // FrmOpcoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +155,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 398);
+            this.Controls.Add(this.btnFornecedor);
             this.Controls.Add(this.bntcadastrarusuarios);
             this.Controls.Add(this.btnpedidos);
             this.Controls.Add(this.btnSair);
@@ -171,5 +185,6 @@
         private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnFornecedor;
     }
 }

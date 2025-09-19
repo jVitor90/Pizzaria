@@ -12,9 +12,8 @@ namespace Pizzaria.Model
     internal class Forncedor
     {
         public int id_fornecedor { get; set; }
-        public string pizzarias { get; set; }
+        public string fornecedor { get; set; }
         public string cnpj { get; set; }
-        public string contato { get; set; }
         public string telefone { get; set; }
         public string email { get; set; }
         public string endereco { get; set; }
@@ -23,15 +22,14 @@ namespace Pizzaria.Model
         public bool Inserir()
         {
             
-            string comando = "INSERT INTO fornecedor (pizzarias, cnpj, contato, telefone, email, endereco) " +
-                             "VALUES (@pizzaria @cnpj, @contato, @telefone, @email, @endereco)";
+            string comando = "INSERT INTO fornecedor (fornecedor, cnpj, telefone, email, endereco) " +
+                             "VALUES (@fornecedor, @cnpj, @telefone, @email, @endereco)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-            cmd.Parameters.AddWithValue("pizzarias", pizzarias);
+            cmd.Parameters.AddWithValue("@fornecedor", fornecedor);
             cmd.Parameters.AddWithValue("@cnpj", cnpj);
-            cmd.Parameters.AddWithValue("@contato", contato);
             cmd.Parameters.AddWithValue("@telefone", telefone);
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@endereco", endereco);
@@ -65,14 +63,13 @@ namespace Pizzaria.Model
        public bool Modificar()
         {
 
-            string comando = "UPDATE fornecedor SET id_fornecedor = @id_fornecedor, pizzarias = @pizzaria cnpj = @cnpj, contato = @contato, telefone = @telefone, email = @email, endereco = @endereco WHERE id_fornecedor = @id_fornecedor";
+            string comando = "UPDATE fornecedor SET id_fornecedor = @id_fornecedor, fornecedor = @fornecedor cnpj = @cnpj, telefone = @telefone, email = @email, endereco = @endereco WHERE id_fornecedor = @id_fornecedor";
 
-            Banco conexaoBD = new Banco();
+           Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-            cmd.Parameters.AddWithValue("pizzarias", pizzarias);
+            cmd.Parameters.AddWithValue("fornecedor", fornecedor);
             cmd.Parameters.AddWithValue("@cnpj", cnpj);
-            cmd.Parameters.AddWithValue("@contato", contato);
             cmd.Parameters.AddWithValue("@telefone", telefone);
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@endereco", endereco);
@@ -135,7 +132,7 @@ namespace Pizzaria.Model
 
         public DataTable Listar()
         {
-            string comando = "SELECT pizzarias, cnpj, contato, telefone, email, endereco FROM id_fornecedor;";
+            string comando = "SELECT fornecedor, cnpj, telefone, email, endereco FROM id_fornecedor;";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();

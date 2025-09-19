@@ -120,5 +120,14 @@ namespace Pizzaria
             frmGestaoPedidos.ShowDialog(); this.Show();
             this.Show();
         }
+
+        private void btnFornecedor_Click(object sender, EventArgs e)
+        {
+            FundoFornecedor frmfornecedor = new FundoFornecedor();
+            this.Hide();
+            frmfornecedor.ShowDialog(); this.Show();
+            this.Show();
+
+        }
     }
 }
