@@ -66,7 +66,7 @@ namespace Pizzaria
                 fornecedor.telefone = txbtelefone.Text;
                 fornecedor.email = txbemail.Text;
                 fornecedor.endereco = txbendereco.Text;
-                
+                //fornecedor.id_fornecedor = int.Parse(txbfornecedor.Text.Split('-')[0]);
                 
                 DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja Cadstrar este Fornecedor?",
               "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
