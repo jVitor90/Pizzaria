@@ -130,6 +130,7 @@
             this.btnExcluir.TabIndex = 17;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAtualizar
             // 
@@ -139,6 +140,7 @@
             this.btnAtualizar.TabIndex = 16;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // bntSalvar
             // 
@@ -148,6 +150,7 @@
             this.bntSalvar.TabIndex = 15;
             this.bntSalvar.Text = "Salvar";
             this.bntSalvar.UseVisualStyleBackColor = true;
+            this.bntSalvar.Click += new System.EventHandler(this.bntSalvar_Click);
             // 
             // btnCadastrar
             // 

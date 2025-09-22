@@ -17,6 +17,7 @@ namespace Pizzaria
         public FundoFornecedor()
         {
             InitializeComponent();
+            AtualizarDGV();
         }
         public void AtualizarDGV()
         {
@@ -93,6 +94,44 @@ namespace Pizzaria
                 }
             }
 
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DialogResult apagar = MessageBox.Show("Tem certeza que deseja apagar esse fornecedor?",
+              "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (apagar == DialogResult.Yes)
+            {
+                if (this.fornecedor.Excluir())
+                {
+                    MessageBox.Show("Produto removido com sucesso", "Sucesso!!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizarDGV();
+                    // Limpar os campos
+                    txbfornecedor.Clear();
+                    txbcnpj.Clear();
+                    txbtelefone.Clear();
+                    txbemail.Clear();
+                    txbendereco.Clear();
+                    AtualizarDGV();
+
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao remover Produto!!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void bntSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
 
         }
     }

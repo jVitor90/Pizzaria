@@ -133,7 +133,7 @@ namespace Pizzaria.Model
 
         public DataTable Listar()
         {
-            string comando = "SELECT fornecedor, cnpj, telefone, email, endereco FROM fornecedor;";
+            string comando = "SELECT id_fornecedor, fornecedor, cnpj, telefone, email, endereco FROM fornecedor;";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
