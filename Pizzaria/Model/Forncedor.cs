@@ -33,8 +33,9 @@ namespace Pizzaria.Model
             cmd.Parameters.AddWithValue("@telefone", telefone);
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@endereco", endereco);
-            cmd.ExecuteNonQuery();
+            //cmd.ExecuteNonQuery();
             // impede que o programa quebre
+            //return cmd.ExecuteNonQuery();
             try
             {
                 if (cmd.ExecuteNonQuery() == 0)
@@ -132,7 +133,7 @@ namespace Pizzaria.Model
 
         public DataTable Listar()
         {
-            string comando = "SELECT fornecedor, cnpj, telefone, email, endereco FROM id_fornecedor;";
+            string comando = "SELECT fornecedor, cnpj, telefone, email, endereco FROM fornecedor;";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();

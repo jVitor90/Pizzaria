@@ -13,14 +13,14 @@ namespace Pizzaria
 {
     public partial class FundoFornecedor : Form
     {
-        Forncedor forncedor = new Forncedor();
+        Forncedor fornecedor = new Forncedor();
         public FundoFornecedor()
         {
             InitializeComponent();
         }
         public void AtualizarDGV()
         {
-            dgvFornecedor.DataSource = forncedor.Listar();
+            dgvFornecedor.DataSource = fornecedor.Listar();
 
             dgvFornecedor.Columns["id_fornecedor"].HeaderText = "ID Fornecedor";
             dgvFornecedor.Columns["fornecedor"].HeaderText = "Fornecedor";
@@ -60,7 +60,7 @@ namespace Pizzaria
             }
             else
             {
-                Model.Forncedor fornecedor = new Model.Forncedor();                             
+                //Model.Forncedor fornecedor = new Model.Forncedor();                             
                 fornecedor.fornecedor = txbfornecedor.Text;
                 fornecedor.cnpj = txbcnpj.Text;
                 fornecedor.telefone = txbtelefone.Text;
@@ -74,6 +74,7 @@ namespace Pizzaria
 
                 if(cadastrar == DialogResult.Yes)
                 {
+                    //MessageBox.Show($"{fornecedor.Inserir()}");
                     if (fornecedor.Inserir())
                     {
                         MessageBox.Show("Fornecedor cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
