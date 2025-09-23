@@ -43,8 +43,10 @@
             // bntcadastrarusuarios
             // 
             this.bntcadastrarusuarios.BackColor = System.Drawing.Color.Transparent;
+            this.bntcadastrarusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntcadastrarusuarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntcadastrarusuarios.Location = new System.Drawing.Point(577, 189);
+            this.bntcadastrarusuarios.ForeColor = System.Drawing.Color.White;
+            this.bntcadastrarusuarios.Location = new System.Drawing.Point(358, 266);
             this.bntcadastrarusuarios.Name = "bntcadastrarusuarios";
             this.bntcadastrarusuarios.Size = new System.Drawing.Size(190, 51);
             this.bntcadastrarusuarios.TabIndex = 15;
@@ -55,20 +57,24 @@
             // btnpedidos
             // 
             this.btnpedidos.BackColor = System.Drawing.Color.Transparent;
+            this.btnpedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpedidos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpedidos.Location = new System.Drawing.Point(308, 189);
+            this.btnpedidos.ForeColor = System.Drawing.Color.White;
+            this.btnpedidos.Location = new System.Drawing.Point(145, 176);
             this.btnpedidos.Name = "btnpedidos";
             this.btnpedidos.Size = new System.Drawing.Size(190, 51);
             this.btnpedidos.TabIndex = 14;
-            this.btnpedidos.Text = "Gestão de Pedidos";
+            this.btnpedidos.Text = "Pedidos";
             this.btnpedidos.UseVisualStyleBackColor = false;
             this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click);
             // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(308, 281);
+            this.btnSair.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSair.Location = new System.Drawing.Point(576, 266);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(190, 51);
             this.btnSair.TabIndex = 13;
@@ -79,44 +85,52 @@
             // btnEstoque
             // 
             this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoque.Location = new System.Drawing.Point(18, 189);
+            this.btnEstoque.ForeColor = System.Drawing.Color.White;
+            this.btnEstoque.Location = new System.Drawing.Point(145, 102);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(190, 51);
             this.btnEstoque.TabIndex = 12;
-            this.btnEstoque.Text = "Gestão de Estoque";
+            this.btnEstoque.Text = "Estoque";
             this.btnEstoque.UseVisualStyleBackColor = false;
             this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // btnComandas
             // 
             this.btnComandas.BackColor = System.Drawing.Color.Transparent;
-            this.btnComandas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComandas.Location = new System.Drawing.Point(577, 105);
+            this.btnComandas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComandas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComandas.ForeColor = System.Drawing.Color.White;
+            this.btnComandas.Location = new System.Drawing.Point(358, 176);
             this.btnComandas.Name = "btnComandas";
             this.btnComandas.Size = new System.Drawing.Size(190, 51);
             this.btnComandas.TabIndex = 11;
-            this.btnComandas.Text = "Gestão de Comandas";
+            this.btnComandas.Text = "Comandas";
             this.btnComandas.UseVisualStyleBackColor = false;
             this.btnComandas.Click += new System.EventHandler(this.btnComandas_Click);
             // 
             // btnCaixa
             // 
             this.btnCaixa.BackColor = System.Drawing.Color.Transparent;
+            this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaixa.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.Location = new System.Drawing.Point(308, 105);
+            this.btnCaixa.ForeColor = System.Drawing.Color.White;
+            this.btnCaixa.Location = new System.Drawing.Point(576, 102);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(190, 51);
             this.btnCaixa.TabIndex = 10;
-            this.btnCaixa.Text = "Gestão de Caixa";
+            this.btnCaixa.Text = "Caixa";
             this.btnCaixa.UseVisualStyleBackColor = false;
             this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(18, 105);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+            this.btnCadastrar.Location = new System.Drawing.Point(358, 102);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(190, 51);
             this.btnCadastrar.TabIndex = 9;
@@ -130,7 +144,7 @@
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(257, 3);
+            this.lblTitulo.Location = new System.Drawing.Point(277, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(271, 38);
             this.lblTitulo.TabIndex = 8;
@@ -139,8 +153,10 @@
             // btnFornecedor
             // 
             this.btnFornecedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFornecedor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFornecedor.Location = new System.Drawing.Point(577, 281);
+            this.btnFornecedor.ForeColor = System.Drawing.Color.White;
+            this.btnFornecedor.Location = new System.Drawing.Point(576, 177);
             this.btnFornecedor.Name = "btnFornecedor";
             this.btnFornecedor.Size = new System.Drawing.Size(190, 51);
             this.btnFornecedor.TabIndex = 16;
@@ -154,7 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 398);
+            this.ClientSize = new System.Drawing.Size(845, 448);
             this.Controls.Add(this.btnFornecedor);
             this.Controls.Add(this.bntcadastrarusuarios);
             this.Controls.Add(this.btnpedidos);

@@ -23,7 +23,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.picblogo = new System.Windows.Forms.PictureBox();
             this.lblcadastrar = new System.Windows.Forms.Label();
-            this.lblsenha = new System.Windows.Forms.Label();
             this.lblcpf = new System.Windows.Forms.Label();
             this.txbsenha = new System.Windows.Forms.TextBox();
             this.btnentrar = new System.Windows.Forms.Button();
@@ -35,7 +34,7 @@
             // 
             this.picblogo.BackColor = System.Drawing.Color.Transparent;
             this.picblogo.Image = ((System.Drawing.Image)(resources.GetObject("picblogo.Image")));
-            this.picblogo.Location = new System.Drawing.Point(294, 12);
+            this.picblogo.Location = new System.Drawing.Point(188, 12);
             this.picblogo.Name = "picblogo";
             this.picblogo.Size = new System.Drawing.Size(159, 152);
             this.picblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -49,18 +48,6 @@
             this.lblcadastrar.Name = "lblcadastrar";
             this.lblcadastrar.Size = new System.Drawing.Size(0, 13);
             this.lblcadastrar.TabIndex = 15;
-            // 
-            // lblsenha
-            // 
-            this.lblsenha.AutoSize = true;
-            this.lblsenha.BackColor = System.Drawing.Color.Transparent;
-            this.lblsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsenha.ForeColor = System.Drawing.Color.Black;
-            this.lblsenha.Location = new System.Drawing.Point(92, 256);
-            this.lblsenha.Name = "lblsenha";
-            this.lblsenha.Size = new System.Drawing.Size(100, 31);
-            this.lblsenha.TabIndex = 14;
-            this.lblsenha.Text = "Senha:";
             // 
             // lblcpf
             // 
@@ -77,7 +64,7 @@
             // txbsenha
             // 
             this.txbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbsenha.Location = new System.Drawing.Point(198, 256);
+            this.txbsenha.Location = new System.Drawing.Point(98, 250);
             this.txbsenha.Multiline = true;
             this.txbsenha.Name = "txbsenha";
             this.txbsenha.PasswordChar = '•';
@@ -86,18 +73,21 @@
             // 
             // btnentrar
             // 
-            this.btnentrar.Location = new System.Drawing.Point(198, 313);
+            this.btnentrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnentrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnentrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnentrar.Location = new System.Drawing.Point(98, 313);
             this.btnentrar.Name = "btnentrar";
-            this.btnentrar.Size = new System.Drawing.Size(351, 32);
+            this.btnentrar.Size = new System.Drawing.Size(351, 38);
             this.btnentrar.TabIndex = 10;
             this.btnentrar.Text = "Entrar";
-            this.btnentrar.UseVisualStyleBackColor = true;
+            this.btnentrar.UseVisualStyleBackColor = false;
             this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
             // 
             // txbcpf
             // 
             this.txbcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbcpf.Location = new System.Drawing.Point(198, 192);
+            this.txbcpf.Location = new System.Drawing.Point(98, 194);
             this.txbcpf.Mask = "000,000,000-00";
             this.txbcpf.Name = "txbcpf";
             this.txbcpf.Size = new System.Drawing.Size(351, 35);
@@ -107,13 +97,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Pizzaria.Properties.Resources.uma_pizza_na_direita_com_uma_fundo_preto;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(704, 390);
+            this.ClientSize = new System.Drawing.Size(727, 384);
             this.Controls.Add(this.txbcpf);
             this.Controls.Add(this.picblogo);
             this.Controls.Add(this.lblcadastrar);
-            this.Controls.Add(this.lblsenha);
             this.Controls.Add(this.lblcpf);
             this.Controls.Add(this.txbsenha);
             this.Controls.Add(this.btnentrar);
@@ -132,8 +121,6 @@
         private System.Windows.Forms.PictureBox picblogo;
 
         private System.Windows.Forms.Label lblcadastrar;
-
-        private System.Windows.Forms.Label lblsenha;
         private System.Windows.Forms.Label lblcpf;
         private System.Windows.Forms.TextBox txbsenha;
         private System.Windows.Forms.Button btnentrar;
