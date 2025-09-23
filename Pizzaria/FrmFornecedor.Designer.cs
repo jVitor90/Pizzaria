@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnVoltar);
             this.groupBox1.Controls.Add(this.txbendereco);
             this.groupBox1.Controls.Add(this.txbemail);
             this.groupBox1.Controls.Add(this.txbtelefone);
@@ -76,7 +78,7 @@
             this.groupBox1.Size = new System.Drawing.Size(491, 335);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Fornecedor";
             // 
             // txbendereco
             // 
@@ -120,7 +122,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(261, 279);
+            this.btnExcluir.Location = new System.Drawing.Point(250, 244);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(220, 33);
             this.btnExcluir.TabIndex = 17;
@@ -130,7 +132,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(14, 279);
+            this.btnCadastrar.Location = new System.Drawing.Point(9, 244);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(219, 33);
             this.btnCadastrar.TabIndex = 14;
@@ -198,6 +200,16 @@
             this.dgvFornecedor.TabIndex = 2;
             this.dgvFornecedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellClick);
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(165, 299);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(147, 30);
+            this.btnVoltar.TabIndex = 3;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // FundoFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +219,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "FundoFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FundoFornecedor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -233,5 +246,6 @@
         private System.Windows.Forms.TextBox txbendereco;
         private System.Windows.Forms.TextBox txbemail;
         private System.Windows.Forms.DataGridView dgvFornecedor;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

@@ -93,12 +93,6 @@
     <Compile Include="FrmCadastroUsuario.Designer.cs">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmForncedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmForncedor.Designer.cs">
-      <DependentUpon>FrmForncedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,59 +129,17 @@
     <Compile Include="FrmOpcoes.Designer.cs">
       <DependentUpon>FrmOpcoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FundoCadastro.cs">
+    <Compile Include="FrmFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FundoCadastro.Designer.cs">
-      <DependentUpon>FundoCadastro.cs</DependentUpon>
+    <Compile Include="FrmFornecedor.Designer.cs">
+      <DependentUpon>FrmFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FundoCadastroUsuario.cs">
+    <Compile Include="Fundo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FundoCadastroUsuario.Designer.cs">
-      <DependentUpon>FundoCadastroUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FundoCaixa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FundoCaixa.Designer.cs">
-      <DependentUpon>FundoCaixa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FundoComandas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FundoComandas.Designer.cs">
-      <DependentUpon>FundoComandas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FundoEstoque.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FundoEstoque.Designer.cs">
-      <DependentUpon>FundoEstoque.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FundoFornecedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FundoFornecedor.Designer.cs">
-      <DependentUpon>FundoFornecedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FundoLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FundoLogin.Designer.cs">
-      <DependentUpon>FundoLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FundoOpcoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FundoOpcoes.Designer.cs">
-      <DependentUpon>FundoOpcoes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FundoPedidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FundoPedidos.Designer.cs">
-      <DependentUpon>FundoPedidos.cs</DependentUpon>
+    <Compile Include="Fundo.Designer.cs">
+      <DependentUpon>Fundo.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
@@ -226,11 +178,11 @@
     <EmbeddedResource Include="FrmOpcoes.resx">
       <DependentUpon>FrmOpcoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FundoCadastro.resx">
-      <DependentUpon>FundoCadastro.cs</DependentUpon>
+    <EmbeddedResource Include="FrmFornecedor.resx">
+      <DependentUpon>FrmFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FundoFornecedor.resx">
-      <DependentUpon>FundoFornecedor.cs</DependentUpon>
+    <EmbeddedResource Include="Fundo.resx">
+      <DependentUpon>Fundo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -262,6 +214,8 @@
   <ItemGroup>
     <None Include="Resources\pizza-4952508_1920 %281%29.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\uma pizza na direita com uma fundo preto.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

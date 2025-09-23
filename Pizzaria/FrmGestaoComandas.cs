@@ -349,13 +349,6 @@ namespace Pizzaria
         {
             if (this.DesignMode) return; // Evita execução no designer
 
-            this.Hide();
-
-            // Abre a tela de opções
-            FrmOpcoes telaOpcoes = new FrmOpcoes(usuario);
-            telaOpcoes.ShowDialog();
-
-            // Fecha definitivamente a tela de comandas
             this.Close();
         }
 

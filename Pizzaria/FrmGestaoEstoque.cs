@@ -157,10 +157,7 @@ namespace Pizzaria
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            FrmOpcoes frmOpcoes = new FrmOpcoes(usuario);
-            this.Hide();
-            frmOpcoes.ShowDialog();
-            this.Show();
+           this.Close();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
