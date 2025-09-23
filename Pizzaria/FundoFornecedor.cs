@@ -105,7 +105,7 @@ namespace Pizzaria
             {
                 if (this.fornecedor.Excluir())
                 {
-                    MessageBox.Show("Produto removido com sucesso", "Sucesso!!",
+                    MessageBox.Show("Fornecedor removido com sucesso", "Sucesso!!",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                     AtualizarDGV();
                     // Limpar os campos
@@ -119,20 +119,28 @@ namespace Pizzaria
                 }
                 else
                 {
-                    MessageBox.Show("Falha ao remover Produto!!", "ERRO",
+                    MessageBox.Show("Falha ao remover Fornecedor!!", "ERRO",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void bntSalvar_Click(object sender, EventArgs e)
+        private void dgvFornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int linhaselecionada = dgvFornecedor.SelectedCells[0].RowIndex;
+            this.fornecedor.fornecedor = dgvFornecedor.Rows[linhaselecionada].Cells[1].Value.ToString();
+            this.fornecedor.cnpj = dgvFornecedor.Rows[linhaselecionada].Cells[2].Value.ToString();
+            this.fornecedor.telefone = dgvFornecedor.Rows[linhaselecionada].Cells[3].Value.ToString();
+            this.fornecedor.email = dgvFornecedor.Rows[linhaselecionada].Cells[4].Value.ToString();
+            this.fornecedor.endereco = dgvFornecedor.Rows[linhaselecionada].Cells[5].Value.ToString();
+            this.fornecedor.id_fornecedor = (int)dgvFornecedor.Rows[linhaselecionada].Cells[0].Value;
 
-        }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
-        {
-
+            txbfornecedor.Text = this.fornecedor.fornecedor;
+            txbcnpj.Text = this.fornecedor.cnpj;
+            txbtelefone.Text = this.fornecedor.telefone;
+            txbemail.Text = this.fornecedor.email;
+            txbendereco.Text = this.fornecedor.endereco;
         }
     }
 }

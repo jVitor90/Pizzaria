@@ -36,8 +36,6 @@
             this.txbcnpj = new System.Windows.Forms.TextBox();
             this.txbfornecedor = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.bntSalvar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,8 +65,6 @@
             this.groupBox1.Controls.Add(this.txbcnpj);
             this.groupBox1.Controls.Add(this.txbfornecedor);
             this.groupBox1.Controls.Add(this.btnExcluir);
-            this.groupBox1.Controls.Add(this.btnAtualizar);
-            this.groupBox1.Controls.Add(this.bntSalvar);
             this.groupBox1.Controls.Add(this.btnCadastrar);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label6);
@@ -124,39 +120,19 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(374, 279);
+            this.btnExcluir.Location = new System.Drawing.Point(261, 279);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(107, 33);
+            this.btnExcluir.Size = new System.Drawing.Size(220, 33);
             this.btnExcluir.TabIndex = 17;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Location = new System.Drawing.Point(139, 279);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(107, 33);
-            this.btnAtualizar.TabIndex = 16;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
-            // bntSalvar
-            // 
-            this.bntSalvar.Location = new System.Drawing.Point(258, 279);
-            this.bntSalvar.Name = "bntSalvar";
-            this.bntSalvar.Size = new System.Drawing.Size(107, 33);
-            this.bntSalvar.TabIndex = 15;
-            this.bntSalvar.Text = "Salvar";
-            this.bntSalvar.UseVisualStyleBackColor = true;
-            this.bntSalvar.Click += new System.EventHandler(this.bntSalvar_Click);
-            // 
             // btnCadastrar
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(14, 279);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(107, 33);
+            this.btnCadastrar.Size = new System.Drawing.Size(219, 33);
             this.btnCadastrar.TabIndex = 14;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -214,11 +190,13 @@
             // 
             // dgvFornecedor
             // 
+            this.dgvFornecedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFornecedor.Location = new System.Drawing.Point(525, 60);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.Size = new System.Drawing.Size(395, 335);
             this.dgvFornecedor.TabIndex = 2;
+            this.dgvFornecedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellClick);
             // 
             // FundoFornecedor
             // 
@@ -246,8 +224,6 @@
         private System.Windows.Forms.TextBox txbcnpj;
         private System.Windows.Forms.TextBox txbfornecedor;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.Button bntSalvar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
