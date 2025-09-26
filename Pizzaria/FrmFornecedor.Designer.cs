@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FundoFornecedor));
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grbFornecedor = new System.Windows.Forms.GroupBox();
+            this.lblID = new System.Windows.Forms.Label();
+            this.btneditar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.txbendereco = new System.Windows.Forms.TextBox();
             this.txbemail = new System.Windows.Forms.TextBox();
             this.txbtelefone = new System.Windows.Forms.TextBox();
@@ -43,42 +47,79 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.grbFornecedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(266, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(387, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro do fornecedor ";
             // 
-            // groupBox1
+            // grbFornecedor
             // 
-            this.groupBox1.Controls.Add(this.btnVoltar);
-            this.groupBox1.Controls.Add(this.txbendereco);
-            this.groupBox1.Controls.Add(this.txbemail);
-            this.groupBox1.Controls.Add(this.txbtelefone);
-            this.groupBox1.Controls.Add(this.txbcnpj);
-            this.groupBox1.Controls.Add(this.txbfornecedor);
-            this.groupBox1.Controls.Add(this.btnExcluir);
-            this.groupBox1.Controls.Add(this.btnCadastrar);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 60);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(491, 335);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fornecedor";
+            this.grbFornecedor.BackColor = System.Drawing.Color.Transparent;
+            this.grbFornecedor.Controls.Add(this.lblID);
+            this.grbFornecedor.Controls.Add(this.btneditar);
+            this.grbFornecedor.Controls.Add(this.btnVoltar);
+            this.grbFornecedor.Controls.Add(this.txbendereco);
+            this.grbFornecedor.Controls.Add(this.txbemail);
+            this.grbFornecedor.Controls.Add(this.txbtelefone);
+            this.grbFornecedor.Controls.Add(this.txbcnpj);
+            this.grbFornecedor.Controls.Add(this.txbfornecedor);
+            this.grbFornecedor.Controls.Add(this.btnExcluir);
+            this.grbFornecedor.Controls.Add(this.btnCadastrar);
+            this.grbFornecedor.Controls.Add(this.label8);
+            this.grbFornecedor.Controls.Add(this.label6);
+            this.grbFornecedor.Controls.Add(this.label5);
+            this.grbFornecedor.Controls.Add(this.label3);
+            this.grbFornecedor.Controls.Add(this.label2);
+            this.grbFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbFornecedor.ForeColor = System.Drawing.Color.White;
+            this.grbFornecedor.Location = new System.Drawing.Point(12, 60);
+            this.grbFornecedor.Name = "grbFornecedor";
+            this.grbFornecedor.Size = new System.Drawing.Size(491, 361);
+            this.grbFornecedor.TabIndex = 1;
+            this.grbFornecedor.TabStop = false;
+            this.grbFornecedor.Text = "Fornecedor";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(64, 334);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(35, 13);
+            this.lblID.TabIndex = 3;
+            this.lblID.Text = "label4";
+            // 
+            // btneditar
+            // 
+            this.btneditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneditar.Location = new System.Drawing.Point(174, 244);
+            this.btneditar.Name = "btneditar";
+            this.btneditar.Size = new System.Drawing.Size(146, 33);
+            this.btneditar.TabIndex = 24;
+            this.btneditar.Text = "Editar";
+            this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(10, 289);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(460, 30);
+            this.btnVoltar.TabIndex = 3;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // txbendereco
             // 
@@ -122,9 +163,10 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(250, 244);
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(343, 244);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(220, 33);
+            this.btnExcluir.Size = new System.Drawing.Size(127, 33);
             this.btnExcluir.TabIndex = 17;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -132,9 +174,10 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(9, 244);
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Location = new System.Drawing.Point(10, 244);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(219, 33);
+            this.btnCadastrar.Size = new System.Drawing.Size(146, 33);
             this.btnCadastrar.TabIndex = 14;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -196,33 +239,26 @@
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFornecedor.Location = new System.Drawing.Point(525, 60);
             this.dgvFornecedor.Name = "dgvFornecedor";
-            this.dgvFornecedor.Size = new System.Drawing.Size(395, 335);
+            this.dgvFornecedor.Size = new System.Drawing.Size(395, 361);
             this.dgvFornecedor.TabIndex = 2;
             this.dgvFornecedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellClick);
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.Location = new System.Drawing.Point(165, 299);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(147, 30);
-            this.btnVoltar.TabIndex = 3;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // FundoFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(932, 462);
             this.Controls.Add(this.dgvFornecedor);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grbFornecedor);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FundoFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FundoFornecedor";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Text = "Fornecedor";
+            this.grbFornecedor.ResumeLayout(false);
+            this.grbFornecedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -232,12 +268,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbFornecedor;
         private System.Windows.Forms.TextBox txbtelefone;
         private System.Windows.Forms.TextBox txbcnpj;
         private System.Windows.Forms.TextBox txbfornecedor;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -247,5 +282,8 @@
         private System.Windows.Forms.TextBox txbemail;
         private System.Windows.Forms.DataGridView dgvFornecedor;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btneditar;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }

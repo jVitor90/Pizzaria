@@ -64,16 +64,17 @@ namespace Pizzaria.Model
        public bool Modificar()
         {
 
-            string comando = "UPDATE fornecedor SET id_fornecedor = @id_fornecedor, fornecedor = @fornecedor cnpj = @cnpj, telefone = @telefone, email = @email, endereco = @endereco WHERE id_fornecedor = @id_fornecedor";
+            string comando = "UPDATE fornecedor SET fornecedor = @fornecedor, cnpj = @cnpj, telefone = @telefone, email = @email, endereco = @endereco WHERE id_fornecedor = @id_fornecedor";
 
-           Banco conexaoBD = new Banco();
+            Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-            cmd.Parameters.AddWithValue("fornecedor", fornecedor);
+            cmd.Parameters.AddWithValue("@fornecedor", fornecedor);
             cmd.Parameters.AddWithValue("@cnpj", cnpj);
             cmd.Parameters.AddWithValue("@telefone", telefone);
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@endereco", endereco);
+            cmd.Parameters.AddWithValue("@id_fornecedor", id_fornecedor);
 
             try
             {

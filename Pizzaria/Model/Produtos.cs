@@ -116,6 +116,9 @@ namespace Pizzaria.Model
                 }
                 else
                 {
+
+                }
+                {
                     conexaoBD.Desconectar(con);
                     return true;
                 }

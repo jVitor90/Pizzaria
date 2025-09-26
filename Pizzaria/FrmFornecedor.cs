@@ -23,12 +23,12 @@ namespace Pizzaria
         {
             dgvFornecedor.DataSource = fornecedor.Listar();
 
-            dgvFornecedor.Columns["id_fornecedor"].HeaderText = "ID Fornecedor";
-            dgvFornecedor.Columns["fornecedor"].HeaderText = "Fornecedor";
-            dgvFornecedor.Columns["cnpj"].HeaderText = "CNPJ";
-            dgvFornecedor.Columns["telefone"].HeaderText = "Telefone";
-            dgvFornecedor.Columns["email"].HeaderText = "E-mail";
-            dgvFornecedor.Columns["endereco"].HeaderText = "Enderço";
+            //dgvFornecedor.Columns["id_fornecedor"].HeaderText = "ID Fornecedor";
+            //dgvFornecedor.Columns["fornecedor"].HeaderText = "Fornecedor";
+            //dgvFornecedor.Columns["cnpj"].HeaderText = "CNPJ";
+            //dgvFornecedor.Columns["telefone"].HeaderText = "Telefone";
+            //dgvFornecedor.Columns["email"].HeaderText = "E-mail";
+            //dgvFornecedor.Columns["endereco"].HeaderText = "Enderço";
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Pizzaria
                 fornecedor.email = txbemail.Text;
                 fornecedor.endereco = txbendereco.Text;
                 //fornecedor.id_fornecedor = int.Parse(txbfornecedor.Text.Split('-')[0]);
-                
+
                 DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja Cadstrar este Fornecedor?",
               "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -136,16 +136,87 @@ namespace Pizzaria
             this.fornecedor.id_fornecedor = (int)dgvFornecedor.Rows[linhaselecionada].Cells[0].Value;
 
 
+
             txbfornecedor.Text = this.fornecedor.fornecedor;
             txbcnpj.Text = this.fornecedor.cnpj;
             txbtelefone.Text = this.fornecedor.telefone;
             txbemail.Text = this.fornecedor.email;
             txbendereco.Text = this.fornecedor.endereco;
+            lblID.Text = this.fornecedor.id_fornecedor.ToString();
+
+            
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            //validar Erros
+            if (txbfornecedor.Text.Length <= 0)
+            {
+                MessageBox.Show("O Nome do fornecedor invalido!", "ERRO",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbcnpj.Text.Length <= 0)
+            {
+                MessageBox.Show("O CNPJ é invalido!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbemail.Text.Length <= 0)
+            {
+                MessageBox.Show("O Email informado é invalido!", "ERRO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbtelefone.Text.Length <= 0)
+            {
+                MessageBox.Show("O Telefone é invalido!", "ERRO",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbendereco.Text.Length <= 0)
+            {
+                MessageBox.Show("O Endereço é invalido!", "ERRO",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Iniciar no bd
+                // Instanciar o fornecedor
+                Forncedor fornecedor = new Forncedor();
+                fornecedor.fornecedor = txbfornecedor.Text;
+                fornecedor.cnpj = txbcnpj.Text;
+                fornecedor.telefone = txbtelefone.Text;
+                fornecedor.email = txbemail.Text;
+                fornecedor.endereco = txbendereco.Text;
+                fornecedor.id_fornecedor = this.fornecedor.id_fornecedor;
+                //fornecedor.id_fornecedor
+
+                DialogResult editar = MessageBox.Show("Tem certeza que deseja Editar este Fornecedor?",
+                "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (editar == DialogResult.Yes)
+                {
+                    if (fornecedor.Modificar())
+                    {
+                        MessageBox.Show("Fornecedor editado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Limpa os campos de cadastro
+                        txbfornecedor.Clear();
+                        txbcnpj.Clear();
+                        txbtelefone.Clear();
+                        txbemail.Clear();
+                        txbendereco.Clear();
+                        // Atualiza o dgv
+                        AtualizarDGV();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao editar Fornecedor", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"{fornecedor.id_fornecedor}");
+                    }
+                }
+            }
         }
     }
 }
