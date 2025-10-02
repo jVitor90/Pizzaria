@@ -81,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFinanceiro.Designer.cs">
+      <DependentUpon>FrmFinanceiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadastrarProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,7 @@
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\Financeiro.cs" />
     <Compile Include="Model\Forncedor.cs" />
     <Compile Include="Model\Lancamento.cs" />
     <Compile Include="Model\Mesas_lancamentos.cs" />
@@ -154,6 +161,9 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmFinanceiro.resx">
+      <DependentUpon>FrmFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastrarProdutos.resx">
       <DependentUpon>FrmCadastrarProdutos.cs</DependentUpon>
     </EmbeddedResource>

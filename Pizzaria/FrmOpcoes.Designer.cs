@@ -38,6 +38,7 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFornecedor = new System.Windows.Forms.Button();
+            this.BtnFinanceiro = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bntcadastrarusuarios
@@ -74,7 +75,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSair.Location = new System.Drawing.Point(576, 266);
+            this.btnSair.Location = new System.Drawing.Point(576, 345);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(190, 51);
             this.btnSair.TabIndex = 13;
@@ -164,6 +165,20 @@
             this.btnFornecedor.UseVisualStyleBackColor = false;
             this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
             // 
+            // BtnFinanceiro
+            // 
+            this.BtnFinanceiro.BackColor = System.Drawing.Color.Transparent;
+            this.BtnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFinanceiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFinanceiro.ForeColor = System.Drawing.Color.White;
+            this.BtnFinanceiro.Location = new System.Drawing.Point(576, 266);
+            this.BtnFinanceiro.Name = "BtnFinanceiro";
+            this.BtnFinanceiro.Size = new System.Drawing.Size(190, 51);
+            this.BtnFinanceiro.TabIndex = 17;
+            this.BtnFinanceiro.Text = "Financeiro";
+            this.BtnFinanceiro.UseVisualStyleBackColor = false;
+            this.BtnFinanceiro.Click += new System.EventHandler(this.BtnFinanceiro_Click);
+            // 
             // FrmOpcoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +186,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(845, 448);
+            this.Controls.Add(this.BtnFinanceiro);
             this.Controls.Add(this.btnFornecedor);
             this.Controls.Add(this.bntcadastrarusuarios);
             this.Controls.Add(this.btnpedidos);
@@ -202,5 +218,6 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFornecedor;
+        private System.Windows.Forms.Button BtnFinanceiro;
     }
 }

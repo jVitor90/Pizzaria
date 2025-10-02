@@ -32,6 +32,7 @@ namespace Pizzaria
             btnCaixa.Enabled = false;
             btnComandas.Enabled = false;
             btnEstoque.Enabled = false;
+            BtnFinanceiro.Enabled = false;
 
             // 🔑 Agora libera conforme o cargo
             if (cargo == "admin" || cargo == "Gerente")
@@ -42,6 +43,7 @@ namespace Pizzaria
                 btnCaixa.Enabled = true;
                 btnComandas.Enabled = true;
                 btnEstoque.Enabled = true;
+                BtnFinanceiro.Enabled = true;
             }
             else if (cargo == "Garçom")
             {
@@ -128,6 +130,13 @@ namespace Pizzaria
             frmfornecedor.ShowDialog(); this.Show();
             this.Show();
 
+        }
+
+        private void BtnFinanceiro_Click(object sender, EventArgs e)
+        {
+            FrmFinanceiro frmfinanceiro = new FrmFinanceiro();
+            this.Hide();
+            frmfinanceiro.ShowDialog(); this.Show();
         }
     }
 }
