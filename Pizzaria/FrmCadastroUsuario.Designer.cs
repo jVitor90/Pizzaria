@@ -135,26 +135,30 @@
             // 
             // btrnCadastrar
             // 
+            this.btrnCadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.btrnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btrnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btrnCadastrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btrnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btrnCadastrar.Location = new System.Drawing.Point(12, 338);
             this.btrnCadastrar.Name = "btrnCadastrar";
             this.btrnCadastrar.Size = new System.Drawing.Size(452, 39);
             this.btrnCadastrar.TabIndex = 32;
             this.btrnCadastrar.Text = "Cadastrar";
-            this.btrnCadastrar.UseVisualStyleBackColor = true;
+            this.btrnCadastrar.UseVisualStyleBackColor = false;
             this.btrnCadastrar.Click += new System.EventHandler(this.btrnCadastrar_Click);
             // 
             // btnVoltar
             // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVoltar.ForeColor = System.Drawing.Color.White;
             this.btnVoltar.Location = new System.Drawing.Point(12, 383);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(452, 39);
             this.btnVoltar.TabIndex = 42;
             this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // txbSenha
@@ -184,7 +188,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(842, 450);
             this.Controls.Add(this.picblogo);
             this.Controls.Add(this.btnVoltar);

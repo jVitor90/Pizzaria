@@ -64,9 +64,9 @@
             this.DgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.DgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvProdutos.Location = new System.Drawing.Point(581, 243);
+            this.DgvProdutos.Location = new System.Drawing.Point(535, 269);
             this.DgvProdutos.Name = "DgvProdutos";
-            this.DgvProdutos.Size = new System.Drawing.Size(754, 367);
+            this.DgvProdutos.Size = new System.Drawing.Size(794, 273);
             this.DgvProdutos.TabIndex = 23;
             this.DgvProdutos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProdutos_CellDoubleClick);
             // 
@@ -79,9 +79,9 @@
             this.DgvComandas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvComandas.BackgroundColor = System.Drawing.Color.White;
             this.DgvComandas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvComandas.Location = new System.Drawing.Point(18, 243);
+            this.DgvComandas.Location = new System.Drawing.Point(535, 12);
             this.DgvComandas.Name = "DgvComandas";
-            this.DgvComandas.Size = new System.Drawing.Size(557, 367);
+            this.DgvComandas.Size = new System.Drawing.Size(794, 251);
             this.DgvComandas.TabIndex = 22;
             this.DgvComandas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellClick);
             this.DgvComandas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellDoubleClick);
@@ -90,26 +90,23 @@
             // 
             this.grbPedidos.BackColor = System.Drawing.Color.Transparent;
             this.grbPedidos.Controls.Add(this.LblClientes);
-            this.grbPedidos.Controls.Add(this.txbClientes);
             this.grbPedidos.Controls.Add(this.ChbAdicionais);
             this.grbPedidos.Controls.Add(this.ChbBordas);
+            this.grbPedidos.Controls.Add(this.txbClientes);
             this.grbPedidos.Controls.Add(this.ChbBebidas);
             this.grbPedidos.Controls.Add(this.ChbPizzas);
             this.grbPedidos.Controls.Add(this.cmbAdicionais);
-            this.grbPedidos.Controls.Add(this.btnCadastrar);
-            this.grbPedidos.Controls.Add(this.cmbBordas);
-            this.grbPedidos.Controls.Add(this.btnVoltar);
-            this.grbPedidos.Controls.Add(this.btnLimpar);
-            this.grbPedidos.Controls.Add(this.cmbPizzas);
-            this.grbPedidos.Controls.Add(this.label2);
-            this.grbPedidos.Controls.Add(this.lblObservacao);
-            this.grbPedidos.Controls.Add(this.cmbBebidas);
             this.grbPedidos.Controls.Add(this.txbObservecao);
+            this.grbPedidos.Controls.Add(this.lblObservacao);
+            this.grbPedidos.Controls.Add(this.cmbPizzas);
+            this.grbPedidos.Controls.Add(this.cmbBebidas);
+            this.grbPedidos.Controls.Add(this.cmbBordas);
+            this.grbPedidos.Controls.Add(this.label2);
             this.grbPedidos.Controls.Add(this.txbMesa);
             this.grbPedidos.ForeColor = System.Drawing.Color.White;
             this.grbPedidos.Location = new System.Drawing.Point(12, 35);
             this.grbPedidos.Name = "grbPedidos";
-            this.grbPedidos.Size = new System.Drawing.Size(1301, 202);
+            this.grbPedidos.Size = new System.Drawing.Size(517, 507);
             this.grbPedidos.TabIndex = 21;
             this.grbPedidos.TabStop = false;
             this.grbPedidos.Text = "Pedidos";
@@ -119,7 +116,7 @@
             this.LblClientes.AutoSize = true;
             this.LblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblClientes.ForeColor = System.Drawing.Color.White;
-            this.LblClientes.Location = new System.Drawing.Point(1100, 21);
+            this.LblClientes.Location = new System.Drawing.Point(7, 363);
             this.LblClientes.Name = "LblClientes";
             this.LblClientes.Size = new System.Drawing.Size(58, 17);
             this.LblClientes.TabIndex = 23;
@@ -127,7 +124,7 @@
             // 
             // txbClientes
             // 
-            this.txbClientes.Location = new System.Drawing.Point(1100, 47);
+            this.txbClientes.Location = new System.Drawing.Point(7, 389);
             this.txbClientes.Multiline = true;
             this.txbClientes.Name = "txbClientes";
             this.txbClientes.Size = new System.Drawing.Size(195, 28);
@@ -141,7 +138,7 @@
             this.ChbAdicionais.Enabled = false;
             this.ChbAdicionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChbAdicionais.ForeColor = System.Drawing.Color.White;
-            this.ChbAdicionais.Location = new System.Drawing.Point(432, 21);
+            this.ChbAdicionais.Location = new System.Drawing.Point(6, 90);
             this.ChbAdicionais.Name = "ChbAdicionais";
             this.ChbAdicionais.Size = new System.Drawing.Size(94, 22);
             this.ChbAdicionais.TabIndex = 21;
@@ -155,7 +152,7 @@
             this.ChbBordas.Enabled = false;
             this.ChbBordas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChbBordas.ForeColor = System.Drawing.Color.White;
-            this.ChbBordas.Location = new System.Drawing.Point(642, 21);
+            this.ChbBordas.Location = new System.Drawing.Point(10, 294);
             this.ChbBordas.Name = "ChbBordas";
             this.ChbBordas.Size = new System.Drawing.Size(79, 22);
             this.ChbBordas.TabIndex = 20;
@@ -168,7 +165,7 @@
             this.ChbBebidas.AutoSize = true;
             this.ChbBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChbBebidas.ForeColor = System.Drawing.Color.White;
-            this.ChbBebidas.Location = new System.Drawing.Point(216, 19);
+            this.ChbBebidas.Location = new System.Drawing.Point(10, 162);
             this.ChbBebidas.Name = "ChbBebidas";
             this.ChbBebidas.Size = new System.Drawing.Size(86, 24);
             this.ChbBebidas.TabIndex = 18;
@@ -195,18 +192,18 @@
             this.cmbAdicionais.Enabled = false;
             this.cmbAdicionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAdicionais.FormattingEnabled = true;
-            this.cmbAdicionais.Location = new System.Drawing.Point(432, 47);
+            this.cmbAdicionais.Location = new System.Drawing.Point(6, 116);
             this.cmbAdicionais.Name = "cmbAdicionais";
             this.cmbAdicionais.Size = new System.Drawing.Size(195, 28);
             this.cmbAdicionais.TabIndex = 15;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.White;
+            this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastrar.Location = new System.Drawing.Point(9, 155);
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+            this.btnCadastrar.Location = new System.Drawing.Point(15, 558);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(174, 32);
             this.btnCadastrar.TabIndex = 1;
@@ -220,17 +217,17 @@
             this.cmbBordas.Enabled = false;
             this.cmbBordas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBordas.FormattingEnabled = true;
-            this.cmbBordas.Location = new System.Drawing.Point(642, 47);
+            this.cmbBordas.Location = new System.Drawing.Point(10, 320);
             this.cmbBordas.Name = "cmbBordas";
             this.cmbBordas.Size = new System.Drawing.Size(195, 28);
             this.cmbBordas.TabIndex = 14;
             // 
             // btnVoltar
             // 
-            this.btnVoltar.BackColor = System.Drawing.Color.White;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
-            this.btnVoltar.Location = new System.Drawing.Point(450, 155);
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.ForeColor = System.Drawing.Color.White;
+            this.btnVoltar.Location = new System.Drawing.Point(403, 558);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(174, 32);
             this.btnVoltar.TabIndex = 0;
@@ -240,11 +237,11 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackColor = System.Drawing.Color.White;
+            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
             this.btnLimpar.FlatAppearance.BorderSize = 0;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpar.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpar.Location = new System.Drawing.Point(229, 155);
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.Location = new System.Drawing.Point(209, 558);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(174, 32);
             this.btnLimpar.TabIndex = 11;
@@ -269,7 +266,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(880, 21);
+            this.label2.Location = new System.Drawing.Point(6, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 10;
@@ -280,7 +277,7 @@
             this.lblObservacao.AutoSize = true;
             this.lblObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObservacao.ForeColor = System.Drawing.Color.White;
-            this.lblObservacao.Location = new System.Drawing.Point(11, 84);
+            this.lblObservacao.Location = new System.Drawing.Point(8, 420);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(92, 17);
             this.lblObservacao.TabIndex = 7;
@@ -292,7 +289,7 @@
             this.cmbBebidas.Enabled = false;
             this.cmbBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBebidas.FormattingEnabled = true;
-            this.cmbBebidas.Location = new System.Drawing.Point(216, 47);
+            this.cmbBebidas.Location = new System.Drawing.Point(10, 190);
             this.cmbBebidas.Name = "cmbBebidas";
             this.cmbBebidas.Size = new System.Drawing.Size(195, 28);
             this.cmbBebidas.TabIndex = 4;
@@ -300,7 +297,7 @@
             // txbObservecao
             // 
             this.txbObservecao.Enabled = false;
-            this.txbObservecao.Location = new System.Drawing.Point(6, 110);
+            this.txbObservecao.Location = new System.Drawing.Point(3, 446);
             this.txbObservecao.Multiline = true;
             this.txbObservecao.Name = "txbObservecao";
             this.txbObservecao.Size = new System.Drawing.Size(405, 28);
@@ -308,7 +305,7 @@
             // 
             // txbMesa
             // 
-            this.txbMesa.Location = new System.Drawing.Point(880, 47);
+            this.txbMesa.Location = new System.Drawing.Point(6, 265);
             this.txbMesa.Multiline = true;
             this.txbMesa.Name = "txbMesa";
             this.txbMesa.Size = new System.Drawing.Size(195, 28);
@@ -340,6 +337,9 @@
             this.Controls.Add(this.DgvComandas);
             this.Controls.Add(this.grbPedidos);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnVoltar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGestaoComandas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

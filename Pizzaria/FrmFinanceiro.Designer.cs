@@ -15,6 +15,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFinanceiro));
             this.GrbFaturamentoPeriodo = new System.Windows.Forms.GroupBox();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFim = new System.Windows.Forms.DateTimePicker();
@@ -31,10 +32,12 @@
             // 
             // GrbFaturamentoPeriodo
             // 
+            this.GrbFaturamentoPeriodo.BackColor = System.Drawing.Color.Transparent;
             this.GrbFaturamentoPeriodo.Controls.Add(this.dtpInicio);
             this.GrbFaturamentoPeriodo.Controls.Add(this.dtpFim);
             this.GrbFaturamentoPeriodo.Controls.Add(this.BtnGerarRelatorio);
             this.GrbFaturamentoPeriodo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrbFaturamentoPeriodo.ForeColor = System.Drawing.Color.White;
             this.GrbFaturamentoPeriodo.Location = new System.Drawing.Point(12, 50);
             this.GrbFaturamentoPeriodo.Name = "GrbFaturamentoPeriodo";
             this.GrbFaturamentoPeriodo.Size = new System.Drawing.Size(760, 100);
@@ -73,9 +76,11 @@
             // 
             // GrbFaturamentoMensal
             // 
+            this.GrbFaturamentoMensal.BackColor = System.Drawing.Color.Transparent;
             this.GrbFaturamentoMensal.Controls.Add(this.BtnFaturamentoMensalAtual);
             this.GrbFaturamentoMensal.Controls.Add(this.BtnRelatorioMensalGeral);
             this.GrbFaturamentoMensal.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrbFaturamentoMensal.ForeColor = System.Drawing.Color.White;
             this.GrbFaturamentoMensal.Location = new System.Drawing.Point(12, 160);
             this.GrbFaturamentoMensal.Name = "GrbFaturamentoMensal";
             this.GrbFaturamentoMensal.Size = new System.Drawing.Size(760, 76);
@@ -87,6 +92,7 @@
             // 
             this.BtnFaturamentoMensalAtual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFaturamentoMensalAtual.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFaturamentoMensalAtual.ForeColor = System.Drawing.Color.White;
             this.BtnFaturamentoMensalAtual.Location = new System.Drawing.Point(10, 30);
             this.BtnFaturamentoMensalAtual.Name = "BtnFaturamentoMensalAtual";
             this.BtnFaturamentoMensalAtual.Size = new System.Drawing.Size(180, 30);
@@ -98,6 +104,7 @@
             // 
             this.BtnRelatorioMensalGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRelatorioMensalGeral.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRelatorioMensalGeral.ForeColor = System.Drawing.Color.White;
             this.BtnRelatorioMensalGeral.Location = new System.Drawing.Point(200, 30);
             this.BtnRelatorioMensalGeral.Name = "BtnRelatorioMensalGeral";
             this.BtnRelatorioMensalGeral.Size = new System.Drawing.Size(180, 30);
@@ -109,25 +116,30 @@
             // 
             this.DgvFaturamento.Location = new System.Drawing.Point(6, 248);
             this.DgvFaturamento.Name = "DgvFaturamento";
-            this.DgvFaturamento.Size = new System.Drawing.Size(760, 150);
+            this.DgvFaturamento.Size = new System.Drawing.Size(766, 150);
             this.DgvFaturamento.TabIndex = 3;
             // 
             // BtnVoltar
             // 
+            this.BtnVoltar.BackColor = System.Drawing.Color.Transparent;
             this.BtnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVoltar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVoltar.Location = new System.Drawing.Point(6, 404);
+            this.BtnVoltar.ForeColor = System.Drawing.Color.White;
+            this.BtnVoltar.Location = new System.Drawing.Point(6, 410);
             this.BtnVoltar.Name = "BtnVoltar";
             this.BtnVoltar.Size = new System.Drawing.Size(196, 36);
             this.BtnVoltar.TabIndex = 3;
             this.BtnVoltar.Text = "Voltar";
+            this.BtnVoltar.UseVisualStyleBackColor = false;
             this.BtnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
             // 
             // FrmFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 442);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(782, 458);
             this.Controls.Add(this.BtnVoltar);
             this.Controls.Add(this.GrbFaturamentoPeriodo);
             this.Controls.Add(this.GrbFaturamentoMensal);
