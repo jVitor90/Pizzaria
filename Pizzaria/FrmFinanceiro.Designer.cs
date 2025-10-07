@@ -38,9 +38,9 @@
             this.GrbFaturamentoPeriodo.Controls.Add(this.BtnGerarRelatorio);
             this.GrbFaturamentoPeriodo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GrbFaturamentoPeriodo.ForeColor = System.Drawing.Color.White;
-            this.GrbFaturamentoPeriodo.Location = new System.Drawing.Point(12, 50);
+            this.GrbFaturamentoPeriodo.Location = new System.Drawing.Point(12, 35);
             this.GrbFaturamentoPeriodo.Name = "GrbFaturamentoPeriodo";
-            this.GrbFaturamentoPeriodo.Size = new System.Drawing.Size(760, 100);
+            this.GrbFaturamentoPeriodo.Size = new System.Drawing.Size(760, 98);
             this.GrbFaturamentoPeriodo.TabIndex = 1;
             this.GrbFaturamentoPeriodo.TabStop = false;
             this.GrbFaturamentoPeriodo.Text = "Faturamento por Período";
@@ -81,9 +81,9 @@
             this.GrbFaturamentoMensal.Controls.Add(this.BtnRelatorioMensalGeral);
             this.GrbFaturamentoMensal.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GrbFaturamentoMensal.ForeColor = System.Drawing.Color.White;
-            this.GrbFaturamentoMensal.Location = new System.Drawing.Point(12, 160);
+            this.GrbFaturamentoMensal.Location = new System.Drawing.Point(12, 149);
             this.GrbFaturamentoMensal.Name = "GrbFaturamentoMensal";
-            this.GrbFaturamentoMensal.Size = new System.Drawing.Size(760, 76);
+            this.GrbFaturamentoMensal.Size = new System.Drawing.Size(760, 87);
             this.GrbFaturamentoMensal.TabIndex = 2;
             this.GrbFaturamentoMensal.TabStop = false;
             this.GrbFaturamentoMensal.Text = "Faturamento Mensal";

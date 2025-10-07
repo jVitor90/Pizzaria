@@ -33,22 +33,22 @@
             this.DgvComandas = new System.Windows.Forms.DataGridView();
             this.grbPedidos = new System.Windows.Forms.GroupBox();
             this.LblClientes = new System.Windows.Forms.Label();
-            this.txbClientes = new System.Windows.Forms.TextBox();
             this.ChbAdicionais = new System.Windows.Forms.CheckBox();
             this.ChbBordas = new System.Windows.Forms.CheckBox();
+            this.txbClientes = new System.Windows.Forms.TextBox();
             this.ChbBebidas = new System.Windows.Forms.CheckBox();
             this.ChbPizzas = new System.Windows.Forms.CheckBox();
             this.cmbAdicionais = new System.Windows.Forms.ComboBox();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txbObservecao = new System.Windows.Forms.TextBox();
+            this.lblObservacao = new System.Windows.Forms.Label();
+            this.cmbPizzas = new System.Windows.Forms.ComboBox();
+            this.cmbBebidas = new System.Windows.Forms.ComboBox();
             this.cmbBordas = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txbMesa = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.cmbPizzas = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblObservacao = new System.Windows.Forms.Label();
-            this.cmbBebidas = new System.Windows.Forms.ComboBox();
-            this.txbObservecao = new System.Windows.Forms.TextBox();
-            this.txbMesa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvComandas)).BeginInit();
@@ -64,9 +64,9 @@
             this.DgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.DgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvProdutos.Location = new System.Drawing.Point(535, 269);
+            this.DgvProdutos.Location = new System.Drawing.Point(489, 269);
             this.DgvProdutos.Name = "DgvProdutos";
-            this.DgvProdutos.Size = new System.Drawing.Size(794, 273);
+            this.DgvProdutos.Size = new System.Drawing.Size(840, 273);
             this.DgvProdutos.TabIndex = 23;
             this.DgvProdutos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProdutos_CellDoubleClick);
             // 
@@ -79,9 +79,9 @@
             this.DgvComandas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvComandas.BackgroundColor = System.Drawing.Color.White;
             this.DgvComandas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvComandas.Location = new System.Drawing.Point(535, 12);
+            this.DgvComandas.Location = new System.Drawing.Point(489, 35);
             this.DgvComandas.Name = "DgvComandas";
-            this.DgvComandas.Size = new System.Drawing.Size(794, 251);
+            this.DgvComandas.Size = new System.Drawing.Size(840, 228);
             this.DgvComandas.TabIndex = 22;
             this.DgvComandas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellClick);
             this.DgvComandas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellDoubleClick);
@@ -106,7 +106,7 @@
             this.grbPedidos.ForeColor = System.Drawing.Color.White;
             this.grbPedidos.Location = new System.Drawing.Point(12, 35);
             this.grbPedidos.Name = "grbPedidos";
-            this.grbPedidos.Size = new System.Drawing.Size(517, 507);
+            this.grbPedidos.Size = new System.Drawing.Size(445, 507);
             this.grbPedidos.TabIndex = 21;
             this.grbPedidos.TabStop = false;
             this.grbPedidos.Text = "Pedidos";
@@ -121,16 +121,6 @@
             this.LblClientes.Size = new System.Drawing.Size(58, 17);
             this.LblClientes.TabIndex = 23;
             this.LblClientes.Text = "Clientes";
-            // 
-            // txbClientes
-            // 
-            this.txbClientes.Location = new System.Drawing.Point(7, 389);
-            this.txbClientes.Multiline = true;
-            this.txbClientes.Name = "txbClientes";
-            this.txbClientes.Size = new System.Drawing.Size(195, 28);
-            this.txbClientes.TabIndex = 22;
-            this.txbClientes.TextChanged += new System.EventHandler(this.txbClientes_TextChanged);
-            this.txbClientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbClientes_KeyPress);
             // 
             // ChbAdicionais
             // 
@@ -159,6 +149,16 @@
             this.ChbBordas.Text = "Bordas ";
             this.ChbBordas.UseVisualStyleBackColor = true;
             this.ChbBordas.CheckedChanged += new System.EventHandler(this.ChbBordas_CheckedChanged);
+            // 
+            // txbClientes
+            // 
+            this.txbClientes.Location = new System.Drawing.Point(7, 389);
+            this.txbClientes.Multiline = true;
+            this.txbClientes.Name = "txbClientes";
+            this.txbClientes.Size = new System.Drawing.Size(195, 28);
+            this.txbClientes.TabIndex = 22;
+            this.txbClientes.TextChanged += new System.EventHandler(this.txbClientes_TextChanged);
+            this.txbClientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbClientes_KeyPress);
             // 
             // ChbBebidas
             // 
@@ -197,57 +197,25 @@
             this.cmbAdicionais.Size = new System.Drawing.Size(195, 28);
             this.cmbAdicionais.TabIndex = 15;
             // 
-            // btnCadastrar
+            // txbObservecao
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Location = new System.Drawing.Point(15, 558);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(174, 32);
-            this.btnCadastrar.TabIndex = 1;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.txbObservecao.Enabled = false;
+            this.txbObservecao.Location = new System.Drawing.Point(3, 446);
+            this.txbObservecao.Multiline = true;
+            this.txbObservecao.Name = "txbObservecao";
+            this.txbObservecao.Size = new System.Drawing.Size(405, 28);
+            this.txbObservecao.TabIndex = 3;
             // 
-            // cmbBordas
+            // lblObservacao
             // 
-            this.cmbBordas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBordas.Enabled = false;
-            this.cmbBordas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBordas.FormattingEnabled = true;
-            this.cmbBordas.Location = new System.Drawing.Point(10, 320);
-            this.cmbBordas.Name = "cmbBordas";
-            this.cmbBordas.Size = new System.Drawing.Size(195, 28);
-            this.cmbBordas.TabIndex = 14;
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.ForeColor = System.Drawing.Color.White;
-            this.btnVoltar.Location = new System.Drawing.Point(403, 558);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(174, 32);
-            this.btnVoltar.TabIndex = 0;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpar.FlatAppearance.BorderSize = 0;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(209, 558);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(174, 32);
-            this.btnLimpar.TabIndex = 11;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            this.lblObservacao.AutoSize = true;
+            this.lblObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObservacao.ForeColor = System.Drawing.Color.White;
+            this.lblObservacao.Location = new System.Drawing.Point(8, 420);
+            this.lblObservacao.Name = "lblObservacao";
+            this.lblObservacao.Size = new System.Drawing.Size(92, 17);
+            this.lblObservacao.TabIndex = 7;
+            this.lblObservacao.Text = "Observações";
             // 
             // cmbPizzas
             // 
@@ -261,28 +229,6 @@
             this.cmbPizzas.TabIndex = 2;
             this.cmbPizzas.SelectedIndexChanged += new System.EventHandler(this.cmbPizzas_SelectedIndexChanged);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 239);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "N° Da Mesa";
-            // 
-            // lblObservacao
-            // 
-            this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservacao.ForeColor = System.Drawing.Color.White;
-            this.lblObservacao.Location = new System.Drawing.Point(8, 420);
-            this.lblObservacao.Name = "lblObservacao";
-            this.lblObservacao.Size = new System.Drawing.Size(92, 17);
-            this.lblObservacao.TabIndex = 7;
-            this.lblObservacao.Text = "Observações";
-            // 
             // cmbBebidas
             // 
             this.cmbBebidas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -294,14 +240,27 @@
             this.cmbBebidas.Size = new System.Drawing.Size(195, 28);
             this.cmbBebidas.TabIndex = 4;
             // 
-            // txbObservecao
+            // cmbBordas
             // 
-            this.txbObservecao.Enabled = false;
-            this.txbObservecao.Location = new System.Drawing.Point(3, 446);
-            this.txbObservecao.Multiline = true;
-            this.txbObservecao.Name = "txbObservecao";
-            this.txbObservecao.Size = new System.Drawing.Size(405, 28);
-            this.txbObservecao.TabIndex = 3;
+            this.cmbBordas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBordas.Enabled = false;
+            this.cmbBordas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBordas.FormattingEnabled = true;
+            this.cmbBordas.Location = new System.Drawing.Point(10, 320);
+            this.cmbBordas.Name = "cmbBordas";
+            this.cmbBordas.Size = new System.Drawing.Size(195, 28);
+            this.cmbBordas.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(6, 239);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "N° Da Mesa";
             // 
             // txbMesa
             // 
@@ -312,6 +271,47 @@
             this.txbMesa.TabIndex = 9;
             this.txbMesa.TextChanged += new System.EventHandler(this.txbMesa_TextChanged);
             this.txbMesa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMesa_KeyPress);
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+            this.btnCadastrar.Location = new System.Drawing.Point(15, 558);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(192, 32);
+            this.btnCadastrar.TabIndex = 1;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.ForeColor = System.Drawing.Color.White;
+            this.btnVoltar.Location = new System.Drawing.Point(403, 558);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(192, 32);
+            this.btnVoltar.TabIndex = 0;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpar.FlatAppearance.BorderSize = 0;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.Location = new System.Drawing.Point(209, 558);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(192, 32);
+            this.btnLimpar.TabIndex = 11;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // label1
             // 
