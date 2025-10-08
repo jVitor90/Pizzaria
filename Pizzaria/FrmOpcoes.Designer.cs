@@ -47,7 +47,7 @@
             this.bntcadastrarusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntcadastrarusuarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntcadastrarusuarios.ForeColor = System.Drawing.Color.White;
-            this.bntcadastrarusuarios.Location = new System.Drawing.Point(358, 266);
+            this.bntcadastrarusuarios.Location = new System.Drawing.Point(358, 253);
             this.bntcadastrarusuarios.Name = "bntcadastrarusuarios";
             this.bntcadastrarusuarios.Size = new System.Drawing.Size(190, 51);
             this.bntcadastrarusuarios.TabIndex = 15;
@@ -75,7 +75,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSair.Location = new System.Drawing.Point(576, 345);
+            this.btnSair.Location = new System.Drawing.Point(459, 320);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(190, 51);
             this.btnSair.TabIndex = 13;
@@ -145,7 +145,7 @@
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(295, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(310, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(271, 38);
             this.lblTitulo.TabIndex = 8;
@@ -171,7 +171,7 @@
             this.BtnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFinanceiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFinanceiro.ForeColor = System.Drawing.Color.White;
-            this.BtnFinanceiro.Location = new System.Drawing.Point(576, 266);
+            this.BtnFinanceiro.Location = new System.Drawing.Point(576, 253);
             this.BtnFinanceiro.Name = "BtnFinanceiro";
             this.BtnFinanceiro.Size = new System.Drawing.Size(190, 51);
             this.BtnFinanceiro.TabIndex = 17;

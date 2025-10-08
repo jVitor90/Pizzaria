@@ -51,23 +51,36 @@ namespace Pizzaria
 
         private void brnFinalizar_Click(object sender, EventArgs e)
         {
+            if (mesas.num_mesa == 0)
+            {
+                MessageBox.Show("Selecione uma mesa antes de finalizar a comanda!",
+                                "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DialogResult pergunta = MessageBox.Show(
-        $"Tem certeza que deseja finalizar a comanda {mesas.num_mesa}?",
-        "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                $"Tem certeza que deseja finalizar a comanda {mesas.num_mesa}?",
+                "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (pergunta == DialogResult.Yes)
             {
-             ;
                 if (mesas.Encerrar())
                 {
                     MessageBox.Show("Comanda finalizada!",
                                    "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    AtualizarDgvProdutos();
+
+                   
+                    dgvProdutos.DataSource = null;
+                    dgvProdutos.Rows.Clear();
+                    dgvProdutos.Refresh();
+
+                   
+                    dgvPedidos.DataSource = mesas.ListarMesas();
+                    mesas.num_mesa = 0;
                 }
                 else
                 {
                     MessageBox.Show("Erro ao finalizar a comanda ou não há lançamentos pendentes para essa mesa!",
-                                   "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -124,10 +137,6 @@ namespace Pizzaria
             this.Hide();
             frmOpcoes.ShowDialog();
             this.Show();
-        }
-
-        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
         }
     }
 }

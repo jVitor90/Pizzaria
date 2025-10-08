@@ -177,7 +177,7 @@
             this.dgvEstoque.Location = new System.Drawing.Point(15, 86);
             this.dgvEstoque.Name = "dgvEstoque";
             this.dgvEstoque.ReadOnly = true;
-            this.dgvEstoque.Size = new System.Drawing.Size(794, 274);
+            this.dgvEstoque.Size = new System.Drawing.Size(644, 284);
             this.dgvEstoque.TabIndex = 51;
             this.dgvEstoque.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellClick);
             this.dgvEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellContentClick);
@@ -203,7 +203,7 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(846, 436);
+            this.ClientSize = new System.Drawing.Size(871, 446);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.lblUnidade);
             this.Controls.Add(this.lblQuantidade);

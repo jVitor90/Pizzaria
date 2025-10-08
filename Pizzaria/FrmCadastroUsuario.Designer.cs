@@ -141,7 +141,7 @@
             this.btrnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btrnCadastrar.Location = new System.Drawing.Point(12, 338);
             this.btrnCadastrar.Name = "btrnCadastrar";
-            this.btrnCadastrar.Size = new System.Drawing.Size(452, 39);
+            this.btrnCadastrar.Size = new System.Drawing.Size(461, 39);
             this.btrnCadastrar.TabIndex = 32;
             this.btrnCadastrar.Text = "Cadastrar";
             this.btrnCadastrar.UseVisualStyleBackColor = false;
@@ -155,7 +155,7 @@
             this.btnVoltar.ForeColor = System.Drawing.Color.White;
             this.btnVoltar.Location = new System.Drawing.Point(12, 383);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(452, 39);
+            this.btnVoltar.Size = new System.Drawing.Size(461, 39);
             this.btnVoltar.TabIndex = 42;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
@@ -176,7 +176,7 @@
             this.picblogo.BackColor = System.Drawing.Color.Transparent;
             this.picblogo.ErrorImage = null;
             this.picblogo.Image = ((System.Drawing.Image)(resources.GetObject("picblogo.Image")));
-            this.picblogo.Location = new System.Drawing.Point(554, 72);
+            this.picblogo.Location = new System.Drawing.Point(557, 21);
             this.picblogo.Name = "picblogo";
             this.picblogo.Size = new System.Drawing.Size(249, 257);
             this.picblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -187,8 +187,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(842, 450);
+            this.BackgroundImage = global::Pizzaria.Properties.Resources.uma_pizza_pequena_no_lado_inferiror_direito;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(999, 499);
             this.Controls.Add(this.picblogo);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblLogo);

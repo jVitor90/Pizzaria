@@ -109,7 +109,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.picblogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

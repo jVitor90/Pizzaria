@@ -83,9 +83,29 @@ namespace Pizzaria.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pizza_pequena_do_lado_inferior_esquerdo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("pizza pequena do lado inferior esquerdo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap uma_pizza_na_direita_com_uma_fundo_preto {
             get {
                 object obj = ResourceManager.GetObject("uma pizza na direita com uma fundo preto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uma_pizza_pequena_no_lado_inferiror_direito {
+            get {
+                object obj = ResourceManager.GetObject("uma pizza pequena no lado inferiror direito", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

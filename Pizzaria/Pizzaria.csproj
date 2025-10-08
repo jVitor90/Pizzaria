@@ -227,5 +227,11 @@
   <ItemGroup>
     <None Include="Resources\uma pizza na direita com uma fundo preto.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza pequena do lado inferior esquerdo %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uma pizza pequena no lado inferiror direito.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

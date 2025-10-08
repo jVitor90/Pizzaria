@@ -38,9 +38,9 @@
             this.GrbFaturamentoPeriodo.Controls.Add(this.BtnGerarRelatorio);
             this.GrbFaturamentoPeriodo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GrbFaturamentoPeriodo.ForeColor = System.Drawing.Color.White;
-            this.GrbFaturamentoPeriodo.Location = new System.Drawing.Point(12, 35);
+            this.GrbFaturamentoPeriodo.Location = new System.Drawing.Point(12, 12);
             this.GrbFaturamentoPeriodo.Name = "GrbFaturamentoPeriodo";
-            this.GrbFaturamentoPeriodo.Size = new System.Drawing.Size(760, 98);
+            this.GrbFaturamentoPeriodo.Size = new System.Drawing.Size(760, 121);
             this.GrbFaturamentoPeriodo.TabIndex = 1;
             this.GrbFaturamentoPeriodo.TabStop = false;
             this.GrbFaturamentoPeriodo.Text = "Faturamento por Período";
@@ -67,7 +67,7 @@
             // 
             this.BtnGerarRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGerarRelatorio.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGerarRelatorio.Location = new System.Drawing.Point(390, 30);
+            this.BtnGerarRelatorio.Location = new System.Drawing.Point(63, 59);
             this.BtnGerarRelatorio.Name = "BtnGerarRelatorio";
             this.BtnGerarRelatorio.Size = new System.Drawing.Size(268, 30);
             this.BtnGerarRelatorio.TabIndex = 2;
@@ -114,6 +114,11 @@
             // 
             // DgvFaturamento
             // 
+            this.DgvFaturamento.AllowUserToAddRows = false;
+            this.DgvFaturamento.AllowUserToDeleteRows = false;
+            this.DgvFaturamento.AllowUserToResizeColumns = false;
+            this.DgvFaturamento.AllowUserToResizeRows = false;
+            this.DgvFaturamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvFaturamento.Location = new System.Drawing.Point(6, 248);
             this.DgvFaturamento.Name = "DgvFaturamento";
             this.DgvFaturamento.Size = new System.Drawing.Size(766, 150);
@@ -145,6 +150,7 @@
             this.Controls.Add(this.GrbFaturamentoMensal);
             this.Controls.Add(this.DgvFaturamento);
             this.Name = "FrmFinanceiro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Financeiro";
             this.GrbFaturamentoPeriodo.ResumeLayout(false);
             this.GrbFaturamentoMensal.ResumeLayout(false);

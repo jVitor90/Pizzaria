@@ -79,9 +79,9 @@
             this.DgvComandas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvComandas.BackgroundColor = System.Drawing.Color.White;
             this.DgvComandas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvComandas.Location = new System.Drawing.Point(489, 35);
+            this.DgvComandas.Location = new System.Drawing.Point(489, 12);
             this.DgvComandas.Name = "DgvComandas";
-            this.DgvComandas.Size = new System.Drawing.Size(840, 228);
+            this.DgvComandas.Size = new System.Drawing.Size(840, 251);
             this.DgvComandas.TabIndex = 22;
             this.DgvComandas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellClick);
             this.DgvComandas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComandas_CellDoubleClick);
@@ -275,12 +275,11 @@
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Location = new System.Drawing.Point(15, 558);
+            this.btnCadastrar.Location = new System.Drawing.Point(15, 553);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(192, 32);
+            this.btnCadastrar.Size = new System.Drawing.Size(192, 41);
             this.btnCadastrar.TabIndex = 1;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -291,9 +290,9 @@
             this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.ForeColor = System.Drawing.Color.White;
-            this.btnVoltar.Location = new System.Drawing.Point(403, 558);
+            this.btnVoltar.Location = new System.Drawing.Point(449, 553);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(192, 32);
+            this.btnVoltar.Size = new System.Drawing.Size(192, 41);
             this.btnVoltar.TabIndex = 0;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
@@ -302,12 +301,11 @@
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpar.FlatAppearance.BorderSize = 0;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(209, 558);
+            this.btnLimpar.Location = new System.Drawing.Point(228, 553);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(192, 32);
+            this.btnLimpar.Size = new System.Drawing.Size(192, 41);
             this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
