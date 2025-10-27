@@ -187,11 +187,11 @@ namespace Pizzaria
                 estoque.unidade = txbUnidade.Text;
                 estoque.id_Categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
 
-                //if (estoque.VerificarProdutoEstoqueExistente(txbNomeProduto.Text))
-                //{
-                //    MessageBox.Show("Já existe um produto cadastrado com este nome!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    return;
-                //}
+                if (estoque.VerificarProdutoEstoqueExistente(txbNomeProduto.Text))
+                {
+                    MessageBox.Show("Já existe um produto cadastrado com este nome!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja cadastrar este item?",
                 "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
