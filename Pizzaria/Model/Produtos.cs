@@ -175,5 +175,35 @@ namespace Pizzaria.Model
             conexaoBD.Desconectar(con);
             return tabela;
         }
+        public bool VerificarProdutoExistente(string nome)
+        {
+            string comando = "SELECT COUNT(*) FROM produtos WHERE nome_produto = @nome_produto";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@nome_produto", nome);
+
+            cmd.Prepare();
+            // para impedir que o programa quebre 
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            // se der erro, ele ira desconectar do bd
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
     }
 }

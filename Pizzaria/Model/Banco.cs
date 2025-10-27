@@ -13,10 +13,10 @@ namespace Pizzaria.Model
     {
         //Informações da conexão com o BD
         private const string SERVER = "localhost",
-                              PORT = "49170",
+                              PORT = "3306",
                               DATABASE = "pizzaria",
                               UID = "root",
-                              PWD = "";
+                              PWD = "qNJqN_j5J(LNKUR2";
 
         // Conecta ao BD
 

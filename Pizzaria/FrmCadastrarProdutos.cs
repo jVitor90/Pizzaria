@@ -21,18 +21,7 @@ namespace Pizzaria
             InitializeComponent();
             this.usuario = usuario;
             AtualizarDgv();
-
-            //dgvProdutos.Columns["id_produto"].HeaderText = "ID Produto";
-            //dgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
-            //dgvProdutos.Columns["preco"].HeaderText = "Nome Responsável";
-            //dgvProdutos.Columns["id_categoria"].HeaderText = "Categorias";
-            //dgvProdutos.Columns["disponivel"].HeaderText = "Disponivel";
-            //dgvProdutos.Columns["atualizado_em"].HeaderText = "Data";
             
-
-
-
-
 
             //Obter as categorias do banco
             DataTable resultadoCategoria = categoria.Listar();
@@ -84,7 +73,13 @@ namespace Pizzaria
                 DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja Cadstrar este Produto?",
                "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if(cadastrar == DialogResult.Yes)
+                if (produtos.VerificarProdutoExistente(txbNomeProduto.Text))
+                {
+                    MessageBox.Show("Já existe um produto cadastrado com este nome!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (cadastrar == DialogResult.Yes)
                 {
                     if (produtos.Cadastrar())
                     {
@@ -112,7 +107,7 @@ namespace Pizzaria
                 //    cmbCategoria.SelectedIndex = -1;
                 //    // Atualizar o dgv
                 //    AtualizarDgv();
-                    
+
                 //}
                 //else
                 //{
