@@ -70,14 +70,15 @@ namespace Pizzaria
                 // obter o id-categoria do cbb
                 produtos.id_categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
 
-                DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja Cadstrar este Produto?",
-               "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (produtos.VerificarProdutoExistente(txbNomeProduto.Text))
                 {
                     MessageBox.Show("Já existe um produto cadastrado com este nome!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja Cadstrar este Produto?",
+               "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
 
                 if (cadastrar == DialogResult.Yes)
                 {

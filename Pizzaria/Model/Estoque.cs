@@ -131,5 +131,36 @@ namespace Pizzaria.Model
                 return false;
             }
         }
+        public bool VerificarProdutoEstoqueExistente(string nome)
+        {
+            string comando = "SELECT COUNT(*) FROM estoque WHERE nome_item = @nome_item";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@nome_item", nome);
+
+            cmd.Prepare();
+            // para impedir que o programa quebre 
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            // se der erro, ele ira desconectar do bd
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
+
     }
 }

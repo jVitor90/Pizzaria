@@ -187,22 +187,32 @@ namespace Pizzaria
                 estoque.unidade = txbUnidade.Text;
                 estoque.id_Categoria = int.Parse(cmbCategoria.Text.Split('-')[0]);
 
+                //if (estoque.VerificarProdutoEstoqueExistente(txbNomeProduto.Text))
+                //{
+                //    MessageBox.Show("Já existe um produto cadastrado com este nome!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
+
                 DialogResult cadastrar = MessageBox.Show("Tem certeza que deseja cadastrar este item?",
                 "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (estoque.Cadastrar())
+
+                if(cadastrar == DialogResult.Yes)
                 {
-                    MessageBox.Show("item cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Limpa os campos de edição
-                    txbNomeProduto.Clear();
-                    txbQuantidade.Clear();
-                    txbUnidade.Clear();
-                    cmbCategoria.SelectedIndex = -1;
-                    // Atualiza o dgv
-                    AtualizarDgv();
-                }
-                else
-                {
-                    MessageBox.Show("falha ao cadastrar item", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (estoque.Cadastrar())
+                    {
+                        MessageBox.Show("item cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Limpa os campos de edição
+                        txbNomeProduto.Clear();
+                        txbQuantidade.Clear();
+                        txbUnidade.Clear();
+                        cmbCategoria.SelectedIndex = -1;
+                        // Atualiza o dgv
+                        AtualizarDgv();
+                    }
+                    else
+                    {
+                        MessageBox.Show("falha ao cadastrar item", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
 
