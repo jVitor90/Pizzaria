@@ -87,7 +87,21 @@ namespace Pizzaria.Model
         {
 
 
-            string comando = "SELECT * FROM view_mesas_abertas  WHERE num_mesa = @num_mesa";
+            string comando = @"
+                SELECT
+                    ml.id_lancamento,
+                    ml.num_mesa,
+                    ml.id_Produto,
+                    p.nome_produto,
+                    ml.quantidade,
+                    p.preco,
+                    (p.preco * ml.quantidade) AS total_item,
+                    m.nome_cliente
+                FROM mesas_lancamentos ml
+                INNER JOIN produtos p ON ml.id_Produto = p.id_produto
+                LEFT JOIN mesas m ON ml.num_mesa = m.num_mesa AND m.ativa = 1
+                WHERE ml.pagamento = 1
+                AND ml.num_mesa = @num_mesa";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();

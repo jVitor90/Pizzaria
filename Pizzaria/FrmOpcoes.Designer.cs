@@ -2,213 +2,240 @@
 {
     partial class FrmOpcoes
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOpcoes));
-            this.bntcadastrarusuarios = new System.Windows.Forms.Button();
-            this.btnpedidos = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnEstoque = new System.Windows.Forms.Button();
-            this.btnComandas = new System.Windows.Forms.Button();
-            this.btnCaixa = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(FrmOpcoes));
+
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnFornecedor = new System.Windows.Forms.Button();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblCargo = new System.Windows.Forms.Label();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pnlHeaderLine = new System.Windows.Forms.Panel();
+            this.pnlBody = new System.Windows.Forms.Panel();
+            this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.lblSideGreeting = new System.Windows.Forms.Label();
+            this.lblSideInfo = new System.Windows.Forms.Label();
+            this.pnlCards = new System.Windows.Forms.Panel();
+
+            this.btnEstoque = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnCaixa = new System.Windows.Forms.Button();
+            this.btnpedidos = new System.Windows.Forms.Button();
+            this.btnComandas = new System.Windows.Forms.Button();
+            this.bntcadastrarusuarios = new System.Windows.Forms.Button();
             this.BtnFinanceiro = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnFornecedor = new System.Windows.Forms.Button();
+
+            this.pnlHeader.SuspendLayout();
+            this.pnlBody.SuspendLayout();
+            this.pnlSidebar.SuspendLayout();
+            this.pnlCards.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bntcadastrarusuarios
-            // 
-            this.bntcadastrarusuarios.BackColor = System.Drawing.Color.Transparent;
-            this.bntcadastrarusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntcadastrarusuarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntcadastrarusuarios.ForeColor = System.Drawing.Color.White;
-            this.bntcadastrarusuarios.Location = new System.Drawing.Point(358, 253);
-            this.bntcadastrarusuarios.Name = "bntcadastrarusuarios";
-            this.bntcadastrarusuarios.Size = new System.Drawing.Size(190, 51);
-            this.bntcadastrarusuarios.TabIndex = 15;
-            this.bntcadastrarusuarios.Text = "Cadastrar Usuarios";
-            this.bntcadastrarusuarios.UseVisualStyleBackColor = false;
-            this.bntcadastrarusuarios.Click += new System.EventHandler(this.bntcadastrarusuarios_Click);
-            // 
-            // btnpedidos
-            // 
-            this.btnpedidos.BackColor = System.Drawing.Color.Transparent;
-            this.btnpedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnpedidos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpedidos.ForeColor = System.Drawing.Color.White;
-            this.btnpedidos.Location = new System.Drawing.Point(145, 176);
-            this.btnpedidos.Name = "btnpedidos";
-            this.btnpedidos.Size = new System.Drawing.Size(190, 51);
-            this.btnpedidos.TabIndex = 14;
-            this.btnpedidos.Text = "Pedidos";
-            this.btnpedidos.UseVisualStyleBackColor = false;
+
+            // ── pnlHeader ────────────────────────────────────────────────
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(10, 10, 10);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Height = 64;
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.TabIndex = 80;
+
+            this.lblTitulo.AutoSize = false;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitulo.Text = "Painel de Controle";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitulo.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.lblTitulo.Name = "lblTitulo";
+
+            this.lblUsuario.AutoSize = false;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblUsuario.Width = 220;
+            this.lblUsuario.Text = "";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 28, 8);
+            this.lblUsuario.Name = "lblUsuario";
+
+            this.lblCargo.AutoSize = false;
+            this.lblCargo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCargo.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblCargo.ForeColor = System.Drawing.Color.FromArgb(196, 30, 30);
+            this.lblCargo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblCargo.Width = 180;
+            this.lblCargo.Text = "";
+            this.lblCargo.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblCargo.Padding = new System.Windows.Forms.Padding(0, 0, 28, 10);
+            this.lblCargo.Name = "lblCargo";
+
+            this.pnlHeader.Controls.Add(this.lblTitulo);
+            this.pnlHeader.Controls.Add(this.lblUsuario);
+            this.pnlHeader.Controls.Add(this.lblCargo);
+
+            // Linha vermelha abaixo do header
+            this.pnlHeaderLine.BackColor = System.Drawing.Color.FromArgb(196, 30, 30);
+            this.pnlHeaderLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeaderLine.Height = 2;
+            this.pnlHeaderLine.Name = "pnlHeaderLine";
+            this.pnlHeaderLine.TabIndex = 81;
+
+            // ── pnlBody ──────────────────────────────────────────────────
+            this.pnlBody.BackColor = System.Drawing.Color.FromArgb(12, 12, 12);
+            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBody.Name = "pnlBody";
+            this.pnlBody.TabIndex = 82;
+
+            // ── pnlSidebar ───────────────────────────────────────────────
+            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(8, 8, 8);
+            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSidebar.Width = 240;
+            this.pnlSidebar.Name = "pnlSidebar";
+            this.pnlSidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlSidebar_Paint);
+
+            this.lblSideGreeting.AutoSize = false;
+            this.lblSideGreeting.BackColor = System.Drawing.Color.Transparent;
+            this.lblSideGreeting.Font = new System.Drawing.Font("Georgia", 13F, System.Drawing.FontStyle.Bold);
+            this.lblSideGreeting.ForeColor = System.Drawing.Color.White;
+            this.lblSideGreeting.Name = "lblSideGreeting";
+            this.lblSideGreeting.Text = "Olá,";
+
+            this.lblSideInfo.AutoSize = false;
+            this.lblSideInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblSideInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblSideInfo.ForeColor = System.Drawing.Color.FromArgb(80, 80, 75);
+            this.lblSideInfo.Name = "lblSideInfo";
+            this.lblSideInfo.Text = "Selecione um módulo\npara continuar.";
+
+            this.pnlSidebar.Controls.Add(this.lblSideGreeting);
+            this.pnlSidebar.Controls.Add(this.lblSideInfo);
+
+            // ── pnlCards ─────────────────────────────────────────────────
+            this.pnlCards.BackColor = System.Drawing.Color.FromArgb(12, 12, 12);
+            this.pnlCards.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCards.Name = "pnlCards";
+
+            // Cards — configurados via método
+            ConfigCard(this.btnEstoque, "btnEstoque", "Estoque", 12);
+            ConfigCard(this.btnCadastrar, "btnCadastrar", "Cadastrar Produtos", 9);
+            ConfigCard(this.btnCaixa, "btnCaixa", "Caixa", 10);
+            ConfigCard(this.btnpedidos, "btnpedidos", "Pedidos", 14);
+            ConfigCard(this.btnComandas, "btnComandas", "Comandas", 11);
+            ConfigCard(this.bntcadastrarusuarios, "bntcadastrarusuarios", "Usuários", 15);
+            ConfigCard(this.BtnFinanceiro, "BtnFinanceiro", "Financeiro", 17);
+
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click);
-            // 
+            this.btnComandas.Click += new System.EventHandler(this.btnComandas_Click);
+            this.bntcadastrarusuarios.Click += new System.EventHandler(this.bntcadastrarusuarios_Click);
+            this.BtnFinanceiro.Click += new System.EventHandler(this.BtnFinanceiro_Click);
+
             // btnSair
-            // 
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Text = "↩  Sair";
+            this.btnSair.TabIndex = 13;
+            this.btnSair.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSair.ForeColor = System.Drawing.Color.FromArgb(80, 80, 75);
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSair.Location = new System.Drawing.Point(459, 320);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(190, 51);
-            this.btnSair.TabIndex = 13;
-            this.btnSair.Text = "Sair";
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnEstoque
-            // 
-            this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
-            this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoque.ForeColor = System.Drawing.Color.White;
-            this.btnEstoque.Location = new System.Drawing.Point(145, 102);
-            this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(190, 51);
-            this.btnEstoque.TabIndex = 12;
-            this.btnEstoque.Text = "Estoque";
-            this.btnEstoque.UseVisualStyleBackColor = false;
-            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
-            // 
-            // btnComandas
-            // 
-            this.btnComandas.BackColor = System.Drawing.Color.Transparent;
-            this.btnComandas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComandas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComandas.ForeColor = System.Drawing.Color.White;
-            this.btnComandas.Location = new System.Drawing.Point(358, 176);
-            this.btnComandas.Name = "btnComandas";
-            this.btnComandas.Size = new System.Drawing.Size(190, 51);
-            this.btnComandas.TabIndex = 11;
-            this.btnComandas.Text = "Comandas";
-            this.btnComandas.UseVisualStyleBackColor = false;
-            this.btnComandas.Click += new System.EventHandler(this.btnComandas_Click);
-            // 
-            // btnCaixa
-            // 
-            this.btnCaixa.BackColor = System.Drawing.Color.Transparent;
-            this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaixa.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.ForeColor = System.Drawing.Color.White;
-            this.btnCaixa.Location = new System.Drawing.Point(576, 102);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(190, 51);
-            this.btnCaixa.TabIndex = 10;
-            this.btnCaixa.Text = "Caixa";
-            this.btnCaixa.UseVisualStyleBackColor = false;
-            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Location = new System.Drawing.Point(358, 102);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(190, 51);
-            this.btnCadastrar.TabIndex = 9;
-            this.btnCadastrar.Text = "Cadastrar Produtos";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(310, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(271, 38);
-            this.lblTitulo.TabIndex = 8;
-            this.lblTitulo.Text = "Gestão de Opções ";
-            // 
-            // btnFornecedor
-            // 
-            this.btnFornecedor.BackColor = System.Drawing.Color.Transparent;
-            this.btnFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFornecedor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFornecedor.ForeColor = System.Drawing.Color.White;
-            this.btnFornecedor.Location = new System.Drawing.Point(576, 177);
+            this.pnlSidebar.Controls.Add(this.btnSair);
+
+            // btnFornecedor oculto
+            this.btnFornecedor.Visible = false;
             this.btnFornecedor.Name = "btnFornecedor";
-            this.btnFornecedor.Size = new System.Drawing.Size(190, 51);
-            this.btnFornecedor.TabIndex = 16;
-            this.btnFornecedor.Text = "Fornecedor";
-            this.btnFornecedor.UseVisualStyleBackColor = false;
             this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
-            // 
-            // BtnFinanceiro
-            // 
-            this.BtnFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.BtnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFinanceiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFinanceiro.ForeColor = System.Drawing.Color.White;
-            this.BtnFinanceiro.Location = new System.Drawing.Point(576, 253);
-            this.BtnFinanceiro.Name = "BtnFinanceiro";
-            this.BtnFinanceiro.Size = new System.Drawing.Size(190, 51);
-            this.BtnFinanceiro.TabIndex = 17;
-            this.BtnFinanceiro.Text = "Financeiro";
-            this.BtnFinanceiro.UseVisualStyleBackColor = false;
-            this.BtnFinanceiro.Click += new System.EventHandler(this.BtnFinanceiro_Click);
-            // 
-            // FrmOpcoes
-            // 
+
+            this.pnlCards.Controls.Add(this.btnEstoque);
+            this.pnlCards.Controls.Add(this.btnCadastrar);
+            this.pnlCards.Controls.Add(this.btnCaixa);
+            this.pnlCards.Controls.Add(this.btnpedidos);
+            this.pnlCards.Controls.Add(this.btnComandas);
+            this.pnlCards.Controls.Add(this.bntcadastrarusuarios);
+            this.pnlCards.Controls.Add(this.BtnFinanceiro);
+            this.pnlCards.Controls.Add(this.btnFornecedor);
+
+            this.pnlBody.Controls.Add(this.pnlCards);
+            this.pnlBody.Controls.Add(this.pnlSidebar);
+
+            // ── FrmOpcoes ────────────────────────────────────────────────
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(845, 448);
-            this.Controls.Add(this.BtnFinanceiro);
-            this.Controls.Add(this.btnFornecedor);
-            this.Controls.Add(this.bntcadastrarusuarios);
-            this.Controls.Add(this.btnpedidos);
-            this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnEstoque);
-            this.Controls.Add(this.btnComandas);
-            this.Controls.Add(this.btnCaixa);
-            this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.lblTitulo);
-            this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmOpcoes";
+            this.BackColor = System.Drawing.Color.FromArgb(12, 12, 12);
+            this.BackgroundImage = null;
+            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.DoubleBuffered = true;
+            this.Name = "FrmOpcoes";
             this.Text = "Opções";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Load += new System.EventHandler(this.FrmOpcoes_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            this.Resize += new System.EventHandler(this.FrmOpcoes_Resize);
 
+            this.Controls.Add(this.pnlBody);
+            this.Controls.Add(this.pnlHeaderLine);
+            this.Controls.Add(this.pnlHeader);
+
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlBody.ResumeLayout(false);
+            this.pnlSidebar.ResumeLayout(false);
+            this.pnlCards.ResumeLayout(false);
+            this.ResumeLayout(false);
+        }
+
+        private void ConfigCard(System.Windows.Forms.Button btn, string name, string text, int tabIndex)
+        {
+            btn.Name = name;
+            btn.Text = text;
+            btn.TabIndex = tabIndex;
+            btn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            btn.ForeColor = System.Drawing.Color.White;
+            btn.BackColor = System.Drawing.Color.FromArgb(18, 18, 18);
+            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(32, 32, 30);
+            btn.FlatAppearance.BorderSize = 1;
+            btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 28);
+            btn.UseVisualStyleBackColor = false;
+            btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btn.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Panel pnlHeaderLine;
+        private System.Windows.Forms.Panel pnlBody;
+        private System.Windows.Forms.Panel pnlSidebar;
+        private System.Windows.Forms.Panel pnlCards;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.Label lblSideGreeting;
+        private System.Windows.Forms.Label lblSideInfo;
         private System.Windows.Forms.Button bntcadastrarusuarios;
         private System.Windows.Forms.Button btnpedidos;
         private System.Windows.Forms.Button btnSair;
@@ -216,7 +243,6 @@
         private System.Windows.Forms.Button btnComandas;
         private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFornecedor;
         private System.Windows.Forms.Button BtnFinanceiro;
     }
