@@ -44,7 +44,14 @@ namespace Pizzaria
                 usuario.Nome_usuario = resultado.Rows[0]["nome_usuario"].ToString();
                 usuario.id_usuario = (int)resultado.Rows[0]["Id_usuario"];
                 FrmOpcoes frm = new FrmOpcoes(usuario);
-                this.Hide(); frm.ShowDialog(); this.Show();
+                this.Hide();
+                frm.ShowDialog();
+
+                // Verifica se o form ainda pode ser exibido
+                if (!this.IsDisposed)
+                    this.Show();
+                else
+                    Application.Exit();
             }
             else
                 MessageBox.Show("CPF ou senha invalida!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);

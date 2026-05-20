@@ -60,7 +60,9 @@ namespace Pizzaria
                     txbMesa.Clear();
                     lblValor.Text = "";
                     cmbFormaPagamento.Text = "";
-                    grbPagamentos.Enabled = false;
+                    cmbFormaPagamento.Enabled = false;
+                    btnFinalizar.Enabled = false;
+                    btnFinalizar.BackColor = System.Drawing.Color.FromArgb(50, 65, 105);
                     txbMesa.Enabled = true;
                 }
                 else
@@ -117,20 +119,22 @@ namespace Pizzaria
                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            grbPagamentos.Enabled = true;
+            cmbFormaPagamento.Enabled = true;
+            btnFinalizar.Enabled = true;
+            btnFinalizar.BackColor = System.Drawing.Color.FromArgb(190, 70, 50);
             txbMesa.Enabled = false;
         }
-    
+
 
 
         public void Atualizar()
         {
-           
-        
+
+
             DataTable consulta = mesas_Lancamentos.ListarProdutos(); // Usar ListarProdutos em vez de Listar
 
-            
-        
+
+
         }
         private void btnLimpar_Click_1(object sender, EventArgs e)
         {
@@ -139,7 +143,9 @@ namespace Pizzaria
             cmbFormaPagamento.Text = " ";
 
             dgvComanda.DataSource = "";
-            grbPagamentos.Enabled = false;
+            cmbFormaPagamento.Enabled = false;
+            btnFinalizar.Enabled = false;
+            btnFinalizar.BackColor = System.Drawing.Color.FromArgb(50, 65, 105);
             txbMesa.Enabled = true;
         }
         private void btnVoltar_Click(object sender, EventArgs e)

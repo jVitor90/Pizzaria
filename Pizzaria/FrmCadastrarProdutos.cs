@@ -19,17 +19,27 @@ namespace Pizzaria
         public FrmCadastrarProdutos(Model.Usuario usuario)
         {
             InitializeComponent();
+            // Fix double-buffer para evitar flickering no DataGridView
+            typeof(System.Windows.Forms.DataGridView)
+                .InvokeMember("DoubleBuffered",
+                    System.Reflection.BindingFlags.NonPublic |
+                    System.Reflection.BindingFlags.Instance |
+                    System.Reflection.BindingFlags.SetProperty,
+                    null, dgvProdutos, new object[] { true });
             this.usuario = usuario;
             AtualizarDgv();
-            
+
 
             //Obter as categorias do banco
             DataTable resultadoCategoria = categoria.Listar();
-            foreach(DataRow linha in resultadoCategoria.Rows)
+            int contCategoria = 0;
+            foreach (DataRow linha in resultadoCategoria.Rows)
             {
                 //Adicionar os Combobox
+                if (contCategoria >= 4) break;
                 cmbCategoria.Items.Add($"{linha["id_categoria"]} - {linha["nome_categoria"]}");
-            } 
+                contCategoria++;
+            }
         }
         public void AtualizarDgv()
         {
@@ -37,10 +47,10 @@ namespace Pizzaria
 
             dgvProdutos.Columns["id_produto"].HeaderText = "ID Produto";
             dgvProdutos.Columns["nome_produto"].HeaderText = "Produto";
-            dgvProdutos.Columns["preco"].HeaderText = "Nome Responsável";
-            dgvProdutos.Columns["id_categoria"].HeaderText = "Categorias";
-            dgvProdutos.Columns["disponivel"].HeaderText = "Disponivel";
-            dgvProdutos.Columns["atualizado_em"].HeaderText = "Data";
+            dgvProdutos.Columns["preco"].HeaderText = "Preço";
+            dgvProdutos.Columns["id_categoria"].HeaderText = "Categoria";
+            dgvProdutos.Columns["disponivel"].Visible = false;
+            dgvProdutos.Columns["atualizado_em"].Visible = false;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -182,13 +192,13 @@ namespace Pizzaria
                 //}
             }
         }
-        
+
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             DialogResult apagar = MessageBox.Show("Tem certeza que deseja apagar este Produto?",
                 "Atenção!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(apagar == DialogResult.Yes)
+            if (apagar == DialogResult.Yes)
             {
                 if (this.produtos.Remover())
                 {
@@ -211,7 +221,7 @@ namespace Pizzaria
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-           
+
             this.Close();
         }
 
@@ -226,7 +236,13 @@ namespace Pizzaria
             // Atribuir as linhas selecionadas
             txbNomeProduto.Text = this.produtos.nome_produto;
             txbValor.Text = this.produtos.preco.ToString();
-            cmbCategoria.Text = this.produtos.id_categoria.ToString();
+            string idCatP = this.produtos.id_categoria.ToString();
+            cmbCategoria.SelectedIndex = -1;
+            foreach (object item in cmbCategoria.Items)
+            {
+                if (item.ToString().StartsWith(idCatP + " -"))
+                { cmbCategoria.SelectedItem = item; break; }
+            }
 
         }
 
