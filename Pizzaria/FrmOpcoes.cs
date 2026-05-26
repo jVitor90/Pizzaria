@@ -16,7 +16,6 @@ namespace Pizzaria
             this.usuario = usuario;
         }
 
-        // ── Lógica original inalterada ──────────────────────────────────
         private void FrmOpcoes_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = SessaoUsuario.Nome;
@@ -62,7 +61,6 @@ namespace Pizzaria
             pnlSidebar.Invalidate();
         }
 
-        // ── Layout ─────────────────────────────────────────────────────
         private void AjustarLayout()
         {
             int cW = pnlCards.ClientSize.Width;
@@ -89,7 +87,6 @@ namespace Pizzaria
                     cardW, cardH);
             }
 
-            // Sidebar — saudação e info
             int sH = pnlSidebar.ClientSize.Height;
             lblSideGreeting.SetBounds(24, (int)(sH * 0.30), 190, 34);
             lblSideInfo.SetBounds(24, lblSideGreeting.Bottom + 10, 190, 50);
@@ -120,8 +117,7 @@ namespace Pizzaria
             }
         }
 
-        // ── Paint sidebar ───────────────────────────────────────────────
-        private void PnlSidebar_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        private void PnlSidebar_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
             var rc = pnlSidebar.ClientRectangle;
@@ -129,16 +125,14 @@ namespace Pizzaria
 
             g.FillRectangle(new SolidBrush(Color.FromArgb(8, 8, 8)), rc);
 
-            // Linha vermelha à direita
             using (var pen = new Pen(Color.FromArgb(30, 196, 30, 30), 1f))
                 g.DrawLine(pen, rc.Right - 1, 0, rc.Right - 1, rc.Bottom);
 
-            // Ponto vermelho decorativo no topo
             using (var brush = new SolidBrush(Color.FromArgb(196, 30, 30)))
                 g.FillEllipse(brush, 24, (int)(rc.Height * 0.30) - 30, 6, 6);
         }
 
-        // ── Eventos originais inalterados ───────────────────────────────
+        // ── Eventos ────────────────────────────────────────────────────
         private void btnCadastrar_Click(object sender, EventArgs e)
         { var f = new FrmCadastrarProdutos(usuario); this.Hide(); f.ShowDialog(); this.Show(); }
 
@@ -151,8 +145,9 @@ namespace Pizzaria
         private void btnEstoque_Click(object sender, EventArgs e)
         { var f = new FrmGestaoEstoque(); this.Hide(); f.ShowDialog(); this.Show(); }
 
+        // Botão agora abre FrmGerenciarUsuarios (não FrmCadastroUsuario diretamente)
         private void bntcadastrarusuarios_Click(object sender, EventArgs e)
-        { var f = new FrmCadastroUsuario(); this.Hide(); f.ShowDialog(); this.Show(); }
+        { var f = new FrmGerenciarUsuarios(); this.Hide(); f.ShowDialog(); this.Show(); }
 
         private void btnSair_Click(object sender, EventArgs e)
         { var f = new FrmLogin(); this.Hide(); f.ShowDialog(); this.Show(); }

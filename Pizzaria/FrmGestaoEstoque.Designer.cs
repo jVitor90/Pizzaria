@@ -258,11 +258,13 @@
             this.dgvEstoque.AllowUserToResizeRows = false;
             this.dgvEstoque.ColumnHeadersVisible = true;
             this.dgvEstoque.ColumnHeadersHeight = 36;
+            this.dgvEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEstoque.BackgroundColor = corCampo;
             this.dgvEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEstoque.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEstoque.EnableHeadersVisualStyles = false;
             this.dgvEstoque.Font = fGrid;
@@ -300,6 +302,7 @@
             this.BackColor = corFundo;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.MinimumSize = new System.Drawing.Size(900, 500);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGestaoEstoque";

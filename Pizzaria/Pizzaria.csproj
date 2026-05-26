@@ -99,6 +99,12 @@
     <Compile Include="FrmCadastroUsuario.Designer.cs">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGerenciarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGerenciarUsuarios.Designer.cs">
+      <DependentUpon>FrmGerenciarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -228,7 +228,9 @@
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProdutos.ColumnHeadersHeight = 36;
+            this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProdutos.ColumnHeadersVisible = true;
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.EnableHeadersVisualStyles = false;

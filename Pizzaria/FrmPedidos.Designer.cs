@@ -30,11 +30,6 @@
             this.lblSecPedidos = new System.Windows.Forms.Label();
             this.lblSecProdutos = new System.Windows.Forms.Label();
 
-            this.pnlTitleBar = new System.Windows.Forms.Panel();
-            this.lblAppName = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.pnlTopo.SuspendLayout();
@@ -42,7 +37,6 @@
             this.pnlConteudo.SuspendLayout();
             this.pnlGridTop.SuspendLayout();
             this.pnlGridBot.SuspendLayout();
-            this.pnlTitleBar.SuspendLayout();
             this.SuspendLayout();
 
             System.Drawing.Color corFundo = System.Drawing.Color.FromArgb(10, 14, 30);
@@ -52,74 +46,11 @@
             System.Drawing.Color corBranco = System.Drawing.Color.FromArgb(215, 220, 238);
             System.Drawing.Color corSub = System.Drawing.Color.FromArgb(100, 118, 160);
             System.Drawing.Color corAcento = System.Drawing.Color.FromArgb(204, 64, 44);
-            System.Drawing.Color corTitleBar = System.Drawing.Color.FromArgb(8, 11, 24);
 
             System.Drawing.Font fTitulo = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             System.Drawing.Font fSec = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold);
             System.Drawing.Font fBotao = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             System.Drawing.Font fGrid = new System.Drawing.Font("Segoe UI", 9F);
-            System.Drawing.Font fAppName = new System.Drawing.Font("Segoe UI", 8F);
-            System.Drawing.Font fWinBtn = new System.Drawing.Font("Segoe UI", 10F);
-
-            // ── pnlTitleBar
-            this.pnlTitleBar.BackColor = corTitleBar;
-            this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitleBar.Height = 32;
-            this.pnlTitleBar.Name = "pnlTitleBar";
-
-            this.lblAppName.AutoSize = true;
-            this.lblAppName.Font = fAppName;
-            this.lblAppName.ForeColor = corSub;
-            this.lblAppName.Text = "🍕  Pizzaria — Pedidos";
-            this.lblAppName.Location = new System.Drawing.Point(12, 8);
-            this.lblAppName.Name = "lblAppName";
-
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(196, 43, 28);
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.ForeColor = corSub;
-            this.btnClose.Font = fWinBtn;
-            this.btnClose.Text = "✕";
-            this.btnClose.Size = new System.Drawing.Size(46, 32);
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.Name = "btnClose";
-            this.btnClose.TabStop = false;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Click += new System.EventHandler((s, e2) => { System.Windows.Forms.Application.Exit(); });
-
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(35, 45, 75);
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.ForeColor = corSub;
-            this.btnMinimize.Font = fWinBtn;
-            this.btnMinimize.Text = "─";
-            this.btnMinimize.Size = new System.Drawing.Size(46, 32);
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Click += new System.EventHandler((s, e2) => { this.WindowState = System.Windows.Forms.FormWindowState.Minimized; });
-
-            this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler((s, e2) => {
-                if (e2.Button == System.Windows.Forms.MouseButtons.Left)
-                {
-
-
-                }
-            });
-            this.lblAppName.MouseDown += new System.Windows.Forms.MouseEventHandler((s, e2) => {
-                if (e2.Button == System.Windows.Forms.MouseButtons.Left)
-                {
-
-
-                }
-            });
-
-            this.pnlTitleBar.Controls.Add(this.btnClose);
-            this.pnlTitleBar.Controls.Add(this.btnMinimize);
-            this.pnlTitleBar.Controls.Add(this.lblAppName);
 
             // ── pnlTopo
             this.pnlTopo.BackColor = corPainel;
@@ -220,7 +151,9 @@
             this.dgvPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPedidos.GridColor = System.Drawing.Color.FromArgb(30, 40, 68);
             this.dgvPedidos.ColumnHeadersHeight = 36;
+            this.dgvPedidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPedidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPedidos.EnableHeadersVisualStyles = false;
             this.dgvPedidos.Font = fGrid;
@@ -271,7 +204,9 @@
             this.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProdutos.GridColor = System.Drawing.Color.FromArgb(30, 40, 68);
             this.dgvProdutos.ColumnHeadersHeight = 36;
+            this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.EnableHeadersVisualStyles = false;
             this.dgvProdutos.Font = fGrid;
@@ -321,11 +256,8 @@
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlBotoes);
             this.Controls.Add(this.pnlTopo);
-            this.Controls.Add(this.pnlTitleBar);
             this.Controls.Add(this.lblLogo);
 
-            this.pnlTitleBar.ResumeLayout(false);
-            this.pnlTitleBar.PerformLayout();
             this.pnlTopo.ResumeLayout(false);
             this.pnlTopo.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
@@ -355,9 +287,5 @@
         private System.Windows.Forms.Panel pnlGridBot;
         private System.Windows.Forms.Label lblSecPedidos;
         private System.Windows.Forms.Label lblSecProdutos;
-        private System.Windows.Forms.Panel pnlTitleBar;
-        private System.Windows.Forms.Label lblAppName;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnMinimize;
     }
 }

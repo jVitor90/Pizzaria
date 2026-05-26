@@ -130,13 +130,14 @@
             this.pnlCards.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCards.Name = "pnlCards";
 
-            // Cards — configurados via método
+            // Cards
             ConfigCard(this.btnEstoque, "btnEstoque", "Estoque", 12);
             ConfigCard(this.btnCadastrar, "btnCadastrar", "Cadastrar Produtos", 9);
             ConfigCard(this.btnCaixa, "btnCaixa", "Caixa", 10);
             ConfigCard(this.btnpedidos, "btnpedidos", "Pedidos", 14);
             ConfigCard(this.btnComandas, "btnComandas", "Comandas", 11);
-            ConfigCard(this.bntcadastrarusuarios, "bntcadastrarusuarios", "Usuários", 15);
+            // ← texto alterado de "Usuários" para "Gerenciar Usuários"
+            ConfigCard(this.bntcadastrarusuarios, "bntcadastrarusuarios", "Gerenciar Usuários", 15);
             ConfigCard(this.BtnFinanceiro, "BtnFinanceiro", "Financeiro", 17);
 
             this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);

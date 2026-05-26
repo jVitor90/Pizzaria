@@ -22,11 +22,11 @@ namespace Pizzaria
         Model.Usuario usuario = new Usuario();
         Model.Mesas_lancamentos lancamentos = new Model.Mesas_lancamentos();
         Model.Mesas mesas = new Model.Mesas();
-        
+
         public void AtualizarDgvProdutos()
         {
-           
-            dgvPedidos.DataSource =  mesas.ListarMesas();
+
+            dgvPedidos.DataSource = mesas.ListarMesas();
             dgvProdutos.DataSource = lancamentos.Listar();
 
 
@@ -68,12 +68,12 @@ namespace Pizzaria
                     MessageBox.Show("Comanda finalizada!",
                                    "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                   
+
                     dgvProdutos.DataSource = null;
                     dgvProdutos.Rows.Clear();
                     dgvProdutos.Refresh();
 
-                   
+
                     dgvPedidos.DataSource = mesas.ListarMesas();
                     mesas.num_mesa = 0;
                 }
@@ -98,7 +98,7 @@ namespace Pizzaria
             mesas.num_mesa = numMesa;
             lancamentos.num_mesa = numMesa;
 
-           
+
             DataTable dados = lancamentos.ListarProdutos();
 
             if (dados.Rows.Count == 0)
