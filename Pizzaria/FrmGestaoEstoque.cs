@@ -202,6 +202,11 @@ namespace Pizzaria
 
         private void dgvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
 
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();

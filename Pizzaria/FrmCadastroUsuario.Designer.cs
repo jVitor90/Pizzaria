@@ -27,7 +27,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txbcpf = new System.Windows.Forms.MaskedTextBox();
+            this.txbcpf = new System.Windows.Forms.TextBox();
             this.lblCargo = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -130,10 +130,12 @@
             this.txbcpf.Font = fCampo;
             this.txbcpf.ForeColor = cBranco;
             this.txbcpf.Location = new System.Drawing.Point(32, 136);
-            this.txbcpf.Mask = "000,000,000-00";
+            this.txbcpf.MaxLength = 14;
             this.txbcpf.Name = "txbcpf";
             this.txbcpf.Size = new System.Drawing.Size(230, 38);
             this.txbcpf.TabIndex = 1;
+            this.txbcpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxbCpf_KeyPress);
+            this.txbcpf.TextChanged += new System.EventHandler(this.TxbCpf_TextChanged);
 
             // ── CARGO ──────────────────────────────────────────────────
             this.lblCargo.AutoSize = true;
@@ -261,7 +263,7 @@
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txbNome;
-        private System.Windows.Forms.MaskedTextBox txbcpf;
+        private System.Windows.Forms.TextBox txbcpf;
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Button btrnCadastrar;

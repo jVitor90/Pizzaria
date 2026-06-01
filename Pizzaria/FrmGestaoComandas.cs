@@ -51,34 +51,21 @@ namespace Pizzaria
             // Carregar Pizzas (categoria 1)
             produto.id_categoria = 1;
             DataTable dtPizzas = produto.ListarPorCategoria();
-            foreach (DataRow linha in dtPizzas.Rows)
-            {
-                cmbPizzas.Items.Add($"{linha["nome_produto"]}");
-            }
+            cmbPizzas.DataSource = dtPizzas;
+            cmbPizzas.DisplayMember = "nome_produto";
+            cmbPizzas.ValueMember = "id_produto";
+            cmbPizzas.SelectedIndex = -1;
 
             // Carregar Bebidas (categoria 2)
             produto.id_categoria = 2;
             DataTable dtBebidas = produto.ListarPorCategoria();
-            foreach (DataRow linha in dtBebidas.Rows)
-            {
-                cmbBebidas.Items.Add($"{linha["nome_produto"]}");
-            }
+            cmbBebidas.DataSource = dtBebidas;
+            cmbBebidas.DisplayMember = "nome_produto";
+            cmbBebidas.ValueMember = "id_produto";
+            cmbBebidas.SelectedIndex = -1;
 
-            // Carregar Adicionais (categoria 3)
-            produto.id_categoria = 3;
-            DataTable dtAdicionais = produto.ListarPorCategoria();
-            foreach (DataRow linha in dtAdicionais.Rows)
-            {
-                cmbAdicionais.Items.Add($"{linha["nome_produto"]}");
-            }
-
-            // Carregar Bordas (categoria 4)
-            produto.id_categoria = 4;
-            DataTable dtBordas = produto.ListarPorCategoria();
-            foreach (DataRow linha in dtBordas.Rows)
-            {
-                cmbBordas.Items.Add($"{linha["nome_produto"]}");
-            }
+            // Adicionais e Bordas são carregados dinamicamente em cmbPizzas_SelectedIndexChanged,
+            // filtrados pelo tipo_pizza da pizza escolhida. Não carrega aqui.
             atualizarComanda();
         }
 
@@ -244,47 +231,30 @@ namespace Pizzaria
 
             if (cmbPizzas.SelectedIndex == -1)
             {
-                // Limpa os combos se nada selecionado
-                cmbBordas.Items.Clear();
-                cmbAdicionais.Items.Clear();
+                cmbBordas.DataSource = null;
+                cmbAdicionais.DataSource = null;
                 return;
             }
 
-            // Obtém o ID da pizza selecionada
-            produto.id_categoria = 1; // Categoria de pizzas
-            DataTable dtPizzas = produto.ListarPorCategoria(); // Carrega todas as pizzas
-            int idPizza = Convert.ToInt32(dtPizzas.Rows[cmbPizzas.SelectedIndex]["id_produto"]);
+            // Obtém o tipo_pizza direto do DataSource do combo (sem nova query)
+            DataRowView pizzaSelecionada = (DataRowView)cmbPizzas.SelectedItem;
+            string tipoPizza = pizzaSelecionada["tipo_pizza"].ToString(); // "doce" ou "salgada"
 
-            // Define o Id_produto para buscar o tipo
-            produto.Id_produto = idPizza;
+            // Carrega adicionais filtrados pelo tipo da pizza
+            produto.id_categoria = 3;
+            DataTable dtAdicionais = produto.ListarPorCategoria(tipoPizza);
+            cmbAdicionais.DataSource = dtAdicionais;
+            cmbAdicionais.DisplayMember = "nome_produto";
+            cmbAdicionais.ValueMember = "id_produto";
+            cmbAdicionais.SelectedIndex = -1;
 
-            // Obtém o tipo_pizza da pizza selecionada
-            DataTable dtTipo = produto.ObterTipoPizza();
-            if (dtTipo.Rows.Count == 0)
-            {
-                MessageBox.Show("Tipo de pizza não encontrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cmbBordas.Items.Clear();
-                cmbAdicionais.Items.Clear();
-                return;
-            }
-            string tipoPizza = dtTipo.Rows[0]["tipo_pizza"].ToString(); // Ex.: "doce" ou "salgada"
-
-            // Agora use o tipoPizza para carregar adicionais e bordas filtrados
-            cmbAdicionais.Items.Clear();
-            produto.id_categoria = 3; // Adicionais
-            DataTable dtAdicionais = produto.ListarPorCategoria(tipoPizza); // Filtra por tipo
-            foreach (DataRow linha in dtAdicionais.Rows)
-            {
-                cmbAdicionais.Items.Add(linha["nome_produto"].ToString());
-            }
-
-            cmbBordas.Items.Clear();
-            produto.id_categoria = 4; // Bordas
-            DataTable dtBordas = produto.ListarPorCategoria(tipoPizza); // Filtra por tipo
-            foreach (DataRow linha in dtBordas.Rows)
-            {
-                cmbBordas.Items.Add(linha["nome_produto"].ToString());
-            }
+            // Carrega bordas filtradas pelo tipo da pizza
+            produto.id_categoria = 4;
+            DataTable dtBordas = produto.ListarPorCategoria(tipoPizza);
+            cmbBordas.DataSource = dtBordas;
+            cmbBordas.DisplayMember = "nome_produto";
+            cmbBordas.ValueMember = "id_produto";
+            cmbBordas.SelectedIndex = -1;
         }
 
 
@@ -347,7 +317,7 @@ namespace Pizzaria
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            if (this.DesignMode) return; // Evita execução no designer
+            if (this.DesignMode) return; 
 
             this.Close();
         }

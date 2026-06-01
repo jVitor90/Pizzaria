@@ -39,38 +39,42 @@
             this.pnlGridBot.SuspendLayout();
             this.SuspendLayout();
 
-            System.Drawing.Color corFundo = System.Drawing.Color.FromArgb(10, 14, 30);
-            System.Drawing.Color corPainel = System.Drawing.Color.FromArgb(17, 24, 46);
-            System.Drawing.Color corCampo = System.Drawing.Color.FromArgb(25, 34, 62);
-            System.Drawing.Color corBorda = System.Drawing.Color.FromArgb(42, 55, 95);
-            System.Drawing.Color corBranco = System.Drawing.Color.FromArgb(215, 220, 238);
-            System.Drawing.Color corSub = System.Drawing.Color.FromArgb(100, 118, 160);
-            System.Drawing.Color corAcento = System.Drawing.Color.FromArgb(204, 64, 44);
+            System.Drawing.Color corFundo = System.Drawing.Color.FromArgb(12, 12, 12);
+            System.Drawing.Color corPainel = System.Drawing.Color.FromArgb(10, 10, 10);
+            System.Drawing.Color corCampo = System.Drawing.Color.FromArgb(24, 24, 24);
+            System.Drawing.Color corBorda = System.Drawing.Color.FromArgb(32, 32, 30);
+            System.Drawing.Color corBranco = System.Drawing.Color.White;
+            System.Drawing.Color corSub = System.Drawing.Color.FromArgb(80, 80, 75);
+            System.Drawing.Color corAcento = System.Drawing.Color.FromArgb(196, 30, 30);
 
-            System.Drawing.Font fTitulo = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            System.Drawing.Font fTitulo = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Bold);
             System.Drawing.Font fSec = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold);
-            System.Drawing.Font fBotao = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            System.Drawing.Font fBotao = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             System.Drawing.Font fGrid = new System.Drawing.Font("Segoe UI", 9F);
 
             // ── pnlTopo
             this.pnlTopo.BackColor = corPainel;
             this.pnlTopo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopo.Height = 58;
+            this.pnlTopo.Height = 64;
             this.pnlTopo.Name = "pnlTopo";
-            this.pnlTopo.Controls.Add(this.lblTitulo);
 
-            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.AutoSize = false;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTitulo.Font = fTitulo;
             this.lblTitulo.ForeColor = corBranco;
             this.lblTitulo.Text = "Pedidos";
-            this.lblTitulo.Location = new System.Drawing.Point(20, 13);
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitulo.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
             this.lblTitulo.Name = "lblTitulo";
 
             System.Windows.Forms.Panel pnlAcento = new System.Windows.Forms.Panel();
             pnlAcento.BackColor = corAcento;
-            pnlAcento.Dock = System.Windows.Forms.DockStyle.Bottom;
+            pnlAcento.Dock = System.Windows.Forms.DockStyle.Top;
             pnlAcento.Height = 2;
+
+            // pnlTopo: adiciona linha de acento (Top) depois do Fill para que fique acima
+            this.pnlTopo.Controls.Add(this.lblTitulo);
             this.pnlTopo.Controls.Add(pnlAcento);
 
             this.lblLogo.Visible = false;
@@ -84,7 +88,7 @@
             this.pnlBotoes.Name = "pnlBotoes";
 
             System.Windows.Forms.Panel pnlSepBotoes = new System.Windows.Forms.Panel();
-            pnlSepBotoes.BackColor = corBorda;
+            pnlSepBotoes.BackColor = System.Drawing.Color.FromArgb(32, 32, 30);
             pnlSepBotoes.Dock = System.Windows.Forms.DockStyle.Top;
             pnlSepBotoes.Height = 1;
             this.pnlBotoes.Controls.Add(pnlSepBotoes);
@@ -108,7 +112,7 @@
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.FlatAppearance.BorderColor = corBorda;
             this.btnVoltar.FlatAppearance.BorderSize = 1;
-            this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(38, 50, 85);
+            this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 10, 10);
             this.btnVoltar.Font = fBotao;
             this.btnVoltar.ForeColor = corSub;
             this.btnVoltar.Location = new System.Drawing.Point(220, 14);
@@ -162,20 +166,20 @@
             this.dgvPedidos.RowHeadersVisible = false;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedidos.TabIndex = 5;
-            this.dgvPedidos.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(14, 20, 42);
+            this.dgvPedidos.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(10, 10, 10);
             this.dgvPedidos.ColumnHeadersDefaultCellStyle.ForeColor = corSub;
             this.dgvPedidos.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold);
-            this.dgvPedidos.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(14, 20, 42);
+            this.dgvPedidos.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(10, 10, 10);
             this.dgvPedidos.ColumnHeadersDefaultCellStyle.SelectionForeColor = corSub;
             this.dgvPedidos.ColumnHeadersDefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvPedidos.ColumnHeadersDefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dgvPedidos.DefaultCellStyle.BackColor = corCampo;
             this.dgvPedidos.DefaultCellStyle.ForeColor = corBranco;
-            this.dgvPedidos.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(70, 204, 64, 44);
+            this.dgvPedidos.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(196, 30, 30);
             this.dgvPedidos.DefaultCellStyle.SelectionForeColor = corBranco;
             this.dgvPedidos.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 6, 0, 6);
             this.dgvPedidos.RowTemplate.Height = 40;
-            this.dgvPedidos.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(18, 26, 50);
+            this.dgvPedidos.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
             this.dgvPedidos.AlternatingRowsDefaultCellStyle.ForeColor = corBranco;
             this.dgvPedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellClick);
 
@@ -201,8 +205,8 @@
             this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdutos.BackgroundColor = corCampo;
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvProdutos.GridColor = System.Drawing.Color.FromArgb(30, 40, 68);
+            this.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvProdutos.GridColor = System.Drawing.Color.FromArgb(28, 28, 26);
             this.dgvProdutos.ColumnHeadersHeight = 36;
             this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -215,20 +219,20 @@
             this.dgvProdutos.RowHeadersVisible = false;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutos.TabIndex = 12;
-            this.dgvProdutos.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(14, 20, 42);
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(10, 10, 10);
             this.dgvProdutos.ColumnHeadersDefaultCellStyle.ForeColor = corSub;
             this.dgvProdutos.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold);
-            this.dgvProdutos.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(14, 20, 42);
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(10, 10, 10);
             this.dgvProdutos.ColumnHeadersDefaultCellStyle.SelectionForeColor = corSub;
             this.dgvProdutos.ColumnHeadersDefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvProdutos.ColumnHeadersDefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dgvProdutos.DefaultCellStyle.BackColor = corCampo;
             this.dgvProdutos.DefaultCellStyle.ForeColor = corBranco;
-            this.dgvProdutos.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(70, 204, 64, 44);
+            this.dgvProdutos.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(196, 30, 30);
             this.dgvProdutos.DefaultCellStyle.SelectionForeColor = corBranco;
             this.dgvProdutos.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 6, 0, 6);
             this.dgvProdutos.RowTemplate.Height = 40;
-            this.dgvProdutos.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(18, 26, 50);
+            this.dgvProdutos.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
             this.dgvProdutos.AlternatingRowsDefaultCellStyle.ForeColor = corBranco;
 
             this.pnlGridBot.Controls.Add(this.dgvProdutos);

@@ -121,5 +121,24 @@ namespace Pizzaria
             // posiciona o card imediatamente após o Load
             FrmCadastroUsuario_Resize(sender, e);
         }
+
+        // ── Máscara de CPF (idêntica ao FrmLogin) ──────────────────────
+        private bool _updCpf = false;
+        private void TxbCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back) e.Handled = true;
+        }
+        private void TxbCpf_TextChanged(object sender, EventArgs e)
+        {
+            if (_updCpf) return; _updCpf = true;
+            string d = System.Text.RegularExpressions.Regex.Replace(txbcpf.Text, @"\D", "");
+            if (d.Length > 11) d = d.Substring(0, 11);
+            string f = d;
+            if (d.Length > 9) f = $"{d.Substring(0, 3)}.{d.Substring(3, 3)}.{d.Substring(6, 3)}-{d.Substring(9)}";
+            else if (d.Length > 6) f = $"{d.Substring(0, 3)}.{d.Substring(3, 3)}.{d.Substring(6)}";
+            else if (d.Length > 3) f = $"{d.Substring(0, 3)}.{d.Substring(3)}";
+            txbcpf.Text = f; txbcpf.SelectionStart = f.Length;
+            _updCpf = false;
+        }
     }
 }

@@ -11,12 +11,12 @@ using Pizzaria.Model;
 
 namespace Pizzaria
 {
-    public partial class FrmCadastrarProdutos : Form
+    public partial class FrmGestaoProdutos : Form
     {
         Model.Usuario usuario = new Usuario();
         Model.Produtos produtos = new Produtos();
         Model.Categoria categoria = new Categoria();
-        public FrmCadastrarProdutos(Model.Usuario usuario)
+        public FrmGestaoProdutos(Model.Usuario usuario)
         {
             InitializeComponent();
             // Fix double-buffer para evitar flickering no DataGridView
@@ -217,6 +217,19 @@ namespace Pizzaria
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+
+        private void LimparCampos()
+        {
+            txbNomeProduto.Clear();
+            txbValor.Clear();
+            cmbCategoria.SelectedIndex = -1;
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

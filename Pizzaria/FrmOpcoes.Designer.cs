@@ -131,8 +131,8 @@
             this.pnlCards.Name = "pnlCards";
 
             // Cards
-            ConfigCard(this.btnEstoque, "btnEstoque", "Estoque", 12);
-            ConfigCard(this.btnCadastrar, "btnCadastrar", "Cadastrar Produtos", 9);
+            ConfigCard(this.btnEstoque, "btnEstoque", "Gestão de Estoque", 12);
+            ConfigCard(this.btnCadastrar, "btnCadastrar", "Gestão de Produtos", 9);
             ConfigCard(this.btnCaixa, "btnCaixa", "Caixa", 10);
             ConfigCard(this.btnpedidos, "btnpedidos", "Pedidos", 14);
             ConfigCard(this.btnComandas, "btnComandas", "Comandas", 11);

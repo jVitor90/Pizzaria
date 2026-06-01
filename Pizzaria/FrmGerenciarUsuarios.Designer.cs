@@ -28,7 +28,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txbCpf = new System.Windows.Forms.MaskedTextBox();  // << MÁSCARA
+            this.txbCpf = new System.Windows.Forms.TextBox();
             this.lblCargo = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -194,16 +194,12 @@
             this.txbCpf.Font = fCampo;
             this.txbCpf.ForeColor = cBranco;
             this.txbCpf.Location = new System.Drawing.Point(24, 164);
-            this.txbCpf.Mask = "000,000,000-00";
+            this.txbCpf.MaxLength = 14;
             this.txbCpf.Name = "txbCpf";
             this.txbCpf.Size = new System.Drawing.Size(272, 36);
             this.txbCpf.TabIndex = 1;
-            this.txbCpf.RejectInputOnFirstFailure = false;
-            // Sem highlight azul ao focar: desfaz a seleção automática
-            this.txbCpf.GotFocus += (s, ev) => {
-                var m = (System.Windows.Forms.MaskedTextBox)s;
-                m.BeginInvoke(new System.Action(() => m.SelectionLength = 0));
-            };
+            this.txbCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxbCpf_KeyPress);
+            this.txbCpf.TextChanged += new System.EventHandler(this.TxbCpf_TextChanged);
 
             // ── CARGO — ComboBox escuro com FlatStyle ──────────────────
             this.lblCargo.AutoSize = true;
@@ -373,7 +369,7 @@
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txbNome;
-        private System.Windows.Forms.MaskedTextBox txbCpf;   // << tipo atualizado
+        private System.Windows.Forms.TextBox txbCpf;
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.DataGridView dgvUsuarios;

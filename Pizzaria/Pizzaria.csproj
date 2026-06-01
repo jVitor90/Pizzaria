@@ -87,11 +87,11 @@
     <Compile Include="FrmFinanceiro.Designer.cs">
       <DependentUpon>FrmFinanceiro.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCadastrarProdutos.cs">
+    <Compile Include="FrmGestãoProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCadastrarProdutos.Designer.cs">
-      <DependentUpon>FrmCadastrarProdutos.cs</DependentUpon>
+    <Compile Include="FrmGestãoProdutos.Designer.cs">
+      <DependentUpon>FrmGestãoProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
@@ -157,8 +157,8 @@
     <EmbeddedResource Include="FrmFinanceiro.resx">
       <DependentUpon>FrmFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCadastrarProdutos.resx">
-      <DependentUpon>FrmCadastrarProdutos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestãoProdutos.resx">
+      <DependentUpon>FrmGestãoProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>

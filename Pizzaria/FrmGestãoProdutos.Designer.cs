@@ -1,6 +1,6 @@
 ﻿namespace Pizzaria
 {
-    partial class FrmGestaoEstoque
+    partial class FrmGestaoProdutos
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -20,24 +20,22 @@
             this.pnlBody = new System.Windows.Forms.Panel();
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.dgvEstoque = new System.Windows.Forms.DataGridView();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
             // sidebar
             this.lblSecaoCadastro = new System.Windows.Forms.Label();
             this.lblProduto = new System.Windows.Forms.Label();
             this.txbNomeProduto = new System.Windows.Forms.TextBox();
+            this.lblPreco = new System.Windows.Forms.Label();
+            this.txbValor = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.lblUnidade = new System.Windows.Forms.Label();
-            this.txbUnidade = new System.Windows.Forms.TextBox();
-            this.lblQuantidade = new System.Windows.Forms.Label();
-            this.txbQuantidade = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
 
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
 
             // ── cores ──────────────────────────────────────────────────
@@ -63,7 +61,7 @@
             this.lblTitulo.Font = fHeader;
             this.lblTitulo.ForeColor = cBranco;
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Text = "Gestão de Estoque";
+            this.lblTitulo.Text = "Gestão de Produtos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTitulo.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
 
@@ -80,55 +78,56 @@
             this.pnlHeaderLine.Height = 2;
             this.pnlHeaderLine.Name = "pnlHeaderLine";
 
-            // ── dgvEstoque ─────────────────────────────────────────────
-            this.dgvEstoque.AllowUserToAddRows = false;
-            this.dgvEstoque.AllowUserToDeleteRows = false;
-            this.dgvEstoque.AllowUserToResizeColumns = false;
-            this.dgvEstoque.AllowUserToResizeRows = false;
-            this.dgvEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEstoque.BackgroundColor = cCampo;
-            this.dgvEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvEstoque.ColumnHeadersHeight = 40;
-            this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEstoque.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEstoque.EnableHeadersVisualStyles = false;
-            this.dgvEstoque.Font = fCampo;
-            this.dgvEstoque.GridColor = System.Drawing.Color.FromArgb(28, 28, 26);
-            this.dgvEstoque.MultiSelect = false;
-            this.dgvEstoque.Name = "dgvEstoque";
-            this.dgvEstoque.ReadOnly = true;
-            this.dgvEstoque.RowHeadersVisible = false;
-            this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEstoque.TabIndex = 0;
+            // ── dgvProdutos ────────────────────────────────────────────
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.AllowUserToResizeColumns = false;
+            this.dgvProdutos.AllowUserToResizeRows = false;
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProdutos.BackgroundColor = cCampo;
+            this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvProdutos.ColumnHeadersHeight = 40;
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProdutos.EnableHeadersVisualStyles = false;
+            this.dgvProdutos.Font = fCampo;
+            this.dgvProdutos.GridColor = System.Drawing.Color.FromArgb(28, 28, 26);
+            this.dgvProdutos.MultiSelect = false;
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
+            this.dgvProdutos.RowHeadersVisible = false;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProdutos.TabIndex = 0;
 
-            this.dgvEstoque.ColumnHeadersDefaultCellStyle.BackColor = cHeader;
-            this.dgvEstoque.ColumnHeadersDefaultCellStyle.ForeColor = cSub;
-            this.dgvEstoque.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.dgvEstoque.ColumnHeadersDefaultCellStyle.SelectionBackColor = cHeader;
-            this.dgvEstoque.ColumnHeadersDefaultCellStyle.SelectionForeColor = cSub;
-            this.dgvEstoque.ColumnHeadersDefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvEstoque.ColumnHeadersDefaultCellStyle.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.BackColor = cHeader;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.ForeColor = cSub;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.SelectionBackColor = cHeader;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.SelectionForeColor = cSub;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
 
-            this.dgvEstoque.DefaultCellStyle.BackColor = cCampo;
-            this.dgvEstoque.DefaultCellStyle.ForeColor = cBranco;
-            this.dgvEstoque.DefaultCellStyle.SelectionBackColor = cAccent;
-            this.dgvEstoque.DefaultCellStyle.SelectionForeColor = cBranco;
-            this.dgvEstoque.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.dgvEstoque.RowTemplate.Height = 48;
+            this.dgvProdutos.DefaultCellStyle.BackColor = cCampo;
+            this.dgvProdutos.DefaultCellStyle.ForeColor = cBranco;
+            this.dgvProdutos.DefaultCellStyle.SelectionBackColor = cAccent;
+            this.dgvProdutos.DefaultCellStyle.SelectionForeColor = cBranco;
+            this.dgvProdutos.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.dgvProdutos.RowTemplate.Height = 48;
 
-            this.dgvEstoque.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
-            this.dgvEstoque.AlternatingRowsDefaultCellStyle.ForeColor = cBranco;
+            this.dgvProdutos.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            this.dgvProdutos.AlternatingRowsDefaultCellStyle.ForeColor = cBranco;
 
-            this.dgvEstoque.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellClick);
-            this.dgvEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellContentClick);
+            this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
+            this.dgvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellContentClick);
+            this.dgvProdutos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutos_RowHeaderMouseClick);
 
             // ── pnlGrid ────────────────────────────────────────────────
             this.pnlGrid.BackColor = cFundo;
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Controls.Add(this.dgvEstoque);
+            this.pnlGrid.Controls.Add(this.dgvProdutos);
 
             // ════════════════════════════════════════════════════════════
             // SIDEBAR
@@ -140,7 +139,7 @@
             this.lblSecaoCadastro.ForeColor = cSub;
             this.lblSecaoCadastro.Location = new System.Drawing.Point(24, 24);
             this.lblSecaoCadastro.Name = "lblSecaoCadastro";
-            this.lblSecaoCadastro.Text = "DADOS DO ITEM";
+            this.lblSecaoCadastro.Text = "DADOS DO PRODUTO";
 
             // PRODUTO
             this.lblProduto.AutoSize = true;
@@ -161,12 +160,31 @@
             this.txbNomeProduto.Size = new System.Drawing.Size(272, 36);
             this.txbNomeProduto.TabIndex = 0;
 
+            // PREÇO
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.BackColor = System.Drawing.Color.Transparent;
+            this.lblPreco.Font = fLabel;
+            this.lblPreco.ForeColor = cSub;
+            this.lblPreco.Location = new System.Drawing.Point(24, 118);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Text = "PREÇO";
+
+            this.txbValor.BackColor = cCampo;
+            this.txbValor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbValor.Font = fCampo;
+            this.txbValor.ForeColor = cBranco;
+            this.txbValor.Location = new System.Drawing.Point(24, 136);
+            this.txbValor.Multiline = true;
+            this.txbValor.Name = "txbValor";
+            this.txbValor.Size = new System.Drawing.Size(272, 36);
+            this.txbValor.TabIndex = 1;
+
             // CATEGORIA
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
             this.lblCategoria.Font = fLabel;
             this.lblCategoria.ForeColor = cSub;
-            this.lblCategoria.Location = new System.Drawing.Point(24, 118);
+            this.lblCategoria.Location = new System.Drawing.Point(24, 186);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Text = "CATEGORIA";
 
@@ -175,48 +193,10 @@
             this.cmbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCategoria.Font = fCampo;
             this.cmbCategoria.ForeColor = cBranco;
-            this.cmbCategoria.Location = new System.Drawing.Point(24, 136);
+            this.cmbCategoria.Location = new System.Drawing.Point(24, 204);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(272, 30);
-            this.cmbCategoria.TabIndex = 1;
-
-            // UNIDADE
-            this.lblUnidade.AutoSize = true;
-            this.lblUnidade.BackColor = System.Drawing.Color.Transparent;
-            this.lblUnidade.Font = fLabel;
-            this.lblUnidade.ForeColor = cSub;
-            this.lblUnidade.Location = new System.Drawing.Point(24, 182);
-            this.lblUnidade.Name = "lblUnidade";
-            this.lblUnidade.Text = "UNIDADE  (ex: kg, L, un)";
-
-            this.txbUnidade.BackColor = cCampo;
-            this.txbUnidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbUnidade.Font = fCampo;
-            this.txbUnidade.ForeColor = cBranco;
-            this.txbUnidade.Location = new System.Drawing.Point(24, 200);
-            this.txbUnidade.Multiline = true;
-            this.txbUnidade.Name = "txbUnidade";
-            this.txbUnidade.Size = new System.Drawing.Size(272, 36);
-            this.txbUnidade.TabIndex = 2;
-
-            // QUANTIDADE
-            this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuantidade.Font = fLabel;
-            this.lblQuantidade.ForeColor = cSub;
-            this.lblQuantidade.Location = new System.Drawing.Point(24, 250);
-            this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Text = "QUANTIDADE";
-
-            this.txbQuantidade.BackColor = cCampo;
-            this.txbQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbQuantidade.Font = fCampo;
-            this.txbQuantidade.ForeColor = cBranco;
-            this.txbQuantidade.Location = new System.Drawing.Point(24, 268);
-            this.txbQuantidade.Multiline = true;
-            this.txbQuantidade.Name = "txbQuantidade";
-            this.txbQuantidade.Size = new System.Drawing.Size(272, 36);
-            this.txbQuantidade.TabIndex = 3;
+            this.cmbCategoria.TabIndex = 2;
 
             // ── botões sidebar ─────────────────────────────────────────
             this.btnCadastrar.BackColor = cAccent;
@@ -225,11 +205,11 @@
             this.btnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(170, 20, 20);
             this.btnCadastrar.Font = fBtn;
             this.btnCadastrar.ForeColor = cBranco;
-            this.btnCadastrar.Location = new System.Drawing.Point(24, 326);
+            this.btnCadastrar.Location = new System.Drawing.Point(24, 256);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(272, 44);
-            this.btnCadastrar.TabIndex = 4;
-            this.btnCadastrar.Text = "Cadastrar Item";
+            this.btnCadastrar.TabIndex = 3;
+            this.btnCadastrar.Text = "Cadastrar Produto";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -241,10 +221,10 @@
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 10, 10);
             this.btnEditar.Font = fBtnSm;
             this.btnEditar.ForeColor = cBranco;
-            this.btnEditar.Location = new System.Drawing.Point(24, 382);
+            this.btnEditar.Location = new System.Drawing.Point(24, 312);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(272, 44);
-            this.btnEditar.TabIndex = 5;
+            this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Salvar Edição";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -257,11 +237,11 @@
             this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 10, 10);
             this.btnExcluir.Font = fBtnSm;
             this.btnExcluir.ForeColor = cAccent;
-            this.btnExcluir.Location = new System.Drawing.Point(24, 438);
+            this.btnExcluir.Location = new System.Drawing.Point(24, 368);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(272, 44);
-            this.btnExcluir.TabIndex = 6;
-            this.btnExcluir.Text = "Excluir Item";
+            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.Text = "Excluir Produto";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -272,10 +252,10 @@
             this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLimpar.Font = fBtnSm;
             this.btnLimpar.ForeColor = cSub;
-            this.btnLimpar.Location = new System.Drawing.Point(24, 500);
+            this.btnLimpar.Location = new System.Drawing.Point(24, 430);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(120, 30);
-            this.btnLimpar.TabIndex = 7;
+            this.btnLimpar.TabIndex = 6;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -287,10 +267,10 @@
             this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Font = fBtnSm;
             this.btnVoltar.ForeColor = cSub;
-            this.btnVoltar.Location = new System.Drawing.Point(152, 500);
+            this.btnVoltar.Location = new System.Drawing.Point(152, 430);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(144, 30);
-            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.TabIndex = 7;
             this.btnVoltar.Text = "\u21A9  Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -304,12 +284,10 @@
             this.pnlSidebar.Controls.Add(this.lblSecaoCadastro);
             this.pnlSidebar.Controls.Add(this.lblProduto);
             this.pnlSidebar.Controls.Add(this.txbNomeProduto);
+            this.pnlSidebar.Controls.Add(this.lblPreco);
+            this.pnlSidebar.Controls.Add(this.txbValor);
             this.pnlSidebar.Controls.Add(this.lblCategoria);
             this.pnlSidebar.Controls.Add(this.cmbCategoria);
-            this.pnlSidebar.Controls.Add(this.lblUnidade);
-            this.pnlSidebar.Controls.Add(this.txbUnidade);
-            this.pnlSidebar.Controls.Add(this.lblQuantidade);
-            this.pnlSidebar.Controls.Add(this.txbQuantidade);
             this.pnlSidebar.Controls.Add(this.btnCadastrar);
             this.pnlSidebar.Controls.Add(this.btnEditar);
             this.pnlSidebar.Controls.Add(this.btnExcluir);
@@ -332,15 +310,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Name = "FrmGestaoEstoque";
-            this.Text = "Gestão de Estoque";
+            this.Name = "FrmGestaoProdutos";
+            this.Text = "Gestão de Produtos";
 
             // Ordem: Fill → Top(line) → Top(header)
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.pnlHeaderLine);
             this.Controls.Add(this.pnlHeader);
 
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -354,21 +332,19 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblSecaoCadastro;
         private System.Windows.Forms.Label lblProduto;
+        private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.Label lblUnidade;
-        private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.TextBox txbNomeProduto;
+        private System.Windows.Forms.TextBox txbValor;
         private System.Windows.Forms.ComboBox cmbCategoria;
-        private System.Windows.Forms.TextBox txbUnidade;
-        private System.Windows.Forms.TextBox txbQuantidade;
-        private System.Windows.Forms.DataGridView dgvEstoque;
+        private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnVoltar;
 
-        // aliases para compatibilidade com o .cs original (pnlTopo/pnlCampos/pnlBotoes)
+        // aliases de compatibilidade
         private System.Windows.Forms.Panel pnlTopo { get { return pnlHeader; } }
         private System.Windows.Forms.Panel pnlCampos { get { return pnlSidebar; } }
         private System.Windows.Forms.Panel pnlBotoes { get { return pnlSidebar; } }

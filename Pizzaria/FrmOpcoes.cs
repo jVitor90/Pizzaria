@@ -134,7 +134,7 @@ namespace Pizzaria
 
         // ── Eventos ────────────────────────────────────────────────────
         private void btnCadastrar_Click(object sender, EventArgs e)
-        { var f = new FrmCadastrarProdutos(usuario); this.Hide(); f.ShowDialog(); this.Show(); }
+        { var f = new FrmGestaoProdutos(usuario); this.Hide(); f.ShowDialog(); this.Show(); }
 
         private void btnCaixa_Click(object sender, EventArgs e)
         { var f = new FrmGestaoCaixa(); this.Hide(); f.ShowDialog(); this.Show(); }
