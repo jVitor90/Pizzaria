@@ -184,21 +184,12 @@ namespace Pizzaria.Model
             cmd.Parameters.AddWithValue("@nome_produto", nome);
 
             cmd.Prepare();
-            // para impedir que o programa quebre 
             try
             {
-                if (cmd.ExecuteNonQuery() == 0)
-                {
-                    conexaoBD.Desconectar(con);
-                    return false;
-                }
-                else
-                {
-                    conexaoBD.Desconectar(con);
-                    return true;
-                }
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                conexaoBD.Desconectar(con);
+                return count > 0;
             }
-            // se der erro, ele ira desconectar do bd
             catch
             {
                 conexaoBD.Desconectar(con);

@@ -70,7 +70,7 @@ namespace Pizzaria
             if (e.RowIndex < 0) return;
 
             int linha = e.RowIndex;
-            this.usuario.id_usuario = (int)dgvUsuarios.Rows[linha].Cells["id_usuario"].Value;
+            this.usuario.id_usuario = Convert.ToInt32(dgvUsuarios.Rows[linha].Cells["id_usuario"].Value);
             this.usuario.Nome_usuario = dgvUsuarios.Rows[linha].Cells["nome_usuario"].Value.ToString();
             this.usuario.cpf = dgvUsuarios.Rows[linha].Cells["cpf"].Value.ToString();
             this.usuario.Cargo = dgvUsuarios.Rows[linha].Cells["cargo"].Value.ToString();

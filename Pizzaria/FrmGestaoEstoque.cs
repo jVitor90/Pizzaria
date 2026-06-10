@@ -191,8 +191,8 @@ namespace Pizzaria
             this.estoque.nome_item = dgvEstoque.Rows[linha].Cells[1].Value.ToString();
             this.estoque.quantidade = (decimal)dgvEstoque.Rows[linha].Cells[2].Value;
             this.estoque.unidade = dgvEstoque.Rows[linha].Cells[3].Value.ToString();
-            this.estoque.id_Categoria = (int)dgvEstoque.Rows[linha].Cells[4].Value;
-            this.estoque.id_estoque = (int)dgvEstoque.Rows[linha].Cells[0].Value;
+            this.estoque.id_Categoria = Convert.ToInt32(dgvEstoque.Rows[linha].Cells[4].Value);
+            this.estoque.id_estoque = Convert.ToInt32(dgvEstoque.Rows[linha].Cells[0].Value);
 
             txbNomeProduto.Text = this.estoque.nome_item;
             txbQuantidade.Text = this.estoque.quantidade.ToString();

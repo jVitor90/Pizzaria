@@ -42,7 +42,7 @@ namespace Pizzaria
                 SessaoUsuario.Cargo = resultado.Rows[0]["cargo"].ToString();
                 SessaoUsuario.Cpf = resultado.Rows[0]["cpf"].ToString();
                 usuario.Nome_usuario = resultado.Rows[0]["nome_usuario"].ToString();
-                usuario.id_usuario = (int)resultado.Rows[0]["Id_usuario"];
+                usuario.id_usuario = Convert.ToInt32(resultado.Rows[0]["id_usuario"]);
                 FrmOpcoes frm = new FrmOpcoes(usuario);
                 this.Hide();
                 frm.ShowDialog();

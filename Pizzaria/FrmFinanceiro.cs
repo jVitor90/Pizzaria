@@ -48,7 +48,7 @@ namespace Pizzaria
                 else
                 {
                     DataTable resultado = financeiro.ObterFaturamentoPeriodo();
-                    if (resultado != null || resultado.Rows.Count > 0)
+                    if (resultado != null && resultado.Rows.Count > 0)
                     {
                         DgvFaturamento.DataSource = resultado;
                         DgvFaturamento.Columns["faturamento_total"].HeaderText = "Faturamento Total";
@@ -69,13 +69,6 @@ namespace Pizzaria
                 MessageBox.Show($"Erro ao consultar o faturamento: {ex.Message}",
                                 "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-
-
-
-
         }
 
         private void btnFaturamentoMensalAtual_Click(object sender, EventArgs e)
