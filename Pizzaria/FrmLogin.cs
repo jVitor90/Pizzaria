@@ -73,9 +73,11 @@ namespace Pizzaria
             pnlLeft.Invalidate();
 
             // Logo
-            picblogo.Size = new System.Drawing.Size(80, 80);
-            picblogo.Left = (leftW - 80) / 2;
-            picblogo.Top = (int)(H * 0.30);
+            int logoW = Math.Min(420, leftW - 60);
+            int logoH = (int)(logoW * 0.22);  // proporcao 420x92
+            picblogo.Size = new System.Drawing.Size(logoW, logoH);
+            picblogo.Left = (leftW - logoW) / 2;
+            picblogo.Top = (int)(H * 0.32);
 
             // Brand
             lblBrand.SetBounds(40, picblogo.Bottom + 18, leftW - 80, 60);

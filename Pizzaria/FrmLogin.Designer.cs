@@ -15,9 +15,7 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.picblogo = new System.Windows.Forms.PictureBox();
             this.lblcadastrar = new System.Windows.Forms.Label();
             this.lblcpf = new System.Windows.Forms.Label();
@@ -26,203 +24,253 @@
             this.txbcpf = new System.Windows.Forms.TextBox();
             this.btnentrar = new System.Windows.Forms.Button();
             this.btnsair = new System.Windows.Forms.Button();
-
-            // paineis estruturais
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.pnlRight = new System.Windows.Forms.Panel();
-            this.pnlAccent = new System.Windows.Forms.Panel();
-            this.pnlForm = new System.Windows.Forms.Panel();
-
-            // labels decorativos do lado esquerdo
             this.lblBrand = new System.Windows.Forms.Label();
+            this.pnlAccent = new System.Windows.Forms.Panel();
             this.lblSlogan = new System.Windows.Forms.Label();
+            this.pnlRight = new System.Windows.Forms.Panel();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblSubtitle = new System.Windows.Forms.Label();
+            this.pnlForm = new System.Windows.Forms.Panel();
             this.lblVersion = new System.Windows.Forms.Label();
-
             ((System.ComponentModel.ISupportInitialize)(this.picblogo)).BeginInit();
             this.pnlLeft.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.pnlForm.SuspendLayout();
             this.SuspendLayout();
-
-            // ── pnlLeft — lado esquerdo escuro ───────────────────────────
-            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(8, 8, 8);
-            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
-            this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.TabIndex = 60;
-            this.pnlLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlLeft_Paint);
-
-            // Logo
+            // 
+            // picblogo
+            // 
             this.picblogo.BackColor = System.Drawing.Color.Transparent;
             this.picblogo.Image = ((System.Drawing.Image)(resources.GetObject("picblogo.Image")));
-            this.picblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picblogo.Location = new System.Drawing.Point(0, 0);
             this.picblogo.Name = "picblogo";
-            this.picblogo.Size = new System.Drawing.Size(90, 90);
+            this.picblogo.Size = new System.Drawing.Size(380, 80);
+            this.picblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picblogo.TabIndex = 0;
             this.picblogo.TabStop = false;
+            // 
+            // lblcadastrar
+            // 
+            this.lblcadastrar.AutoSize = true;
+            this.lblcadastrar.Location = new System.Drawing.Point(0, 0);
+            this.lblcadastrar.Name = "lblcadastrar";
+            this.lblcadastrar.Size = new System.Drawing.Size(0, 13);
+            this.lblcadastrar.TabIndex = 4;
+            this.lblcadastrar.Visible = false;
+            // 
+            // lblcpf
+            // 
+            this.lblcpf.BackColor = System.Drawing.Color.Transparent;
+            this.lblcpf.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.lblcpf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.lblcpf.Location = new System.Drawing.Point(0, 0);
+            this.lblcpf.Name = "lblcpf";
+            this.lblcpf.Size = new System.Drawing.Size(100, 23);
+            this.lblcpf.TabIndex = 0;
+            this.lblcpf.Text = "CPF";
+            // 
+            // lblsenha
+            // 
+            this.lblsenha.BackColor = System.Drawing.Color.Transparent;
+            this.lblsenha.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.lblsenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.lblsenha.Location = new System.Drawing.Point(0, 0);
+            this.lblsenha.Name = "lblsenha";
+            this.lblsenha.Size = new System.Drawing.Size(100, 23);
+            this.lblsenha.TabIndex = 2;
+            this.lblsenha.Text = "SENHA";
+            // 
+            // txbsenha
+            // 
+            this.txbsenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txbsenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbsenha.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txbsenha.ForeColor = System.Drawing.Color.White;
+            this.txbsenha.Location = new System.Drawing.Point(0, 0);
+            this.txbsenha.Name = "txbsenha";
+            this.txbsenha.PasswordChar = '●';
+            this.txbsenha.Size = new System.Drawing.Size(100, 32);
+            this.txbsenha.TabIndex = 3;
+            // 
+            // txbcpf
+            // 
+            this.txbcpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txbcpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbcpf.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txbcpf.ForeColor = System.Drawing.Color.White;
+            this.txbcpf.Location = new System.Drawing.Point(0, 0);
+            this.txbcpf.MaxLength = 14;
+            this.txbcpf.Name = "txbcpf";
+            this.txbcpf.Size = new System.Drawing.Size(100, 32);
+            this.txbcpf.TabIndex = 1;
+            // 
+            // btnentrar
+            // 
+            this.btnentrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnentrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnentrar.FlatAppearance.BorderSize = 0;
+            this.btnentrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnentrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnentrar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnentrar.ForeColor = System.Drawing.Color.White;
+            this.btnentrar.Location = new System.Drawing.Point(0, 0);
+            this.btnentrar.Name = "btnentrar";
+            this.btnentrar.Size = new System.Drawing.Size(75, 23);
+            this.btnentrar.TabIndex = 4;
+            this.btnentrar.Text = "ENTRAR";
+            this.btnentrar.UseVisualStyleBackColor = false;
+            this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
+            // 
+            // btnsair
+            // 
+            this.btnsair.BackColor = System.Drawing.Color.Transparent;
+            this.btnsair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnsair.FlatAppearance.BorderSize = 0;
+            this.btnsair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnsair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsair.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnsair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(75)))));
+            this.btnsair.Location = new System.Drawing.Point(0, 0);
+            this.btnsair.Name = "btnsair";
+            this.btnsair.Size = new System.Drawing.Size(75, 23);
+            this.btnsair.TabIndex = 5;
+            this.btnsair.Text = "Sair do sistema";
+            this.btnsair.UseVisualStyleBackColor = false;
+            this.btnsair.Click += new System.EventHandler(this.btnsair_Click);
+            // 
+            // pnlLeft
+            // 
+            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
             this.pnlLeft.Controls.Add(this.picblogo);
-
-            // Nome da pizzaria
-            this.lblBrand.AutoSize = false;
+            this.pnlLeft.Controls.Add(this.lblBrand);
+            this.pnlLeft.Controls.Add(this.pnlAccent);
+            this.pnlLeft.Controls.Add(this.lblSlogan);
+            this.pnlLeft.Controls.Add(this.lblcadastrar);
+            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(200, 100);
+            this.pnlLeft.TabIndex = 60;
+            this.pnlLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlLeft_Paint);
+            // 
+            // lblBrand
+            // 
             this.lblBrand.BackColor = System.Drawing.Color.Transparent;
             this.lblBrand.Font = new System.Drawing.Font("Georgia", 36F, System.Drawing.FontStyle.Bold);
             this.lblBrand.ForeColor = System.Drawing.Color.White;
+            this.lblBrand.Location = new System.Drawing.Point(0, 0);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBrand.Size = new System.Drawing.Size(100, 23);
+            this.lblBrand.TabIndex = 1;
             this.lblBrand.Text = "PIZZARIA";
-            this.pnlLeft.Controls.Add(this.lblBrand);
-
-            // Linha decorativa vermelha
-            this.pnlAccent.BackColor = System.Drawing.Color.FromArgb(196, 30, 30);
+            this.lblBrand.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlAccent
+            // 
+            this.pnlAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlAccent.Location = new System.Drawing.Point(0, 0);
             this.pnlAccent.Name = "pnlAccent";
-            this.pnlAccent.Height = 3;
-            this.pnlLeft.Controls.Add(this.pnlAccent);
-
-            // Slogan
-            this.lblSlogan.AutoSize = false;
+            this.pnlAccent.Size = new System.Drawing.Size(200, 3);
+            this.pnlAccent.TabIndex = 2;
+            // 
+            // lblSlogan
+            // 
             this.lblSlogan.BackColor = System.Drawing.Color.Transparent;
             this.lblSlogan.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Italic);
-            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(160, 160, 150);
+            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(150)))));
+            this.lblSlogan.Location = new System.Drawing.Point(0, 0);
             this.lblSlogan.Name = "lblSlogan";
-            this.lblSlogan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSlogan.Size = new System.Drawing.Size(100, 23);
+            this.lblSlogan.TabIndex = 3;
             this.lblSlogan.Text = "Sistema de Gestão";
-            this.pnlLeft.Controls.Add(this.lblSlogan);
-
-            // lblcadastrar mantido oculto
-            this.lblcadastrar.AutoSize = true;
-            this.lblcadastrar.Visible = false;
-            this.lblcadastrar.Name = "lblcadastrar";
-            this.pnlLeft.Controls.Add(this.lblcadastrar);
-
-            // ── pnlRight — lado direito formulário ───────────────────────
-            this.pnlRight.BackColor = System.Drawing.Color.FromArgb(13, 13, 13);
+            this.lblSlogan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlRight
+            // 
+            this.pnlRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.pnlRight.Controls.Add(this.lblBemVindo);
+            this.pnlRight.Controls.Add(this.lblSubtitle);
+            this.pnlRight.Controls.Add(this.pnlForm);
+            this.pnlRight.Controls.Add(this.lblVersion);
+            this.pnlRight.Location = new System.Drawing.Point(0, 0);
             this.pnlRight.Name = "pnlRight";
+            this.pnlRight.Size = new System.Drawing.Size(200, 100);
             this.pnlRight.TabIndex = 61;
-
-            // Bem-vindo
-            this.lblBemVindo.AutoSize = false;
+            // 
+            // lblBemVindo
+            // 
             this.lblBemVindo.BackColor = System.Drawing.Color.Transparent;
             this.lblBemVindo.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
             this.lblBemVindo.ForeColor = System.Drawing.Color.White;
+            this.lblBemVindo.Location = new System.Drawing.Point(0, 0);
             this.lblBemVindo.Name = "lblBemVindo";
+            this.lblBemVindo.Size = new System.Drawing.Size(100, 23);
+            this.lblBemVindo.TabIndex = 0;
             this.lblBemVindo.Text = "Entrar";
-            this.pnlRight.Controls.Add(this.lblBemVindo);
-
-            // Subtítulo
-            this.lblSubtitle.AutoSize = false;
+            // 
+            // lblSubtitle
+            // 
             this.lblSubtitle.BackColor = System.Drawing.Color.Transparent;
             this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 100, 95);
+            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(95)))));
+            this.lblSubtitle.Location = new System.Drawing.Point(0, 0);
             this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(100, 23);
+            this.lblSubtitle.TabIndex = 1;
             this.lblSubtitle.Text = "Acesse sua conta para continuar";
-            this.pnlRight.Controls.Add(this.lblSubtitle);
-
-            // ── pnlForm — card flutuante ─────────────────────────────────
-            this.pnlForm.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            // 
+            // pnlForm
+            // 
+            this.pnlForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlForm.Controls.Add(this.lblcpf);
+            this.pnlForm.Controls.Add(this.txbcpf);
+            this.pnlForm.Controls.Add(this.lblsenha);
+            this.pnlForm.Controls.Add(this.txbsenha);
+            this.pnlForm.Controls.Add(this.btnentrar);
+            this.pnlForm.Controls.Add(this.btnsair);
+            this.pnlForm.Location = new System.Drawing.Point(0, 0);
             this.pnlForm.Name = "pnlForm";
+            this.pnlForm.Size = new System.Drawing.Size(200, 100);
             this.pnlForm.TabIndex = 62;
             this.pnlForm.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlForm_Paint);
-
-            // lblcpf
-            this.lblcpf.AutoSize = false;
-            this.lblcpf.BackColor = System.Drawing.Color.Transparent;
-            this.lblcpf.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.lblcpf.ForeColor = System.Drawing.Color.FromArgb(196, 30, 30);
-            this.lblcpf.Name = "lblcpf";
-            this.lblcpf.Text = "CPF";
-            this.pnlForm.Controls.Add(this.lblcpf);
-
-            // txbcpf
-            this.txbcpf.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
-            this.txbcpf.ForeColor = System.Drawing.Color.White;
-            this.txbcpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbcpf.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.txbcpf.MaxLength = 14;
-            this.txbcpf.Name = "txbcpf";
-            this.pnlForm.Controls.Add(this.txbcpf);
-
-            // lblsenha
-            this.lblsenha.AutoSize = false;
-            this.lblsenha.BackColor = System.Drawing.Color.Transparent;
-            this.lblsenha.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.lblsenha.ForeColor = System.Drawing.Color.FromArgb(196, 30, 30);
-            this.lblsenha.Name = "lblsenha";
-            this.lblsenha.Text = "SENHA";
-            this.pnlForm.Controls.Add(this.lblsenha);
-
-            // txbsenha
-            this.txbsenha.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
-            this.txbsenha.ForeColor = System.Drawing.Color.White;
-            this.txbsenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbsenha.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.txbsenha.PasswordChar = '●';
-            this.txbsenha.Name = "txbsenha";
-            this.pnlForm.Controls.Add(this.txbsenha);
-
-            // btnentrar
-            this.btnentrar.BackColor = System.Drawing.Color.FromArgb(196, 30, 30);
-            this.btnentrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnentrar.FlatAppearance.BorderSize = 0;
-            this.btnentrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(215, 45, 45);
-            this.btnentrar.ForeColor = System.Drawing.Color.White;
-            this.btnentrar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnentrar.Text = "ENTRAR";
-            this.btnentrar.Name = "btnentrar";
-            this.btnentrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnentrar.UseVisualStyleBackColor = false;
-            this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
-            this.pnlForm.Controls.Add(this.btnentrar);
-
-            // btnsair
-            this.btnsair.BackColor = System.Drawing.Color.Transparent;
-            this.btnsair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsair.FlatAppearance.BorderSize = 0;
-            this.btnsair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnsair.ForeColor = System.Drawing.Color.FromArgb(80, 80, 75);
-            this.btnsair.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnsair.Text = "Sair do sistema";
-            this.btnsair.Name = "btnsair";
-            this.btnsair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnsair.UseVisualStyleBackColor = false;
-            this.btnsair.Click += new System.EventHandler(this.btnsair_Click);
-            this.pnlForm.Controls.Add(this.btnsair);
-
-            this.pnlRight.Controls.Add(this.pnlForm);
-
+            // 
             // lblVersion
-            this.lblVersion.AutoSize = false;
+            // 
             this.lblVersion.BackColor = System.Drawing.Color.Transparent;
             this.lblVersion.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(45, 45, 42);
+            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(42)))));
+            this.lblVersion.Location = new System.Drawing.Point(0, 0);
             this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(100, 23);
+            this.lblVersion.TabIndex = 63;
             this.lblVersion.Text = "v1.0  •  Pizzaria Sistema";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.pnlRight.Controls.Add(this.lblVersion);
-
-            // ── FrmLogin ─────────────────────────────────────────────────
+            // 
+            // FrmLogin
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(8, 8, 8);
-            this.BackgroundImage = null;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
             this.ClientSize = new System.Drawing.Size(1440, 900);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.DoubleBuffered = true;
-            this.Name = "FrmLogin";
-            this.Text = " ";
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
-            this.Resize += new System.EventHandler(this.FrmLogin_Resize);
-
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.pnlRight);
-
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.Resize += new System.EventHandler(this.FrmLogin_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.picblogo)).EndInit();
             this.pnlLeft.ResumeLayout(false);
+            this.pnlLeft.PerformLayout();
             this.pnlRight.ResumeLayout(false);
             this.pnlForm.ResumeLayout(false);
+            this.pnlForm.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
